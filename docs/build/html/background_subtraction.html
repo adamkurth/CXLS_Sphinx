@@ -44,8 +44,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Project Pages</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Water Background Subtraction Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#peakthresholdprocessor-class">PeakThresholdProcessor Class</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Water Background Subtraction Project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#peakthresholdprocessor-class">PeakThresholdProcessor Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#functions-used">Functions Used</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#PeakThresholdProcessor"><code class="docutils literal notranslate"><span class="pre">PeakThresholdProcessor</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#PeakThresholdProcessor.set_threshold_value"><code class="docutils literal notranslate"><span class="pre">PeakThresholdProcessor.set_threshold_value()</span></code></a></li>
@@ -54,9 +54,7 @@
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#arrayregion-class">ArrayRegion Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#arrayregion-class">ArrayRegion Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">Functions Used</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ArrayRegion"><code class="docutils literal notranslate"><span class="pre">ArrayRegion</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#ArrayRegion.x_center"><code class="docutils literal notranslate"><span class="pre">ArrayRegion.x_center</span></code></a></li>
@@ -69,21 +67,21 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#helper-functions">Helper Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#load_h5"><code class="docutils literal notranslate"><span class="pre">load_h5()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extract_region"><code class="docutils literal notranslate"><span class="pre">extract_region()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#helper-functions">Helper Functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#load_h5"><code class="docutils literal notranslate"><span class="pre">load_h5()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#extract_region"><code class="docutils literal notranslate"><span class="pre">extract_region()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#coordinate-menu-function">Coordinate Menu Function</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#coordinate_menu"><code class="docutils literal notranslate"><span class="pre">coordinate_menu()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build_coord_intensity"><code class="docutils literal notranslate"><span class="pre">build_coord_intensity()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#create_scatter"><code class="docutils literal notranslate"><span class="pre">create_scatter()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#main-function">Main Function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#main-function">Main Function</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -117,10 +115,10 @@
 <p>This project is a simple implementation of background subtraction using OpenCV. It is intended to be used for the water background subtraction project.
 Within the project, there are three main project files: <cite>h5_background_subtraction_10_2_23.py</cite> and <cite>h5_stream_background_subtraction_10_2_23.py</cite>, and <cite>overwrite_10_2_23.py</cite>, all found under the <cite>src/</cite> directory. The first file contains the main code for this page, while the others were adaptations on this.</p>
 <p>ßThe GitHub repository for this project can be found at <a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">https://github.com/adamkurth/waterbackground_subtraction.git</a>, as well as <a class="reference external" href="https://gitlab.com/amkurth/waterbackground_subtraction.git">https://gitlab.com/amkurth/waterbackground_subtraction.git</a>.</p>
-</section>
 <section id="peakthresholdprocessor-class">
-<h1>PeakThresholdProcessor Class<a class="headerlink" href="#peakthresholdprocessor-class" title="Link to this heading"></a></h1>
+<h2>PeakThresholdProcessor Class<a class="headerlink" href="#peakthresholdprocessor-class" title="Link to this heading"></a></h2>
 <p>The <a href="#id1"><span class="problematic" id="id2">`</span></a>PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.</p>
+</section>
 <section id="functions-used">
 <h2>Functions Used<a class="headerlink" href="#functions-used" title="Link to this heading"></a></h2>
 <dl class="py class">
@@ -174,10 +172,10 @@ Within the project, there are three main project files: <cite>h5_background_subt
 </dd></dl>
 
 </section>
-</section>
 <section id="arrayregion-class">
-<h1>ArrayRegion Class<a class="headerlink" href="#arrayregion-class" title="Link to this heading"></a></h1>
+<h2>ArrayRegion Class<a class="headerlink" href="#arrayregion-class" title="Link to this heading"></a></h2>
 <p>The <cite>ArrayRegion</cite> class is used for processing the image array region, using the coordinate values provided. This class provides functions for setting and retrieving coordinate values these values.</p>
+</section>
 <section id="id3">
 <h2>Functions Used<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <dl class="py class">
@@ -257,9 +255,8 @@ Within the project, there are three main project files: <cite>h5_background_subt
 </dd></dl>
 
 </section>
-</section>
 <section id="helper-functions">
-<h1>Helper Functions<a class="headerlink" href="#helper-functions" title="Link to this heading"></a></h1>
+<h2>Helper Functions<a class="headerlink" href="#helper-functions" title="Link to this heading"></a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="load_h5">
 <span class="sig-name descname"><span class="pre">load_h5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_h5" title="Link to this definition"></a></dt>
@@ -293,6 +290,7 @@ Within the project, there are three main project files: <cite>h5_background_subt
 </dl>
 </dd></dl>
 
+</section>
 <section id="coordinate-menu-function">
 <h2>Coordinate Menu Function<a class="headerlink" href="#coordinate-menu-function" title="Link to this heading"></a></h2>
 <p><cite>coordinate_menu</cite> is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.</p>
@@ -445,9 +443,8 @@ Within the project, there are three main project files: <cite>h5_background_subt
 </dd></dl>
 
 </section>
-</section>
 <section id="main-function">
-<h1>Main Function<a class="headerlink" href="#main-function" title="Link to this heading"></a></h1>
+<h2>Main Function<a class="headerlink" href="#main-function" title="Link to this heading"></a></h2>
 <p>The <cite>main</cite> function processes image data from specified HDF5 file for 3-ring integration analysis. Calling <cite>coordinate_menu</cite> for increasing radius value.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="main">
@@ -474,6 +471,7 @@ Within the project, there are three main project files: <cite>h5_background_subt
 <p>The script also defines paths for working with image files and calls the <cite>main</cite> function with different image paths for processing.</p>
 </dd></dl>
 
+</section>
 </section>
 
 

@@ -9,12 +9,12 @@ Within the project, there are three main project files: `h5_background_subtracti
 ßThe GitHub repository for this project can be found at https://github.com/adamkurth/waterbackground_subtraction.git, as well as https://gitlab.com/amkurth/waterbackground_subtraction.git.
 
 PeakThresholdProcessor Class 
-============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
 
 Functions Used
----------------
+^^^^^^^^^^^^^^
 
 .. py:class:: PeakThresholdProcessor(image_array, threshold_value=0)
     
@@ -41,12 +41,12 @@ Functions Used
         :rtype: float
 
 ArrayRegion Class
-=================
+^^^^^^^^^^^^^^^^^
 
 The `ArrayRegion` class is used for processing the image array region, using the coordinate values provided. This class provides functions for setting and retrieving coordinate values these values.
 
 Functions Used
----------------
+^^^^^^^^^^^^^^
 
 .. py:class:: ArrayRegion(array)
     
@@ -89,7 +89,7 @@ Functions Used
 
 
 Helper Functions
-================
+^^^^^^^^^^^^^^^^
 
 .. py:method:: load_h5(filename)
 
@@ -115,7 +115,7 @@ Helper Functions
     :rtype: numpy.ndarray
     
 Coordinate Menu Function
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `coordinate_menu` is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.
 
@@ -252,7 +252,7 @@ Coordinate Menu Function
     :type highlight_y: int
 
 Main Function
-=============
+^^^^^^^^^^^^^
 
 The `main` function processes image data from specified HDF5 file for 3-ring integration analysis. Calling `coordinate_menu` for increasing radius value.
 
@@ -264,7 +264,7 @@ The `main` function processes image data from specified HDF5 file for 3-ring int
     :type filename: str
 
     The function performs the following steps:
-    
+
     1. **File Loading**: It calls ``load_h5`` to load the specified HDF5 file.
 
     2. **Image Data Extraction**: Extracts the NumPy array from the HDF5 file, which is 2D array of zeros with shape of (4371, 4150). 
