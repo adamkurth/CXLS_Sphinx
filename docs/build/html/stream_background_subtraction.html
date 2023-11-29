@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Water Background Subtraction Project (Stream) &mdash; CXLS Sphinx N documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -83,12 +84,12 @@
            <div itemprop="articleBody">
              
   <section id="water-background-subtraction-project-stream">
-<h1>Water Background Subtraction Project (Stream)<a class="headerlink" href="#water-background-subtraction-project-stream" title="Permalink to this headline"></a></h1>
+<h1>Water Background Subtraction Project (Stream)<a class="headerlink" href="#water-background-subtraction-project-stream" title="Permalink to this heading"></a></h1>
 <p>This project is an adaptation on  <span class="xref std std-doc">Water Background Subtraction Project (Main)</span>. It is intended to analyze the <cite>.stream</cite> after running <cite>indexamajig</cite> from CrystFEL.
 This adaptation will focus specifically on the differences of the <span class="xref std std-doc">Water Background Subtraction Project (Main)</span> and the <cite>h5_stream_background_subtraction_10_2_23.py</cite> file, both located in the <cite>src/</cite> directory.</p>
 <p>The GitHub repository for this project can be found at <a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">https://github.com/adamkurth/waterbackground_subtraction.git</a>, as well as <a class="reference external" href="https://gitlab.com/amkurth/waterbackground_subtraction.git">https://gitlab.com/amkurth/waterbackground_subtraction.git</a>.</p>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"></a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading"></a></h2>
 <p>The following modules are imported for use in the program:
 .. code-block:: python</p>
 <blockquote>
@@ -100,7 +101,7 @@ import matplotlib.pyplot as plt</p>
 </div></blockquote>
 </section>
 <section id="peakthresholdprocessor-class">
-<h2>PeakThresholdProcessor Class<a class="headerlink" href="#peakthresholdprocessor-class" title="Permalink to this headline"></a></h2>
+<h2>PeakThresholdProcessor Class<a class="headerlink" href="#peakthresholdprocessor-class" title="Permalink to this heading"></a></h2>
 <p>The <a href="#id1"><span class="problematic" id="id2">`</span></a>PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="PeakThresholdProcessor">
@@ -109,16 +110,16 @@ import matplotlib.pyplot as plt</p>
 <div><p>Initialize the <cite>PeakThresholdProcessor</cite> with the image array and coordinate threshold value.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
 <li><p><strong>threshold_value</strong> (<em>float</em><em>, </em><em>optional</em>) – The threshold value to be used for processing the image array, defaults to 0.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns coordinate list of x and y values above the threshold value.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><p>list</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="PeakThresholdProcessor.set_threshold_value">
@@ -126,7 +127,7 @@ import matplotlib.pyplot as plt</p>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Set</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">threshold</span> <span class="pre">value</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">image</span> <span class="pre">array.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>new_threshold_value</strong> (<em>float</em>) – The new threshold value to be used for processing the image array.</p>
 </dd>
 </dl>
@@ -138,10 +139,10 @@ import matplotlib.pyplot as plt</p>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Getter</span> <span class="pre">method</span> <span class="pre">which</span> <span class="pre">returns</span> <span class="pre">the</span> <span class="pre">current</span> <span class="pre">threshold</span> <span class="pre">value</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">image</span> <span class="pre">array.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The current threshold value for the image array.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -154,11 +155,11 @@ import matplotlib.pyplot as plt</p>
 
 </section>
 <section id="arrayregion-class">
-<h2>ArrayRegion Class<a class="headerlink" href="#arrayregion-class" title="Permalink to this headline"></a></h2>
+<h2>ArrayRegion Class<a class="headerlink" href="#arrayregion-class" title="Permalink to this heading"></a></h2>
 <p>The <cite>ArrayRegion</cite> class is used for processing the image array region, using the coordinate values provided. This class provides functions for setting and retrieving coordinate values these values.</p>
 </section>
 <section id="functions-used">
-<h2>Functions Used<a class="headerlink" href="#functions-used" title="Permalink to this headline"></a></h2>
+<h2>Functions Used<a class="headerlink" href="#functions-used" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="ArrayRegion">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArrayRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ArrayRegion" title="Permalink to this definition"></a></dt>
@@ -166,7 +167,7 @@ import matplotlib.pyplot as plt</p>
 <div><p>The <cite>ArrayRegion</cite> class is used for processing the image array region.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p>
 </dd>
 </dl>
@@ -197,7 +198,7 @@ import matplotlib.pyplot as plt</p>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Set</span> <span class="pre">the</span> <span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span> <span class="pre">coordinates</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">center</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">region</span> <span class="pre">using</span> <span class="pre">chosen</span> <span class="pre">coordinate.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>int</em>) – The x coordinate of the center of the region.</p></li>
 <li><p><strong>y</strong> (<em>int</em>) – The y coordinate of the center of the region.</p></li>
@@ -212,7 +213,7 @@ import matplotlib.pyplot as plt</p>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Make</span> <span class="pre">region</span> <span class="pre">that</span> <span class="pre">is</span> <span class="pre">printable</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">terminal</span> <span class="pre">and</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">radius</span> <span class="pre">of</span> <span class="pre">region_size.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>size</strong> (<em>int</em>) – The size of the region radius.</p>
 </dd>
 </dl>
@@ -224,10 +225,10 @@ import matplotlib.pyplot as plt</p>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Get</span> <span class="pre">the</span> <span class="pre">region</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">image</span> <span class="pre">array.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The region from the image array.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>numpy.ndarray</p>
 </dd>
 </dl>
@@ -237,13 +238,13 @@ import matplotlib.pyplot as plt</p>
 
 </section>
 <section id="helper-functions">
-<h2>Helper Functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline"></a></h2>
+<h2>Helper Functions<a class="headerlink" href="#helper-functions" title="Permalink to this heading"></a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="load_h5">
 <span class="sig-name descname"><span class="pre">load_h5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_h5" title="Permalink to this definition"></a></dt>
 <dd><p>This method loads an HDF5 file and prints a success message if the file is loaded successfully. If the file is not found within the working directory, it prints an error message.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The path to the HDF5 file.</p>
 </dd>
 </dl>
@@ -254,7 +255,7 @@ import matplotlib.pyplot as plt</p>
 <span class="sig-name descname"><span class="pre">extract_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_center</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract_region" title="Permalink to this definition"></a></dt>
 <dd><p>This function calls the <cite>ArrayRegion</cite> class to extract the region from the image array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
 <li><p><strong>region_size</strong> (<em>int</em>) – The size of the region radius.</p></li>
@@ -262,10 +263,10 @@ import matplotlib.pyplot as plt</p>
 <li><p><strong>y_center</strong> (<em>int</em>) – The y coordinate of the center of the region.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The extracted region from the image array.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy.ndarray</p>
 </dd>
 </dl>
@@ -273,14 +274,14 @@ import matplotlib.pyplot as plt</p>
 
 </section>
 <section id="coordinate-menu-function">
-<h2>Coordinate Menu Function<a class="headerlink" href="#coordinate-menu-function" title="Permalink to this headline"></a></h2>
+<h2>Coordinate Menu Function<a class="headerlink" href="#coordinate-menu-function" title="Permalink to this heading"></a></h2>
 <p><cite>coordinate_menu</cite> is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="coordinate_menu">
 <span class="sig-name descname"><span class="pre">coordinate_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#coordinate_menu" title="Permalink to this definition"></a></dt>
 <dd><p>This function displays the coordinates above the given threshold and radius, and allows the user to interactively select the coordinate for further processing.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
 <li><p><strong>threshold_value</strong> (<em>float</em>) – The thresold value used to determine the coordiantes.</p></li>
@@ -291,10 +292,10 @@ import matplotlib.pyplot as plt</p>
 </dl>
 <p>The user is prompted to choose a coordinate. Function displays 9x9 two-dimensional array, the segment, and the boolean array of traversed values. The function then returns the average surrounding peak value and the intensity peak value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The average surrounding peak value and the intensity peak value.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>tuple[float, float]</p>
 </dd>
 </dl>
@@ -374,16 +375,16 @@ import matplotlib.pyplot as plt</p>
 
 </section>
 <section id="load-stream-function">
-<h2>Load Stream Function<a class="headerlink" href="#load-stream-function" title="Permalink to this headline"></a></h2>
+<h2>Load Stream Function<a class="headerlink" href="#load-stream-function" title="Permalink to this heading"></a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="load_stream">
 <span class="sig-name descname"><span class="pre">load_stream</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_stream" title="Permalink to this definition"></a></dt>
 <dd><p>This function loads the <cite>.stream</cite> file and prints a success message if the file is loaded successfully. If the file is not found within the working directory, it prints an error message. It then reads the file line by line and stores the values in a dictionary. The function then returns the dictionary and the x, y, and z values.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A tuple containing four lists: data_columns, result_x, result_y, result_z, from previous code adaptation <cite>create_scatter</cite>.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>tuple[dictionary, list, list, list]</p>
 </dd>
 </dl>
@@ -454,7 +455,7 @@ import matplotlib.pyplot as plt</p>
 
 </section>
 <section id="main-function">
-<h2>Main Function<a class="headerlink" href="#main-function" title="Permalink to this headline"></a></h2>
+<h2>Main Function<a class="headerlink" href="#main-function" title="Permalink to this heading"></a></h2>
 <p>The <cite>main</cite> function processes image data from specified HDF5 file for 3-ring integration analysis. Calling <cite>coordinate_menu</cite> for increasing radius value.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="main">
@@ -462,10 +463,10 @@ import matplotlib.pyplot as plt</p>
 <dd><blockquote>
 <div><p>Loads and processes image data from HDF5 file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param filename</dt>
+<dt class="field-odd">param filename<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The path to the HDF5 file containing image data.</p>
 </dd>
-<dt class="field-even">type filename</dt>
+<dt class="field-even">type filename<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
