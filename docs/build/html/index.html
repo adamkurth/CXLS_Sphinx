@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to CXLS GitPages documentation! &mdash; CXLS Sphinx N documentation</title>
@@ -11,15 +11,14 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=cf3e543a"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Water Background Subtraction Project" href="background_subtraction.html" /> 
+    <link rel="next" title="Water Background Subtraction Project (Main)" href="background_subtraction.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,7 +42,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Project Pages</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
 </ul>
 
         </div>
@@ -71,16 +71,16 @@
            <div itemprop="articleBody">
              
   <section id="welcome-to-cxls-gitpages-documentation">
-<h1>Welcome to CXLS GitPages documentation!<a class="headerlink" href="#welcome-to-cxls-gitpages-documentation" title="Link to this heading"></a></h1>
+<h1>Welcome to CXLS GitPages documentation!<a class="headerlink" href="#welcome-to-cxls-gitpages-documentation" title="Permalink to this headline"></a></h1>
 <p>Through use of reborn repository, we have created a new documentation for CXLS. This documentation is based on Sphinx and ReadTheDocs. The documentation is still under construction and will be updated regularly.
 <em>For use of CXLS Eiger 4M Detector</em> please refer to the  <span class="xref std std-doc">documentation for CXLS Eiger 4M Detector</span>.</p>
 <section id="contents">
-<h2>Contents:<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<h2>Contents:<a class="headerlink" href="#contents" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 </div>
 </section>
 <section id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h2>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
@@ -89,10 +89,10 @@
 </section>
 </section>
 <section id="introduction">
-<span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
 <p>CXLS is a python package for data analysis of X-ray scattering data. Specially tailored for uses at CXLS, repository . It is based on the python package reborn, tailored to the uses at CXLS. The documentation for reborn can be found here: <a class="reference external" href="https://kirianlab.gitlab.io/reborn/">https://kirianlab.gitlab.io/reborn/</a>.</p>
 <section id="installation">
-<span id="id2"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<span id="id2"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
 <p>The installation of CXLS is very simple. You can install it by using pip.
 <code class="docutils literal notranslate"><span class="pre">`</span>
 <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cxls</span>
@@ -104,37 +104,37 @@ If you want to install it in a virtual environment, you can do the following:
 </div></blockquote>
 </section>
 <section id="usage">
-<span id="id3"></span><h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<span id="id3"></span><h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>CXLS is a python package for data analysis of X-ray crystallography experimental data.</p>
 </section>
 <section id="documentation-for-cxls">
-<span id="cxls"></span><h2>Documentation for CXLS<a class="headerlink" href="#documentation-for-cxls" title="Link to this heading"></a></h2>
+<span id="cxls"></span><h2>Documentation for CXLS<a class="headerlink" href="#documentation-for-cxls" title="Permalink to this headline"></a></h2>
 </section>
 <section id="documentation-for-reborn">
-<span id="reborn"></span><h2>Documentation for Reborn<a class="headerlink" href="#documentation-for-reborn" title="Link to this heading"></a></h2>
+<span id="reborn"></span><h2>Documentation for Reborn<a class="headerlink" href="#documentation-for-reborn" title="Permalink to this headline"></a></h2>
 <p>The GitLab repository for reborn can be found here: <a class="reference external" href="https://gitlab.com/kirianlab/reborn">https://gitlab.com/kirianlab/reborn</a>.
 The documentation for reborn can be found here: <a class="reference external" href="https://kirianlab.gitlab.io/reborn/">https://kirianlab.gitlab.io/reborn/</a>.</p>
 </section>
 <section id="documentation-for-cxls-eiger-4m-detector">
-<span id="cxls-eiger4m"></span><h2>Documentation for CXLS Eiger 4M Detector<a class="headerlink" href="#documentation-for-cxls-eiger-4m-detector" title="Link to this heading"></a></h2>
+<span id="cxls-eiger4m"></span><h2>Documentation for CXLS Eiger 4M Detector<a class="headerlink" href="#documentation-for-cxls-eiger-4m-detector" title="Permalink to this headline"></a></h2>
 </section>
 <section id="testing-functionalities-in-sphinx">
-<span id="testing"></span><h2>Testing Functionalities in Sphinx<a class="headerlink" href="#testing-functionalities-in-sphinx" title="Link to this heading"></a></h2>
+<h2>Testing Functionalities in Sphinx<a class="headerlink" href="#testing-functionalities-in-sphinx" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">``cxls_eiger4m.read_eiger4m_data(filename,</span> <span class="pre">data_type='image')``</span></span></dt>
 <dd><p>Read Eiger 4M data from a file. The data can be either image or series of images. The data is returned as a numpy array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> (<em>str</em>) – The name of the file to be read.</p></li>
 <li><p><strong>data_type</strong> (<em>str</em>) – The type of data to be read. The default is ‘image’. The other option is ‘series’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The data read from the file.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>numpy.ndarray</p>
 </dd>
 </dl>
@@ -142,12 +142,12 @@ The documentation for reborn can be found here: <a class="reference external" hr
 
 </section>
 <section id="development-of-cxls">
-<span id="development"></span><h2>Development of CXLS<a class="headerlink" href="#development-of-cxls" title="Link to this heading"></a></h2>
+<h2>Development of CXLS<a class="headerlink" href="#development-of-cxls" title="Permalink to this headline"></a></h2>
 <p>Code development for CXLS</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Project Pages</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html#peakthresholdprocessor-class">PeakThresholdProcessor Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html#functions-used">Functions Used</a></li>
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html#arrayregion-class">ArrayRegion Class</a></li>
@@ -155,6 +155,17 @@ The documentation for reborn can be found here: <a class="reference external" hr
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html#helper-functions">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html#coordinate-menu-function">Coordinate Menu Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html#main-function">Main Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html#peakthresholdprocessor-class">PeakThresholdProcessor Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html#functions-used">Functions Used</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html#arrayregion-class">ArrayRegion Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html#id3">Functions Used</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html#helper-functions">Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html#coordinate-menu-function">Coordinate Menu Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html#load-stream-function">Load Stream Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html#main-function">Main Function</a></li>
 </ul>
 </li>
 </ul>
@@ -166,7 +177,7 @@ The documentation for reborn can be found here: <a class="reference external" hr
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="background_subtraction.html" class="btn btn-neutral float-right" title="Water Background Subtraction Project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="background_subtraction.html" class="btn btn-neutral float-right" title="Water Background Subtraction Project (Main)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
