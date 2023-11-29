@@ -1,8 +1,6 @@
 Water Background Subtraction Project (Stream)
 ===========================================
 
-.. author:: Adam Kurth <
-
 This project is an adaptation on  :doc:`Water Background Subtraction Project (Main)`. It is intended to analyze the `.stream` after running `indexamajig` from CrystFEL. 
 This adaptation will focus specifically on the differences of the :doc:`Water Background Subtraction Project (Main)` and the `h5_stream_background_subtraction_10_2_23.py` file, both located in the `src/` directory.
 

@@ -1,8 +1,6 @@
 Water Background Subtraction (Overwrite)
 =========================================
 
-.. author:: Adam Kurth <
-
 This module contains the adaptation of the previous background subtraction programs, called `overwrite_10_2_23.py`. 
 The rational behind this is to take two stream files, one with "high" keV values and one with "low" keV values, and analyze their respective `.stream` files.
 The program will then take the background from the "low" keV stream file and overwrite the background in the "high" keV stream file.
@@ -22,7 +20,10 @@ To compare the two stream files before and after the the overwrite process, we n
 
 We do this by using the `shutil.copyfile()` function, which takes two arguments, the source file and the destination file.
 
-.. py:method:: duplicate_before_overwrite(filename):
+.. py:function:: duplicate_before_overwrite(filename):
+
+    Duplicates a file by creating a copy with a modified name.
+
     :param filename: The name of the file to duplicate.
     :type filename: str
 
@@ -45,7 +46,10 @@ Debugging Function
 
 Used to compare the two stream files, used for debugging purposes.
 
-.. py:method:: compare_high_low(high_data, low_data, *columns):
+.. py:function:: compare_high_low(high_data, low_data, *columns)
+
+    Compare the high and low data and return the compared data.
+
     :param high_data: The high keV file to compare.
     :type high_data: dict
     :param low_data: The low keV file to compare.
@@ -74,7 +78,10 @@ Used to compare the two stream files, used for debugging purposes.
 
 This function directly appends certain columns in `data_columns` for ease of use and debugging purposes.
 
-.. py:method:: retrieve(data_columns, *args)
+.. py:function:: retrieve(data_columns, *args)
+
+    Retrieve the columns of data to retrieve.
+
     :param data_columns: The columns of data to retrieve.
     :type data_columns: dict
     :param args: Takes the desired columns to be retrieved, appends to list. 
@@ -100,7 +107,7 @@ Overwrite Function
 
 This function executes the overwriting procedure of the "high" keV stream file with the "low" keV stream file.
 
-.. py:method:: overwrite_low_in_high(filename, overwrite_data):
+.. py:function:: overwrite_low_in_high(filename, overwrite_data)
 
     Overwrite the low data in the high stream file with the given overwrite data.
 
@@ -148,7 +155,10 @@ Intenstity Finder Function
 This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
 If the x,y coordinates are out of bounds, the function will simply ignore the peak.
 
-.. py:method:: intensity_finder(x_coords, y_coords, image_name)
+.. py:function:: intensity_finder(x_coords, y_coords, image_name)
+
+    Retrieve the intensity values for every x,y coordinate in the image.
+
     :param x_coords: The x coordinates of the peaks.
     :type x_coords: list
     :param y_coords: The y coordinates of the peaks.
@@ -176,7 +186,10 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 
 Populate Intensity Array Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. py:method:: populate_intensity_array(data_columns, image_name)
+.. py:function:: populate_intensity_array(data_columns, image_name)
+
+    Populate the intensity array with the intensity values for each x,y coordinate.
+
     :param data_columns: The columns of data to populate.
     :type data_columns: dict
     :param image_name: The name of the image to populate the intensity array.
@@ -208,14 +221,13 @@ Populate Intensity Array Function
 
 Main Function
 ^^^^^^^^^^^^^
-
-.. py:method::main()
-
     The main function of the program, which executes the program.
 
     The function performs the following steps:
     
-    1. **File Loading**: Displays the current working directory.
+    1. **File Loading**: 
+        
+        -Displays the current working directory.
 
     2. **Setup Paths**:
         
@@ -225,41 +237,45 @@ Main Function
 
     3. **Initialize Variables**: 
     
-    - Initializes `intensities_array` to `None`.
-    
-    - Initializes `high_stream_name` and `low_stream_name` to the respective stream file names.
+        - Initializes `intensities_array` to `None`.
+        
+        - Initializes `high_stream_name` and `low_stream_name` to the respective stream file names.
 
     4. **Load and Compare Stream Data**:
     
-    - Loads data from the high and low stream files using `load_stream`.
-    
-    - Compares high and low data using `compare_high_low`.
+        - Loads data from the high and low stream files using `load_stream`.
+        
+        - Compares high and low data using `compare_high_low`.
 
     5. **Overwrite Data**:
     
-    - Overwrites data in the high stream file with data from the low stream.
+        - Overwrites data in the high stream file with data from the low stream.
 
     6. **Image Processing**:
 
-    - Sets up `image_name` and `image_path` for processing.
+        - Sets up `image_name` and `image_path` for processing.
 
-    - Finds intensities using `intensity_finder` with high data stream coordinates and image path.
-    
-    - Populates the `intensities_array` with intensity data using `populate_intensity_array()`.
+        - Finds intensities using `intensity_finder` with high data stream coordinates and image path.
+        
+        - Populates the `intensities_array` with intensity data using `populate_intensity_array()`.
 
     7. **Threshold Processing and Coordinate Extraction**:
 
-    - Initializes a `PeakThresholdProcessor` with a very low threshold.
+        - Initializes a `PeakThresholdProcessor` with a very low threshold.
 
-    - Prints the original threshold value.
-    
-    - Retrieves coordinates above the threshold using `get_coordinates_above_threshold`.
+        - Prints the original threshold value.
+        
+        - Retrieves coordinates above the threshold using `get_coordinates_above_threshold`.
 
     8. **Coordinate Menu Processing**:
-    - Initializes another `PeakThresholdProcessor` with a higher threshold value.
-    - Iterates through a list of radii, processing coordinates with different threshold values and radii.
-    - Sets completed to True after processing
 
+        - Initializes another `PeakThresholdProcessor` with a higher threshold value.
+        
+        - Iterates through a list of radii, processing coordinates with different threshold values and radii.
+        
+        - Sets completed to True after processing
+
+.. py:function:: main()
     .. code-block:: python
 
         def main():

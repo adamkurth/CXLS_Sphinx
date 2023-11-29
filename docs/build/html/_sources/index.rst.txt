@@ -14,10 +14,11 @@ Contents:
    :maxdepth: 2
    :caption: Contents:
 
-   background_subtraction
-   stream_background_subtraction
-   overwrite_background_subtraction
-   
+   background_subtraction.rst
+   stream_background_subtraction.rst
+   overwrite_background_subtraction.rst
+   overwrite.rst
+
 Indices and tables
 ------------------
 
