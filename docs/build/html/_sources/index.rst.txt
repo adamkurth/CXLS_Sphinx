@@ -14,14 +14,10 @@ Contents:
    :maxdepth: 2
    :caption: Contents:
 
-   introduction
-   installation
-   usage
-   cxls
-   reborn
-   cxls_eiger4m
-   testing
-
+   background_subtraction
+   stream_background_subtraction
+   overwrite_background_subtraction
+   
 Indices and tables
 ------------------
 
