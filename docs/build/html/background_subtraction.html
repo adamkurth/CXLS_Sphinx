@@ -83,9 +83,23 @@
              
   <section id="water-background-subtraction-project-main">
 <h1>Water Background Subtraction Project (Main)<a class="headerlink" href="#water-background-subtraction-project-main" title="Permalink to this heading"></a></h1>
-<p>This project is a simple implementation of background subtraction. It is intended to be used for the water background subtraction project.
-Within the project, there are three main project files: <cite>h5_background_subtraction_10_2_23.py</cite> and <cite>h5_stream_background_subtraction_10_2_23.py</cite>, and <cite>overwrite_10_2_23.py</cite>, all found under the <cite>src/</cite> directory. The first file contains the main code for this page, while the others were adaptations on this.</p>
-<p>The GitHub repository for this project can be found at <a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">https://github.com/adamkurth/waterbackground_subtraction.git</a>, as well as <a class="reference external" href="https://gitlab.com/amkurth/waterbackground_subtraction.git">https://gitlab.com/amkurth/waterbackground_subtraction.git</a>.</p>
+<p>This project is a simple implementation of background subtraction.</p>
+<p>Within the project, there are three main project files:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>h5_background_subtraction_10_2_23.py</cite></p></li>
+<li><p><cite>h5_stream_background_subtraction_10_2_23.py</cite></p></li>
+<li><p><cite>overwrite_10_2_23.py</cite>.</p></li>
+</ul>
+</div></blockquote>
+<p>All of these are found under the <cite>src/</cite> directory. The first file contains the main code for this page, while the others were adaptations on this.</p>
+<dl class="simple">
+<dt>The GitHub repository for this project can be found at:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">https://github.com/adamkurth/waterbackground_subtraction.git</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.com/amkurth/waterbackground_subtraction.git">https://gitlab.com/amkurth/waterbackground_subtraction.git</a>.</p></li>
+</ul>
+</dd>
+</dl>
 <section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading"></a></h2>
 <p>The following modules are imported for use in the program:
@@ -438,11 +452,35 @@ import matplotlib.pyplot as plt</p>
 </dd>
 </dl>
 <p>The function performs the following steps:</p>
-<ol class="arabic simple">
-<li><p><strong>File Loading</strong>: It calls <code class="docutils literal notranslate"><span class="pre">load_h5</span></code> to load the specified HDF5 file.</p></li>
-<li><p><strong>Image Data Extraction</strong>: Extracts the NumPy array from the HDF5 file, which is 2D array of zeros with shape of (4371, 4150).</p></li>
-<li><p><strong>Threshold Processing</strong>: It calls <code class="docutils literal notranslate"><span class="pre">PeakThresholdProcessor</span></code> and creates object with the extracted array region and a threshold of 1000. Then retrieving the coordinates above this threshold.</p></li>
-<li><p><strong>Ring Integration Analysis</strong>: Interactively calls <code class="docutils literal notranslate"><span class="pre">coordinate_menu</span></code> for a set of radii (1,2,3,4). And for each value in the list, this calculates and prints the peak estimate by subtracting the average value from the intensity peak value.</p></li>
+<ol class="arabic">
+<li><p><strong>File Loading</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It calls <cite>load_h5</cite> to load the specified HDF5 file.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Image Data Extraction</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Extracts the NumPy array from the HDF5 file, which is 2D array of zeros with shape of (4371, 4150).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Threshold Processing</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It calls <cite>PeakThresholdProcessor</cite> and creates object with the extracted array region and a threshold of 1000. Then retrieving the coordinates above this threshold.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Ring Integration Analysis</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Interactively calls <cite>coordinate_menu</cite> for a set of radii (1,2,3,4). And for each value in the list, this calculates and prints the peak estimate by subtracting the average value from the intensity peak value.</p></li>
+</ul>
+</div></blockquote>
+</li>
 </ol>
 </div></blockquote>
 <p>The function sets a global variable <cite>image_array</cite> to store the image data and <cite>coordinates</cite> to store the coordinates above the threshold. The global variable <cite>intensity_peak</cite> and <cite>avg_values</cite> are used to calculate the peak estimates.</p>
