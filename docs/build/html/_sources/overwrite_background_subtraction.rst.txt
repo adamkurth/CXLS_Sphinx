@@ -1,6 +1,8 @@
 Water Background Subtraction (Overwrite)
 =========================================
 
+.. author:: Adam Kurth <
+
 This module contains the adaptation of the previous background subtraction programs, called `overwrite_10_2_23.py`. 
 The rational behind this is to take two stream files, one with "high" keV values and one with "low" keV values, and analyze their respective `.stream` files.
 The program will then take the background from the "low" keV stream file and overwrite the background in the "high" keV stream file.
@@ -9,22 +11,26 @@ The program will then "overwrite" the "low" keV stream file, as the "high" keV s
 
 Imports
 ^^^^^^^
+
 Most notably, we inherit the `h5_stream_background_subtraction_10_2_23.py` program, to simplify the code. 
 We also import `os`, `shutil`, `numpy`, and `h5py` as `h5`.
 
 Duplicate Function
 ^^^^^^^^^^^^^^^^^^
+
 To compare the two stream files before and after the the overwrite process, we need to duplicate the stream files.
 
 We do this by using the `shutil.copyfile()` function, which takes two arguments, the source file and the destination file.
 
-.. py:function:: duplicate_before_overwrite(filename):
+.. py:method:: duplicate_before_overwrite(filename):
     :param filename: The name of the file to duplicate.
     :type filename: str
+
     :return: The path of the duplicated file.
     :rtype: str
 
     .. code-block:: python
+
         def duplicate_before_overwrite(filename):
             # taking filename and adding copy extension to it.
             base_file, extension = filename.rsplit('.',1)
@@ -39,17 +45,19 @@ Debugging Function
 
 Used to compare the two stream files, used for debugging purposes.
 
-.. py:function:: compare_high_low(high_data, low_data, *columns):
+.. py:method:: compare_high_low(high_data, low_data, *columns):
     :param high_data: The high keV file to compare.
     :type high_data: dict
     :param low_data: The low keV file to compare.
     :type low_data: dict
-    :param columns: The columns desired to be compared.
+    :option columns: The columns desired to be compared.
     :type columns: str
+
     :return: The columns desired to be compared.
     :rtype: dict
 
     .. code-block:: python
+
         def compare_high_low(high_data, low_data, *columns):
             """
             Compare the high and low data and return the compared data.
@@ -66,15 +74,17 @@ Used to compare the two stream files, used for debugging purposes.
 
 This function directly appends certain columns in `data_columns` for ease of use and debugging purposes.
 
-.. py:function:: retrieve(data_columns, *args)
+.. py:method:: retrieve(data_columns, *args)
     :param data_columns: The columns of data to retrieve.
     :type data_columns: dict
     :param args: Takes the desired columns to be retrieved, appends to list. 
     :type args: list
+
     :return: The columns of data to retrieve.
     :rtype: list
 
     .. code-block:: python
+
         def retrieve(data_columns, *args):
             result = []
             try:
@@ -90,7 +100,7 @@ Overwrite Function
 
 This function executes the overwriting procedure of the "high" keV stream file with the "low" keV stream file.
 
-.. py:function:: overwrite_low_in_high(filename, overwrite_data):
+.. py:method:: overwrite_low_in_high(filename, overwrite_data):
 
     Overwrite the low data in the high stream file with the given overwrite data.
 
@@ -98,9 +108,11 @@ This function executes the overwriting procedure of the "high" keV stream file w
     :type filename: str
     :param overwrite_data: A dictionary containing the data to overwrite.
     :type overwrite_data: dict
+
     :return: None
 
     .. code-block::python
+
         def overwrite_low_in_high(filename, overwrite_data):
         """
         Overwrite the low data in the high stream file with the given overwrite data.
@@ -136,17 +148,19 @@ Intenstity Finder Function
 This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
 If the x,y coordinates are out of bounds, the function will simply ignore the peak.
 
-.. py:function:: intensity_finder(x_coords, y_coords, image_name)
+.. py:method:: intensity_finder(x_coords, y_coords, image_name)
     :param x_coords: The x coordinates of the peaks.
     :type x_coords: list
     :param y_coords: The y coordinates of the peaks.
     :type y_coords: list
     :param image_name: The name of the image to find the intensity of the peaks.
     :type image_name: str
+
     :return: The intensity of the image.
     :rtype: list
 
     .. code-block:: python
+
         def intensity_finder(x_coords, y_coords, image_name):
             """
             Retrieve the intensity values for every x,y coordinate in the image.
@@ -162,15 +176,17 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 
 Populate Intensity Array Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. py:function:: populate_intensity_array(data_columns, image_name)
+.. py:method:: populate_intensity_array(data_columns, image_name)
     :param data_columns: The columns of data to populate.
     :type data_columns: dict
     :param image_name: The name of the image to populate the intensity array.
     :type image_name: str
+
     :return: The populated intensity array.
     :rtype: np.array    
 
     .. code-block:: python
+
         def populate_intensity_array(data_columns, image_name):
             """
             Populate the intensity array with the intensity values for each x,y coordinate.
@@ -193,21 +209,19 @@ Populate Intensity Array Function
 Main Function
 ^^^^^^^^^^^^^
 
-.. py:function::main()
+.. py:method::main()
 
     The main function of the program, which executes the program.
 
     The function performs the following steps:
     
-    1. **File Loading**: 
-    
-    - Displays the current working directory.
+    1. **File Loading**: Displays the current working directory.
 
     2. **Setup Paths**:
-    
-    - Initializes `src_path` to the current working directory. 
-    
-    - Creates `stream_dir`` and `image_dir` paths by joining `src_path` with respective directory names.
+        
+        - Initializes `src_path` to the current working directory. 
+        
+        - Creates `stream_dir`` and `image_dir` paths by joining `src_path` with respective directory names.
 
     3. **Initialize Variables**: 
     
@@ -241,14 +255,13 @@ Main Function
     
     - Retrieves coordinates above the threshold using `get_coordinates_above_threshold`.
 
-Coordinate Menu Processing:
-
-    Initializes another PeakThresholdProcessor with a higher threshold value.
-    Iterates through a list of radii, processing coordinates with different threshold values and radii.
-    Sets completed to True after processing
-
+    8. **Coordinate Menu Processing**:
+    - Initializes another `PeakThresholdProcessor` with a higher threshold value.
+    - Iterates through a list of radii, processing coordinates with different threshold values and radii.
+    - Sets completed to True after processing
 
     .. code-block:: python
+
         def main():
             print("Current working directory:", os.getcwd())
             src_path = os.getcwd()

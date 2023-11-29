@@ -101,5 +101,5 @@ Code development for CXLS
    :caption: Contents:
 
    background_subtraction
-   overwrite_background_subtraction
    stream_background_subtraction
+   overwrite_background_subtraction
