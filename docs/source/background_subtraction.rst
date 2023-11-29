@@ -3,18 +3,27 @@ Water Background Subtraction Project (Main)
 
 .. author:: Adam Kurth <
 
-This project is a simple implementation of background subtraction using OpenCV. It is intended to be used for the water background subtraction project.
+This project is a simple implementation of background subtraction. It is intended to be used for the water background subtraction project.
 Within the project, there are three main project files: `h5_background_subtraction_10_2_23.py` and `h5_stream_background_subtraction_10_2_23.py`, and `overwrite_10_2_23.py`, all found under the `src/` directory. The first file contains the main code for this page, while the others were adaptations on this.
 
 The GitHub repository for this project can be found at https://github.com/adamkurth/waterbackground_subtraction.git, as well as https://gitlab.com/amkurth/waterbackground_subtraction.git.
+ 
+Imports
+^^^^^^^
+
+The following modules are imported for use in the program:
+.. code-block:: python
+
+    import os
+    import numpy as np
+    import h5py as h5
+    import matplotlib.pyplot as plt
+
 
 PeakThresholdProcessor Class 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
-
-Functions Used
-^^^^^^^^^^^^^^
+ The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
 
 .. py:class:: PeakThresholdProcessor(image_array, threshold_value=0)
     
@@ -45,8 +54,6 @@ ArrayRegion Class
 
 The `ArrayRegion` class is used for processing the image array region, using the coordinate values provided. This class provides functions for setting and retrieving coordinate values these values.
 
-Functions Used
-^^^^^^^^^^^^^^
 
 .. py:class:: ArrayRegion(array)
     
@@ -98,7 +105,7 @@ Helper Functions
     :param filename: The path to the HDF5 file.
     :type filename: str
 
-.. py:function:: extract_region(image_array, region_size, x_center, y_center)
+.. py:method:: extract_region(image_array, region_size, x_center, y_center)
     
     This function calls the `ArrayRegion` class to extract the region from the image array.
 
@@ -119,7 +126,7 @@ Coordinate Menu Function
 
 `coordinate_menu` is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.
 
-.. py:function:: coordinate_menu(image_array, threshold_value, coordinates, radius)
+.. py:method:: coordinate_menu(image_array, threshold_value, coordinates, radius)
 
     This function displays the coordinates above the given threshold and radius, and allows the user to interactively select the coordinate for further processing.
 
@@ -205,7 +212,7 @@ Coordinate Menu Function
                 except ValueError:
                     print("Invalid input. Enter a number or 'q' to quit.")
 
-.. py:function:: build_coord_intensity()
+.. py:method:: build_coord_intensity()
 
     This function builds the intensity peak value for the chosen coordinate, used in the `create_scatter` function. 
 
@@ -237,7 +244,7 @@ Coordinate Menu Function
             coordinates_and_intensities = np.column_stack((result_x, result_y, result_z))
             return result_x, result_y, result_z, coordinates_and_intensities
 
-.. py:function:: create_scatter(x, y, z, highlight_x=None, highlight_y=None)
+.. py:method:: create_scatter(x, y, z, highlight_x=None, highlight_y=None)
     `create_scatter ` creates visualization for chosen highlighted coordinate, using matplotlib.pyplot.
 
     :param x: list of x coordinate values.
@@ -256,7 +263,7 @@ Main Function
 
 The `main` function processes image data from specified HDF5 file for 3-ring integration analysis. Calling `coordinate_menu` for increasing radius value.
 
-.. py:function:: main(filename)
+.. py:method:: main(filename)
 
     Loads and processes image data from HDF5 file.
 

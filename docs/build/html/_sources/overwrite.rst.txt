@@ -1,0 +1,169 @@
+Water Background Subtraction (Overwrite)
+========================================
+
+This module contains the adaptation of the previous background subtraction programs, called `overwrite_10_2_23.py`. 
+The rationale behind this is to take two stream files, one with "high" keV values and one with "low" keV values, and analyze their respective `.stream` files.
+The program will then take the background from the "low" keV stream file and overwrite the background in the "high" keV stream file.
+
+The program will then "overwrite" the "low" keV stream file, as the "high" keV stream, with the new more accurate peak values.
+
+Imports
+-------
+Most notably, we inherit the `h5_stream_background_subtraction_10_2_23.py` program, to simplify the code. 
+We also import `os`, `shutil`, `numpy`, and `h5py` as `h5`.
+
+Duplicate Function
+------------------
+To compare the two stream files before and after the overwrite process, we need to duplicate the stream files.
+
+We do this by using the `shutil.copyfile()` function, which takes two arguments, the source file and the destination file.
+
+.. code-block:: python
+
+    def duplicate_before_overwrite(filename):
+        """
+        Duplicate the specified file.
+
+        :param filename: The name of the file to duplicate.
+        :type filename: str
+        :return: The path of the duplicated file.
+        :rtype: str
+        """
+        base_file, extension = filename.rsplit('.',1)
+        new_base_file = f'{base_file}_copy'
+        new_filename = f'{new_base_file}.{extension}'
+        duplicate = shutil.copyfile(filename, new_filename)
+        return duplicate
+
+
+Debugging Function
+------------------
+
+Used to compare the two stream files, used for debugging purposes.
+
+.. code-block:: python
+
+    def compare_high_low(high_data, low_data, *columns):
+        """
+        Compare the high and low data and return the compared data.
+
+        :param high_data: The high keV file to compare.
+        :type high_data: dict
+        :param low_data: The low keV file to compare.
+        :type low_data: dict
+        :param columns: The columns desired to be compared.
+        :type columns: str
+        :return: The columns desired to be compared.
+        :rtype: dict
+        """
+        compared_data = {}
+        for col in columns:
+            if col in high_data and col in low_data:
+                print(f'High: {high_data[col]} \n')
+                print(f'Low: {low_data[col]} \n')
+                print()
+                compared_data[col] = (high_data[col], low_data[col])
+        return compared_data
+
+This function directly appends certain columns in `data_columns` for ease of use and debugging purposes.
+
+.. code-block:: python
+
+    def retrieve(data_columns, *args):
+        """
+        Retrieve columns of data.
+
+        :param data_columns: The columns of data to retrieve.
+        :type data_columns: dict
+        :param args: Takes the desired columns to be retrieved, appends to list. 
+        :type args: list
+        :return: The columns of data to retrieve.
+        :rtype: list
+        """
+        result = []
+        try:
+            result = [data_columns[col] for col in args if col in data_columns]
+        except Exception as e:
+            pass
+        return result
+    
+
+Overwrite Function
+------------------
+
+This function executes the overwriting procedure of the "high" keV stream file with the "low" keV stream file.
+
+.. code-block:: python
+
+    def overwrite_low_in_high(filename, overwrite_data):
+        """
+        Overwrite the low data in the high stream file with the given overwrite data.
+
+        :param filename: The name of the file to overwrite.
+        :type filename: str
+        :param overwrite_data: A dictionary containing the data to overwrite.
+        :type overwrite_data: dict
+        :return: None
+        """
+        with open(filename, 'r') as f:
+            lines = f.readlines()
+
+        with open(filename, 'r+') as f:
+            for line in lines:
+                # Write code here to process the line and overwrite data
+                pass
+
+Intenstity Finder Function
+--------------------------
+
+This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
+If the x,y coordinates are out of bounds, the function will simply ignore the peak.
+
+.. code-block:: python
+
+    def intensity_finder(x_coords, y_coords, image_name):
+        """
+        Find the intensity of peaks in an image.
+
+        :param x_coords: The x coordinates of the peaks.
+        :type x_coords: list
+        :param y_coords: The y coordinates of the peaks.
+        :type y_coords: list
+        :param image_name: The name of the image to find the intensity of the peaks.
+        :type image_name: str
+        :return: The intensity of the image.
+        :rtype: list
+        """
+        # Function implementation here
+
+Populate Intensity Array Function
+---------------------------------
+
+.. code-block:: python
+
+    def populate_intensity_array(data_columns, image_name):
+        """
+        Populate the intensity array with intensity values.
+
+        :param data_columns: The columns of data to populate.
+        :type data_columns: dict
+        :param image_name: The name of the image to populate the intensity array.
+        :type image_name: str
+        :return: The populated intensity array.
+        :rtype: np.array
+        """
+        # Function implementation here
+
+Main Function
+-------------
+
+.. code-block:: python
+
+    def main():
+        """
+        Main function of the program, which executes the program.
+        """
+        # Function implementation here
+
+        if __name__ == '__main__':
+            main()

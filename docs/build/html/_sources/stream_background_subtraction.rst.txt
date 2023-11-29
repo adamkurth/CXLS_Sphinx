@@ -1,3 +1,4 @@
+===========================================
 Water Background Subtraction Project (Stream)
 ===========================================
 
@@ -7,14 +8,23 @@ This project is an adaptation on  :doc:`Water Background Subtraction Project (Ma
 This adaptation will focus specifically on the differences of the :doc:`Water Background Subtraction Project (Main)` and the `h5_stream_background_subtraction_10_2_23.py` file, both located in the `src/` directory.
 
 The GitHub repository for this project can be found at https://github.com/adamkurth/waterbackground_subtraction.git, as well as https://gitlab.com/amkurth/waterbackground_subtraction.git.
+ 
+Imports
+^^^^^^^
+
+The following modules are imported for use in the program:
+.. code-block:: python
+
+    import os
+    import sys
+    import numpy as np
+    import h5py as h5
+    import matplotlib.pyplot as plt
 
 PeakThresholdProcessor Class 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
-
-Functions Used
-^^^^^^^^^^^^^^
 
 .. py:class:: PeakThresholdProcessor(image_array, threshold_value=0)
     
@@ -98,7 +108,7 @@ Helper Functions
     :param filename: The path to the HDF5 file.
     :type filename: str
 
-.. py:function:: extract_region(image_array, region_size, x_center, y_center)
+.. py:method:: extract_region(image_array, region_size, x_center, y_center)
     
     This function calls the `ArrayRegion` class to extract the region from the image array.
 
@@ -119,7 +129,7 @@ Coordinate Menu Function
 
 `coordinate_menu` is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.
 
-.. py:function:: coordinate_menu(image_array, threshold_value, coordinates, radius)
+.. py:method:: coordinate_menu(image_array, threshold_value, coordinates, radius)
 
     This function displays the coordinates above the given threshold and radius, and allows the user to interactively select the coordinate for further processing.
 
@@ -214,7 +224,7 @@ Coordinate Menu Function
 Load Stream Function
 ^^^^^^^^^^^^^^^^^^^^
 
-.. py:function:: load_stream()
+.. py:method:: load_stream()
 
     This function loads the `.stream` file and prints a success message if the file is loaded successfully. If the file is not found within the working directory, it prints an error message. It then reads the file line by line and stores the values in a dictionary. The function then returns the dictionary and the x, y, and z values.
 
@@ -290,7 +300,7 @@ Main Function
 
 The `main` function processes image data from specified HDF5 file for 3-ring integration analysis. Calling `coordinate_menu` for increasing radius value.
 
-.. py:function:: main(filename)
+.. py:method:: main(filename)
 
     Loads and processes image data from HDF5 file.
 
