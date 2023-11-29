@@ -2,14 +2,18 @@ Water Background Subtraction Project (Stream)
 ===========================================
 
 This project is an adaptation on  :doc:`Water Background Subtraction Project (Main)`. It is intended to analyze the `.stream` after running `indexamajig` from CrystFEL. 
-This adaptation will focus specifically on the differences of the :doc:`Water Background Subtraction Project (Main)` and the `h5_stream_background_subtraction_10_2_23.py` file, both located in the `src/` directory.
 
-The GitHub repository for this project can be found at https://github.com/adamkurth/waterbackground_subtraction.git, as well as https://gitlab.com/amkurth/waterbackground_subtraction.git.
+This extension focuses on reading the `.stream` files, makeing a dictionary of the content, and recreating an array of the intensity values. The intensity values are then used to calculate the average surrounding peak value and the intensity peak value.
+
+The GitHub repository for this project can be found at: 
+    - https://github.com/adamkurth/waterbackground_subtraction.git
+    - https://gitlab.com/amkurth/waterbackground_subtraction.git.
  
 Imports
 ^^^^^^^
 
 The following modules are imported for use in the program:
+
 .. code-block:: python
 
     import os
@@ -35,17 +39,30 @@ The `PeakThresholdProcessor ` class is used for processing the image peak values
    :return: Returns coordinate list of x and y values above the threshold value.
    :rtype: list
    
-    .. py:method:: set_threshold_value(new_threshold_value)
+    .. py:function:: set_threshold_value(new_threshold_value)
         Set a new threshold value for the image array.
 
         :param new_threshold_value: The new threshold value to be used for processing the image array.
         :type new_threshold_value: float
 
-    .. py:method:: get_threshold_value()
+    .. py:function:: get_threshold_value()
+        
         Getter method which returns the current threshold value for the image array.
 
         :return: The current threshold value for the image array.
         :rtype: float
+
+.. code-block::python
+
+    class PeakThresholdProcessor: 
+        def __init__(self, image_array, threshold_value=0):
+            self.image_array = image_array
+            self.threshold_value = threshold_value
+        def set_threshold_value(self, new_threshold_value):
+            self.threshold_value = new_threshold_value
+        def get_coordinates_above_threshold(self):  
+            coordinates = np.argwhere(self.image_array > self.threshold_value)
+            return coordinates
 
 ArrayRegion Class
 ^^^^^^^^^^^^^^^^^
@@ -62,50 +79,86 @@ Functions Used
    :param array: The image array to be processed.
    :type array: numpy.ndarray
    
-   .. py:attribute:: x_center
-       The x coordinate of the center of the region. First coordinate in tuple.
+   .. py:attribute:: x_center 
+        First coordinate in tuple
        :type: int
 
    .. py:attribute:: y_center
-       The y coordinate of the center of the region. Second coordinate in tuple.
+        Second coordinate in tuple.
        :type: int
 
    .. py:attribute:: region_size
         Make region that has radius of size region_size.
        :type: int
 
-   .. py:method:: set_peak_coordinate(x, y)
+   .. py:function:: set_peak_coordinate(x, y)
+
        Set the x and y coordinates of the center of the region using chosen coordinate.
 
-       :param x: The x coordinate of the center of the region.
+       :param x: x coordinate of the region
        :type x: int
-       :param y: The y coordinate of the center of the region.
+       :param y: y coordinate of the region
        :type y: int
 
-   .. py:method:: set_region_size(size)
+   .. py:function:: set_region_size(size)
+
        Make region that is printable for the terminal and has a radius of region_size.
 
        :param size: The size of the region radius.
        :type size: int
 
-   .. py:method:: get_region()
+   .. py:function:: get_region()
+
        Get the region from the image array.
 
        :return: The region from the image array.
        :rtype: numpy.ndarray
 
+.. code-block:: python 
+    class ArrayRegion:
+    def __init__(self, array):
+        self.array = array
+        self.x_center = 0
+        self.y_center = 0
+        self.region_size = 0
+    def set_peak_coordinate(self, x, y):
+            self.x_center = x
+            self.y_center = y
+    def set_region_size(self, size):
+        # set limit that is printable in terminal
+        self.region_size = size
+        max_printable_region = min(self.array.shape[0], self.array.shape[1]) //2
+        self.region_size = min(size, max_printable_region)
+    def get_region(self):
+        x_range = slice(self.x_center - self.region_size, self.x_center + self.region_size+1)
+        y_range = slice(self.y_center - self.region_size, self.y_center + self.region_size+1)
+        region = self.array[x_range, y_range]
+        return region
 
 Helper Functions
 ^^^^^^^^^^^^^^^^
 
-.. py:method:: load_h5(filename)
+.. py:function:: load_file_h5(filename)
 
+    Left over helper function from :ref::`Water Background Subtraction (Main)` to load the image data. 
+    
     This method loads an HDF5 file and prints a success message if the file is loaded successfully. If the file is not found within the working directory, it prints an error message.
 
     :param filename: The path to the HDF5 file.
     :type filename: str
 
-.. py:method:: extract_region(image_array, region_size, x_center, y_center)
+    .. code-block::python
+        def load_file_h5(filename):
+            if not os.path.exists(filename):
+                print("File not found within working directory.")
+                return
+            try:
+                with h5.File(filename, "r") as f: 
+                    print("\nLoaded file successfully.", filename)
+            except Exception as e:
+                print("\nAn error has occurred:", str(e))
+
+.. py:function:: extract_region(image_array, region_size, x_center, y_center)
     
     This function calls the `ArrayRegion` class to extract the region from the image array.
 
@@ -113,35 +166,47 @@ Helper Functions
     :type image_array: numpy.ndarray
     :param region_size: The size of the region radius.
     :type region_size: int
-    :param x_center: The x coordinate of the center of the region.
+    :param x_center: x coordinate of the region
     :type x_center: int
-    :param y_center: The y coordinate of the center of the region.
+    :param y_center: y coordinate of the region
     :type y_center: int
 
     :return: The extracted region from the image array.
     :rtype: numpy.ndarray
+
+    .. code-block::python
+        
+        def extract_region(image_array, region_size, x_center, y_center):
+            extract = ArrayRegion(image_array)
+            extract.set_peak_coordinate(x_center,y_center)
+            extract.set_region_size(region_size)
+            np.set_printoptions(floatmode='fixed', precision=10)
+            np.set_printoptions(edgeitems=3, suppress=True, linewidth=200)
+            region = extract.get_region()
+            return region      
     
+        
 Coordinate Menu Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `coordinate_menu` is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.
 
-.. py:method:: coordinate_menu(image_array, threshold_value, coordinates, radius)
+.. py:function:: coordinate_menu(image_array, threshold_value, coordinates, radius)
 
     This function displays the coordinates above the given threshold and radius, and allows the user to interactively select the coordinate for further processing.
 
     :param image_array: The image array to be processed.
     :type image_array: numpy.ndarray
-    :param threshold_value: The thresold value used to determine the coordiantes.
+    :param threshold_value: thresold value to determine the coordiantes.
     :type threshold_value: float
-    :param coordinates: A tuple list of coordinates (x,y) above the thresold.
+    :param coordinates: tuple list of coordinates (x,y) above thresold.
     :type coordinates: list[tuple[int, int]]
     :param radius: The radius around each coordinate to be processed.
     :type radius: int
 
     The user is prompted to choose a coordinate. Function displays 9x9 two-dimensional array, the segment, and the boolean array of traversed values. The function then returns the average surrounding peak value and the intensity peak value.
 
-    :return: The average surrounding peak value and the intensity peak value.
+    :return: avg surrounding peak, intensity peak
     :rtype: tuple[float, float]
 
     .. code-block:: python
@@ -221,9 +286,11 @@ Coordinate Menu Function
 Load Stream Function
 ^^^^^^^^^^^^^^^^^^^^
 
-.. py:method:: load_stream()
+.. py:function:: load_stream()
 
-    This function loads the `.stream` file and prints a success message if the file is loaded successfully. If the file is not found within the working directory, it prints an error message. It then reads the file line by line and stores the values in a dictionary. The function then returns the dictionary and the x, y, and z values.
+    This function loads the `.stream` file and prints a success message if the file is loaded successfully. If the file is not found within the working directory, it prints an error message.
+    
+     It then reads the file line by line and stores the values in a dictionary. The function then returns the dictionary and the x, y, and z values.
 
     :return: A tuple containing four lists: data_columns, result_x, result_y, result_z, from previous code adaptation `create_scatter`.
     :rtype: tuple[dictionary, list, list, list]
@@ -297,7 +364,7 @@ Main Function
 
 The `main` function processes image data from specified HDF5 file for 3-ring integration analysis. Calling `coordinate_menu` for increasing radius value.
 
-.. py:method:: main(filename)
+.. py:function:: main(filename)
 
     Loads and processes image data from HDF5 file.
 
@@ -306,13 +373,21 @@ The `main` function processes image data from specified HDF5 file for 3-ring int
 
     The function performs the following steps:
 
-    1. **File Loading**: It calls ``load_h5`` to load the specified HDF5 file.
+    1. **File Loading**: 
 
-    2. **Image Data Extraction**: Extracts the NumPy array from the HDF5 file, which is 2D array of zeros with shape of (4371, 4150). 
+        - It calls `load_h5()` to load the specified HDF5 file.
+
+    2. **Image Data Extraction**: 
     
-    3. **Threshold Processing**: It calls ``PeakThresholdProcessor`` and creates object with the extracted array region and a threshold of 1000. Then retrieving the coordinates above this threshold.
+        - Extracts the NumPy array from the HDF5 file, which is 2D array of zeros with shape of (4371, 4150). 
     
-    4. **Ring Integration Analysis**: Interactively calls ``coordinate_menu`` for a set of radii (1,2,3,4). And for each value in the list, this calculates and prints the peak estimate by subtracting the average value from the intensity peak value.
+    3. **Threshold Processing**: 
+    
+        - It calls `PeakThresholdProcessor` and creates object with the extracted array region and a threshold of 1000. Then retrieving the coordinates above this threshold.
+    
+    4. **Ring Integration Analysis**: 
+    
+        - Interactively calls `coordinate_menu()` for a set of radii (1,2,3,4). And for each value in the list, this calculates and prints the peak estimate by subtracting the average value from the intensity peak value.
    
    The function sets a global variable `intensity_array` to store the image data and `coordinates` to store the coordinates above the threshold. The global variable `intensity_peak` and `avg_values` are used to calculate the peak estimates.
 

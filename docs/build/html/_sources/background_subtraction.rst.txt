@@ -1,10 +1,21 @@
 Water Background Subtraction Project (Main)
 ===========================================
 
-This project is a simple implementation of background subtraction. It is intended to be used for the water background subtraction project.
-Within the project, there are three main project files: `h5_background_subtraction_10_2_23.py` and `h5_stream_background_subtraction_10_2_23.py`, and `overwrite_10_2_23.py`, all found under the `src/` directory. The first file contains the main code for this page, while the others were adaptations on this.
+This project is a simple implementation of background subtraction.
 
-The GitHub repository for this project can be found at https://github.com/adamkurth/waterbackground_subtraction.git, as well as https://gitlab.com/amkurth/waterbackground_subtraction.git.
+Within the project, there are three main project files: 
+    
+    - `h5_background_subtraction_10_2_23.py`
+    
+    - `h5_stream_background_subtraction_10_2_23.py`
+
+    - `overwrite_10_2_23.py`. 
+
+All of these are found under the `src/` directory. The first file contains the main code for this page, while the others were adaptations on this.
+
+The GitHub repository for this project can be found at: 
+    - https://github.com/adamkurth/waterbackground_subtraction.git
+    - https://gitlab.com/amkurth/waterbackground_subtraction.git.
  
 Imports
 ^^^^^^^
@@ -16,7 +27,6 @@ The following modules are imported for use in the program:
     import numpy as np
     import h5py as h5
     import matplotlib.pyplot as plt
-
 
 PeakThresholdProcessor Class 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -270,13 +280,21 @@ The `main` function processes image data from specified HDF5 file for 3-ring int
 
     The function performs the following steps:
 
-    1. **File Loading**: It calls ``load_h5`` to load the specified HDF5 file.
+    1. **File Loading**: 
+    
+        - It calls `load_h5` to load the specified HDF5 file.
 
-    2. **Image Data Extraction**: Extracts the NumPy array from the HDF5 file, which is 2D array of zeros with shape of (4371, 4150). 
+    2. **Image Data Extraction**: 
     
-    3. **Threshold Processing**: It calls ``PeakThresholdProcessor`` and creates object with the extracted array region and a threshold of 1000. Then retrieving the coordinates above this threshold.
+        - Extracts the NumPy array from the HDF5 file, which is 2D array of zeros with shape of (4371, 4150). 
     
-    4. **Ring Integration Analysis**: Interactively calls ``coordinate_menu`` for a set of radii (1,2,3,4). And for each value in the list, this calculates and prints the peak estimate by subtracting the average value from the intensity peak value.
+    3. **Threshold Processing**: 
+    
+        - It calls `PeakThresholdProcessor` and creates object with the extracted array region and a threshold of 1000. Then retrieving the coordinates above this threshold.
+    
+    4. **Ring Integration Analysis**: 
+
+        - Interactively calls `coordinate_menu` for a set of radii (1,2,3,4). And for each value in the list, this calculates and prints the peak estimate by subtracting the average value from the intensity peak value.
    
    The function sets a global variable `image_array` to store the image data and `coordinates` to store the coordinates above the threshold. The global variable `intensity_peak` and `avg_values` are used to calculate the peak estimates.
 

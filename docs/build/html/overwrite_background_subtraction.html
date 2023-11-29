@@ -19,7 +19,6 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Water Background Subtraction (Overwrite)" href="overwrite.html" />
     <link rel="prev" title="Water Background Subtraction Project (Stream)" href="stream_background_subtraction.html" /> 
 </head>
 
@@ -49,14 +48,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Water Background Subtraction (Overwrite)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#imports">Imports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#duplicate-function">Duplicate Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#debugging-function">Debugging Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-functions">Debugging Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overwrite-function">Overwrite Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#intenstity-finder-function">Intenstity Finder Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#populate-intensity-array-function">Populate Intensity Array Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#main-function">Main Function</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="overwrite.html">Water Background Subtraction (Overwrite)</a></li>
 </ul>
 
         </div>
@@ -85,14 +83,29 @@
              
   <section id="water-background-subtraction-overwrite">
 <h1>Water Background Subtraction (Overwrite)<a class="headerlink" href="#water-background-subtraction-overwrite" title="Permalink to this heading"></a></h1>
-<p>This module contains the adaptation of the previous background subtraction programs, called <cite>overwrite_10_2_23.py</cite>.
-The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files.
+<p>This module contains the adaptation of the previous background subtraction programs, and is called <cite>overwrite_10_2_23.py</cite> in the Git repositories.</p>
+<p>The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files.
 The program will then take the background from the “low” keV stream file and overwrite the background in the “high” keV stream file.</p>
 <p>The program will then “overwrite” the “low” keV stream file, as the “high” keV stream, with the new more accurate peak values.</p>
+<p>Please refer to <span class="xref std std-doc">Water Background Subtraction Project (Stream)</span> for information about the foundational coding structure.</p>
+<dl class="simple">
+<dt>The GitHub repository for this project can be found at:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">https://github.com/adamkurth/waterbackground_subtraction.git</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.com/amkurth/waterbackground_subtraction.git">https://gitlab.com/amkurth/waterbackground_subtraction.git</a>.</p></li>
+</ul>
+</dd>
+</dl>
 <section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading"></a></h2>
-<p>Most notably, we inherit the <cite>h5_stream_background_subtraction_10_2_23.py</cite> program, to simplify the code.
-We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <cite>h5py</cite> as <cite>h5</cite>.</p>
+<p>Most notably, we inherit the <cite>h5_stream_background_subtraction_10_2_23.py</cite> program, to simplify the code.</p>
+<p>We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <cite>h5py</cite> as <cite>h5</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">h5py</span> <span class="k">as</span> <span class="nn">h5</span>
+<span class="kn">import</span> <span class="nn">h5_stream_background_subtraction_10_2_23</span> <span class="k">as</span> <span class="nn">streampy</span>
+</pre></div>
+</div>
 </section>
 <section id="duplicate-function">
 <h2>Duplicate Function<a class="headerlink" href="#duplicate-function" title="Permalink to this heading"></a></h2>
@@ -125,9 +138,12 @@ We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <ci
 </dd></dl>
 
 </section>
-<section id="debugging-function">
-<h2>Debugging Function<a class="headerlink" href="#debugging-function" title="Permalink to this heading"></a></h2>
-<p>Used to compare the two stream files, used for debugging purposes.</p>
+<section id="debugging-functions">
+<h2>Debugging Functions<a class="headerlink" href="#debugging-functions" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><cite>compare_high_low()</cite> is used to compare the two stream file contents to ensure that they’re loaded and read properly.</p></li>
+<li><p><cite>retrieve()</cite> is used to retrieve the columns of data to retrieve, and append to a list.</p></li>
+</ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="compare_high_low">
 <span class="sig-name descname"><span class="pre">compare_high_low</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compare_high_low" title="Permalink to this definition"></a></dt>
@@ -261,6 +277,7 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </section>
 <section id="populate-intensity-array-function">
 <h2>Populate Intensity Array Function<a class="headerlink" href="#populate-intensity-array-function" title="Permalink to this heading"></a></h2>
+<p>Populates the intensity array to recreate the array of a loaded image with the stream data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="populate_intensity_array">
 <span class="sig-name descname"><span class="pre">populate_intensity_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#populate_intensity_array" title="Permalink to this definition"></a></dt>
@@ -310,7 +327,9 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 <ol class="arabic">
 <li><p><strong>File Loading</strong>:</p>
 <blockquote>
-<div><p>-Displays the current working directory.</p>
+<div><ul class="simple">
+<li><p>Displays the current working directory.</p></li>
+</ul>
 </div></blockquote>
 </li>
 <li><p><strong>Setup Paths</strong>:</p>
@@ -450,7 +469,6 @@ completed = True</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="stream_background_subtraction.html" class="btn btn-neutral float-left" title="Water Background Subtraction Project (Stream)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="overwrite.html" class="btn btn-neutral float-right" title="Water Background Subtraction (Overwrite)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

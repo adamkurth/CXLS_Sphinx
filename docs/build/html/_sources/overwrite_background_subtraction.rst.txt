@@ -1,17 +1,33 @@
 Water Background Subtraction (Overwrite)
 =========================================
 
-This module contains the adaptation of the previous background subtraction programs, called `overwrite_10_2_23.py`. 
+This module contains the adaptation of the previous background subtraction programs, and is called `overwrite_10_2_23.py` in the Git repositories.
+
 The rational behind this is to take two stream files, one with "high" keV values and one with "low" keV values, and analyze their respective `.stream` files.
 The program will then take the background from the "low" keV stream file and overwrite the background in the "high" keV stream file.
 
 The program will then "overwrite" the "low" keV stream file, as the "high" keV stream, with the new more accurate peak values.
 
+Please refer to :doc:`Water Background Subtraction Project (Stream)` for information about the foundational coding structure.
+
+The GitHub repository for this project can be found at: 
+    - https://github.com/adamkurth/waterbackground_subtraction.git
+    - https://gitlab.com/amkurth/waterbackground_subtraction.git.
+ 
 Imports
 ^^^^^^^
 
 Most notably, we inherit the `h5_stream_background_subtraction_10_2_23.py` program, to simplify the code. 
+
 We also import `os`, `shutil`, `numpy`, and `h5py` as `h5`.
+
+.. code-block:: python
+    
+    import os
+    import shutil
+    import numpy as np
+    import h5py as h5
+    import h5_stream_background_subtraction_10_2_23 as streampy
 
 Duplicate Function
 ^^^^^^^^^^^^^^^^^^
@@ -41,10 +57,11 @@ We do this by using the `shutil.copyfile()` function, which takes two arguments,
             return duplicate
 
 
-Debugging Function
-^^^^^^^^^^^^^^^^^^
+Debugging Functions
+^^^^^^^^^^^^^^^^^^^
+- `compare_high_low()` is used to compare the two stream file contents to ensure that they're loaded and read properly. 
 
-Used to compare the two stream files, used for debugging purposes.
+- `retrieve()` is used to retrieve the columns of data to retrieve, and append to a list.
 
 .. py:function:: compare_high_low(high_data, low_data, *columns)
 
@@ -184,8 +201,12 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
                     found_intensities.append(intensities[int(x), int(y)])
             return found_intensities
 
+
 Populate Intensity Array Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Populates the intensity array to recreate the array of a loaded image with the stream data.
+
 .. py:function:: populate_intensity_array(data_columns, image_name)
 
     Populate the intensity array with the intensity values for each x,y coordinate.
@@ -227,7 +248,7 @@ Main Function
     
     1. **File Loading**: 
         
-        -Displays the current working directory.
+        - Displays the current working directory.
 
     2. **Setup Paths**:
         
