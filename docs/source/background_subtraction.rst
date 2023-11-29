@@ -1,8 +1,6 @@
 Water Background Subtraction Project (Main)
 ===========================================
 
-.. author:: Adam Kurth <
-
 This project is a simple implementation of background subtraction. It is intended to be used for the water background subtraction project.
 Within the project, there are three main project files: `h5_background_subtraction_10_2_23.py` and `h5_stream_background_subtraction_10_2_23.py`, and `overwrite_10_2_23.py`, all found under the `src/` directory. The first file contains the main code for this page, while the others were adaptations on this.
 
