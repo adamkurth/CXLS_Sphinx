@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Water Background Subtraction (Overwrite) &mdash; CXLS Sphinx N documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -55,6 +56,21 @@
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Water Background Subtraction (Overwrite)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#imports">Imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#duplicate-function">Duplicate Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-function">Debugging Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overwrite-function">Overwrite Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intenstity-finder-function">Intenstity Finder Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#populate-intensity-array-function">Populate Intensity Array Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-function">Main Function</a></li>
+</ul>
+</li>
+</ul>
 
         </div>
       </div>
@@ -81,41 +97,41 @@
            <div itemprop="articleBody">
              
   <section id="water-background-subtraction-overwrite">
-<h1>Water Background Subtraction (Overwrite)<a class="headerlink" href="#water-background-subtraction-overwrite" title="Permalink to this headline"></a></h1>
+<h1>Water Background Subtraction (Overwrite)<a class="headerlink" href="#water-background-subtraction-overwrite" title="Permalink to this heading"></a></h1>
 <p>This module contains the adaptation of the previous background subtraction programs, called <cite>overwrite_10_2_23.py</cite>.
 The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files.
 The program will then take the background from the “low” keV stream file and overwrite the background in the “high” keV stream file.</p>
 <p>The program will then “overwrite” the “low” keV stream file, as the “high” keV stream, with the new more accurate peak values.</p>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"></a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading"></a></h2>
 <p>Most notably, we inherit the <cite>h5_stream_background_subtraction_10_2_23.py</cite> program, to simplify the code.
 We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <cite>h5py</cite> as <cite>h5</cite>.</p>
 </section>
 <section id="duplicate-function">
-<h2>Duplicate Function<a class="headerlink" href="#duplicate-function" title="Permalink to this headline"></a></h2>
+<h2>Duplicate Function<a class="headerlink" href="#duplicate-function" title="Permalink to this heading"></a></h2>
 <p>To compare the two stream files before and after the the overwrite process, we need to duplicate the stream files.</p>
 <p>We do this by using the <cite>shutil.copyfile()</cite> function, which takes two arguments, the source file and the destination file.</p>
 </section>
 <section id="debugging-function">
-<h2>Debugging Function<a class="headerlink" href="#debugging-function" title="Permalink to this headline"></a></h2>
+<h2>Debugging Function<a class="headerlink" href="#debugging-function" title="Permalink to this heading"></a></h2>
 <p>Used to compare the two stream files, used for debugging purposes.</p>
 <p>This function directly appends certain columns in <cite>data_columns</cite> for ease of use and debugging purposes.</p>
 </section>
 <section id="overwrite-function">
-<h2>Overwrite Function<a class="headerlink" href="#overwrite-function" title="Permalink to this headline"></a></h2>
+<h2>Overwrite Function<a class="headerlink" href="#overwrite-function" title="Permalink to this heading"></a></h2>
 <p>This function executes the overwriting procedure of the “high” keV stream file with the “low” keV stream file.</p>
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">overwrite_low_in_high(filename,</span> <span class="pre">overwrite_data):</span></span></dt>
 <dd><p>Overwrite the low data in the high stream file with the given overwrite data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> (<em>str</em>) – The name of the file to overwrite.</p></li>
 <li><p><strong>overwrite_data</strong> (<em>dict</em>) – A dictionary containing the data to overwrite.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -123,15 +139,15 @@ We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <ci
 
 </section>
 <section id="intenstity-finder-function">
-<h2>Intenstity Finder Function<a class="headerlink" href="#intenstity-finder-function" title="Permalink to this headline"></a></h2>
+<h2>Intenstity Finder Function<a class="headerlink" href="#intenstity-finder-function" title="Permalink to this heading"></a></h2>
 <p>This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
 If the x,y coordinates are out of bounds, the function will simply ignore the peak.</p>
 </section>
 <section id="populate-intensity-array-function">
-<h2>Populate Intensity Array Function<a class="headerlink" href="#populate-intensity-array-function" title="Permalink to this headline"></a></h2>
+<h2>Populate Intensity Array Function<a class="headerlink" href="#populate-intensity-array-function" title="Permalink to this heading"></a></h2>
 </section>
 <section id="main-function">
-<h2>Main Function<a class="headerlink" href="#main-function" title="Permalink to this headline"></a></h2>
+<h2>Main Function<a class="headerlink" href="#main-function" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 

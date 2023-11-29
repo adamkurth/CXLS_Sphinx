@@ -86,16 +86,3 @@ Testing Functionalities in Sphinx
    :rtype: numpy.ndarray
 
 .. _development:
-
-Development 
------------
-
-Code development for CXLS 
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   background_subtraction
-   stream_background_subtraction
-   overwrite_background_subtraction
