@@ -37,7 +37,7 @@ Using Conda Python package manager, to properly install requirements for using S
     conda install sphinx_rtd_theme recommonmark
     ```
 ### 5. Verify Installation 
-   - Verify installation with:
+   - Verify installation and create initial sphinx build for documentation with:
         ```bash 
         sphinx-quickstart
         ```
