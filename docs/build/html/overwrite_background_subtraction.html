@@ -1,84 +1,108 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Water Background Subtraction (Overwrite) &mdash; CXLS Sphinx N documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Water Background Subtraction Project (Stream)" href="stream_background_subtraction.html" /> 
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="black" metia="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>Water Background Subtraction (Overwrite) | CXLS Sphinx  documentation</title>
+<meta content="Water Background Subtraction (Overwrite) | CXLS Sphinx  documentation" property="og:title"/>
+<meta content="Water Background Subtraction (Overwrite) | CXLS Sphinx  documentation" name="twitter:title"/>
+<link href="_static/pygments.css" rel="stylesheet"/>
+<link href="_static/theme.47abdafeea10b5ccf58b.css" rel="stylesheet"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="stream_background_subtraction.html" rel="prev" title="Water Background Subtraction Project (Stream)"/>
+<script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script defer="" src="_static/theme.4ea23184acb23c5e9294.js"></script>
 </head>
-
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> CXLS Sphinx
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+<body :class="{ 'overflow-hidden': showSidebar }" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">CXLS Sphinx  documentation</span>
+</a></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none">
+<form @keydown.k.window.meta="$refs.search.focus()" action="search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+      K
+    </kbd>
+</form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<nav class="flex items-center space-x-1">
+<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="!justify-start text-sm md:!hidden bg-background" href="index.html"><span class="font-bold text-clip whitespace-nowrap">CXLS Sphinx  documentation</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+<div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Water Background Subtraction (Overwrite)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#imports">Imports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#duplicate-function">Duplicate Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#debugging-functions">Debugging Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#overwrite-function">Overwrite Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#intenstity-finder-function">Intenstity Finder Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#populate-intensity-array-function">Populate Intensity Array Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#main-function">Main Function</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Water Background Subtraction (Overwrite)</a></li>
 </ul>
-</li>
-</ul>
-
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">CXLS Sphinx</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Water Background Subtraction (Overwrite)</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/overwrite_background_subtraction.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
+</nav>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="water-background-subtraction-overwrite">
-<h1>Water Background Subtraction (Overwrite)<a class="headerlink" href="#water-background-subtraction-overwrite" title="Permalink to this heading"></a></h1>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="index.html">
+<span class="hidden md:inline">CXLS Sphinx  documentation</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Water Background Subtraction (Overwrite)</span>
+</nav>
+<div id="content" role="main">
+<section id="water-background-subtraction-overwrite">
+<h1>Water Background Subtraction (Overwrite)<a class="headerlink" href="#water-background-subtraction-overwrite" title="Permalink to this heading">¶</a></h1>
 <p>This module contains the adaptation of the previous background subtraction programs, and is called <cite>overwrite_10_2_23.py</cite> in the Git repositories.</p>
 <p>The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files.
 The program will then take the background from the “low” keV stream file and overwrite the background in the “high” keV stream file.</p>
@@ -92,7 +116,7 @@ The program will then take the background from the “low” keV stream file and
 </dd>
 </dl>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading"></a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#imports'">¶</a></h2>
 <p>Most notably, we inherit the <cite>h5_stream_background_subtraction_10_2_23.py</cite> program, to simplify the code.</p>
 <p>We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <cite>h5py</cite> as <cite>h5</cite>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -104,7 +128,7 @@ The program will then take the background from the “low” keV stream file and
 </div>
 </section>
 <section id="duplicate-function">
-<h2>Duplicate Function<a class="headerlink" href="#duplicate-function" title="Permalink to this heading"></a></h2>
+<h2>Duplicate Function<a class="headerlink" href="#duplicate-function" title="Permalink to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#duplicate-function'">¶</a></h2>
 <p>To compare the two stream files before and after the the overwrite process, we need to duplicate the stream files.</p>
 <p>We do this by using the <cite>shutil.copyfile()</cite> function, which takes two arguments, the source file and the destination file.</p>
 <dl class="py function">
@@ -124,25 +148,24 @@ The program will then take the background from the “low” keV stream file and
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">duplicate_before_overwrite</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="c1"># taking filename and adding copy extension to it.</span>
-    <span class="n">base_file</span><span class="p">,</span> <span class="n">extension</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">new_base_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_file</span><span class="si">}</span><span class="s1">_copy&#39;</span>
-    <span class="n">new_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">new_base_file</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">extension</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">base_file</span><span class="p">,</span> <span class="n">extension</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">new_base_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">base_file</span><span class="si">}</span><span class="s1">_copy'</span>
+    <span class="n">new_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">new_base_file</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">extension</span><span class="si">}</span><span class="s1">'</span>
     <span class="n">duplicate</span> <span class="o">=</span> <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">new_filename</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">duplicate</span>
 </pre></div>
 </div>
 </dd></dl>
-
 </section>
 <section id="debugging-functions">
-<h2>Debugging Functions<a class="headerlink" href="#debugging-functions" title="Permalink to this heading"></a></h2>
+<h2>Debugging Functions<a class="headerlink" href="#debugging-functions" title="Permalink to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#debugging-functions'">¶</a></h2>
 <ul class="simple">
 <li><p><cite>compare_high_low()</cite> is used to compare the two stream file contents to ensure that they’re loaded and read properly.</p></li>
 <li><p><cite>retrieve()</cite> is used to retrieve the columns of data to retrieve, and append to a list.</p></li>
 </ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="compare_high_low">
-<span class="sig-name descname"><span class="pre">compare_high_low</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compare_high_low" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">compare_high_low</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compare_high_low" title="Permalink to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#compare_high_low'">¶</a></dt>
 <dd><p>Compare the high and low data and return the compared data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -162,14 +185,14 @@ The program will then take the background from the “low” keV stream file and
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compare_high_low</span><span class="p">(</span><span class="n">high_data</span><span class="p">,</span> <span class="n">low_data</span><span class="p">,</span> <span class="o">*</span><span class="n">columns</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Compare the high and low data and return the compared data.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">compared_data</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">high_data</span> <span class="ow">and</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">low_data</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;High: </span><span class="si">{</span><span class="n">high_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Low: </span><span class="si">{</span><span class="n">low_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'High: </span><span class="si">{</span><span class="n">high_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Low: </span><span class="si">{</span><span class="n">low_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">()</span>
             <span class="n">compared_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">high_data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">low_data</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
             <span class="n">retrieve</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">high_data</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">low_data</span><span class="p">),</span> <span class="o">*</span><span class="n">columns</span><span class="p">)</span>
@@ -177,11 +200,10 @@ The program will then take the background from the “low” keV stream file and
 </pre></div>
 </div>
 </dd></dl>
-
 <p>This function directly appends certain columns in <cite>data_columns</cite> for ease of use and debugging purposes.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="retrieve">
-<span class="sig-name descname"><span class="pre">retrieve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#retrieve" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">retrieve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#retrieve" title="Permalink to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#retrieve'">¶</a></dt>
 <dd><p>Retrieve the columns of data to retrieve.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -208,14 +230,13 @@ The program will then take the background from the “low” keV stream file and
 </pre></div>
 </div>
 </dd></dl>
-
 </section>
 <section id="overwrite-function">
-<h2>Overwrite Function<a class="headerlink" href="#overwrite-function" title="Permalink to this heading"></a></h2>
+<h2>Overwrite Function<a class="headerlink" href="#overwrite-function" title="Permalink to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#overwrite-function'">¶</a></h2>
 <p>This function executes the overwriting procedure of the “high” keV stream file with the “low” keV stream file.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="overwrite_low_in_high">
-<span class="sig-name descname"><span class="pre">overwrite_low_in_high</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#overwrite_low_in_high" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">overwrite_low_in_high</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#overwrite_low_in_high" title="Permalink to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#overwrite_low_in_high'">¶</a></dt>
 <dd><p>Overwrite the low data in the high stream file with the given overwrite data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -229,15 +250,14 @@ The program will then take the background from the “low” keV stream file and
 </dd>
 </dl>
 </dd></dl>
-
 </section>
 <section id="intenstity-finder-function">
-<h2>Intenstity Finder Function<a class="headerlink" href="#intenstity-finder-function" title="Permalink to this heading"></a></h2>
+<h2>Intenstity Finder Function<a class="headerlink" href="#intenstity-finder-function" title="Permalink to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#intenstity-finder-function'">¶</a></h2>
 <p>This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
 If the x,y coordinates are out of bounds, the function will simply ignore the peak.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="intensity_finder">
-<span class="sig-name descname"><span class="pre">intensity_finder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intensity_finder" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">intensity_finder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intensity_finder" title="Permalink to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#intensity_finder'">¶</a></dt>
 <dd><p>Retrieve the intensity values for every x,y coordinate in the image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -255,11 +275,11 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">intensity_finder</span><span class="p">(</span><span class="n">x_coords</span><span class="p">,</span> <span class="n">y_coords</span><span class="p">,</span> <span class="n">image_name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Retrieve the intensity values for every x,y coordinate in the image.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">with</span> <span class="n">h5</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">intensities</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;/entry/data/data&#39;</span><span class="p">][()]</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="n">h5</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">intensities</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">'/entry/data/data'</span><span class="p">][()]</span>
     <span class="n">intensities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">intensities</span><span class="p">)</span>
     <span class="n">found_intensities</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_coords</span><span class="p">,</span> <span class="n">y_coords</span><span class="p">):</span>
@@ -269,14 +289,13 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </pre></div>
 </div>
 </dd></dl>
-
 </section>
 <section id="populate-intensity-array-function">
-<h2>Populate Intensity Array Function<a class="headerlink" href="#populate-intensity-array-function" title="Permalink to this heading"></a></h2>
+<h2>Populate Intensity Array Function<a class="headerlink" href="#populate-intensity-array-function" title="Permalink to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#populate-intensity-array-function'">¶</a></h2>
 <p>Populates the intensity array to recreate the array of a loaded image with the stream data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="populate_intensity_array">
-<span class="sig-name descname"><span class="pre">populate_intensity_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#populate_intensity_array" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">populate_intensity_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#populate_intensity_array" title="Permalink to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#populate_intensity_array'">¶</a></dt>
 <dd><p>Populate the intensity array with the intensity values for each x,y coordinate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -293,30 +312,29 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">populate_intensity_array</span><span class="p">(</span><span class="n">data_columns</span><span class="p">,</span> <span class="n">image_name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Populate the intensity array with the intensity values for each x,y coordinate.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># reads the h5 image</span>
-    <span class="k">with</span> <span class="n">h5</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">intensities</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;/entry/data/data&#39;</span><span class="p">][()]</span>
+    <span class="k">with</span> <span class="n">h5</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">intensities</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">'/entry/data/data'</span><span class="p">][()]</span>
     <span class="n">intensities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">intensities</span><span class="p">)</span>
     <span class="c1"># generates a new array of zeros with the same shape as the image</span>
     <span class="n">new_intensities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">intensities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">intensities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
     <span class="c1"># for each x,y coordinate in the data_columns, set the value in the new array to the intensity value</span>
     <span class="c1"># populate the intensity array with corresponding (fs,ss) coordinates</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_columns</span><span class="p">[</span><span class="s1">&#39;fs&#39;</span><span class="p">])):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_columns</span><span class="p">[</span><span class="s1">&#39;fs&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_columns</span><span class="p">[</span><span class="s1">&#39;ss&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_columns</span><span class="p">[</span><span class="s1">'fs'</span><span class="p">])):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_columns</span><span class="p">[</span><span class="s1">'fs'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_columns</span><span class="p">[</span><span class="s1">'ss'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
         <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">intensities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">intensities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
             <span class="n">new_intensities</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">intensities</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">new_intensities</span>
 </pre></div>
 </div>
 </dd></dl>
-
 </section>
 <section id="main-function">
-<h2>Main Function<a class="headerlink" href="#main-function" title="Permalink to this heading"></a></h2>
+<h2>Main Function<a class="headerlink" href="#main-function" title="Permalink to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#main-function'">¶</a></h2>
 <blockquote>
 <div><p>The main function of the program, which executes the program.</p>
 <p>The function performs the following steps:</p>
@@ -390,104 +408,105 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </div></blockquote>
 <dl class="py function">
 <dt class="sig sig-object py" id="main">
-<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main" title="Permalink to this definition"></a></dt>
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">..</span> <span class="pre">code-block::</span> <span class="pre">python</span></span></dt>
-<dd><blockquote>
-<div><dl>
-<dt>def main():</dt><dd><p>print(“Current working directory:”, os.getcwd())
-src_path = os.getcwd()
-stream_dir = os.path.join(src_path, “high_low_stream”)
-image_dir = os.path.join(src_path, “images”)</p>
-<p>intensities_array = None
-high_stream_name = ‘test_high.stream’
-low_stream_name = ‘test_low.stream’</p>
-<p>high_stream_path = “high_low_stream/test_high.stream”
-low_stream_path = “high_low_stream/test_low.stream”</p>
-<dl class="simple">
-<dt>if not os.path.exists(high_stream_path):</dt><dd><p>print(f”File {high_stream_path} does not exist.”)
-return</p>
-</dd>
-<dt>elif os.path.exists(low_stream_path) and os.path.exists(high_stream_path):</dt><dd><p>print(f”Files {low_stream_path} and {high_stream_path} exist.”)</p>
-</dd>
-<dt>if not os.path.exists(high_stream_path):</dt><dd><p>print(f”File {high_stream_path} does not exist.”)
-return</p>
-</dd>
-<dt>elif os.path.exists(low_stream_path) and os.path.exists(high_stream_path):</dt><dd><p>print(f”Files {low_stream_path} and {high_stream_path} exist.”)</p>
-</dd>
-</dl>
-<p># compare_high_low(high_data, low_data)
-high_data = load_stream(high_stream_path)
-low_data = load_stream(low_stream_path)
-compare_high_low(high_data, low_data)</p>
-<p># Took low data from low_stream and put in high_stream file.
-overwrite_data = low_data
-overwrite_low_in_high(high_stream_path, overwrite_data)</p>
-<p># compare any columns in data_columns
-# compare_high_low(high_data, low_data, “h”)</p>
-<p># now high_stream has data from low_stream</p>
-<p>image_name = ‘9_18_23_high_intensity_3e8keV-1_test.h5’
-image_path = os.path.join(image_dir, image_name)</p>
-<p># retrieved from stream coordinate menu
-intensities = intensity_finder(high_data[‘fs’], high_data[‘ss’], image_path)</p>
-<p># populate_inteneity_array is not correctly working
-intensities_array = populate_intensity_array(high_data, image_path)</p>
-<p>print(“Number of non-zero values in intensity arrayt”, np.count_nonzero(intensities_array))</p>
-<p># for debugging
-# intensities_array = np.array(intensities_array)
-# print(intensities_array)
-# compare_high_low(high_data, low_data, “I”)</p>
-<p>threshold_stream = streampy.PeakThresholdProcessor(intensities_array, threshold_value=1e-5) # very low!
-print(“Original threshold value: “, threshold_stream.threshold_value, “n”)
-coordinate_list_stream = threshold_stream.get_coordinates_above_threshold()</p>
-<p>completed = False
-radius = [1,2,3,4]</p>
-<p>threshold = streampy.PeakThresholdProcessor(intensities_array, threshold_value=9000)
-for r in [1, 2, 3, 4]:</p>
-<blockquote>
-<div><p>print(f”Threshold value for radius {r}: {threshold.threshold_value}”)
-streampy.coordinate_menu(intensities_array, threshold_value=threshold.threshold_value, coordinates=coordinate_list_stream, radius=r)
-print(f”Completed coordinate menu for radius {r}”)
-completed = True</p>
-</div></blockquote>
-</dd>
-<dt>if __name__ == ‘__main__’:</dt><dd><p>main()</p>
-</dd>
-</dl>
-</div></blockquote>
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main" title="Permalink to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#main'">¶</a></dt>
+<dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Current working directory:"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+    <span class="n">src_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="n">stream_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="s2">"high_low_stream"</span><span class="p">)</span>
+    <span class="n">image_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">)</span>
+
+    <span class="n">intensities_array</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">high_stream_name</span> <span class="o">=</span> <span class="s1">'test_high.stream'</span>
+    <span class="n">low_stream_name</span> <span class="o">=</span> <span class="s1">'test_low.stream'</span>
+
+    <span class="n">high_stream_path</span> <span class="o">=</span> <span class="s2">"high_low_stream/test_high.stream"</span>
+    <span class="n">low_stream_path</span> <span class="o">=</span> <span class="s2">"high_low_stream/test_low.stream"</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">high_stream_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"File </span><span class="si">{</span><span class="n">high_stream_path</span><span class="si">}</span><span class="s2"> does not exist."</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">low_stream_path</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">high_stream_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Files </span><span class="si">{</span><span class="n">low_stream_path</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">high_stream_path</span><span class="si">}</span><span class="s2"> exist."</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">high_stream_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"File </span><span class="si">{</span><span class="n">high_stream_path</span><span class="si">}</span><span class="s2"> does not exist."</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">low_stream_path</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">high_stream_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Files </span><span class="si">{</span><span class="n">low_stream_path</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">high_stream_path</span><span class="si">}</span><span class="s2"> exist."</span><span class="p">)</span>
+
+    <span class="c1"># compare_high_low(high_data, low_data)</span>
+    <span class="n">high_data</span> <span class="o">=</span> <span class="n">load_stream</span><span class="p">(</span><span class="n">high_stream_path</span><span class="p">)</span>
+    <span class="n">low_data</span> <span class="o">=</span> <span class="n">load_stream</span><span class="p">(</span><span class="n">low_stream_path</span><span class="p">)</span>
+    <span class="n">compare_high_low</span><span class="p">(</span><span class="n">high_data</span><span class="p">,</span> <span class="n">low_data</span><span class="p">)</span>
+
+    <span class="c1"># Took low data from low_stream and put in high_stream file.</span>
+    <span class="n">overwrite_data</span> <span class="o">=</span> <span class="n">low_data</span>
+    <span class="n">overwrite_low_in_high</span><span class="p">(</span><span class="n">high_stream_path</span><span class="p">,</span> <span class="n">overwrite_data</span><span class="p">)</span>
+
+    <span class="c1"># compare any columns in data_columns</span>
+    <span class="c1"># compare_high_low(high_data, low_data, "h")</span>
+
+    <span class="c1"># now high_stream has data from low_stream</span>
+
+    <span class="n">image_name</span> <span class="o">=</span> <span class="s1">'9_18_23_high_intensity_3e8keV-1_test.h5'</span>
+    <span class="n">image_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_dir</span><span class="p">,</span> <span class="n">image_name</span><span class="p">)</span>
+
+    <span class="c1"># retrieved from stream coordinate menu</span>
+    <span class="n">intensities</span> <span class="o">=</span> <span class="n">intensity_finder</span><span class="p">(</span><span class="n">high_data</span><span class="p">[</span><span class="s1">'fs'</span><span class="p">],</span> <span class="n">high_data</span><span class="p">[</span><span class="s1">'ss'</span><span class="p">],</span> <span class="n">image_path</span><span class="p">)</span>
+
+    <span class="c1"># populate_inteneity_array is not correctly working</span>
+    <span class="n">intensities_array</span> <span class="o">=</span> <span class="n">populate_intensity_array</span><span class="p">(</span><span class="n">high_data</span><span class="p">,</span> <span class="n">image_path</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of non-zero values in intensity array</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">intensities_array</span><span class="p">))</span>
+
+    <span class="c1"># for debugging</span>
+    <span class="c1"># intensities_array = np.array(intensities_array)</span>
+    <span class="c1"># print(intensities_array)</span>
+    <span class="c1"># compare_high_low(high_data, low_data, "I")</span>
+
+    <span class="n">threshold_stream</span> <span class="o">=</span> <span class="n">streampy</span><span class="o">.</span><span class="n">PeakThresholdProcessor</span><span class="p">(</span><span class="n">intensities_array</span><span class="p">,</span> <span class="n">threshold_value</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span> <span class="c1"># very low!</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Original threshold value: "</span><span class="p">,</span> <span class="n">threshold_stream</span><span class="o">.</span><span class="n">threshold_value</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">coordinate_list_stream</span> <span class="o">=</span> <span class="n">threshold_stream</span><span class="o">.</span><span class="n">get_coordinates_above_threshold</span><span class="p">()</span>
+
+    <span class="n">completed</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+    <span class="n">threshold</span> <span class="o">=</span> <span class="n">streampy</span><span class="o">.</span><span class="n">PeakThresholdProcessor</span><span class="p">(</span><span class="n">intensities_array</span><span class="p">,</span> <span class="n">threshold_value</span><span class="o">=</span><span class="mi">9000</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Threshold value for radius </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">threshold</span><span class="o">.</span><span class="n">threshold_value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">streampy</span><span class="o">.</span><span class="n">coordinate_menu</span><span class="p">(</span><span class="n">intensities_array</span><span class="p">,</span> <span class="n">threshold_value</span><span class="o">=</span><span class="n">threshold</span><span class="o">.</span><span class="n">threshold_value</span><span class="p">,</span> <span class="n">coordinates</span><span class="o">=</span><span class="n">coordinate_list_stream</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Completed coordinate menu for radius </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">completed</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
-
 </section>
 </section>
-
-
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="stream_background_subtraction.html" class="btn btn-neutral float-left" title="Water Background Subtraction Project (Stream)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2023, Sabine Botha, Adam Kurth, and more.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#imports'" class="reference internal" href="#imports">Imports</a></li>
+<li><a :data-current="activeSection === '#duplicate-function'" class="reference internal" href="#duplicate-function">Duplicate Function</a></li>
+<li><a :data-current="activeSection === '#debugging-functions'" class="reference internal" href="#debugging-functions">Debugging Functions</a></li>
+<li><a :data-current="activeSection === '#overwrite-function'" class="reference internal" href="#overwrite-function">Overwrite Function</a></li>
+<li><a :data-current="activeSection === '#intenstity-finder-function'" class="reference internal" href="#intenstity-finder-function">Intenstity Finder Function</a></li>
+<li><a :data-current="activeSection === '#populate-intensity-array-function'" class="reference internal" href="#populate-intensity-array-function">Populate Intensity Array Function</a></li>
+<li><a :data-current="activeSection === '#main-function'" class="reference internal" href="#main-function">Main Function</a></li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2023, Sabine Botha, Adam Kurth, and more Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 5.0.2</a></p>
+</div>
+</div>
 </footer>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
+</div>
 </body>
 </html>
