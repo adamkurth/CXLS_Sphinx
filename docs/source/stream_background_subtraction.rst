@@ -27,6 +27,8 @@ PeakThresholdProcessor Class
 
 The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
 
+The following functions are defined in the `PeakThresholdProcessor` class:
+
 .. py:class:: PeakThresholdProcessor(image_array, threshold_value=0)
     
     Initialize the `PeakThresholdProcessor` with the image array and coordinate threshold value.
@@ -69,8 +71,7 @@ ArrayRegion Class
 
 The `ArrayRegion` class is used for processing the image array region, using the coordinate values provided. This class provides functions for setting and retrieving coordinate values these values.
 
-Functions Used
-^^^^^^^^^^^^^^
+The following functions are defined in the `ArrayRegion` class:
 
 .. py:class:: ArrayRegion(array)
     
