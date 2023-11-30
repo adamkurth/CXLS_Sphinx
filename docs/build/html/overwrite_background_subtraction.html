@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Water Background Subtraction (Overwrite) &mdash; CXLS Sphinx N documentation</title>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -26,15 +27,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="index.html" class="icon icon-home">
-            CXLS Sphinx
+            <a href="index.html" class="icon icon-home"> CXLS Sphinx
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -69,7 +66,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Water Background Subtraction (Overwrite)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/overwrite_background_subtraction.rst.txt" rel="nofollow"> View page source</a>
@@ -81,7 +78,7 @@
            <div itemprop="articleBody">
              
   <section id="water-background-subtraction-overwrite">
-<h1>Water Background Subtraction (Overwrite)<a class="headerlink" href="#water-background-subtraction-overwrite" title="Permalink to this headline"></a></h1>
+<h1>Water Background Subtraction (Overwrite)<a class="headerlink" href="#water-background-subtraction-overwrite" title="Permalink to this heading"></a></h1>
 <p>This module contains the adaptation of the previous background subtraction programs, and is called <cite>overwrite_10_2_23.py</cite> in the Git repositories.</p>
 <p>The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files.
 The program will then take the background from the “low” keV stream file and overwrite the background in the “high” keV stream file.</p>
@@ -95,7 +92,7 @@ The program will then take the background from the “low” keV stream file and
 </dd>
 </dl>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"></a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading"></a></h2>
 <p>Most notably, we inherit the <cite>h5_stream_background_subtraction_10_2_23.py</cite> program, to simplify the code.</p>
 <p>We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <cite>h5py</cite> as <cite>h5</cite>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -107,7 +104,7 @@ The program will then take the background from the “low” keV stream file and
 </div>
 </section>
 <section id="duplicate-function">
-<h2>Duplicate Function<a class="headerlink" href="#duplicate-function" title="Permalink to this headline"></a></h2>
+<h2>Duplicate Function<a class="headerlink" href="#duplicate-function" title="Permalink to this heading"></a></h2>
 <p>To compare the two stream files before and after the the overwrite process, we need to duplicate the stream files.</p>
 <p>We do this by using the <cite>shutil.copyfile()</cite> function, which takes two arguments, the source file and the destination file.</p>
 <dl class="py function">
@@ -115,13 +112,13 @@ The program will then take the background from the “low” keV stream file and
 <span class="sig-name descname"><span class="pre">duplicate_before_overwrite(filename):</span></span></dt>
 <dd><p>Duplicates a file by creating a copy with a modified name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The name of the file to duplicate.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The path of the duplicated file.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -138,7 +135,7 @@ The program will then take the background from the “low” keV stream file and
 
 </section>
 <section id="debugging-functions">
-<h2>Debugging Functions<a class="headerlink" href="#debugging-functions" title="Permalink to this headline"></a></h2>
+<h2>Debugging Functions<a class="headerlink" href="#debugging-functions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><cite>compare_high_low()</cite> is used to compare the two stream file contents to ensure that they’re loaded and read properly.</p></li>
 <li><p><cite>retrieve()</cite> is used to retrieve the columns of data to retrieve, and append to a list.</p></li>
@@ -148,19 +145,19 @@ The program will then take the background from the “low” keV stream file and
 <span class="sig-name descname"><span class="pre">compare_high_low</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compare_high_low" title="Permalink to this definition"></a></dt>
 <dd><p>Compare the high and low data and return the compared data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>high_data</strong> (<em>dict</em>) – The high keV file to compare.</p></li>
 <li><p><strong>low_data</strong> (<em>dict</em>) – The low keV file to compare.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Option columns</dt>
+<dt class="field-even">Option columns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The columns desired to be compared.</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The columns desired to be compared.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict</p>
 </dd>
 </dl>
@@ -187,16 +184,16 @@ The program will then take the background from the “low” keV stream file and
 <span class="sig-name descname"><span class="pre">retrieve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#retrieve" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieve the columns of data to retrieve.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_columns</strong> (<em>dict</em>) – The columns of data to retrieve.</p></li>
 <li><p><strong>args</strong> (<em>list</em>) – Takes the desired columns to be retrieved, appends to list.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The columns of data to retrieve.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -214,20 +211,20 @@ The program will then take the background from the “low” keV stream file and
 
 </section>
 <section id="overwrite-function">
-<h2>Overwrite Function<a class="headerlink" href="#overwrite-function" title="Permalink to this headline"></a></h2>
+<h2>Overwrite Function<a class="headerlink" href="#overwrite-function" title="Permalink to this heading"></a></h2>
 <p>This function executes the overwriting procedure of the “high” keV stream file with the “low” keV stream file.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="overwrite_low_in_high">
 <span class="sig-name descname"><span class="pre">overwrite_low_in_high</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#overwrite_low_in_high" title="Permalink to this definition"></a></dt>
 <dd><p>Overwrite the low data in the high stream file with the given overwrite data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> (<em>str</em>) – The name of the file to overwrite.</p></li>
 <li><p><strong>overwrite_data</strong> (<em>dict</em>) – A dictionary containing the data to overwrite.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -235,7 +232,7 @@ The program will then take the background from the “low” keV stream file and
 
 </section>
 <section id="intenstity-finder-function">
-<h2>Intenstity Finder Function<a class="headerlink" href="#intenstity-finder-function" title="Permalink to this headline"></a></h2>
+<h2>Intenstity Finder Function<a class="headerlink" href="#intenstity-finder-function" title="Permalink to this heading"></a></h2>
 <p>This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
 If the x,y coordinates are out of bounds, the function will simply ignore the peak.</p>
 <dl class="py function">
@@ -243,17 +240,17 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 <span class="sig-name descname"><span class="pre">intensity_finder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intensity_finder" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieve the intensity values for every x,y coordinate in the image.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x_coords</strong> (<em>list</em>) – The x coordinates of the peaks.</p></li>
 <li><p><strong>y_coords</strong> (<em>list</em>) – The y coordinates of the peaks.</p></li>
 <li><p><strong>image_name</strong> (<em>str</em>) – The name of the image to find the intensity of the peaks.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The intensity of the image.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -275,23 +272,23 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 
 </section>
 <section id="populate-intensity-array-function">
-<h2>Populate Intensity Array Function<a class="headerlink" href="#populate-intensity-array-function" title="Permalink to this headline"></a></h2>
+<h2>Populate Intensity Array Function<a class="headerlink" href="#populate-intensity-array-function" title="Permalink to this heading"></a></h2>
 <p>Populates the intensity array to recreate the array of a loaded image with the stream data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="populate_intensity_array">
 <span class="sig-name descname"><span class="pre">populate_intensity_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#populate_intensity_array" title="Permalink to this definition"></a></dt>
 <dd><p>Populate the intensity array with the intensity values for each x,y coordinate.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_columns</strong> (<em>dict</em>) – The columns of data to populate.</p></li>
 <li><p><strong>image_name</strong> (<em>str</em>) – The name of the image to populate the intensity array.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The populated intensity array.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.array</p>
 </dd>
 </dl>
@@ -319,7 +316,7 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 
 </section>
 <section id="main-function">
-<h2>Main Function<a class="headerlink" href="#main-function" title="Permalink to this headline"></a></h2>
+<h2>Main Function<a class="headerlink" href="#main-function" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><p>The main function of the program, which executes the program.</p>
 <p>The function performs the following steps:</p>
