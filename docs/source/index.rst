@@ -10,7 +10,9 @@ Welcome to CXLS GitPages documentation!
 Introduction
 ------------
 
-By adapting the uses of Reborn repository (https://gitlab.com/kirianlab/reborn), we have created a new repository for CXLS. This repository is tailored to the uses at CXLS and gathering and analyzing crystallography data. The documentation for Reborn can be found here: https://kirianlab.gitlab.io/reborn/.
+By adapting the uses of Reborn repository (https://gitlab.com/kirianlab/reborn), we have created a new repository for CXLS. 
+This repository is tailored to the uses at CXLS and gathering and analyzing crystallography data. 
+The documentation for Reborn can be found here: https://kirianlab.gitlab.io/reborn/.
 
 This documentation is still under construction and will be updated regularly.
 
