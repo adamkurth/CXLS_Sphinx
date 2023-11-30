@@ -5,19 +5,22 @@
 
 Welcome to CXLS GitPages documentation!
 =======================================
-Through use of reborn repository, we have created a new documentation for CXLS. This documentation is based on Sphinx and ReadTheDocs. The documentation is still under construction and will be updated regularly.
-*For use of CXLS Eiger 4M Detector* please refer to the  :doc:`documentation for CXLS Eiger 4M Detector`.
 
-Contents:
----------
+
+Introduction
+------------
+
+By adapting the uses of Reborn repository (https://gitlab.com/kirianlab/reborn), we have created a new repository for CXLS. This repository is tailored to the uses at CXLS and gathering and analyzing crystallography data. The documentation for Reborn can be found here: https://kirianlab.gitlab.io/reborn/.
+
+This documentation is still under construction and will be updated regularly.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   background_subtraction.rst
-   stream_background_subtraction.rst
-   overwrite_background_subtraction.rst
-   overwrite.rst
+   background_subtraction
+   stream_background_subtraction
+   overwrite_background_subtraction
 
 Indices and tables
 ------------------
@@ -26,36 +29,21 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-.. _introduction:
-
-Introduction
-============
-
-CXLS is a python package for data analysis of X-ray scattering data. Specially tailored for uses at CXLS, repository . It is based on the python package reborn, tailored to the uses at CXLS. The documentation for reborn can be found here: https://kirianlab.gitlab.io/reborn/.
-
 .. _installation: 
 
 Installation
 ------------
+
+Example use of code block: 
+
 The installation of CXLS is very simple. You can install it by using pip.
+
 ```
 pip install cxls
 ```
 If you want to install it in a virtual environment, you can do the following:
 .. code-block:: console
     (.venv) $ pip install cxls
-
-.. _usage:
-
-Usage
------
-CXLS is a python package for data analysis of X-ray crystallography experimental data. 
-
-.. _cxls:
-
-Documentation for CXLS
-----------------------
-
 
 
 .. _reborn:
@@ -72,8 +60,12 @@ Documentation for CXLS Eiger 4M Detector
 -----------------------------------------
 
 .. _testing:
+
 Testing Functionalities in Sphinx
 ---------------------------------
+
+Refer to :doc::`Water Background Subtraction (Overwrite)` for more information.
+
 
 .. py:function:: ``cxls_eiger4m.read_eiger4m_data(filename, data_type='image')``
 
@@ -85,5 +77,3 @@ Testing Functionalities in Sphinx
    :type data_type: str
    :return: The data read from the file.
    :rtype: numpy.ndarray
-
-.. _development:
