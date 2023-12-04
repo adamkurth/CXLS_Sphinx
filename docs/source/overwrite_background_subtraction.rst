@@ -1,5 +1,5 @@
 Water Background Subtraction (Overwrite)
-===========================================
+========================================
 
 This module contains the adaptation of the previous background subtraction programs, and is called `overwrite_10_2_23.py` in the Git repositories.
 
