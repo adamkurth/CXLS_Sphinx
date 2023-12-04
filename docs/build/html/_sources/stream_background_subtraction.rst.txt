@@ -1,7 +1,7 @@
 Water Background Subtraction Project (Stream)
-===========================================
+==============================================
 
-This project is an adaptation on  :doc:`Water Background Subtraction Project (Main)`. It is intended to analyze the `.stream` after running `indexamajig` from CrystFEL. 
+This project is an adaptation on  :doc:`stream_background_subtraction`. It is intended to analyze the `.stream` after running `indexamajig` from CrystFEL. 
 
 This extension focuses on reading the `.stream` files, makeing a dictionary of the content, and recreating an array of the intensity values. The intensity values are then used to calculate the average surrounding peak value and the intensity peak value.
 
