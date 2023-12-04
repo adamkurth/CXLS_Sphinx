@@ -34,7 +34,7 @@ Using Conda Python package manager, to properly install requirements for using S
     ```
 - Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
     ```bash
-    conda install sphinx_rtd_theme recommonmark
+    conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
     ```
 ### 5. Verify Installation 
    - Verify installation and create initial sphinx build for documentation with:
