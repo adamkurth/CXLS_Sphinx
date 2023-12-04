@@ -237,6 +237,27 @@
 </dl>
 </dd></dl>
 </dd></dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrayRegion</span><span class="p">:</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">array</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">set_peak_coordinate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">=</span> <span class="n">y</span>
+<span class="k">def</span> <span class="nf">set_region_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="c1"># set limit that is printable in terminal</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span> <span class="o">=</span> <span class="n">size</span>
+    <span class="n">max_printable_region</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">//</span><span class="mi">2</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">max_printable_region</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">x_range</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">y_range</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">region</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">region</span>
+</pre></div>
+</div>
 </section>
 <section id="helper-functions">
 <h2>Helper Functions<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#helper-functions">¶</a></h2>
