@@ -8,7 +8,11 @@ runme:
 
 This repository is the documentation for CXLS using Sphinx GitPages. This is under construction currently and will be updated regularly.
 
-For development, the file is available at:
+Changed so that when pushing to either the `main`, or `progress` branch, `.github/workflows/sphinx_deploy.yml` file is automatically triggered to update the website available at:
+
+[Click here to access the documentation](https://adamkurth.github.io/CXLS_Sphinx/docs/build/html/)
+
+For testing and development the html file, after running `make html` is available here:
 
 `file:///Users/adamkurth/Documents/vscode/CXFEL_Image_Analysis/CXFEL/CXLS_Sphinx/docs/build/html/index.html`
 
@@ -41,6 +45,7 @@ conda activate sphinx_env
 ```
 
 ### 4. Install Sphinx
+<<<<<<< HEAD
 
 - Using conda, we need to install Sphinx with:
 
@@ -69,4 +74,24 @@ sphinx-quickstart
 ```bash {"id":"01HGH1C5W5NH560Z1NN12PM8B2"}
 conda deactivate
 ```
+=======
+- Using conda, we need to install Sphinx with: 
+    ```bash
+    conda install sphinx
+    ```
+- Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
+    ```bash
+    conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
+    ```
+### 5. Verify Installation 
+   - Verify installation and create initial sphinx build for documentation with:
+        ```bash 
+        sphinx-quickstart
+        ```
+### 6. Deactivate Enviornment 
+   - When done working with the enviornment, deactivate using: 
+        ```bash 
+        conda deactivate
+        ```
+>>>>>>> origin/progress
 
