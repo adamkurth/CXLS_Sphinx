@@ -1,5 +1,5 @@
 Water Background Subtraction Project (Main)
-=============================================
+===========================================
 
 This project is a simple implementation of background subtraction.
 

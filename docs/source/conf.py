@@ -18,10 +18,7 @@ author = 'Sabine Botha, Adam Kurth, and more'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-extensions = [
-    'sphinx.ext.duration',
-    'sphinxawesome_theme.highlighting'
-]
+extensions = ['sphinx.ext.duration',]
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -33,7 +30,7 @@ pygments_style = 'sphinx'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinxawesome_theme'
-html_static_path = ['_static']
+# html_static_path = ['_static']
 
 # themes installed with pip 
 # 'sphinx_rtd_theme'
