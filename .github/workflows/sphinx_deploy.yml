@@ -27,6 +27,10 @@ jobs:
         pip install sphinx
         # Add any other Sphinx-related installation commands here
 
+    - name: Install sphinxawesome_theme
+      run: |
+        pip install --ugrade sphinxawesome_theme
+
     - name: Build Sphinx Documentation
       run: |
         cd docs
