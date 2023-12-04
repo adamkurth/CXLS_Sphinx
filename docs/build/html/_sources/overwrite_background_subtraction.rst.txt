@@ -59,6 +59,7 @@ We do this by using the `shutil.copyfile()` function, which takes two arguments,
 
 Debugging Functions
 ^^^^^^^^^^^^^^^^^^^
+
 - `compare_high_low()` is used to compare the two stream file contents to ensure that they're loaded and read properly. 
 
 - `retrieve()` is used to retrieve the columns of data to retrieve, and append to a list.
@@ -297,7 +298,7 @@ Main Function
         - Sets completed to True after processing
 
 .. py:function:: main()
-    
+
     .. code-block:: python
 
         def main():
