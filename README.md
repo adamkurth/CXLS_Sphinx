@@ -2,7 +2,11 @@
 
 This repository is the documentation for CXLS using Sphinx GitPages. This is under construction currently and will be updated regularly.
 
-For development, the file is available at:
+Changed so that when pushing to either the `main`, or `progress` branch, `.github/workflows/sphinx_deploy.yml` file is automatically triggered to update the website available at:
+
+[Click here to access the documentation](https://adamkurth.github.io/CXLS_Sphinx/docs/build/html/)
+
+For testing and development the html file, after running `make html` is available here:
 
 `file:///Users/adamkurth/Documents/vscode/CXFEL_Image_Analysis/CXFEL/CXLS_Sphinx/docs/build/html/index.html`
 
