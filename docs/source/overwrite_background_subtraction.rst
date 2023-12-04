@@ -298,7 +298,8 @@ Main Function
         - Sets completed to True after processing
 
 .. py:function:: main()
-
+    :no-index:
+    
     .. code-block:: python
 
         def main():

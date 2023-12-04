@@ -30,6 +30,7 @@ The `PeakThresholdProcessor ` class is used for processing the image peak values
 The following functions are defined in the `PeakThresholdProcessor` class:
 
 .. py:class:: PeakThresholdProcessor(image_array, threshold_value=0)
+    :no-index:
     
     Initialize the `PeakThresholdProcessor` with the image array and coordinate threshold value.
 
