@@ -10,8 +10,13 @@ jobs:
   build-and-deploy:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false  # Continue running even if one version fails
       matrix:
-        os: [macos-latest, ubuntu-latest]  # macOS and Ubuntu as a stand-in for Rocky Linux
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - ubuntu-20.04
+          - ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v2
@@ -21,19 +26,13 @@ jobs:
       with:
         python-version: '3.12'  # Adjust the Python version as needed
 
-    - name: Install Sphinx
-      run: |
-        python -m pip install --upgrade pip
-        pip install sphinx
-        # Add any other Sphinx-related installation commands here
-
     - name: Build Sphinx Documentation
       run: |
         cd docs
         make html
 
     - name: Deploy to GitHub Pages
-      if: matrix.os == 'ubuntu-latest'  # Deploy only from the Ubuntu job
+      if: matrix.os == 'ubuntu-latest'  # Deploy only from the latest Ubuntu job
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

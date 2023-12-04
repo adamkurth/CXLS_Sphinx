@@ -116,6 +116,7 @@ The following functions are defined in the `ArrayRegion` class:
        :rtype: numpy.ndarray
 
 .. code-block:: python 
+    
     class ArrayRegion:
     def __init__(self, array):
         self.array = array
