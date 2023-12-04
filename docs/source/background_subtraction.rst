@@ -22,7 +22,7 @@ Imports
 
 The following modules are imported for use in the program:
 .. code-block:: python
-
+ 
     import os
     import numpy as np
     import h5py as h5
