@@ -77,7 +77,7 @@
 </nav>
 <article class="flex-1" role="main">
 <section id="water-background-subtraction-overwrite">
-<h1>Water Background Subtraction (Overwrite)<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#water-background-subtraction-overwrite">¶</a></h1>
+<h1>Water Background Subtraction (Overwrite)<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#water-background-subtraction-overwrite">¶</a></h1>
 <p>This module contains the adaptation of the previous background subtraction programs, and is called <cite>overwrite_10_2_23.py</cite> in the Git repositories.</p>
 <p>The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files.
 The program will then take the background from the “low” keV stream file and overwrite the background in the “high” keV stream file.</p>
@@ -91,7 +91,7 @@ The program will then take the background from the “low” keV stream file and
 </dd>
 </dl>
 <section id="imports">
-<h2>Imports<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#imports">¶</a></h2>
+<h2>Imports<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#imports">¶</a></h2>
 <p>Most notably, we inherit the <cite>h5_stream_background_subtraction_10_2_23.py</cite> program, to simplify the code.</p>
 <p>We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <cite>h5py</cite> as <cite>h5</cite>.</p>
 <div class="code-wrapper" data-controller="code">
@@ -105,7 +105,7 @@ The program will then take the background from the “low” keV stream file and
 </code></pre></div></div>
 </section>
 <section id="duplicate-function">
-<h2>Duplicate Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#duplicate-function">¶</a></h2>
+<h2>Duplicate Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#duplicate-function">¶</a></h2>
 <p>To compare the two stream files before and after the the overwrite process, we need to duplicate the stream files.</p>
 <p>We do this by using the <cite>shutil.copyfile()</cite> function, which takes two arguments, the source file and the destination file.</p>
 <dl class="py function code-definition">
@@ -138,14 +138,14 @@ The program will then take the background from the “low” keV stream file and
 </dd></dl>
 </section>
 <section id="debugging-functions">
-<h2>Debugging Functions<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#debugging-functions">¶</a></h2>
+<h2>Debugging Functions<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#debugging-functions">¶</a></h2>
 <ul class="simple">
 <li><p><cite>compare_high_low()</cite> is used to compare the two stream file contents to ensure that they’re loaded and read properly.</p></li>
 <li><p><cite>retrieve()</cite> is used to retrieve the columns of data to retrieve, and append to a list.</p></li>
 </ul>
 <dl class="py function code-definition">
 <dt class="sig sig-object py" id="compare_high_low">
-<code class="sig-name descname">compare_high_low</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">high_data</span></em>, <em class="sig-param"><span class="n">low_data</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">columns</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#compare_high_low">¶</a></dt>
+<code class="sig-name descname">compare_high_low</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">high_data</span></em>, <em class="sig-param"><span class="n">low_data</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">columns</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#compare_high_low">¶</a></dt>
 <dd>
 <p>Compare the high and low data and return the compared data.</p>
 <dl class="field-list simple">
@@ -186,7 +186,7 @@ The program will then take the background from the “low” keV stream file and
 <p>This function directly appends certain columns in <cite>data_columns</cite> for ease of use and debugging purposes.</p>
 <dl class="py function code-definition">
 <dt class="sig sig-object py" id="retrieve">
-<code class="sig-name descname">retrieve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_columns</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#retrieve">¶</a></dt>
+<code class="sig-name descname">retrieve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_columns</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#retrieve">¶</a></dt>
 <dd>
 <p>Retrieve the columns of data to retrieve.</p>
 <dl class="field-list simple">
@@ -218,11 +218,11 @@ The program will then take the background from the “low” keV stream file and
 </dd></dl>
 </section>
 <section id="overwrite-function">
-<h2>Overwrite Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#overwrite-function">¶</a></h2>
+<h2>Overwrite Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#overwrite-function">¶</a></h2>
 <p>This function executes the overwriting procedure of the “high” keV stream file with the “low” keV stream file.</p>
 <dl class="py function code-definition">
 <dt class="sig sig-object py" id="overwrite_low_in_high">
-<code class="sig-name descname">overwrite_low_in_high</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">overwrite_data</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#overwrite_low_in_high">¶</a></dt>
+<code class="sig-name descname">overwrite_low_in_high</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">overwrite_data</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#overwrite_low_in_high">¶</a></dt>
 <dd>
 <p>Overwrite the low data in the high stream file with the given overwrite data.</p>
 <dl class="field-list simple">
@@ -239,12 +239,12 @@ The program will then take the background from the “low” keV stream file and
 </dd></dl>
 </section>
 <section id="intenstity-finder-function">
-<h2>Intenstity Finder Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#intenstity-finder-function">¶</a></h2>
+<h2>Intenstity Finder Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#intenstity-finder-function">¶</a></h2>
 <p>This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
 If the x,y coordinates are out of bounds, the function will simply ignore the peak.</p>
 <dl class="py function code-definition">
 <dt class="sig sig-object py" id="intensity_finder">
-<code class="sig-name descname">intensity_finder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x_coords</span></em>, <em class="sig-param"><span class="n">y_coords</span></em>, <em class="sig-param"><span class="n">image_name</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#intensity_finder">¶</a></dt>
+<code class="sig-name descname">intensity_finder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x_coords</span></em>, <em class="sig-param"><span class="n">y_coords</span></em>, <em class="sig-param"><span class="n">image_name</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#intensity_finder">¶</a></dt>
 <dd>
 <p>Retrieve the intensity values for every x,y coordinate in the image.</p>
 <dl class="field-list simple">
@@ -281,11 +281,11 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </dd></dl>
 </section>
 <section id="populate-intensity-array-function">
-<h2>Populate Intensity Array Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#populate-intensity-array-function">¶</a></h2>
+<h2>Populate Intensity Array Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#populate-intensity-array-function">¶</a></h2>
 <p>Populates the intensity array to recreate the array of a loaded image with the stream data.</p>
 <dl class="py function code-definition">
 <dt class="sig sig-object py" id="populate_intensity_array">
-<code class="sig-name descname">populate_intensity_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_columns</span></em>, <em class="sig-param"><span class="n">image_name</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#populate_intensity_array">¶</a></dt>
+<code class="sig-name descname">populate_intensity_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_columns</span></em>, <em class="sig-param"><span class="n">image_name</span></em><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#populate_intensity_array">¶</a></dt>
 <dd>
 <p>Populate the intensity array with the intensity values for each x,y coordinate.</p>
 <dl class="field-list simple">
@@ -327,7 +327,7 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </dd></dl>
 </section>
 <section id="main-function">
-<h2>Main Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#main-function">¶</a></h2>
+<h2>Main Function<a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#main-function">¶</a></h2>
 <blockquote>
 <div><p>The main function of the program, which executes the program.</p>
 <p>The function performs the following steps:</p>
@@ -401,7 +401,7 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </div></blockquote>
 <dl class="py function code-definition">
 <dt class="sig sig-object py" id="main">
-<code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#main">¶</a></dt>
+<code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a aria-label="Click to copy this link" class="headerlink tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne tooltipped tooltipped-ne" data-action="click-&gt;clipboard#copyHeaderLink" data-controller="clipboard" href="#main">¶</a></dt>
 <dd>
 <div class="code-wrapper" data-controller="code">
 <div class="code-header">
