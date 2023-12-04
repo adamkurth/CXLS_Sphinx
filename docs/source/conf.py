@@ -20,6 +20,7 @@ author = 'Sabine Botha, Adam Kurth, and more'
 
 extensions = [
     'sphinx.ext.duration',
+    'sphinxawesome_theme.highlighting'
 ]
 
 templates_path = ['_templates']
