@@ -4,7 +4,9 @@ runme:
   version: v2.0
 ---
 
-## CXLS Sphinx Repository
+## CXLS Sphinx Repository 
+
+TEST
 
 This repository is the documentation for CXLS using Sphinx GitPages. This is under construction currently and will be updated regularly.
 
@@ -29,7 +31,6 @@ Using Conda Python package manager, to properly install requirements for using S
 ### 2. Create New Conda Enviornment
 
 - Create a new Conda enviornment called `sphinx_env`.
-
 - Replace 3.x with the specific version of Python you want to use (e.g., 3.8).
 
 ```bash {"id":"01HGH1C5W5NH560Z1NMHVV6XR8"}
@@ -45,6 +46,7 @@ conda activate sphinx_env
 ```
 
 ### 4. Install Sphinx
+
 <<<<<<< HEAD
 
 - Using conda, we need to install Sphinx with:
@@ -74,24 +76,36 @@ sphinx-quickstart
 ```bash {"id":"01HGH1C5W5NH560Z1NN12PM8B2"}
 conda deactivate
 ```
+
 =======
-- Using conda, we need to install Sphinx with: 
-    ```bash
-    conda install sphinx
-    ```
+
+- Using conda, we need to install Sphinx with:
+
+```bash {"id":"01HH2X9XZJF8B41E029D44G1C4"}
+conda install sphinx
+```
+
 - Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
-    ```bash
-    conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
-    ```
-### 5. Verify Installation 
-   - Verify installation and create initial sphinx build for documentation with:
-        ```bash 
-        sphinx-quickstart
-        ```
-### 6. Deactivate Enviornment 
-   - When done working with the enviornment, deactivate using: 
-        ```bash 
-        conda deactivate
-        ```
->>>>>>> origin/progress
+
+```bash {"id":"01HH2X9XZJF8B41E029GT36HR9"}
+conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
+```
+
+### 5. Verify Installation
+
+- Verify installation and create initial sphinx build for documentation with:
+
+```bash {"id":"01HH2X9XZJF8B41E029HNTBKCY"}
+sphinx-quickstart
+```
+
+### 6. Deactivate Enviornment
+
+- When done working with the enviornment, deactivate using:
+
+```bash {"id":"01HH2X9XZJF8B41E029M2J6SVT"}
+conda deactivate
+```
+
+> > > > > > > origin/progress
 
