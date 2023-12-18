@@ -1,10 +1,7 @@
-Dectris-Eiger4M
-===============
+Setup and Operation of the Dectris Eiger4M Detector
+===================================================
 
 This page contains documentaion for the operation of the Dectris Eiger4M detector. It includes steps for activating the zmq listener, initializing and arming the detector, troubleshooting, and additional resources for handling images and using AGAVE.
-
-Setup and Operation
-===================
 
 Accessing the Dectris Menu
 --------------------------
@@ -74,11 +71,13 @@ Next, initialize and arm the detector. This will allow you to control the detect
     - Choose from the options below:
 
     .. code-block:: bash
+
         $ enable_monitor
         $ enable_stream
         $ enable_filewriter
 
     .. code-block:: bash
+      
         $ nimages num
         $ frame_time num
         $ count_time num
@@ -96,12 +95,13 @@ Next, initialize and arm the detector. This will allow you to control the detect
 
 3. Able to check the options set using the following functions:
 
-    .. code-block:: bash
-        $ get_nimages
-        $ get_frame_time
-        $ get_count_time
+  .. code-block:: bash
+      $ get_nimages
+      $ get_frame_time
+      $ get_count_time
 
 3. Control the detector:
+
   .. code-block:: bash
       $ arm
       $ disarm
@@ -111,6 +111,7 @@ Downloading and Overwrite Images
 --------------------------------
 
 1. Navigate to the desired directory to store images:
+
     .. code-block:: bash
 
         $ cd /home/labuser/Projects/Dectris/test/temp_data
@@ -123,13 +124,13 @@ Downloading and Overwrite Images
   
     .. code-block:: bash
 
-        $ cd /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction/adam_setup.sh
+        $ cd /home/labuser/Development/adam/vscode/CXFEL
 
     Then,
 
     .. code-block:: bash
 
-        $ source adam_setup.sh
+        $ source Eiger_Setup.sh
         $ download_images_from_IP
 
 Viewing HDF5 Images Through Reborn
@@ -143,29 +144,30 @@ Viewing HDF5 Images Through Reborn
   
 2. Export the Python path:
   
-    .. code-block:: bash
+  .. code-block:: bash
 
-      $ export PYTHONPATH=/home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:$PYTHONPATH
+    $ export PYTHONPATH=/home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:$PYTHONPATH
 
 3. Run `test_h5_reading.py` or any other Python file:
-    .. code-block:: bash
 
-        $ python test_h5_reading.py
+  .. code-block:: bash
+
+      $ python test_h5_reading.py
 
 Troubleshooting
 ---------------
 
 - If encountering module errors, check the modules available in reborn:
   
-      .. code-block:: bash
-  
-          $ conda list
+    .. code-block:: bash
+
+        $ conda list
 
 - Check and make sure that the `reborn` conda enviornment is activated:
 
-      .. code-block:: bash
+    .. code-block:: bash
 
-          $ conda list env
+        $ conda list env
 
 - If a module is not installed, install using:
 
@@ -179,10 +181,11 @@ Troubleshooting
 Filtering Images
 ----------------
 - Using `filter_nimages`: This function will filter the downloaded images based on the number of images in the series.
+
   .. code-block:: bash
 
-      $ cd /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction
-      $ source adam_setup.sh
+      $ cd /home/labuser/Development/adam/vscode/CXFEL
+      $ source Eiger_Setup.sh
 
   To show all downloaded images, run the following command:
 
@@ -218,14 +221,14 @@ ALBULA Image Viewer
 
   .. code-block:: bash
 
-      $ cd /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction
-      $ source adam_setup.sh
+      $ cd /home/labuser/Development/adam/vscode/CXFEL
+      $ source Eiger_Setup.sh
 
   .. code-block:: bash
         
         $ albula_launch
 
-- This function in `adam_setup.sh` will launch the ALBULA image viewer, and display the images in the `temp_data` directory.
+- This function in `Eiger_Setup.sh` will launch the ALBULA image viewer, and display the images in the `temp_data` directory.
 
 - Note that this function will only work if the `temp_data` directory contains images.
 
@@ -238,8 +241,8 @@ ADXV Image Viewer
 
   .. code-block:: bash
 
-      $ cd /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction
-      $ source adam_setup.sh
+      $ cd /home/labuser/Development/adam/vscode/CXFEL
+      $ source Eiger_Setup.sh
 
   .. code-block:: bash
         
