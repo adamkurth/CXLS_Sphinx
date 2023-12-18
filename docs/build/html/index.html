@@ -72,6 +72,14 @@
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agave.html">Agave Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Dectris-Eiger4M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html#setup-and-operation">Setup and Operation</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="waterbackground_subtraction_projects.html">Projects<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
@@ -105,6 +113,30 @@ The documentation for Reborn can be found here: <a class="reference external" hr
 <li class="toctree-l2"><a class="reference internal" href="agave.html#submitting-jobs">Submitting Jobs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agave.html#running-pattern-sim-through-crystfel">Running <cite>pattern_sim</cite> through CrystFEL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agave.html#indexing-images-through-crystfel">Indexing Images through CrystFEL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Dectris-Eiger4M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html#setup-and-operation">Setup and Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#accessing-the-dectris-menu">Accessing the Dectris Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#activate-zmq-listener">Activate zmq Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#steps">Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#initializing-and-arming">Initializing and Arming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#id1">Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#downloading-and-overwrite-images">Downloading and Overwrite Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#id2">Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#viewing-hdf5-images-through-reborn">Viewing HDF5 Images Through Reborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#id3">Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#using-agave">Using AGAVE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#id4">Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#working-with-slurm-in-agave">Working with Slurm in AGAVE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#additional-notes">Additional Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="waterbackground_subtraction_projects.html">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
 </ul>
 </li>
 </ul>

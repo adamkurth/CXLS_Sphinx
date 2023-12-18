@@ -7,13 +7,15 @@
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" metia="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Sol Access Page | CXLS Sphinx  documentation</title>
-<meta content="Sol Access Page | CXLS Sphinx  documentation" property="og:title"/>
-<meta content="Sol Access Page | CXLS Sphinx  documentation" name="twitter:title"/>
+<title>Dectris-Eiger4M | CXLS Sphinx  documentation</title>
+<meta content="Dectris-Eiger4M | CXLS Sphinx  documentation" property="og:title"/>
+<meta content="Dectris-Eiger4M | CXLS Sphinx  documentation" name="twitter:title"/>
 <link href="_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
 <link href="_static/theme.css?v=1c6a6288" rel="stylesheet" type="text/css"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
+<link href="waterbackground_subtraction_projects.html" rel="next" title="Projects"/>
+<link href="agave.html" rel="prev" title="Agave Access"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
@@ -67,12 +69,12 @@
 <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agave.html">Agave Access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Dectris-Eiger4M</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html#setup-and-operation">Setup and Operation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dectris-Eiger4M</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#setup-and-operation">Setup and Operation</a></li>
 <li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="waterbackground_subtraction_projects.html">Projects<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
@@ -98,44 +100,205 @@
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Sol Access Page</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Dectris-Eiger4M</span>
 </nav>
 <div id="content" role="main">
-<section id="sol-access-page">
-<h1>Sol Access Page</h1>
-<section id="introduction">
-<h2>Introduction</h2>
-<p>This page provides information on how to access the Sol supercomputer.</p>
+<section id="dectris-eiger4m">
+<h1>Dectris-Eiger4M</h1>
+<p>This page contains documentaion for the operation of the Dectris Eiger4M detector. It includes steps for activating the zmq listener, initializing and arming the detector, troubleshooting, and additional resources for handling images and using AGAVE.</p>
 </section>
-<section id="access-methods">
-<h2>Access Methods</h2>
-<p>There are multiple ways to access the Sol supercomputer:</p>
-<ol class="arabic simple">
-<li><p>SSH Access: You can access Sol using SSH by connecting to the following address: <cite>sol.supercomputer.com</cite>.</p></li>
-<li><p>Web Portal: Sol also provides a web portal for accessing the supercomputer. You can access it by visiting <cite>https://sol.supercomputer.com</cite>.</p></li>
-<li><p>Batch Job Submission: To submit batch jobs to Sol, you can use the job submission system. Detailed instructions on how to submit batch jobs can be found in the Sol User Guide.</p></li>
+<section id="setup-and-operation">
+<h1>Setup and Operation</h1>
+<section id="accessing-the-dectris-menu">
+<h2>Accessing the Dectris Menu</h2>
+<ul class="simple">
+<li><p>Open <cite>http://10.139.1.5</cite> in any browser to access the Dectris menu options for the detector.</p></li>
+<li><p>Data images will be stored at <cite>http://10.139.1.5/data/</cite>.</p></li>
+<li><p>Use <cite>setup.sh</cite> to download these images onto your computer (details provided later in this document).</p></li>
+</ul>
+</section>
+<section id="activate-zmq-listener">
+<h2>Activate zmq Listener</h2>
+<ol class="arabic simple" start="0">
+<li><p>If not done already, please clone the reborn repository <cite>https://gitlab.com/kirianlab/reborn.git</cite>.</p></li>
 </ol>
 </section>
-<section id="user-guide">
-<h2>User Guide</h2>
-<p>For detailed instructions on how to use Sol, please refer to the Sol User Guide. It provides information on system specifications, software environment, job submission, and other important topics.</p>
+<section id="steps">
+<h2>Steps</h2>
+<ol class="arabic">
+<li><dl>
+<dt>Navigate to the correct directory:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Activate <cite>reborn</cite> enviornment:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>reborn
+</pre></div>
+</div>
+<p>python DEigerStream.py -i 10.139.1.5 -f junk.log</p>
+</dd>
+</dl>
+</li>
+</ol>
 </section>
-<section id="additional-resources">
-<h2>Additional Resources</h2>
-<p>For any further assistance or questions, please contact the Sol support team at <cite>support@sol.supercomputer.com</cite>.</p>
+<section id="initializing-and-arming">
+<h2>Initializing and Arming</h2>
 </section>
-<section id="module-load-commands">
-<h2>Module Load Commands</h2>
+<section id="id1">
+<h2>Steps</h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Source <cite>setup.sh</cite> to use simplified commands like initialize, arm, disarm, etc.:</dt><dd><p>source setup.sh
+initialize</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Set parameters and enable desired outputs using functions from <cite>setup.sh</cite>:</dt><dd><p>enable_monitor
+enable_stream
+enable_filewriter</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Specify quantities for desired output:</dt><dd><p>nimages &lt;x&gt;
+frame_time &lt;x&gt;
+count_time &lt;x&gt;
+nimages_per_file &lt;x&gt;</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Control the detector:</dt><dd><p>arm
+disarm
+trigger</p>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="downloading-and-overwrite-images">
+<h2>Downloading and Overwrite Images</h2>
+</section>
+<section id="id2">
+<h2>Steps</h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Source <cite>setup.sh</cite> and call the download function to start downloading images from <cite>http://10.139.1.5/data/</cite>:</dt><dd><p>source setup.sh
+download_images_from_IP</p>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="viewing-hdf5-images-through-reborn">
+<h2>Viewing HDF5 Images Through Reborn</h2>
+</section>
+<section id="id3">
+<h2>Steps</h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Go to the workind directoy:</dt><dd><p>cd /home/labuser/Projects/Dectris/test/temp_data</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Export the Python path:</dt><dd><p>export PYTHONPATH=$PYTHONPATH:/home/labuser/Projects/Dectris/reborn</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Run <cite>test_h5_reading.py</cite> or any other Python file:</dt><dd><p>python test_h5_reading.py</p>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting</h2>
+<ul class="simple">
+<li><p>If encountering module errors, check the modules available in reborn:
+conda list</p></li>
+<li><p>If a module is not installed, install using:
+conda install &lt;modulename&gt;</p></li>
+</ul>
+</section>
+<section id="using-agave">
+<h2>Using AGAVE</h2>
+</section>
+<section id="id4">
+<h2>Steps</h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>On startup in AGAVE, get off the interactive node for computationally intensive tasks:</dt><dd><p>interactive</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Activate conda enviornment</dt><dd><p>source /home/&lt;username&gt;/anaconda3/bin/activate</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Manage modules in AGAVE:</dt><dd><ul class="simple">
+<li><p>Check available modules:
+module -l avail</p></li>
+<li><p>Load a module:
+module load &lt;module load&gt;/&lt;version number&gt;</p></li>
+<li><p>Check loaded modules:
+module list</p></li>
+<li><p>Unload all modules
+module purge</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="working-with-slurm-in-agave">
+<h2>Working with Slurm in AGAVE</h2>
+<ul class="simple">
+<li><p>Find partitions:
+sinfo</p></li>
+<li><p>Select output of only partition names:
+sinfo -h –format=”%P”</p></li>
+<li><p>Get detailed information of a specific partition:
+sinfo -p &lt;partition_name&gt;</p></li>
+<li><p>Watch tasks:
+watch ‘squeue -u &lt;username&gt;’</p></li>
+</ul>
+</section>
+<section id="additional-notes">
+<h2>Additional Notes</h2>
+<ul class="simple">
+<li><p>Ensure you are following the specific protocols and safety measures associated with operating the Eiger4M detector.</p></li>
+<li><p>this README is general guide, specific steps may vary.</p></li>
+</ul>
 </section>
 </section>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
-<li><a :data-current="activeSection === '#introduction'" class="reference internal" href="#introduction">Introduction</a></li>
-<li><a :data-current="activeSection === '#access-methods'" class="reference internal" href="#access-methods">Access Methods</a></li>
-<li><a :data-current="activeSection === '#user-guide'" class="reference internal" href="#user-guide">User Guide</a></li>
-<li><a :data-current="activeSection === '#additional-resources'" class="reference internal" href="#additional-resources">Additional Resources</a></li>
-<li><a :data-current="activeSection === '#module-load-commands'" class="reference internal" href="#module-load-commands">Module Load Commands</a></li>
+<li></li>
+<li><a :data-current="activeSection === '#setup-and-operation'" class="reference internal" href="#setup-and-operation">Setup and Operation</a><ul>
+<li><a :data-current="activeSection === '#accessing-the-dectris-menu'" class="reference internal" href="#accessing-the-dectris-menu">Accessing the Dectris Menu</a></li>
+<li><a :data-current="activeSection === '#activate-zmq-listener'" class="reference internal" href="#activate-zmq-listener">Activate zmq Listener</a></li>
+<li><a :data-current="activeSection === '#steps'" class="reference internal" href="#steps">Steps</a></li>
+<li><a :data-current="activeSection === '#initializing-and-arming'" class="reference internal" href="#initializing-and-arming">Initializing and Arming</a></li>
+<li><a :data-current="activeSection === '#id1'" class="reference internal" href="#id1">Steps</a></li>
+<li><a :data-current="activeSection === '#downloading-and-overwrite-images'" class="reference internal" href="#downloading-and-overwrite-images">Downloading and Overwrite Images</a></li>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">Steps</a></li>
+<li><a :data-current="activeSection === '#viewing-hdf5-images-through-reborn'" class="reference internal" href="#viewing-hdf5-images-through-reborn">Viewing HDF5 Images Through Reborn</a></li>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">Steps</a></li>
+<li><a :data-current="activeSection === '#troubleshooting'" class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li><a :data-current="activeSection === '#using-agave'" class="reference internal" href="#using-agave">Using AGAVE</a></li>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">Steps</a></li>
+<li><a :data-current="activeSection === '#working-with-slurm-in-agave'" class="reference internal" href="#working-with-slurm-in-agave">Working with Slurm in AGAVE</a></li>
+<li><a :data-current="activeSection === '#additional-notes'" class="reference internal" href="#additional-notes">Additional Notes</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </aside>
