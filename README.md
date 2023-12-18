@@ -6,8 +6,6 @@ runme:
 
 ## CXLS Sphinx Repository
 
-TEST
-
 This repository is the documentation for CXLS using Sphinx GitPages. This is under construction currently and will be updated regularly.
 
 Changed so that when pushing to either the `main`, or `progress` branch, `.github/workflows/sphinx_deploy.yml` file is automatically triggered to update the website available at:
@@ -47,8 +45,6 @@ conda activate sphinx_env
 
 ### 4. Install Sphinx
 
-<<<<<<< HEAD
-
 - Using conda, we need to install Sphinx with:
 
 ```bash {"id":"01HGH1C5W5NH560Z1NMQ70B1XG"}
@@ -77,8 +73,6 @@ sphinx-quickstart
 conda deactivate
 ```
 
-=======
-
 - Using conda, we need to install Sphinx with:
 
 ```bash {"id":"01HH2XHY84BNQN13BZC2XTX3H8"}
@@ -106,6 +100,4 @@ sphinx-quickstart
 ```bash {"id":"01HH2XHY84BNQN13BZC8FFJE8A"}
 conda deactivate
 ```
-
-> > > > > > > origin/progress
 
