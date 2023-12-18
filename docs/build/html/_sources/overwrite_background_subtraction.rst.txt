@@ -1,5 +1,5 @@
 Water Background Subtraction (Overwrite)
-========================================
+==========================================
 
 This module contains the adaptation of the previous background subtraction programs, and is called `overwrite_10_2_23.py` in the Git repositories.
 
@@ -8,7 +8,7 @@ The program will then take the background from the "low" keV stream file and ove
 
 The program will then "overwrite" the "low" keV stream file, as the "high" keV stream, with the new more accurate peak values.
 
-Please refer to :doc:`stream_background_subtraction` for information about the foundational coding structure.
+Please refer to :doc:`stream_background_subtraction.rst` for information about the foundational coding structure.
 
 The GitHub repository for this project can be found at: 
     - https://github.com/adamkurth/waterbackground_subtraction.git
@@ -298,8 +298,7 @@ Main Function
         - Sets completed to True after processing
 
 .. py:function:: main()
-    :no-index:
-    
+
     .. code-block:: python
 
         def main():

@@ -1,7 +1,7 @@
 Water Background Subtraction Project (Stream)
 ==============================================
 
-This project is an adaptation on  :doc:`stream_background_subtraction`. It is intended to analyze the `.stream` after running `indexamajig` from CrystFEL. 
+This project is an adaptation on  :doc:`background_subtraction.rst`. It is intended to analyze the `.stream` after running `indexamajig` from CrystFEL. 
 
 This extension focuses on reading the `.stream` files, makeing a dictionary of the content, and recreating an array of the intensity values. The intensity values are then used to calculate the average surrounding peak value and the intensity peak value.
 
@@ -30,7 +30,6 @@ The `PeakThresholdProcessor ` class is used for processing the image peak values
 The following functions are defined in the `PeakThresholdProcessor` class:
 
 .. py:class:: PeakThresholdProcessor(image_array, threshold_value=0)
-    :no-index:
     
     Initialize the `PeakThresholdProcessor` with the image array and coordinate threshold value.
 
@@ -117,7 +116,6 @@ The following functions are defined in the `ArrayRegion` class:
        :rtype: numpy.ndarray
 
 .. code-block:: python 
-    
     class ArrayRegion:
     def __init__(self, array):
         self.array = array

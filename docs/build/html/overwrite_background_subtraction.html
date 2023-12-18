@@ -14,7 +14,6 @@
 <link href="_static/theme.css?v=1c6a6288" rel="stylesheet" type="text/css"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
-<link href="stream_background_subtraction.html" rel="prev" title="Water Background Subtraction Project (Stream)"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
@@ -67,12 +66,6 @@
 </a>
 <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Water Background Subtraction (Overwrite)</a></li>
-</ul>
 </nav>
 </div>
 </div>
@@ -100,7 +93,7 @@
 <p>The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files.
 The program will then take the background from the “low” keV stream file and overwrite the background in the “high” keV stream file.</p>
 <p>The program will then “overwrite” the “low” keV stream file, as the “high” keV stream, with the new more accurate peak values.</p>
-<p>Please refer to <a class="reference internal" href="stream_background_subtraction.html"><span class="doc">Water Background Subtraction Project (Stream)</span></a> for information about the foundational coding structure.</p>
+<p>Please refer to <span class="xref std std-doc">stream_background_subtraction.rst</span> for information about the foundational coding structure.</p>
 <dl class="simple">
 <dt>The GitHub repository for this project can be found at:</dt><dd><ul class="simple">
 <li><p><a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">https://github.com/adamkurth/waterbackground_subtraction.git</a></p></li>
@@ -400,8 +393,8 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </ol>
 </div></blockquote>
 <dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="main">
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#main'">¶</a></dt>
 <dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Current working directory:"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
     <span class="n">src_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
@@ -500,7 +493,10 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 <li><a :data-current="activeSection === '#populate_intensity_array'" class="reference internal" href="#populate_intensity_array"><code class="docutils literal notranslate"><span class="pre">populate_intensity_array()</span></code></a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#main-function'" class="reference internal" href="#main-function">Main Function</a></li>
+<li><a :data-current="activeSection === '#main-function'" class="reference internal" href="#main-function">Main Function</a><ul>
+<li><a :data-current="activeSection === '#main'" class="reference internal" href="#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </aside>
