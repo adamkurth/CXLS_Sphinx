@@ -66,26 +66,40 @@ Next, initialize and arm the detector. This will allow you to control the detect
 
         $ source setup.sh
         $ initialize
+    
+    - Note that this will initialize the detector, and return `true`.
 
 2. Set parameters and enable desired outputs using functions from `setup.sh`:
 
-    .. code-block:: bash
+    - Choose from the options below:
 
-        $ set_nimages num
-        $ set_frame_time num
-        $ set_count_time num
-        $ set_nimages_per_file num
+    .. code-block:: bash
         $ enable_monitor
         $ enable_stream
         $ enable_filewriter
 
-    - `set_nimages` sets the number of images to be taken.
-    - `set_frame_time` sets the frame time.
-    - `set_count_time` sets the count time.
-    - `set_nimages_per_file` sets the number of images per file.
+    .. code-block:: bash
+        $ nimages num
+        $ frame_time num
+        $ count_time num
+        $ nimages_per_file num
+
+    - `nimages` sets the number of images collected in a series.
+    - `frame_time` sets the frame time (time between readouts or inverse of collection rate).
+    - `count_time` sets the exposure time.
+    - `nimages_per_file` sets the number of images per file.
     - `enable_monitor` enables the monitor output.
     - `enable_stream` enables the stream output.
     - `enable_filewriter` enables the filewriter output.
+
+    - Replace `num` argument with the desired number, for each function.
+
+3. Able to check the options set using the following functions:
+
+    .. code-block:: bash
+        $ get_nimages
+        $ get_frame_time
+        $ get_count_time
 
 3. Control the detector:
   .. code-block:: bash
@@ -103,11 +117,19 @@ Downloading and Overwrite Images
 
     - Note that this will download all images listed on `http://10.139.1.5/data/`.
 
-2. Source `setup.sh` and call the download function to start downloading images from `http://10.139.1.5/data/`:
+2. Source the adapted setup script called `adam_setup.sh` and call the download function to start downloading images from `http://10.139.1.5/data/`:
     
+    First, 
+  
     .. code-block:: bash
 
-        $ source setup.sh
+        $ cd /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction/adam_setup.sh
+
+    Then,
+
+    .. code-block:: bash
+
+        $ source adam_setup.sh
         $ download_images_from_IP
 
 Viewing HDF5 Images Through Reborn
@@ -126,59 +148,106 @@ Viewing HDF5 Images Through Reborn
       $ export PYTHONPATH=/home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:$PYTHONPATH
 
 3. Run `test_h5_reading.py` or any other Python file:
-    python test_h5_reading.py
+    .. code-block:: bash
+
+        $ python test_h5_reading.py
 
 Troubleshooting
 ---------------
 
 - If encountering module errors, check the modules available in reborn:
-  conda list
+  
+      .. code-block:: bash
+  
+          $ conda list
+
+- Check and make sure that the `reborn` conda enviornment is activated:
+
+      .. code-block:: bash
+
+          $ conda list env
 
 - If a module is not installed, install using:
-  conda install <modulename>
 
-Using AGAVE
------------
+    .. code-block:: bash
 
-Steps
------
+        $ conda install module_name
 
-1. On startup in AGAVE, get off the interactive node for computationally intensive tasks:
-    interactive
+- Replace `module_name` with the desired module.
 
-2. Activate conda enviornment
-    source /home/<username>/anaconda3/bin/activate
 
-3. Manage modules in AGAVE:
-    - Check available modules:
-      module -l avail
-
-    - Load a module:
-      module load <module load>/<version number>
-
-    - Check loaded modules:
-      module list
-
-    - Unload all modules
-      module purge
-
-Working with Slurm in AGAVE
----------------------------
-
-- Find partitions:
-  sinfo
-
-- Select output of only partition names:
-  sinfo -h --format="%P"
-
-- Get detailed information of a specific partition:
-  sinfo -p <partition_name>
-
-- Watch tasks:
-  watch 'squeue -u <username>'
-
-Additional Notes
+Filtering Images
 ----------------
+- Using `filter_nimages`: This function will filter the downloaded images based on the number of images in the series.
+  .. code-block:: bash
 
-- Ensure you are following the specific protocols and safety measures associated with operating the Eiger4M detector.
-- this README is general guide, specific steps may vary.
+      $ cd /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction
+      $ source adam_setup.sh
+
+  To show all downloaded images, run the following command:
+
+  .. code-block:: bash
+
+      $ filter_nimages
+
+  Example output:
+
+  .. code-block:: bash
+
+      Found file: series_1_data_000001.h5
+      Found file: series_1_data_000002.h5
+
+- Using `filter_master_nimages`: This will show all of the master files from using the detector. 
+
+  To show all master files, run the following command:
+
+  .. code-block:: bash
+
+      $ filter_master_nimages
+
+  Example output:
+  
+  .. code-block:: bash
+
+      Found file: series_1_master.h5
+
+ALBULA Image Viewer
+-------------------
+
+- To view images using the ALBULA image viewer, navigate to the directory containing the images, and run the following command:
+
+  .. code-block:: bash
+
+      $ cd /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction
+      $ source adam_setup.sh
+
+  .. code-block:: bash
+        
+        $ albula_launch
+
+- This function in `adam_setup.sh` will launch the ALBULA image viewer, and display the images in the `temp_data` directory.
+
+- Note that this function will only work if the `temp_data` directory contains images.
+
+- There is also an option to choose between `master` files and individual `data` files.
+
+ADXV Image Viewer
+-----------------
+
+- To view images using the ADXV image viewer, navigate to the directory containing the images, and run the following command:
+
+  .. code-block:: bash
+
+      $ cd /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction
+      $ source adam_setup.sh
+
+  .. code-block:: bash
+        
+        $ adxv_launch
+      
+- Through the interactive GUI window, you can select the desired image to view.
+
+Additional Resources
+--------------------
+
+Please refer to ::ref:`agave` for additional information and troubleshooting while using AGAVE.

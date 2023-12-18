@@ -20,66 +20,132 @@ Activate zmq Listener
 
 Steps
 -----
+1. Switch to develop branch:
 
-1. Navigate to the correct directory:
+    .. code-block:: bash
+
+        $ git checkout develop
+
+2. Navigate to the correct directory:
+
     .. code-block:: bash
 
         $ cd /home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
 
-2. Activate `reborn` enviornment:
+3. Activate `reborn` enviornment:
+
     .. code-block:: bash
 
         $ source activate reborn
-        
-    python DEigerStream.py -i 10.139.1.5 -f junk.log
+
+    - Note that this will activate the `reborn` conda enviornment.
+      
+4. Run `DEigerStream.py`: This will start the zmq listener, and display menu options for the detector.
+
+    .. code-block:: bash
+
+        $ python DEigerStream.py -i 10.139.1.5 -f junk.log
+
+    - Usually best to isolate this window in a separate terminal window.
+
+    - The `-i` flag specifies the IP address of the detector.
+
+    - The `-f` flag specifies the name of the log file.   
+    
+    - If desired, to exit the zmq listener, press `Ctrl+C`.
+
 
 Initializing and Arming
 -----------------------
 
-Steps
------
+Next, initialize and arm the detector. This will allow you to control the detector using the zmq listener.
 
 1. Source `setup.sh` to use simplified commands like initialize, arm, disarm, etc.:
-    source setup.sh
-    initialize
+    
+    .. code-block:: bash
+
+        $ source setup.sh
+        $ initialize
+    
+    - Note that this will initialize the detector, and return `true`.
 
 2. Set parameters and enable desired outputs using functions from `setup.sh`:
-    enable_monitor
-    enable_stream
-    enable_filewriter
 
-3. Specify quantities for desired output:
-    nimages <x>
-    frame_time <x>
-    count_time <x>
-    nimages_per_file <x>
+    - Choose from the options below:
 
-4. Control the detector:
-    arm
-    disarm
-    trigger
+    .. code-block:: bash
+        $ enable_monitor
+        $ enable_stream
+        $ enable_filewriter
+
+    .. code-block:: bash
+        $ nimages num
+        $ frame_time num
+        $ count_time num
+        $ nimages_per_file num
+
+    - `nimages` sets the number of images collected in a series.
+    - `frame_time` sets the frame time (time between readouts or inverse of collection rate).
+    - `count_time` sets the exposure time.
+    - `nimages_per_file` sets the number of images per file.
+    - `enable_monitor` enables the monitor output.
+    - `enable_stream` enables the stream output.
+    - `enable_filewriter` enables the filewriter output.
+
+    - Replace `num` argument with the desired number, for each function.
+
+3. Able to check the options set using the following functions:
+
+    .. code-block:: bash
+        $ get_nimages
+        $ get_frame_time
+        $ get_count_time
+
+3. Control the detector:
+  .. code-block:: bash
+      $ arm
+      $ disarm
+      $ trigger
 
 Downloading and Overwrite Images
--------------------------------
+--------------------------------
 
-Steps
------
+1. Navigate to the desired directory to store images:
+    .. code-block:: bash
 
-1. Source `setup.sh` and call the download function to start downloading images from `http://10.139.1.5/data/`:
-    source setup.sh
-    download_images_from_IP
+        $ cd /home/labuser/Projects/Dectris/test/temp_data
+
+    - Note that this will download all images listed on `http://10.139.1.5/data/`.
+
+2. Source the adapted setup script called `adam_setup.sh` and call the download function to start downloading images from `http://10.139.1.5/data/`:
+    
+    First, 
+  
+    .. code-block:: bash
+
+        $ source /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction/adam_setup.sh
+
+    Then,
+    
+    .. code-block:: bash
+
+        $ source adam_setup.sh
+        $ download_images_from_IP
 
 Viewing HDF5 Images Through Reborn
 ----------------------------------
 
-Steps
------
+1. Navigate to the recent downloaded images directory:
 
-1. Go to the workind directoy:
-    cd /home/labuser/Projects/Dectris/test/temp_data
-
+  .. code-block:: bash
+      
+      $ cd /home/labuser/Projects/Dectris/test/temp_data
+  
 2. Export the Python path:
-    export PYTHONPATH=$PYTHONPATH:/home/labuser/Projects/Dectris/reborn
+  
+    .. code-block:: bash
+
+      $ export PYTHONPATH=/home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:$PYTHONPATH
 
 3. Run `test_h5_reading.py` or any other Python file:
     python test_h5_reading.py
@@ -92,6 +158,26 @@ Troubleshooting
 
 - If a module is not installed, install using:
   conda install <modulename>
+
+
+
+
+
+
+
+
+Filtering Images
+----------------
+
+.. code-block:: bash
+
+    $ cd /home/labuser/Development/adam/vscode/dectris-eiger4m/Development/waterbackground_subtraction/adam_setup.sh
+
+
+
+
+
+
 
 Using AGAVE
 -----------

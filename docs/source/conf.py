@@ -29,7 +29,10 @@ pygments_style = 'sphinx'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinxawesome_theme'
+html_theme = 'renku'
+
+# Pygments (syntax highlighting) style to use
+pygments_style = 'friendly'
 
 # This is the correct place for html_add_permalinks configuration
 html_permalinks = False  # Disable ¶ symbols next to headings
@@ -42,4 +45,8 @@ html_permalinks = False  # Disable ¶ symbols next to headings
 # 'sphinx_material'
 # 'sphinx_book_theme'
 # 'sphinx_py3doc_enhanced_theme'
+
+
+#FAVORITES
 # 'sphinxawesome_theme'
+# 'renku'
