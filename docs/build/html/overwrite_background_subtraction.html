@@ -66,6 +66,12 @@
 </a>
 <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agave.html">Agave Access</a></li>
+</ul>
 </nav>
 </div>
 </div>
@@ -88,7 +94,7 @@
 </nav>
 <div id="content" role="main">
 <section id="water-background-subtraction-overwrite">
-<h1>Water Background Subtraction (Overwrite)<a class="headerlink" href="#water-background-subtraction-overwrite" title="Link to this heading">¶</a></h1>
+<h1>Water Background Subtraction (Overwrite)</h1>
 <p>This module contains the adaptation of the previous background subtraction programs, and is called <cite>overwrite_10_2_23.py</cite> in the Git repositories.</p>
 <p>The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files.
 The program will then take the background from the “low” keV stream file and overwrite the background in the “high” keV stream file.</p>
@@ -102,7 +108,7 @@ The program will then take the background from the “low” keV stream file and
 </dd>
 </dl>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#imports'">¶</a></h2>
+<h2>Imports</h2>
 <p>Most notably, we inherit the <cite>h5_stream_background_subtraction_10_2_23.py</cite> program, to simplify the code.</p>
 <p>We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <cite>h5py</cite> as <cite>h5</cite>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -114,7 +120,7 @@ The program will then take the background from the “low” keV stream file and
 </div>
 </section>
 <section id="duplicate-function">
-<h2>Duplicate Function<a class="headerlink" href="#duplicate-function" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#duplicate-function'">¶</a></h2>
+<h2>Duplicate Function</h2>
 <p>To compare the two stream files before and after the the overwrite process, we need to duplicate the stream files.</p>
 <p>We do this by using the <cite>shutil.copyfile()</cite> function, which takes two arguments, the source file and the destination file.</p>
 <dl class="py function">
@@ -144,14 +150,14 @@ The program will then take the background from the “low” keV stream file and
 </dd></dl>
 </section>
 <section id="debugging-functions">
-<h2>Debugging Functions<a class="headerlink" href="#debugging-functions" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#debugging-functions'">¶</a></h2>
+<h2>Debugging Functions</h2>
 <ul class="simple">
 <li><p><cite>compare_high_low()</cite> is used to compare the two stream file contents to ensure that they’re loaded and read properly.</p></li>
 <li><p><cite>retrieve()</cite> is used to retrieve the columns of data to retrieve, and append to a list.</p></li>
 </ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="compare_high_low">
-<span class="sig-name descname"><span class="pre">compare_high_low</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compare_high_low" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#compare_high_low'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">compare_high_low</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Compare the high and low data and return the compared data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -189,7 +195,7 @@ The program will then take the background from the “low” keV stream file and
 <p>This function directly appends certain columns in <cite>data_columns</cite> for ease of use and debugging purposes.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="retrieve">
-<span class="sig-name descname"><span class="pre">retrieve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#retrieve" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#retrieve'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">retrieve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Retrieve the columns of data to retrieve.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -218,11 +224,11 @@ The program will then take the background from the “low” keV stream file and
 </dd></dl>
 </section>
 <section id="overwrite-function">
-<h2>Overwrite Function<a class="headerlink" href="#overwrite-function" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#overwrite-function'">¶</a></h2>
+<h2>Overwrite Function</h2>
 <p>This function executes the overwriting procedure of the “high” keV stream file with the “low” keV stream file.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="overwrite_low_in_high">
-<span class="sig-name descname"><span class="pre">overwrite_low_in_high</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#overwrite_low_in_high" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#overwrite_low_in_high'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">overwrite_low_in_high</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_data</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Overwrite the low data in the high stream file with the given overwrite data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -238,12 +244,12 @@ The program will then take the background from the “low” keV stream file and
 </dd></dl>
 </section>
 <section id="intenstity-finder-function">
-<h2>Intenstity Finder Function<a class="headerlink" href="#intenstity-finder-function" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#intenstity-finder-function'">¶</a></h2>
+<h2>Intenstity Finder Function</h2>
 <p>This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
 If the x,y coordinates are out of bounds, the function will simply ignore the peak.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="intensity_finder">
-<span class="sig-name descname"><span class="pre">intensity_finder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intensity_finder" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#intensity_finder'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">intensity_finder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Retrieve the intensity values for every x,y coordinate in the image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -277,11 +283,11 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </dd></dl>
 </section>
 <section id="populate-intensity-array-function">
-<h2>Populate Intensity Array Function<a class="headerlink" href="#populate-intensity-array-function" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#populate-intensity-array-function'">¶</a></h2>
+<h2>Populate Intensity Array Function</h2>
 <p>Populates the intensity array to recreate the array of a loaded image with the stream data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="populate_intensity_array">
-<span class="sig-name descname"><span class="pre">populate_intensity_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#populate_intensity_array" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#populate_intensity_array'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">populate_intensity_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_name</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Populate the intensity array with the intensity values for each x,y coordinate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -320,7 +326,7 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </dd></dl>
 </section>
 <section id="main-function">
-<h2>Main Function<a class="headerlink" href="#main-function" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#main-function'">¶</a></h2>
+<h2>Main Function</h2>
 <blockquote>
 <div><p>The main function of the program, which executes the program.</p>
 <p>The function performs the following steps:</p>
@@ -394,7 +400,7 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </div></blockquote>
 <dl class="py function">
 <dt class="sig sig-object py" id="main">
-<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#main'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Current working directory:"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
     <span class="n">src_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
