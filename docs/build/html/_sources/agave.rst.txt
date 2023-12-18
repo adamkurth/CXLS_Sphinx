@@ -8,9 +8,13 @@ To access the supercomputer using Agave, follow these steps:
 Prerequisites
 -------------
 1. Make sure to run `Cisco Secure Client` and login to ASU network before running the following commands.
+
 2. Under the connect field, make sure `sslvpn.asu.edu` is entered.
+
 3. Click connect, and enter your ASURITE credentials;
+   
     - ASURITE username and password, and Duo Mobile Code for dual-factor authentication.
+
 4. Click connect, and when connected, follow the next steps to access AGAVE supercomputer.
 
 Steps for SSH Access
