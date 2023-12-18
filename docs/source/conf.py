@@ -31,7 +31,8 @@ pygments_style = 'sphinx'
 
 html_theme = 'sphinxawesome_theme'
 
-html_add_permalinks = False  # Sphinx 1.8 or newer 
+# This is the correct place for html_add_permalinks configuration
+html_permalinks = False  # Disable ¶ symbols next to headings
 
 # html_static_path = ['_static']
 
