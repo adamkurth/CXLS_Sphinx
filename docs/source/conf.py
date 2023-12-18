@@ -30,6 +30,9 @@ pygments_style = 'sphinx'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinxawesome_theme'
+
+html_add_permalinks = False  # Sphinx 1.8 or newer 
+
 # html_static_path = ['_static']
 
 # themes installed with pip 

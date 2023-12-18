@@ -14,8 +14,6 @@
 <link href="_static/theme.css?v=1c6a6288" rel="stylesheet" type="text/css"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
-<link href="overwrite_background_subtraction.html" rel="next" title="Water Background Subtraction (Overwrite)"/>
-<link href="background_subtraction.html" rel="prev" title="Water Background Subtraction Project (Main)"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
@@ -68,12 +66,6 @@
 </a>
 <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Water Background Subtraction Project (Stream)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
-</ul>
 </nav>
 </div>
 </div>
@@ -97,7 +89,7 @@
 <div id="content" role="main">
 <section id="water-background-subtraction-project-stream">
 <h1>Water Background Subtraction Project (Stream)<a class="headerlink" href="#water-background-subtraction-project-stream" title="Link to this heading">¶</a></h1>
-<p>This project is an adaptation on  <a class="reference internal" href="#"><span class="doc">Water Background Subtraction Project (Stream)</span></a>. It is intended to analyze the <cite>.stream</cite> after running <cite>indexamajig</cite> from CrystFEL.</p>
+<p>This project is an adaptation on  <span class="xref std std-doc">background_subtraction.rst</span>. It is intended to analyze the <cite>.stream</cite> after running <cite>indexamajig</cite> from CrystFEL.</p>
 <p>This extension focuses on reading the <cite>.stream</cite> files, makeing a dictionary of the content, and recreating an array of the intensity values. The intensity values are then used to calculate the average surrounding peak value and the intensity peak value.</p>
 <dl class="simple">
 <dt>The GitHub repository for this project can be found at:</dt><dd><ul class="simple">
@@ -124,8 +116,6 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="PeakThresholdProcessor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PeakThresholdProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PeakThresholdProcessor" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#PeakThresholdProcessor'">¶</a></dt>
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">:no-index:</span></span></dt>
 <dd><blockquote>
 <div><p>Initialize the <cite>PeakThresholdProcessor</cite> with the image array and coordinate threshold value.</p>
 </div></blockquote>
@@ -240,27 +230,6 @@
 </dl>
 </dd></dl>
 </dd></dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrayRegion</span><span class="p">:</span>
-<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">array</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">def</span> <span class="nf">set_peak_coordinate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">=</span> <span class="n">y</span>
-<span class="k">def</span> <span class="nf">set_region_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
-    <span class="c1"># set limit that is printable in terminal</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span> <span class="o">=</span> <span class="n">size</span>
-    <span class="n">max_printable_region</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">//</span><span class="mi">2</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">max_printable_region</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="n">x_range</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">y_range</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">region</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">region</span>
-</pre></div>
-</div>
 </section>
 <section id="helper-functions">
 <h2>Helper Functions<a class="headerlink" href="#helper-functions" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#helper-functions'">¶</a></h2>
