@@ -23,9 +23,9 @@ This documentation is still under construction and will be updated regularly.
    home
    overview
    agave
-   cxls_eiger_4m
-   waterbackground_subtraction_projects
    globus
+   cxls_eiger_4m
+   projects
 
 .. _installation: 
 
