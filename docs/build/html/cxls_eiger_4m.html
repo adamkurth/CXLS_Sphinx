@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Setup and Operation of the Dectris Eiger4M Detector &mdash; CXLS Sphinx  documentation</title>
+  <title>Operation of the Dectris Eiger4M Detector &mdash; CXLS Sphinx  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -49,10 +49,9 @@
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agave.html">Agave Access</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup and Operation of the Dectris Eiger4M Detector</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Operation of the Dectris Eiger4M Detector</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#accessing-the-dectris-menu">Accessing the Dectris Menu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#activate-zmq-listener">Activate zmq Listener</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps-to-activate-zmq-listener">Steps to Activate zmq Listener</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initializing-and-arming">Initializing and Arming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#downloading-and-overwrite-images">Downloading and Overwrite Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#viewing-hdf5-images-through-reborn">Viewing HDF5 Images Through Reborn</a></li>
@@ -64,6 +63,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="waterbackground_subtraction_projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
 </ul>
 
         </div>
@@ -80,7 +80,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Setup and Operation of the Dectris Eiger4M Detector</li>
+      <li class="breadcrumb-item active">Operation of the Dectris Eiger4M Detector</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/cxls_eiger_4m.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -90,8 +90,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="setup-and-operation-of-the-dectris-eiger4m-detector">
-<h1>Setup and Operation of the Dectris Eiger4M Detector</h1>
+  <section id="operation-of-the-dectris-eiger4m-detector">
+<h1>Operation of the Dectris Eiger4M Detector</h1>
 <p>This page contains documentaion for the operation of the Dectris Eiger4M detector. It includes steps for activating the zmq listener, initializing and arming the detector, troubleshooting, and additional resources for handling images and using AGAVE.</p>
 <section id="accessing-the-dectris-menu">
 <h2>Accessing the Dectris Menu</h2>
@@ -101,15 +101,16 @@
 <li><p>Use <cite>setup.sh</cite> to download these images onto your computer (details provided later in this document).</p></li>
 </ul>
 </section>
-<section id="activate-zmq-listener">
-<h2>Activate zmq Listener</h2>
-<ol class="arabic simple" start="0">
-<li><p>If not done already, please clone the reborn repository <cite>https://gitlab.com/kirianlab/reborn.git</cite>.</p></li>
-</ol>
-</section>
-<section id="steps">
-<h2>Steps</h2>
+<section id="steps-to-activate-zmq-listener">
+<h2>Steps to Activate zmq Listener</h2>
 <ol class="arabic">
+<li><p>Clone the reborn repository:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/kirianlab/reborn.git
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 <li><p>Switch to develop branch:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>develop

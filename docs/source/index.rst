@@ -25,6 +25,7 @@ This documentation is still under construction and will be updated regularly.
    agave
    cxls_eiger_4m
    waterbackground_subtraction_projects
+   globus
 
 .. _installation: 
 
@@ -41,7 +42,23 @@ The GitLab repository for reborn can be found here: https://gitlab.com/kirianlab
 The documentation for reborn can be found here: https://kirianlab.gitlab.io/reborn/.
 
 
-.. _cxls_eiger4m:
+.. _dcu:
+Troubleshooting DCU Notes
+-------------------------
 
-Documentation for CXLS Eiger 4M Detector
------------------------------------------
+Software:
+---------
+
+- Verify that all instructions on ::ref:`README.md` have been followed.
+- 
+
+Hardware:
+---------
+
+- Verify that the chiller is running and set to 22°C
+- Verify that the dry air is flowing (just enough that you can feel it on your lip should be plenty)
+- Verify that the blue LED on the power brick is lit
+- Verify that the detector's POWER switch is depressed
+- Verify that the DCU is powered on and booted, and that the iDRAC LED or display panel do not show any errors
+   
+
