@@ -17,8 +17,8 @@ Prerequisites
 
 4. Click connect, and when connected, follow the next steps to access AGAVE supercomputer.
 
-Steps for SSH Access
---------------------
+Login Steps
+------------
 
 1. Once logged in, make sure and get off of the login node by running the following command:
 

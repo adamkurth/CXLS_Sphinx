@@ -45,38 +45,44 @@ To run the application without the GUI, follow these steps:
 - Other helpful commands are listed below:
 
     - To see all the commands, run the following command:
+        
         .. code-block:: bash
 
-            $ cd /home/labuser/Public/globusconnectpersonal-3.2.2
             $ ./globusconnectpersonal -help
 
     - To start the application in the background, run the following command:
 
         .. code-block:: bash
 
-            $ cd /home/labuser/Public/globusconnectpersonal-3.2.2
             $ ./globusconnectpersonal -start &
 
     - To deactivate the application, run the following command:
 
         .. code-block:: bash
 
-            $ cd /home/labuser/Public/globusconnectpersonal-3.2.2
             $ ./globusconnectpersonal -stop
 
     - To check the status of the application, run the following command:
 
         .. code-block:: bash
 
-            $ cd /home/labuser/Public/globusconnectpersonal-3.2.2
-            $ ./globusconnectpersonal -status
-
-    - To restart the application, run the following command:
+            $ ./globusconnectpersonal -status   
+    
+    - To pause/resume the application, run the following command:
 
         .. code-block:: bash
 
-            $ cd /home/labuser/Public/globusconnectpersonal-3.2.2
-            $ ./globusconnectpersonal -restart
+            $ ./globusconnectpersonal -pause
+        Or 
+        .. code-block:: bash
+            $ ./globusconnectpersonal -unpause
+
+    - To see the version of the application, run the following command:
+
+        .. code-block:: bash
+
+            $ ./globusconnectpersonal -version
+
 
 Globus Setup in Command Line (No GUI)
 -------------------------------------
@@ -120,7 +126,6 @@ Web Application
         
         .. code-block:: bash
 
-            $ cd /home/labuser/Public/globusconnectpersonal-3.2.2
             $ ./globusconnectpersonal -stop
             $ ./globusconnectpersonal -start &
 
