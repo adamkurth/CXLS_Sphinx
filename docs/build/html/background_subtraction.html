@@ -1,102 +1,111 @@
 <!DOCTYPE html>
-
-<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="./" lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<html class="writer-html5" lang="en" >
 <head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta charset="utf-8"/>
-<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
-<meta content="black" metia="(prefers-color-scheme: dark)" name="theme-color"/>
-<meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Water Background Subtraction Project (Main) | CXLS Sphinx  documentation</title>
-<meta content="Water Background Subtraction Project (Main) | CXLS Sphinx  documentation" property="og:title"/>
-<meta content="Water Background Subtraction Project (Main) | CXLS Sphinx  documentation" name="twitter:title"/>
-<link href="_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
-<link href="_static/theme.css?v=1c6a6288" rel="stylesheet" type="text/css"/>
-<link href="search.html" rel="search" title="Search"/>
-<link href="genindex.html" rel="index" title="Index"/>
-<link href="stream_background_subtraction.html" rel="next" title="Water Background Subtraction Project (Stream)"/>
-<link href="index.html" rel="prev" title="Welcome to CXLS GitPages Documentation!"/>
-<script>
-    <!-- Prevent Flash of wrong theme -->
-      const userPreference = localStorage.getItem('darkMode');
-      let mode;
-      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        mode = 'dark';
-        document.documentElement.classList.add('dark');
-      } else {
-        mode = 'light';
-      }
-      if (!userPreference) {localStorage.setItem('darkMode', mode)}
-    </script>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Background Subtraction Project (Main) &mdash; CXLS Sphinx  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Water Background Subtraction Project (Stream)" href="stream_background_subtraction.html" />
+    <link rel="prev" title="Projects" href="waterbackground_subtraction_projects.html" /> 
 </head>
-<body :class="{ 'overflow-hidden': showSidebar }" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false }">
-<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
-      Skip to content
-    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
-<div class="hidden mr-4 md:flex">
-<a class="flex items-center mr-6" href="index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">CXLS Sphinx  documentation</span>
-</a></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
-<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
-</svg>
-<span class="sr-only">Toggle navigation menu</span>
-</button>
-<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
-<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="search.html" class="relative flex items-center group" id="searchbox" method="get">
-<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
-<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
-<span class="text-xs">⌘</span>
-    K
-  </kbd>
-</form>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> CXLS Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
-<nav class="flex items-center space-x-1">
-<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
-<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
-</svg>
-<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
-</svg>
-</button>
-</nav>
-</div>
-</div>
-</header>
-<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
-<a class="!justify-start text-sm md:!hidden bg-background" href="index.html"><span class="font-bold text-clip whitespace-nowrap">CXLS Sphinx  documentation</span>
-</a>
-<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
-<div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Water Background Subtraction Project (Main)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agave.html">Agave Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Setup and Operation of the Dectris Eiger4M Detector</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="waterbackground_subtraction_projects.html">Projects</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Water Background Subtraction Project (Main)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#imports">Imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peakthresholdprocessor-class">PeakThresholdProcessor Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#PeakThresholdProcessor"><code class="docutils literal notranslate"><span class="pre">PeakThresholdProcessor</span></code></a></li>
 </ul>
-</nav>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#arrayregion-class">ArrayRegion Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ArrayRegion"><code class="docutils literal notranslate"><span class="pre">ArrayRegion</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#helper-functions">Helper Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#load_h5"><code class="docutils literal notranslate"><span class="pre">load_h5()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extract_region"><code class="docutils literal notranslate"><span class="pre">extract_region()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#coordinate-menu-function">Coordinate Menu Function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#coordinate_menu"><code class="docutils literal notranslate"><span class="pre">coordinate_menu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_coord_intensity"><code class="docutils literal notranslate"><span class="pre">build_coord_intensity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_scatter"><code class="docutils literal notranslate"><span class="pre">create_scatter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main-function">Main Function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CXLS Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="waterbackground_subtraction_projects.html">Projects</a></li>
+      <li class="breadcrumb-item active">Water Background Subtraction Project (Main)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/background_subtraction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
 </div>
-</div>
-<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
-<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
-</svg>
-</button>
-</aside>
-<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-<div class="w-full min-w-0 mx-auto">
-<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
-<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="index.html">
-<span class="hidden md:inline">CXLS Sphinx  documentation</span>
-<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
-<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
-</svg>
-</a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Water Background Subtraction Project (Main)</span>
-</nav>
-<div id="content" role="main">
-<section id="water-background-subtraction-project-main">
-<h1>Water Background Subtraction Project (Main)<a class="headerlink" href="#water-background-subtraction-project-main" title="Link to this heading">¶</a></h1>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="water-background-subtraction-project-main">
+<h1>Water Background Subtraction Project (Main)</h1>
 <p>This project is a simple implementation of background subtraction.</p>
 <p>Within the project, there are three main project files:</p>
 <blockquote>
@@ -115,7 +124,7 @@
 </dd>
 </dl>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#imports'">¶</a></h2>
+<h2>Imports</h2>
 <p>The following modules are imported for use in the program:
 .. code-block:: python</p>
 <blockquote>
@@ -126,99 +135,105 @@ import matplotlib.pyplot as plt</p>
 </div></blockquote>
 </section>
 <section id="peakthresholdprocessor-class">
-<h2>PeakThresholdProcessor Class<a class="headerlink" href="#peakthresholdprocessor-class" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#peakthresholdprocessor-class'">¶</a></h2>
+<h2>PeakThresholdProcessor Class</h2>
 <blockquote>
 <div><p>The <a href="#id1"><span class="problematic" id="id2">`</span></a>PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.</p>
 </div></blockquote>
 <p>The following functions are defined in the <cite>PeakThresholdProcessor</cite> class:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="PeakThresholdProcessor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PeakThresholdProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PeakThresholdProcessor" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#PeakThresholdProcessor'">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PeakThresholdProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span></dt>
 <dd><blockquote>
 <div><p>Initialize the <cite>PeakThresholdProcessor</cite> with the image array and coordinate threshold value.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
 <li><p><strong>threshold_value</strong> (<em>float</em><em>, </em><em>optional</em>) – The threshold value to be used for processing the image array, defaults to 0.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns coordinate list of x and y values above the threshold value.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><p>list</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="PeakThresholdProcessor.set_threshold_value">
-<span class="sig-name descname"><span class="pre">set_threshold_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_threshold_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PeakThresholdProcessor.set_threshold_value" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#PeakThresholdProcessor.set_threshold_value'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_threshold_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_threshold_value</span></span></em><span class="sig-paren">)</span></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Set</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">threshold</span> <span class="pre">value</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">image</span> <span class="pre">array.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>new_threshold_value</strong> (<em>float</em>) – The new threshold value to be used for processing the image array.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="PeakThresholdProcessor.get_threshold_value">
-<span class="sig-name descname"><span class="pre">get_threshold_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PeakThresholdProcessor.get_threshold_value" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#PeakThresholdProcessor.get_threshold_value'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_threshold_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Getter</span> <span class="pre">method</span> <span class="pre">which</span> <span class="pre">returns</span> <span class="pre">the</span> <span class="pre">current</span> <span class="pre">threshold</span> <span class="pre">value</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">image</span> <span class="pre">array.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The current threshold value for the image array.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
+
 </p>
 </dd>
 </dl>
 </dd></dl>
+
 </section>
 <section id="arrayregion-class">
-<h2>ArrayRegion Class<a class="headerlink" href="#arrayregion-class" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#arrayregion-class'">¶</a></h2>
+<h2>ArrayRegion Class</h2>
 <p>The <cite>ArrayRegion</cite> class is used for processing the image array region, using the coordinate values provided. This class provides functions for setting and retrieving coordinate values these values.</p>
 <p>The following functions are defined in the <cite>ArrayRegion</cite> class:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ArrayRegion">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArrayRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ArrayRegion" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ArrayRegion'">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArrayRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span></dt>
 <dd><blockquote>
 <div><p>The <cite>ArrayRegion</cite> class is used for processing the image array region.</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p>
 </dd>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ArrayRegion.x_center">
-<span class="sig-name descname"><span class="pre">x_center</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ArrayRegion.x_center" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ArrayRegion.x_center'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">x_center</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">The</span> <span class="pre">x</span> <span class="pre">coordinate</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">center</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">region.</span> <span class="pre">First</span> <span class="pre">coordinate</span> <span class="pre">in</span> <span class="pre">tuple.</span></span></dt>
 <dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ArrayRegion.y_center">
-<span class="sig-name descname"><span class="pre">y_center</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ArrayRegion.y_center" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ArrayRegion.y_center'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">y_center</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">The</span> <span class="pre">y</span> <span class="pre">coordinate</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">center</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">region.</span> <span class="pre">Second</span> <span class="pre">coordinate</span> <span class="pre">in</span> <span class="pre">tuple.</span></span></dt>
 <dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ArrayRegion.region_size">
-<span class="sig-name descname"><span class="pre">region_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ArrayRegion.region_size" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ArrayRegion.region_size'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">region_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Make</span> <span class="pre">region</span> <span class="pre">that</span> <span class="pre">has</span> <span class="pre">radius</span> <span class="pre">of</span> <span class="pre">size</span> <span class="pre">region_size.</span></span></dt>
 <dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="ArrayRegion.set_peak_coordinate">
-<span class="sig-name descname"><span class="pre">set_peak_coordinate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ArrayRegion.set_peak_coordinate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ArrayRegion.set_peak_coordinate'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_peak_coordinate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Set</span> <span class="pre">the</span> <span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span> <span class="pre">coordinates</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">center</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">region</span> <span class="pre">using</span> <span class="pre">chosen</span> <span class="pre">coordinate.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>int</em>) – The x coordinate of the center of the region.</p></li>
 <li><p><strong>y</strong> (<em>int</em>) – The y coordinate of the center of the region.</p></li>
@@ -226,51 +241,56 @@ import matplotlib.pyplot as plt</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="ArrayRegion.set_region_size">
-<span class="sig-name descname"><span class="pre">set_region_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ArrayRegion.set_region_size" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ArrayRegion.set_region_size'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_region_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Make</span> <span class="pre">region</span> <span class="pre">that</span> <span class="pre">is</span> <span class="pre">printable</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">terminal</span> <span class="pre">and</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">radius</span> <span class="pre">of</span> <span class="pre">region_size.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>size</strong> (<em>int</em>) – The size of the region radius.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="ArrayRegion.get_region">
-<span class="sig-name descname"><span class="pre">get_region</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ArrayRegion.get_region" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ArrayRegion.get_region'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_region</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Get</span> <span class="pre">the</span> <span class="pre">region</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">image</span> <span class="pre">array.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The region from the image array.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>numpy.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
+
 </dd></dl>
+
 </section>
 <section id="helper-functions">
-<h2>Helper Functions<a class="headerlink" href="#helper-functions" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#helper-functions'">¶</a></h2>
+<h2>Helper Functions</h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="load_h5">
-<span class="sig-name descname"><span class="pre">load_h5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_h5" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#load_h5'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">load_h5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>This method loads an HDF5 file and prints a success message if the file is loaded successfully. If the file is not found within the working directory, it prints an error message.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The path to the HDF5 file.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="extract_region">
-<span class="sig-name descname"><span class="pre">extract_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_center</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract_region" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#extract_region'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">extract_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_center</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>This function calls the <cite>ArrayRegion</cite> class to extract the region from the image array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
 <li><p><strong>region_size</strong> (<em>int</em>) – The size of the region radius.</p></li>
@@ -278,24 +298,25 @@ import matplotlib.pyplot as plt</p>
 <li><p><strong>y_center</strong> (<em>int</em>) – The y coordinate of the center of the region.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The extracted region from the image array.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>numpy.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
+
 </section>
 <section id="coordinate-menu-function">
-<h2>Coordinate Menu Function<a class="headerlink" href="#coordinate-menu-function" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#coordinate-menu-function'">¶</a></h2>
+<h2>Coordinate Menu Function</h2>
 <p><cite>coordinate_menu</cite> is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="coordinate_menu">
-<span class="sig-name descname"><span class="pre">coordinate_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#coordinate_menu" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#coordinate_menu'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">coordinate_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>This function displays the coordinates above the given threshold and radius, and allows the user to interactively select the coordinate for further processing.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
 <li><p><strong>threshold_value</strong> (<em>float</em>) – The thresold value used to determine the coordiantes.</p></li>
@@ -306,41 +327,41 @@ import matplotlib.pyplot as plt</p>
 </dl>
 <p>The user is prompted to choose a coordinate. Function displays 9x9 two-dimensional array, the segment, and the boolean array of traversed values. The function then returns the average surrounding peak value and the intensity peak value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The average surrounding peak value and the intensity peak value.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>tuple[float, float]</p>
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coordinate_menu</span><span class="p">(</span><span class="n">image_array</span><span class="p">,</span> <span class="n">threshold_value</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Coordinates above given threshold:"</span><span class="p">,</span> <span class="n">threshold_value</span><span class="p">,</span> <span class="s1">'with radius: '</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Coordinates above given threshold:&quot;</span><span class="p">,</span> <span class="n">threshold_value</span><span class="p">,</span> <span class="s1">&#39;with radius: &#39;</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coordinates</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">. (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">. (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Which coordinate do you want to process? (or 'q' to quit)</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"q"</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"Exiting"</span><span class="p">)</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Which coordinate do you want to process? (or &#39;q&#39; to quit)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;q&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exiting&quot;</span><span class="p">)</span>
             <span class="k">break</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
             <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">coordinates</span><span class="p">):</span>
                 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">count</span><span class="p">]</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Processing - (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'Printing 9x9 two-dimensional array</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing - (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Printing 9x9 two-dimensional array</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
                 <span class="c1"># creates visualization if the array, of chosen peak</span>
                 <span class="n">display_region</span> <span class="o">=</span> <span class="n">extract_region</span><span class="p">(</span><span class="n">image_array</span><span class="p">,</span> <span class="n">region_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">x_center</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y_center</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'DISPLAY REGION </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">display_region</span><span class="p">,</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DISPLAY REGION </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">display_region</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-                <span class="c1"># segment is the area with the given radius that's passed through the function.</span>
+                <span class="c1"># segment is the area with the given radius that&#39;s passed through the function.</span>
                 <span class="n">segment</span> <span class="o">=</span> <span class="n">extract_region</span><span class="p">(</span><span class="n">image_array</span><span class="p">,</span> <span class="n">region_size</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">x_center</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y_center</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-                <span class="nb">print</span> <span class="p">(</span><span class="s1">'SEGMENT </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">segment</span><span class="p">,</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+                <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;SEGMENT </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">segment</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
                 <span class="c1"># returns boolean array of traversed values.</span>
                 <span class="n">bool_square</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">segment</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'BOOLEAN'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">bool_square</span><span class="p">,</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BOOLEAN&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">bool_square</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
                 <span class="n">values_array</span> <span class="o">=</span> <span class="n">extract_region</span><span class="p">(</span><span class="n">image_array</span><span class="p">,</span> <span class="n">region_size</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">x_center</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y_center</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
 
@@ -354,20 +375,20 @@ import matplotlib.pyplot as plt</p>
                             <span class="k">if</span> <span class="n">row_index</span> <span class="o">==</span> <span class="n">radius</span> <span class="ow">and</span> <span class="n">col_index</span> <span class="o">==</span> <span class="n">radius</span><span class="p">:</span>
                                 <span class="n">skipped_point</span> <span class="o">=</span> <span class="p">(</span><span class="n">row_index</span><span class="p">,</span> <span class="n">col_index</span><span class="p">)</span>
                                 <span class="n">intensity_peak</span> <span class="o">=</span> <span class="n">values_array</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">col_index</span><span class="p">]</span>
-                                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Peak point to be skipped: (</span><span class="si">{</span><span class="n">row_index</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">col_index</span><span class="si">}</span><span class="s1">) '</span><span class="p">,</span> <span class="n">values_array</span><span class="p">[</span><span class="n">radius</span><span class="p">,</span><span class="n">radius</span><span class="p">])</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Peak point to be skipped: (</span><span class="si">{</span><span class="n">row_index</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">col_index</span><span class="si">}</span><span class="s1">) &#39;</span><span class="p">,</span> <span class="n">values_array</span><span class="p">[</span><span class="n">radius</span><span class="p">,</span><span class="n">radius</span><span class="p">])</span>
                             <span class="k">elif</span> <span class="nb">abs</span><span class="p">(</span><span class="n">row_index</span> <span class="o">-</span> <span class="n">radius</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">col_index</span> <span class="o">-</span> <span class="n">radius</span><span class="p">)</span> <span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span>
-                                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Passed (row, col) (</span><span class="si">{</span><span class="n">row_index</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">col_index</span><span class="si">}</span><span class="s1">)'</span><span class="p">,</span> <span class="n">values_array</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span><span class="n">col_index</span><span class="p">])</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Passed (row, col) (</span><span class="si">{</span><span class="n">row_index</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">col_index</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">values_array</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span><span class="n">col_index</span><span class="p">])</span>
                                 <span class="k">pass</span>
                             <span class="k">else</span><span class="p">:</span>
-                                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'(row,col) (</span><span class="si">{</span><span class="n">row_index</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">col_index</span><span class="si">}</span><span class="s1">) with a value of '</span><span class="p">,</span> <span class="n">values_array</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">col_index</span><span class="p">])</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;(row,col) (</span><span class="si">{</span><span class="n">row_index</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">col_index</span><span class="si">}</span><span class="s1">) with a value of &#39;</span><span class="p">,</span> <span class="n">values_array</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">col_index</span><span class="p">])</span>
                                 <span class="n">total_sum</span> <span class="o">+=</span> <span class="n">values_array</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">col_index</span><span class="p">]</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">######################'</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">######################&#39;</span><span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">bool_square</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'Number of traversed cells'</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'Peak point to be skipped:'</span><span class="p">,</span> <span class="n">skipped_point</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'Total sum:'</span><span class="p">,</span><span class="n">total_sum</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of traversed cells&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Peak point to be skipped:&#39;</span><span class="p">,</span> <span class="n">skipped_point</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total sum:&#39;</span><span class="p">,</span><span class="n">total_sum</span><span class="p">)</span>
                 <span class="n">avg_values</span> <span class="o">=</span> <span class="n">total_sum</span> <span class="o">/</span> <span class="n">count</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'Average surrounding peak:'</span><span class="p">,</span><span class="n">avg_values</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average surrounding peak:&#39;</span><span class="p">,</span><span class="n">avg_values</span><span class="p">)</span>
 
                 <span class="n">build_coord_intensity</span><span class="p">()</span>
 
@@ -375,21 +396,22 @@ import matplotlib.pyplot as plt</p>
                 <span class="k">return</span> <span class="n">avg_values</span><span class="p">,</span><span class="n">intensity_peak</span>
                 <span class="k">break</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid coordinate index."</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid coordinate index.&quot;</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid input. Enter a number or 'q' to quit."</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Enter a number or &#39;q&#39; to quit.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="build_coord_intensity">
-<span class="sig-name descname"><span class="pre">build_coord_intensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#build_coord_intensity" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#build_coord_intensity'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">build_coord_intensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>This function builds the intensity peak value for the chosen coordinate, used in the <cite>create_scatter</cite> function.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A tuple containing four lists: x values, y values, z values, and columns needed for <cite>create_scatter</cite>.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>tuple[list, list, list, list]</p>
 </dd>
 </dl>
@@ -418,13 +440,14 @@ import matplotlib.pyplot as plt</p>
 </pre></div>
 </div>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="create_scatter">
-<span class="sig-name descname"><span class="pre">create_scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highlight_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highlight_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#create_scatter" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#create_scatter'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highlight_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highlight_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">`create_scatter</span> <span class="pre">`</span> <span class="pre">creates</span> <span class="pre">visualization</span> <span class="pre">for</span> <span class="pre">chosen</span> <span class="pre">highlighted</span> <span class="pre">coordinate,</span> <span class="pre">using</span> <span class="pre">matplotlib.pyplot.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>list</em>) – list of x coordinate values.</p></li>
 <li><p><strong>y</strong> (<em>list</em>) – list of y coordinate values.</p></li>
@@ -435,20 +458,21 @@ import matplotlib.pyplot as plt</p>
 </dd>
 </dl>
 </dd></dl>
+
 </section>
 <section id="main-function">
-<h2>Main Function<a class="headerlink" href="#main-function" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#main-function'">¶</a></h2>
+<h2>Main Function</h2>
 <p>The <cite>main</cite> function processes image data from specified HDF5 file for 3-ring integration analysis. Calling <cite>coordinate_menu</cite> for increasing radius value.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="main">
-<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#main'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span></dt>
 <dd><blockquote>
 <div><p>Loads and processes image data from HDF5 file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param filename<span class="colon">:</span></dt>
+<dt class="field-odd">param filename</dt>
 <dd class="field-odd"><p>The path to the HDF5 file containing image data.</p>
 </dd>
-<dt class="field-even">type filename<span class="colon">:</span></dt>
+<dt class="field-even">type filename</dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -487,63 +511,39 @@ import matplotlib.pyplot as plt</p>
 <p>The function sets a global variable <cite>image_array</cite> to store the image data and <cite>coordinates</cite> to store the coordinates above the threshold. The global variable <cite>intensity_peak</cite> and <cite>avg_values</cite> are used to calculate the peak estimates.</p>
 <p>The script also defines paths for working with image files and calls the <cite>main</cite> function with different image paths for processing.</p>
 </dd></dl>
+
 </section>
 </section>
-</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
-<div class="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
-<ul>
-<li><a :data-current="activeSection === '#imports'" class="reference internal" href="#imports">Imports</a></li>
-<li><a :data-current="activeSection === '#peakthresholdprocessor-class'" class="reference internal" href="#peakthresholdprocessor-class">PeakThresholdProcessor Class</a><ul>
-<li><a :data-current="activeSection === '#PeakThresholdProcessor'" class="reference internal" href="#PeakThresholdProcessor"><code class="docutils literal notranslate"><span class="pre">PeakThresholdProcessor</span></code></a><ul>
-<li><a :data-current="activeSection === '#PeakThresholdProcessor.set_threshold_value'" class="reference internal" href="#PeakThresholdProcessor.set_threshold_value"><code class="docutils literal notranslate"><span class="pre">PeakThresholdProcessor.set_threshold_value()</span></code></a></li>
-<li><a :data-current="activeSection === '#PeakThresholdProcessor.get_threshold_value'" class="reference internal" href="#PeakThresholdProcessor.get_threshold_value"><code class="docutils literal notranslate"><span class="pre">PeakThresholdProcessor.get_threshold_value()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a :data-current="activeSection === '#arrayregion-class'" class="reference internal" href="#arrayregion-class">ArrayRegion Class</a><ul>
-<li><a :data-current="activeSection === '#ArrayRegion'" class="reference internal" href="#ArrayRegion"><code class="docutils literal notranslate"><span class="pre">ArrayRegion</span></code></a><ul>
-<li><a :data-current="activeSection === '#ArrayRegion.x_center'" class="reference internal" href="#ArrayRegion.x_center"><code class="docutils literal notranslate"><span class="pre">ArrayRegion.x_center</span></code></a></li>
-<li><a :data-current="activeSection === '#ArrayRegion.y_center'" class="reference internal" href="#ArrayRegion.y_center"><code class="docutils literal notranslate"><span class="pre">ArrayRegion.y_center</span></code></a></li>
-<li><a :data-current="activeSection === '#ArrayRegion.region_size'" class="reference internal" href="#ArrayRegion.region_size"><code class="docutils literal notranslate"><span class="pre">ArrayRegion.region_size</span></code></a></li>
-<li><a :data-current="activeSection === '#ArrayRegion.set_peak_coordinate'" class="reference internal" href="#ArrayRegion.set_peak_coordinate"><code class="docutils literal notranslate"><span class="pre">ArrayRegion.set_peak_coordinate()</span></code></a></li>
-<li><a :data-current="activeSection === '#ArrayRegion.set_region_size'" class="reference internal" href="#ArrayRegion.set_region_size"><code class="docutils literal notranslate"><span class="pre">ArrayRegion.set_region_size()</span></code></a></li>
-<li><a :data-current="activeSection === '#ArrayRegion.get_region'" class="reference internal" href="#ArrayRegion.get_region"><code class="docutils literal notranslate"><span class="pre">ArrayRegion.get_region()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a :data-current="activeSection === '#helper-functions'" class="reference internal" href="#helper-functions">Helper Functions</a><ul>
-<li><a :data-current="activeSection === '#load_h5'" class="reference internal" href="#load_h5"><code class="docutils literal notranslate"><span class="pre">load_h5()</span></code></a></li>
-<li><a :data-current="activeSection === '#extract_region'" class="reference internal" href="#extract_region"><code class="docutils literal notranslate"><span class="pre">extract_region()</span></code></a></li>
-</ul>
-</li>
-<li><a :data-current="activeSection === '#coordinate-menu-function'" class="reference internal" href="#coordinate-menu-function">Coordinate Menu Function</a><ul>
-<li><a :data-current="activeSection === '#coordinate_menu'" class="reference internal" href="#coordinate_menu"><code class="docutils literal notranslate"><span class="pre">coordinate_menu()</span></code></a></li>
-<li><a :data-current="activeSection === '#build_coord_intensity'" class="reference internal" href="#build_coord_intensity"><code class="docutils literal notranslate"><span class="pre">build_coord_intensity()</span></code></a></li>
-<li><a :data-current="activeSection === '#create_scatter'" class="reference internal" href="#create_scatter"><code class="docutils literal notranslate"><span class="pre">create_scatter()</span></code></a></li>
-</ul>
-</li>
-<li><a :data-current="activeSection === '#main-function'" class="reference internal" href="#main-function">Main Function</a><ul>
-<li><a :data-current="activeSection === '#main'" class="reference internal" href="#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</div>
-</aside>
-</main>
-</div>
-</div><footer class="py-6 border-t border-border md:py-0">
-<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2023, Sabine Botha, Adam Kurth, and more Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 7.2.6</a></p>
-</div>
-</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="waterbackground_subtraction_projects.html" class="btn btn-neutral float-left" title="Projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="stream_background_subtraction.html" class="btn btn-neutral float-right" title="Water Background Subtraction Project (Stream)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Sabine Botha, Adam Kurth, and more.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
 </footer>
-</div>
-<script src="_static/documentation_options.js?v=5929fcd5"></script>
-<script src="_static/doctools.js?v=888ff710"></script>
-<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-<script defer="defer" src="_static/theme.js?v=e8bd915e"></script>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
 </body>
 </html>

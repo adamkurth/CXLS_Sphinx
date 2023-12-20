@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agave Access &mdash; CXLS Sphinx  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Setup and Operation of the Dectris Eiger4M Detector" href="cxls_eiger_4m.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> CXLS Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Agave Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps-for-ssh-access">Steps for SSH Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-modules">Loading Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-jobs">Submitting Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-pattern-sim-through-crystfel">Running <cite>pattern_sim</cite> through CrystFEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indexing-images-through-crystfel">Indexing Images through CrystFEL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Setup and Operation of the Dectris Eiger4M Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="waterbackground_subtraction_projects.html">Projects</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CXLS Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Agave Access</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/agave.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agave-access">
+<span id="id1"></span><h1>Agave Access</h1>
+<p>To access the supercomputer using Agave, follow these steps:</p>
+<section id="prerequisites">
+<h2>Prerequisites</h2>
+<ol class="arabic">
+<li><p>Make sure to run <cite>Cisco Secure Client</cite> and login to ASU network before running the following commands.</p></li>
+<li><p>Under the connect field, make sure <cite>sslvpn.asu.edu</cite> is entered.</p></li>
+<li><p>Click connect, and enter your ASURITE credentials;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ASURITE username and password, and Duo Mobile Code for dual-factor authentication.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Click connect, and when connected, follow the next steps to access AGAVE supercomputer.</p></li>
+</ol>
+</section>
+<section id="steps-for-ssh-access">
+<h2>Steps for SSH Access</h2>
+<ol class="arabic">
+<li><p>Once logged in, make sure and get off of the login node by running the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>interactive
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Now to activate conda environment, run the following command:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>replace <cite>username</cite> with your ASURITE username.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>/home/username/anaconda3/bin/activate
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="loading-modules">
+<h2>Loading Modules</h2>
+<ol class="arabic">
+<li><p>To check which modules are available, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>-l<span class="w"> </span>avail
+</pre></div>
+</div>
+<p>Note this is not a particularly fast command, and will take some time.</p>
+</div></blockquote>
+</li>
+<li><p>To load modules, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>module_name/version_number
+</pre></div>
+</div>
+<p>Replace <cite>module_name</cite> with the name of the module you want to load.</p>
+<p>For example, to load the <cite>crystfel</cite> module verion <cite>0.9.0</cite>, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>crystfel/0.9.0
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>To view the currently loaded modules, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>list
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>To unload a module, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>unload<span class="w"> </span>module_name/version_number
+</pre></div>
+</div>
+<p>Replace <cite>module_name</cite> with the name of the module you want to unload.</p>
+<p>For example, to unload the <cite>crystfel</cite> module verion <cite>0.9.0</cite>, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>unload<span class="w"> </span>crystfel/0.9.0
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>To unload all modules, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>purge
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="submitting-jobs">
+<h2>Submitting Jobs</h2>
+<p>Before submitting jobs, here is the information about how to find the partition to run your jobs:</p>
+<ul class="simple">
+<li><p>To check the status of a particular partition, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To check the status of all partitions, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-a
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To check the status of a particular partition, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-p<span class="w"> </span>partition_name
+</pre></div>
+</div>
+<p>Replace <cite>partition_name</cite> with the name of the partition you want to check.</p>
+<ul class="simple">
+<li><p>To change the output to only partitions, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-h<span class="w"> </span>--format<span class="o">=</span><span class="s2">&quot;%P&quot;</span>
+</pre></div>
+</div>
+<p>Equivalently, you can run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;%P&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To check the status of all partitions, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-a
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To watch a job, run the following command:</p></li>
+</ul>
+<p>Or to watch all jobs make sure to replace <cite>username</cite>, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>watch<span class="w"> </span><span class="s1">&#39;squeue -u username&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="running-pattern-sim-through-crystfel">
+<h2>Running <cite>pattern_sim</cite> through CrystFEL</h2>
+<p>ACCESS PATTERN_SIM FILE FOR USERS????</p>
+<ul>
+<li><p>How to run <cite>pattern_sim</cite> through CrystFEL through custom script:</p>
+<blockquote>
+<div><p>Using the script called <cite>run_pattern_sim.sh</cite>, you can run <cite>pattern_sim</cite> through CrystFEL. The script is located in the following directory: <cite>/home/username/Development/run_pattern_sim.sh</cite>.</p>
+<p>Here are the arguments for the script:</p>
+<ul class="simple">
+<li><p><cite>RUN=$1</cite>: is the run name, for example <cite>sim_run1</cite>.</p></li>
+<li><p><cite>GEOM_FILE=$2</cite>: is the path to the geometry file, for CXFEL this will correspond to the Eiger4M .geom file (<cite>Eiger4M.geom</cite>). Make sure this file is in the same directory as the <cite>run_pattern_sim</cite> script.</p></li>
+<li><p><cite>PDB_FILE=$3</cite>: is the path to the pdb file, for example <cite>1vds.pdb</cite>. Make sure this file is in the same directory as the <cite>run_pattern_sim</cite> script.</p></li>
+<li><p><cite>INTENSITY_FILE=$4</cite>: is the path to the intensity file, for example <cite>1vds.pdb.hkl</cite>. Make sure this file is in the same directory as the <cite>run_pattern_sim</cite> script.</p></li>
+<li><p><cite>TASKS=$5</cite>: is the number of tasks to run, for example <cite>10</cite>.</p></li>
+<li><p><cite>PARTITION=$6</cite>: is the partition to run the job on, for example <cite>gpu</cite>.</p></li>
+<li><p><cite>QOS=$7</cite>: is the quality of service, for example <cite>wildfire</cite>.</p></li>
+<li><p><cite>TIME=$8</cite>: is the time limit for the job, for example <cite>4</cite>.</p></li>
+<li><p><cite>TAG=$9</cite>: is the tag for the job, for example <cite>sim_run1</cite>.</p></li>
+</ul>
+<p>To adjust the pattern_sim arguments to CrystFEL, please edit the <cite>run_pattern_sim.sh</cite> script, please add comment.</p>
+</div></blockquote>
+</li>
+<li><p>All together, the command to run the script is as follows:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./run_pattern_sim.sh<span class="w"> </span>RUN<span class="w"> </span>GEOM_FILE<span class="w"> </span>PDB_FILE<span class="w"> </span>INTENSITY_FILE<span class="w"> </span>TASKS<span class="w"> </span>PARTITION<span class="w"> </span>QOS<span class="w"> </span>TIME<span class="w"> </span>TAG
+</pre></div>
+</div>
+<p>Replace <cite>RUN</cite>, <cite>GEOM_FILE</cite>, <cite>PDB_FILE</cite>, <cite>INTENSITY_FILE</cite>, <cite>TASKS</cite>, <cite>PARTITION</cite>, <cite>QOS</cite>, <cite>TIME</cite>, and <cite>TAG</cite> with the appropriate values.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./run_pattern_sim.sh<span class="w"> </span>sim_run1<span class="w"> </span>Eiger4M.geom<span class="w"> </span>1vds.pdb<span class="w"> </span>1vds.pdb.hkl<span class="w"> </span><span class="m">10</span><span class="w"> </span>gpu<span class="w"> </span>wildfire<span class="w"> </span><span class="m">4</span><span class="w"> </span>sim_run1
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="indexing-images-through-crystfel">
+<h2>Indexing Images through CrystFEL</h2>
+<ol class="arabic">
+<li><p>Check the outputted <cite>.h5</cite> files from <cite>pattern_sim</cite> to make sure they are correct.</p></li>
+<li><p>Run the following to create a list of images to index:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>/home/amkurth/Development/pattern_simulations/9_18_23_high_intensity/*.h5<span class="w"> </span>&gt;<span class="w"> </span>high_intensity.list
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Ensure that the pipe operator worked as desired by running the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>less<span class="w"> </span>high_intensity.list
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Load CCP4 and CrystFEL modules by running the following commands:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>ccp4/7.0.077
+$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>crystfel/0.9.0
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Finally, index the list of images by running the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>indexamajig<span class="w"> </span>-i<span class="w"> </span>low_intensity.list<span class="w"> </span>-o<span class="w"> </span>index_test_low/test_low.stream<span class="w"> </span>-g<span class="w"> </span>Eiger4M.geom<span class="w"> </span>--peaks<span class="o">=</span>peakfinder8<span class="w"> </span>--threshold<span class="o">=</span><span class="m">200</span><span class="w"> </span>--min-snr<span class="o">=</span><span class="m">8</span>.0<span class="w"> </span>--min-pix-count<span class="o">=</span><span class="m">1</span><span class="w"> </span>--min-peaks<span class="o">=</span><span class="m">8</span><span class="w"> </span>--min-res<span class="o">=</span><span class="m">50</span><span class="w"> </span>--int-rad<span class="o">=</span><span class="m">2</span>,4,6<span class="w"> </span>--indexing<span class="o">=</span>mosflm<span class="w">  </span>--pdb<span class="o">=</span>1vds.pdb<span class="w"> </span>--multi<span class="w"> </span>--check-peaks
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Adjust arguments as desired. For more information on the arguments, refer to the CrystFEL documentation at <a class="reference external" href="https://www.desy.de/~twhite/crystfel/manual.html#indexamajig">https://www.desy.de/~twhite/crystfel/manual.html#indexamajig</a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Check the outputted <cite>.stream</cite> file in the workind directory, to make sure it is correct.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cxls_eiger_4m.html" class="btn btn-neutral float-right" title="Setup and Operation of the Dectris Eiger4M Detector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Sabine Botha, Adam Kurth, and more.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
