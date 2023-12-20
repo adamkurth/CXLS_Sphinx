@@ -45,6 +45,7 @@ To run the application without the GUI, follow these steps:
 - Other helpful commands are listed below:
 
     - To see all the commands, run the following command:
+        
         .. code-block:: bash
 
             $ ./globusconnectpersonal -help
@@ -65,13 +66,23 @@ To run the application without the GUI, follow these steps:
 
         .. code-block:: bash
 
-            $ ./globusconnectpersonal -status
-
-    - To restart the application, run the following command:
+            $ ./globusconnectpersonal -status   
+    
+    - To pause/resume the application, run the following command:
 
         .. code-block:: bash
 
-            $ ./globusconnectpersonal -restart
+            $ ./globusconnectpersonal -pause
+        Or 
+        .. code-block:: bash
+            $ ./globusconnectpersonal -unpause
+
+    - To see the version of the application, run the following command:
+
+        .. code-block:: bash
+
+            $ ./globusconnectpersonal -version
+
 
 Globus Setup in Command Line (No GUI)
 -------------------------------------
