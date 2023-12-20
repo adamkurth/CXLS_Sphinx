@@ -43,8 +43,9 @@
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agave.html">Agave Access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Setup and Operation of the Dectris Eiger4M Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="waterbackground_subtraction_projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
 </ul>
 
         </div>
@@ -93,10 +94,9 @@ The documentation for Reborn can be found here: <a class="reference external" hr
 <li class="toctree-l2"><a class="reference internal" href="agave.html#indexing-images-through-crystfel">Indexing Images through CrystFEL</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Setup and Operation of the Dectris Eiger4M Detector</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#accessing-the-dectris-menu">Accessing the Dectris Menu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#activate-zmq-listener">Activate zmq Listener</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#steps">Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#steps-to-activate-zmq-listener">Steps to Activate zmq Listener</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#initializing-and-arming">Initializing and Arming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#downloading-and-overwrite-images">Downloading and Overwrite Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#viewing-hdf5-images-through-reborn">Viewing HDF5 Images Through Reborn</a></li>
@@ -113,6 +113,14 @@ The documentation for Reborn can be found here: <a class="reference external" hr
 <li class="toctree-l2"><a class="reference internal" href="overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="globus.html#run-application-with-gui">Run Application (with GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globus.html#run-application-no-gui">Run Application (No GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globus.html#globus-setup-in-command-line-no-gui">Globus Setup in Command Line (No GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globus.html#web-application">Web Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globus.html#acessing-agave-with-globus">Acessing AGAVE with Globus</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -125,8 +133,25 @@ The documentation for Reborn can be found here: <a class="reference external" hr
 <p>The GitLab repository for reborn can be found here: <a class="reference external" href="https://gitlab.com/kirianlab/reborn">https://gitlab.com/kirianlab/reborn</a>.
 The documentation for reborn can be found here: <a class="reference external" href="https://kirianlab.gitlab.io/reborn/">https://kirianlab.gitlab.io/reborn/</a>.</p>
 </section>
-<section id="documentation-for-cxls-eiger-4m-detector">
-<span id="cxls-eiger4m"></span><h2>Documentation for CXLS Eiger 4M Detector</h2>
+<section id="troubleshooting-dcu-notes">
+<span id="dcu"></span><h2>Troubleshooting DCU Notes</h2>
+</section>
+<section id="software">
+<h2>Software:</h2>
+<ul class="simple">
+<li><p>Verify that all instructions on :<span class="xref std std-ref">README.md</span> have been followed.</p></li>
+<li></li>
+</ul>
+</section>
+<section id="hardware">
+<h2>Hardware:</h2>
+<ul class="simple">
+<li><p>Verify that the chiller is running and set to 22°C</p></li>
+<li><p>Verify that the dry air is flowing (just enough that you can feel it on your lip should be plenty)</p></li>
+<li><p>Verify that the blue LED on the power brick is lit</p></li>
+<li><p>Verify that the detector’s POWER switch is depressed</p></li>
+<li><p>Verify that the DCU is powered on and booted, and that the iDRAC LED or display panel do not show any errors</p></li>
+</ul>
 </section>
 </section>
 

@@ -1,5 +1,5 @@
-Setup and Operation of the Dectris Eiger4M Detector
-===================================================
+Operation of the Dectris Eiger4M Detector
+==========================================
 
 This page contains documentaion for the operation of the Dectris Eiger4M detector. It includes steps for activating the zmq listener, initializing and arming the detector, troubleshooting, and additional resources for handling images and using AGAVE.
 
@@ -10,26 +10,28 @@ Accessing the Dectris Menu
 - Data images will be stored at `http://10.139.1.5/data/`.
 - Use `setup.sh` to download these images onto your computer (details provided later in this document).
 
-Activate zmq Listener
----------------------
+Steps to Activate zmq Listener
+------------------------------
 
-0. If not done already, please clone the reborn repository `https://gitlab.com/kirianlab/reborn.git`.
+1. Clone the reborn repository:
 
-Steps
------
-1. Switch to develop branch:
+    .. code-block:: bash
+
+        $ git clone https://gitlab.com/kirianlab/reborn.git
+
+2. Switch to develop branch:
 
     .. code-block:: bash
 
         $ git checkout develop
 
-2. Navigate to the correct directory:
+3. Navigate to the correct directory:
 
     .. code-block:: bash
 
         $ cd /home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
 
-3. Activate `reborn` enviornment:
+4. Activate `reborn` enviornment:
 
     .. code-block:: bash
 
@@ -37,7 +39,7 @@ Steps
 
     - Note that this will activate the `reborn` conda enviornment.
       
-4. Run `DEigerStream.py`: This will start the zmq listener, and display menu options for the detector.
+5. Run `DEigerStream.py`: This will start the zmq listener, and display menu options for the detector.
 
     .. code-block:: bash
 
