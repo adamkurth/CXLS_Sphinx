@@ -60,7 +60,7 @@ The following functions are defined in the `PeakThresholdProcessor` class:
         :rtype: float
 
 ArrayRegion Class
-^^^^^^^^^^^^^^^^^
+-----------------
 
 The `ArrayRegion` class is used for processing the image array region, using the coordinate values provided. This class provides functions for setting and retrieving coordinate values these values.
 
@@ -107,7 +107,7 @@ The following functions are defined in the `ArrayRegion` class:
 
 
 Helper Functions
-^^^^^^^^^^^^^^^^
+----------------
 
 .. py:method:: load_h5(filename)
 
@@ -133,7 +133,7 @@ Helper Functions
     :rtype: numpy.ndarray
     
 Coordinate Menu Function
-^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 `coordinate_menu` is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.
 
@@ -270,7 +270,7 @@ Coordinate Menu Function
     :type highlight_y: int
 
 Main Function
-^^^^^^^^^^^^^
+-------------
 
 The `main` function processes image data from specified HDF5 file for 3-ring integration analysis. Calling `coordinate_menu` for increasing radius value.
 
