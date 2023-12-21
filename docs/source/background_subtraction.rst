@@ -18,7 +18,7 @@ The GitHub repository for this project can be found at:
     - https://gitlab.com/amkurth/waterbackground_subtraction.git.
  
 Imports
-^^^^^^^
+-------
 
 The following modules are imported for use in the program:
 .. code-block:: python
@@ -29,7 +29,7 @@ The following modules are imported for use in the program:
     import matplotlib.pyplot as plt
 
 PeakThresholdProcessor Class 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
  The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
 

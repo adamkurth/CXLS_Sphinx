@@ -1,12 +1,13 @@
 .. _agave-access:
 
-Agave Access
+AGAVE Access
 ============
 
 To access the supercomputer using Agave, follow these steps:
 
 Prerequisites
 -------------
+
 1. Make sure to run `Cisco Secure Client` and login to ASU network before running the following commands.
 
 2. Under the connect field, make sure `sslvpn.asu.edu` is entered.
@@ -17,10 +18,20 @@ Prerequisites
 
 4. Click connect, and when connected, follow the next steps to access AGAVE supercomputer.
 
-Login Steps
-------------
+AGAVE Login Steps
+------------------
 
-1. Once logged in, make sure and get off of the login node by running the following command:
+1. To login to AGAVE supercomputer, run the following command:
+
+    .. code-block:: bash
+
+        $ ssh -Y username@agave.asu.edu
+    
+    - replace `username` with your ASURITE username.
+
+    - Please enter your ASURITE password, and ensure that `Cisco Secure Client` is running and user is logged in.
+
+2. Once logged in, make sure and get off of the login node by running the following command:
 
     .. code-block:: bash
 
@@ -36,6 +47,7 @@ Login Steps
 
 Loading Modules
 ----------------
+
 1. To check which modules are available, run the following command:
 
     .. code-block:: bash
@@ -46,17 +58,17 @@ Loading Modules
 
 2. To load modules, run the following command:
     
-        .. code-block:: bash
-    
-            $ module load module_name/version_number
-    
-        Replace `module_name` with the name of the module you want to load.
+    .. code-block:: bash
 
-        For example, to load the `crystfel` module verion `0.9.0`, run the following command:
+        $ module load module_name/version_number
 
-        .. code-block:: bash
+    Replace `module_name` with the name of the module you want to load.
 
-            $ module load crystfel/0.9.0
+    For example, to load the `crystfel` module verion `0.9.0`, run the following command:
+
+    .. code-block:: bash
+
+        $ module load crystfel/0.9.0
 
 3. To view the currently loaded modules, run the following command:
 
@@ -65,18 +77,18 @@ Loading Modules
         $ module list
 
 4. To unload a module, run the following command:
-    
-        .. code-block:: bash
-    
-            $ module unload module_name/version_number
-    
-        Replace `module_name` with the name of the module you want to unload.
 
-        For example, to unload the `crystfel` module verion `0.9.0`, run the following command:
+    .. code-block:: bash
 
-        .. code-block:: bash
+        $ module unload module_name/version_number
 
-            $ module unload crystfel/0.9.0
+    Replace `module_name` with the name of the module you want to unload.
+
+    For example, to unload the `crystfel` module verion `0.9.0`, run the following command:
+
+    .. code-block:: bash
+
+        $ module unload crystfel/0.9.0
 
 5. To unload all modules, run the following command:
 
@@ -84,65 +96,77 @@ Loading Modules
 
         $ module purge
 
-Submitting Jobs
----------------
+Partitions at AGAVE
+--------------------
+
+- **Note**: Ensure that you are first logged into AGAVE supercomputer.
 
 Before submitting jobs, here is the information about how to find the partition to run your jobs:
 
-- To check the status of a particular partition, run the following command:
+- To check the status of a particular partition, run the following commands:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    $ sinfo
+        $ sinfo -p partition_name
 
-- To check the status of all partitions, run the following command:
+    Replace `partition_name` with the name of the partition you want to check.
 
-.. code-block:: bash
+    - Notes on AGAVE Partitions:
 
-    $ sinfo -a
+            .. code-block:: bash
 
-- To check the status of a particular partition, run the following command:
+                $ sinfo
 
-.. code-block:: bash
+        - To check the status of all partitions, run the following command:
 
-    $ sinfo -p partition_name
+            .. code-block:: bash
 
-Replace `partition_name` with the name of the partition you want to check.
+                $ sinfo -a
 
-- To change the output to only partitions, run the following command:
+        - To check the status of a particular partition, run the following command:
 
-.. code-block:: bash
+            .. code-block:: bash
 
-    $ sinfo -h --format="%P"
+                $ sinfo -p partition_name
 
-Equivalently, you can run the following command:
+        Replace `partition_name` with the name of the partition you want to check.
 
-.. code-block:: bash
+        - To change the output to only partitions, run the following command:
 
-    $ sinfo -o "%P"
+            .. code-block:: bash
 
-- To check the status of all partitions, run the following command:
+                $ sinfo -h --format="%P"
 
-.. code-block:: bash
+        Equivalently, you can run the following command:
 
-    $ sinfo -a
+            .. code-block:: bash
 
-- To watch a job, run the following command:
+                $ sinfo -o "%P"
 
-.. coe-block:: bash
+        - To check the status of all partitions, run the following command:
 
-    $ squeue -j job_id
- 
-Or to watch all jobs make sure to replace `username`, run the following command:
+            .. code-block:: bash
 
-.. code-block:: bash
+                $ sinfo -a
 
-    $ watch 'squeue -u username'
+        - To watch a job, run the following command:
+
+            .. coe-block:: bash
+
+                $ squeue -j job_id
+        
+        Or to watch all jobs make sure to replace `username`, run the following command:
+
+            .. code-block:: bash
+
+                $ watch 'squeue -u username'
 
 Running `pattern_sim` through CrystFEL
 --------------------------------------
 
-ACCESS PATTERN_SIM FILE FOR USERS????
+- **Note**: To run `run_pattern_sim.sh` script, you must first be logged into AGAVE supercomputer, and have the `crystfel` module loaded.
+
+Accessing `run_pattern_sim.sh` in the following directory: `/home/username/Development/run_pattern_sim.sh
 
 - How to run `pattern_sim` through CrystFEL through custom script: 
 
@@ -185,6 +209,8 @@ ACCESS PATTERN_SIM FILE FOR USERS????
 
 Indexing Images through CrystFEL
 --------------------------------
+
+- **Note**: Ensure that you are first logged into AGAVE supercomputer, and have the `crystfel` module loaded.
 
 1. Check the outputted `.h5` files from `pattern_sim` to make sure they are correct.
 

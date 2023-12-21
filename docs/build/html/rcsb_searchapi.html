@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RCSB Search API Scripts &mdash; CXLS Sphinx  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CXLS Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CXLS Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">RCSB Search API Scripts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/rcsb_searchapi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rcsb-search-api-scripts">
+<h1>RCSB Search API Scripts</h1>
+<p>From the official [RCSB Search API](<a class="reference external" href="https://search.rcsb.org/#search-api">https://search.rcsb.org/#search-api</a>) documentation: <cite>https://github.com/rcsb/py-rcsbsearchapi.git</cite></p>
+<p>Some quick access to PDB data using the RCSB Search API.</p>
+<p>In order to use this script, you need to install the RCSB Search API using <cite>pip</cite>. You can do this by running the following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rcsbsearchapi
+</pre></div>
+</div>
+<p>Then, you need to clone this repository to your local machine. You can do this by running the following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/adamkurth/pdb_rcsb_api_scripts.git
+</pre></div>
+</div>
+<section id="access-pdb-ids">
+<h2>Access PDB IDs</h2>
+<p>This is an overview of how to use the script called <cite>scrape.py</cite> that will allow you to access PDB IDs from the RCSB Search API.</p>
+<ul class="simple">
+<li><p><cite>scrape.py</cite> script is located in the root directory of <cite>pdb_rcsb_api_scripts</cite> repository.</p></li>
+</ul>
+<p>To retrieve PDB IDs, you need to run the following command in your terminal:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py<span class="w"> </span>-h<span class="w"> </span>symmetry<span class="w"> </span>--limit<span class="w"> </span>limit
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>After running this command, you will see a list of PDB IDs in your terminal. If this PDB symmetry has entries in the RCSB PDB, you will see a list of PDB IDs in your terminal. Otherwise this will show an empty list.</p></li>
+</ul>
+</div></blockquote>
+<p>Arguments:</p>
+<ul>
+<li><p><cite>symmetry</cite> argument is the symmetry of the protein you are looking for, <cite>-h monoclinic</cite>.</p></li>
+<li><p><cite>limit</cite> argument is the number of PDB IDs you want to retrieve, for example <cite>–limit 100</cite>.</p></li>
+<li><p>You can also use <cite>–help</cite> argument to see the help message.</p>
+<blockquote>
+<div><p>This is a quick easy way to access PDB IDs from the RCSB Search API for other programs and scripts.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="downloading-pdb-files">
+<h2>Downloading PDB Files</h2>
+<p>This is an overview of how to use the script called <cite>download_pdb_files.py</cite> that will allow you to download PDB files from the RCSB Search API.</p>
+<ul class="simple">
+<li><p><cite>download_pdb_files.py</cite> script is located in the root directory of <cite>pdb_rcsb_api_scripts</cite> repository.</p></li>
+<li><p>This script will create a new directory called <cite>pdb_files</cite> in the root directory of <cite>pdb_rcsb_api_scripts</cite> repository, as well as store the PDB files in that directory.</p></li>
+</ul>
+<p>To download PDB files, (much like the <cite>scrape.py</cite> usage) you need to run the following command in your terminal:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>download_pdb_files.py<span class="w"> </span>-h<span class="w"> </span>symmetry<span class="w"> </span>--limit<span class="w"> </span>limit
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>After running this command, (like <cite>scrape.py</cite>) you will see a list of PDB IDs in your terminal. If this PDB symmetry has entries in the RCSB PDB, you will see a list of PDB IDs in your terminal. Otherwise this will show an empty list.</p></li>
+<li><p>This script will create a directory named <cite>pdb_files</cite> in the root directory of the <cite>pdb_rcsb_api_scripts</cite> repository. To organize the structure within the newly created directory, for example, <cite>P2221</cite>, the structure will be <cite>pdb_rcsb_api_scripts/P2221/data/ids</cite>. The <cite>ids</cite> directory will contain the PDB files.</p></li>
+</ul>
+</div></blockquote>
+<p>Arguments:</p>
+<ul>
+<li><p><cite>symmetry</cite> argument is the symmetry of the protein you are looking for, <cite>-h monoclinic</cite>.</p></li>
+<li><p><cite>limit</cite> argument is the number of PDB IDs you want to retrieve, for example <cite>–limit 100</cite>.</p></li>
+<li><p>You can also use <cite>–help</cite> argument to see the help message.</p>
+<blockquote>
+<div><p>This is a quick easy way to access PDB IDs and download the files locally from the RCSB PDB for other programs and scripts.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Sabine Botha, Adam Kurth, and more.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

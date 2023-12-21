@@ -10,7 +10,7 @@ Accessing the Dectris Menu
 - Data images will be stored at `http://10.139.1.5/data/`.
 - Use `setup.sh` to download these images onto your computer (details provided later in this document).
 
-Steps to Activate zmq Listener
+Steps to Activate ZMQ Listener
 ------------------------------
 
 1. Clone the reborn repository:
@@ -29,7 +29,7 @@ Steps to Activate zmq Listener
 
     .. code-block:: bash
 
-        $ cd /home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
+        $ cd /home/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
 
 4. Activate `reborn` enviornment:
 
@@ -116,7 +116,7 @@ Downloading and Overwrite Images
 
     .. code-block:: bash
 
-        $ cd /home/labuser/Projects/Dectris/test/temp_data
+        $ cd /home/labuser/Public/Dectris/test/temp_data
 
     - Note that this will download all images listed on `http://10.139.1.5/data/`.
 
@@ -126,7 +126,7 @@ Downloading and Overwrite Images
   
     .. code-block:: bash
 
-        $ cd /home/labuser/Development/adam/vscode/CXFEL
+        $ cd ~/Public
 
     Then,
 
@@ -142,13 +142,13 @@ Viewing HDF5 Images Through Reborn
 
   .. code-block:: bash
       
-      $ cd /home/labuser/Projects/Dectris/test/temp_data
+      $ cd ~/Public/Dectris/test/temp_data
   
 2. Export the Python path:
   
   .. code-block:: bash
 
-    $ export PYTHONPATH=/home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:$PYTHONPATH
+    $ export PYTHONPATH=/home/labuser/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:$PYTHONPATH
 
 3. Run `test_h5_reading.py` or any other Python file:
 
@@ -186,7 +186,7 @@ Filtering Images
 
   .. code-block:: bash
 
-      $ cd /home/labuser/Development/adam/vscode/CXFEL
+      $ cd ~/Public
       $ source Eiger_Setup.sh
 
   To show all downloaded images, run the following command:
@@ -223,7 +223,7 @@ ALBULA Image Viewer
 
   .. code-block:: bash
 
-      $ cd /home/labuser/Development/adam/vscode/CXFEL
+      $ cd ~/Public
       $ source Eiger_Setup.sh
 
   .. code-block:: bash
@@ -243,7 +243,7 @@ ADXV Image Viewer
 
   .. code-block:: bash
 
-      $ cd /home/labuser/Development/adam/vscode/CXFEL
+      $ cd ~/Public
       $ source Eiger_Setup.sh
 
   .. code-block:: bash
