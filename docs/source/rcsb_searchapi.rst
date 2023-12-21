@@ -11,7 +11,9 @@ In order to use this script, you need to install the RCSB Search API using `pip`
 
     pip install rcsbsearchapi
 
-Then, you need to clone this repository to your local machine. You can do this by running the following command in your terminal:
+Then, you need to clone this repository to your local machine. Here is the link https://github.com/adamkurth/pdb_rcsb_api_scripts.git 
+
+You can do this by running the following command in your terminal:
 
 .. code-block:: bash
 

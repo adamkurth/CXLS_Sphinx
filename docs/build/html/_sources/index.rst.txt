@@ -25,6 +25,8 @@ This documentation is still under construction and will be updated regularly.
    agave
    globus
    cxls_eiger_4m
+   slurm_script
+   rcsb_searchapi
    projects
 
 .. _installation: 
