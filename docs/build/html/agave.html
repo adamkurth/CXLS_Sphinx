@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agave Access &mdash; CXLS Sphinx  documentation</title>
+  <title>AGAVE Access &mdash; CXLS Sphinx  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Operation of the Dectris Eiger4M Detector" href="cxls_eiger_4m.html" />
+    <link rel="next" title="Globus File Sharing" href="globus.html" />
     <link rel="prev" title="Overview" href="overview.html" /> 
 </head>
 
@@ -48,18 +48,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Agave Access</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AGAVE Access</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#steps-for-ssh-access">Steps for SSH Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agave-login-steps">AGAVE Login Steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#loading-modules">Loading Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submitting-jobs">Submitting Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#partitions-at-agave">Partitions at AGAVE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-pattern-sim-through-crystfel">Running <cite>pattern_sim</cite> through CrystFEL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indexing-images-through-crystfel">Indexing Images through CrystFEL</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="waterbackground_subtraction_projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 </ul>
 
         </div>
@@ -76,7 +76,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Agave Access</li>
+      <li class="breadcrumb-item active">AGAVE Access</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/agave.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,7 +87,7 @@
            <div itemprop="articleBody">
              
   <section id="agave-access">
-<span id="id1"></span><h1>Agave Access</h1>
+<span id="id1"></span><h1>AGAVE Access</h1>
 <p>To access the supercomputer using Agave, follow these steps:</p>
 <section id="prerequisites">
 <h2>Prerequisites</h2>
@@ -104,9 +104,20 @@
 <li><p>Click connect, and when connected, follow the next steps to access AGAVE supercomputer.</p></li>
 </ol>
 </section>
-<section id="steps-for-ssh-access">
-<h2>Steps for SSH Access</h2>
+<section id="agave-login-steps">
+<h2>AGAVE Login Steps</h2>
 <ol class="arabic">
+<li><p>To login to AGAVE supercomputer, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span>username@agave.asu.edu
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>replace <cite>username</cite> with your ASURITE username.</p></li>
+<li><p>Please enter your ASURITE password, and ensure that <cite>Cisco Secure Client</cite> is running and user is logged in.</p></li>
+</ul>
+</div></blockquote>
+</li>
 <li><p>Once logged in, make sure and get off of the login node by running the following command:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>interactive
@@ -114,6 +125,8 @@
 </div>
 </div></blockquote>
 </li>
+</ol>
+<ol class="arabic" start="2">
 <li><p>Now to activate conda environment, run the following command:</p>
 <blockquote>
 <div><ul class="simple">
@@ -177,55 +190,91 @@
 </li>
 </ol>
 </section>
-<section id="submitting-jobs">
-<h2>Submitting Jobs</h2>
+<section id="partitions-at-agave">
+<h2>Partitions at AGAVE</h2>
+<ul class="simple">
+<li><p><strong>Note</strong>: Ensure that you are first logged into AGAVE supercomputer.</p></li>
+</ul>
 <p>Before submitting jobs, here is the information about how to find the partition to run your jobs:</p>
-<ul class="simple">
-<li><p>To check the status of a particular partition, run the following command:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>To check the status of all partitions, run the following command:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-a
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>To check the status of a particular partition, run the following command:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-p<span class="w"> </span>partition_name
+<ul>
+<li><p>To check the status of a particular partition, run the following commands:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-p<span class="w"> </span>partition_name
 </pre></div>
 </div>
 <p>Replace <cite>partition_name</cite> with the name of the partition you want to check.</p>
-<ul class="simple">
-<li><p>To change the output to only partitions, run the following command:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-h<span class="w"> </span>--format<span class="o">=</span><span class="s2">&quot;%P&quot;</span>
+<ul>
+<li><p>Notes on AGAVE Partitions:</p>
+<blockquote>
+<div><blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo
 </pre></div>
 </div>
+</div></blockquote>
+<ul>
+<li><p>To check the status of all partitions, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-a
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>To check the status of a particular partition, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-p<span class="w"> </span>partition_name
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Replace <cite>partition_name</cite> with the name of the partition you want to check.</p>
+<ul>
+<li><p>To change the output to only partitions, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-h<span class="w"> </span>--format<span class="o">=</span><span class="s2">&quot;%P&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
 <p>Equivalently, you can run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;%P&quot;</span>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;%P&quot;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>To check the status of all partitions, run the following command:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-a
+</div></blockquote>
+<ul>
+<li><p>To check the status of all partitions, run the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-a
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>To watch a job, run the following command:</p></li>
+</div></blockquote>
+</li>
+<li><p>To watch a job, run the following command:</p>
+<blockquote>
+<div></div></blockquote>
+</li>
 </ul>
 <p>Or to watch all jobs make sure to replace <cite>username</cite>, run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>watch<span class="w"> </span><span class="s1">&#39;squeue -u username&#39;</span>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>watch<span class="w"> </span><span class="s1">&#39;squeue -u username&#39;</span>
 </pre></div>
 </div>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
 </section>
 <section id="running-pattern-sim-through-crystfel">
 <h2>Running <cite>pattern_sim</cite> through CrystFEL</h2>
-<p>ACCESS PATTERN_SIM FILE FOR USERS????</p>
+<ul class="simple">
+<li><p><strong>Note</strong>: To run <cite>run_pattern_sim.sh</cite> script, you must first be logged into AGAVE supercomputer, and have the <cite>crystfel</cite> module loaded.</p></li>
+</ul>
+<p>Accessing <cite>run_pattern_sim.sh</cite> in the following directory: <a href="#id2"><span class="problematic" id="id3">`</span></a>/home/username/Development/run_pattern_sim.sh</p>
 <ul>
 <li><p>How to run <cite>pattern_sim</cite> through CrystFEL through custom script:</p>
 <blockquote>
@@ -260,6 +309,9 @@
 </section>
 <section id="indexing-images-through-crystfel">
 <h2>Indexing Images through CrystFEL</h2>
+<ul class="simple">
+<li><p><strong>Note</strong>: Ensure that you are first logged into AGAVE supercomputer, and have the <cite>crystfel</cite> module loaded.</p></li>
+</ul>
 <ol class="arabic">
 <li><p>Check the outputted <cite>.h5</cite> files from <cite>pattern_sim</cite> to make sure they are correct.</p></li>
 <li><p>Run the following to create a list of images to index:</p>
@@ -304,7 +356,7 @@ $<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </sp
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="cxls_eiger_4m.html" class="btn btn-neutral float-right" title="Operation of the Dectris Eiger4M Detector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="globus.html" class="btn btn-neutral float-right" title="Globus File Sharing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

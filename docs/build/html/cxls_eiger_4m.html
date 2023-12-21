@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Projects" href="waterbackground_subtraction_projects.html" />
-    <link rel="prev" title="Agave Access" href="agave.html" /> 
+    <link rel="next" title="Projects" href="projects.html" />
+    <link rel="prev" title="Globus File Sharing" href="globus.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,10 +48,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agave.html">Agave Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Operation of the Dectris Eiger4M Detector</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#accessing-the-dectris-menu">Accessing the Dectris Menu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#steps-to-activate-zmq-listener">Steps to Activate zmq Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps-to-activate-zmq-listener">Steps to Activate ZMQ Listener</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initializing-and-arming">Initializing and Arming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#downloading-and-overwrite-images">Downloading and Overwrite Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#viewing-hdf5-images-through-reborn">Viewing HDF5 Images Through Reborn</a></li>
@@ -62,8 +63,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="waterbackground_subtraction_projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 </ul>
 
         </div>
@@ -102,7 +102,7 @@
 </ul>
 </section>
 <section id="steps-to-activate-zmq-listener">
-<h2>Steps to Activate zmq Listener</h2>
+<h2>Steps to Activate ZMQ Listener</h2>
 <ol class="arabic">
 <li><p>Clone the reborn repository:</p>
 <blockquote>
@@ -120,7 +120,7 @@
 </li>
 <li><p>Navigate to the correct directory:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
 </pre></div>
 </div>
 </div></blockquote>
@@ -208,7 +208,7 @@ $<span class="w"> </span>nimages_per_file<span class="w"> </span>num
 <ol class="arabic">
 <li><p>Navigate to the desired directory to store images:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Projects/Dectris/test/temp_data
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/Dectris/test/temp_data
 </pre></div>
 </div>
 <ul class="simple">
@@ -219,7 +219,7 @@ $<span class="w"> </span>nimages_per_file<span class="w"> </span>num
 <li><p>Source the adapted setup script called <cite>adam_setup.sh</cite> and call the download function to start downloading images from <cite>http://10.139.1.5/data/</cite>:</p>
 <blockquote>
 <div><p>First,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Development/adam/vscode/CXFEL
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public
 </pre></div>
 </div>
 <p>Then,</p>
@@ -237,7 +237,7 @@ $<span class="w"> </span>download_images_from_IP
 <li><p>Navigate to the recent downloaded images directory:</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Projects/Dectris/test/temp_data
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public/Dectris/test/temp_data
 </pre></div>
 </div>
 </div></blockquote>
@@ -245,7 +245,7 @@ $<span class="w"> </span>download_images_from_IP
 <li><p>Export the Python path:</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>/home/labuser/Projects/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:<span class="nv">$PYTHONPATH</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>/home/labuser/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:<span class="nv">$PYTHONPATH</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -289,7 +289,7 @@ $<span class="w"> </span>download_images_from_IP
 <h2>Filtering Images</h2>
 <ul>
 <li><p>Using <cite>filter_nimages</cite>: This function will filter the downloaded images based on the number of images in the series.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Development/adam/vscode/CXFEL
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public
 $<span class="w"> </span><span class="nb">source</span><span class="w"> </span>Eiger_Setup.sh
 </pre></div>
 </div>
@@ -319,7 +319,7 @@ Found<span class="w"> </span>file:<span class="w"> </span>series_1_data_000002.h
 <h2>ALBULA Image Viewer</h2>
 <ul>
 <li><p>To view images using the ALBULA image viewer, navigate to the directory containing the images, and run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Development/adam/vscode/CXFEL
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public
 $<span class="w"> </span><span class="nb">source</span><span class="w"> </span>Eiger_Setup.sh
 </pre></div>
 </div>
@@ -336,7 +336,7 @@ $<span class="w"> </span><span class="nb">source</span><span class="w"> </span>E
 <h2>ADXV Image Viewer</h2>
 <ul>
 <li><p>To view images using the ADXV image viewer, navigate to the directory containing the images, and run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Development/adam/vscode/CXFEL
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public
 $<span class="w"> </span><span class="nb">source</span><span class="w"> </span>Eiger_Setup.sh
 </pre></div>
 </div>
@@ -357,8 +357,8 @@ $<span class="w"> </span><span class="nb">source</span><span class="w"> </span>E
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="agave.html" class="btn btn-neutral float-left" title="Agave Access" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="waterbackground_subtraction_projects.html" class="btn btn-neutral float-right" title="Projects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="globus.html" class="btn btn-neutral float-left" title="Globus File Sharing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="projects.html" class="btn btn-neutral float-right" title="Projects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

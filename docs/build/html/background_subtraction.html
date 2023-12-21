@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Water Background Subtraction Project (Stream)" href="stream_background_subtraction.html" />
-    <link rel="prev" title="Projects" href="waterbackground_subtraction_projects.html" /> 
+    <link rel="prev" title="Projects" href="projects.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,32 +48,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agave.html">Agave Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="waterbackground_subtraction_projects.html">Projects</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="projects.html">Projects</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Water Background Subtraction Project (Main)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#imports">Imports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#peakthresholdprocessor-class">PeakThresholdProcessor Class</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#PeakThresholdProcessor"><code class="docutils literal notranslate"><span class="pre">PeakThresholdProcessor</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#arrayregion-class">ArrayRegion Class</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ArrayRegion"><code class="docutils literal notranslate"><span class="pre">ArrayRegion</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#helper-functions">Helper Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#load_h5"><code class="docutils literal notranslate"><span class="pre">load_h5()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#extract_region"><code class="docutils literal notranslate"><span class="pre">extract_region()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#coordinate-menu-function">Coordinate Menu Function</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#coordinate_menu"><code class="docutils literal notranslate"><span class="pre">coordinate_menu()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#build_coord_intensity"><code class="docutils literal notranslate"><span class="pre">build_coord_intensity()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#create_scatter"><code class="docutils literal notranslate"><span class="pre">create_scatter()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#main-function">Main Function</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arrayregion-class">ArrayRegion Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#helper-functions">Helper Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#coordinate-menu-function">Coordinate Menu Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main-function">Main Function</a></li>
 </ul>
 </li>
 </ul>
@@ -82,7 +68,6 @@
 <li class="toctree-l2"><a class="reference internal" href="overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
 </ul>
 
         </div>
@@ -99,7 +84,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="waterbackground_subtraction_projects.html">Projects</a></li>
+          <li class="breadcrumb-item"><a href="projects.html">Projects</a></li>
       <li class="breadcrumb-item active">Water Background Subtraction Project (Main)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/background_subtraction.rst.txt" rel="nofollow"> View page source</a>
@@ -196,9 +181,8 @@ import matplotlib.pyplot as plt</p>
 </dl>
 </dd></dl>
 
-</section>
 <section id="arrayregion-class">
-<h2>ArrayRegion Class</h2>
+<h3>ArrayRegion Class</h3>
 <p>The <cite>ArrayRegion</cite> class is used for processing the image array region, using the coordinate values provided. This class provides functions for setting and retrieving coordinate values these values.</p>
 <p>The following functions are defined in the <cite>ArrayRegion</cite> class:</p>
 <dl class="py class">
@@ -279,7 +263,7 @@ import matplotlib.pyplot as plt</p>
 
 </section>
 <section id="helper-functions">
-<h2>Helper Functions</h2>
+<h3>Helper Functions</h3>
 <dl class="py method">
 <dt class="sig sig-object py" id="load_h5">
 <span class="sig-name descname"><span class="pre">load_h5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span></dt>
@@ -315,7 +299,7 @@ import matplotlib.pyplot as plt</p>
 
 </section>
 <section id="coordinate-menu-function">
-<h2>Coordinate Menu Function</h2>
+<h3>Coordinate Menu Function</h3>
 <p><cite>coordinate_menu</cite> is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="coordinate_menu">
@@ -467,7 +451,7 @@ import matplotlib.pyplot as plt</p>
 
 </section>
 <section id="main-function">
-<h2>Main Function</h2>
+<h3>Main Function</h3>
 <p>The <cite>main</cite> function processes image data from specified HDF5 file for 3-ring integration analysis. Calling <cite>coordinate_menu</cite> for increasing radius value.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="main">
@@ -520,12 +504,13 @@ import matplotlib.pyplot as plt</p>
 
 </section>
 </section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="waterbackground_subtraction_projects.html" class="btn btn-neutral float-left" title="Projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="projects.html" class="btn btn-neutral float-left" title="Projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="stream_background_subtraction.html" class="btn btn-neutral float-right" title="Water Background Subtraction Project (Stream)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
