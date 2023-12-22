@@ -30,6 +30,10 @@ pygments_style = 'sphinx'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'renku'
+html_static_path = ['_static']
+html_css_files = [
+    'custom.css',
+]
 
 # Pygments (syntax highlighting) style to use
 pygments_style = 'friendly'
