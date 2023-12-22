@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RCSB Search API Scripts &mdash; CXLS Sphinx  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Projects" href="projects.html" />
+    <link rel="prev" title="Operation of the Dectris Eiger4M Detector" href="cxls_eiger_4m.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CXLS Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submmitting SLURM Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RCSB Search API Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#official-documentation">Official Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-and-setup">Installation and Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-pdb-ids-using-scrape-py">Accessing PDB IDs using <cite>scrape.py</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-pdb-files-using-download-pdb-files-py">Downloading PDB Files using <cite>download_pdb_files.py</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CXLS Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">RCSB Search API Scripts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/rcsb_search_api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rcsb-search-api-scripts">
+<h1>RCSB Search API Scripts</h1>
+<p>The RCSB Search API Scripts provide a convenient way to interact with the RCSB Search API, allowing users to search and download PDB files based on specific criteria.</p>
+<section id="official-documentation">
+<h2>Official Documentation</h2>
+<p>For more information about the RCSB Search API, visit the official documentation: <a class="reference external" href="https://github.com/rcsb/py-rcsbsearchapi.git">RCSB Search API</a>.</p>
+</section>
+<section id="installation-and-setup">
+<h2>Installation and Setup</h2>
+<ol class="arabic">
+<li><p><strong>Install RCSB Search API</strong>:</p>
+<blockquote>
+<div><p>Install the RCSB Search API using pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rcsbsearchapi
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Clone the Repository</strong>:</p>
+<blockquote>
+<div><p>Clone the PDB RCSB API Scripts repository to your local machine:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/adamkurth/pdb_rcsb_api_scripts.git
+</pre></div>
+</div>
+<p>Repository Link: <a class="reference external" href="https://github.com/adamkurth/pdb_rcsb_api_scripts.git">PDB RCSB API Repo</a></p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="accessing-pdb-ids-using-scrape-py">
+<h2>Accessing PDB IDs using <cite>scrape.py</cite></h2>
+<p>The <cite>scrape.py</cite> script, located in the root directory of the <cite>pdb_rcsb_api_scripts</cite> repository, is used to retrieve PDB IDs from the RCSB Search API.</p>
+<p><strong>Usage</strong>:</p>
+<p>Run the script with the desired symmetry and limit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py<span class="w"> </span>-h<span class="w"> </span>symmetry<span class="w"> </span>--limit<span class="w"> </span>limit
+</pre></div>
+</div>
+<p><strong>Arguments</strong>:</p>
+<ul class="simple">
+<li><p><strong>symmetry</strong>: Symmetry of the protein (e.g., <cite>-h monoclinic</cite>).</p></li>
+<li><p><strong>limit</strong>: Number of PDB IDs to retrieve (e.g., <cite>–limit 100</cite>).</p></li>
+</ul>
+<p><strong>Script Overview</strong>:</p>
+<p>The script utilizes several classes and functions from the <cite>rcsbsearchapi</cite> package to perform queries and handle results:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rcsbsearchapi</span> <span class="kn">import</span> <span class="n">AttributeQuery</span><span class="p">,</span> <span class="n">STRUCTURE_ATTRIBUTE_SEARCH_SERVICE</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">rcsbsearchapi.search</span> <span class="kn">import</span> <span class="n">TextQuery</span><span class="p">,</span> <span class="n">AttributeQuery</span><span class="p">,</span> <span class="n">SequenceQuery</span><span class="p">,</span> <span class="n">SeqMotifQuery</span><span class="p">,</span> <span class="n">StructSimilarityQuery</span><span class="p">,</span> <span class="n">Attr</span>
+<span class="kn">from</span> <span class="nn">rcsbsearchapi</span> <span class="kn">import</span> <span class="n">rcsb_attributes</span> <span class="k">as</span> <span class="n">attrs</span>
+<span class="kn">from</span> <span class="nn">rcsbsearchapi.const</span> <span class="kn">import</span> <span class="n">STRUCTURE_ATTRIBUTE_SEARCH_SERVICE</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="c1"># From rcsbsearchapi</span>
+<span class="c1"># comment and add as needed, for reference check the quickstart.ipynb in rcsbsearchapi repo</span>
+
+<span class="k">def</span> <span class="nf">get_pdb_ids</span><span class="p">(</span><span class="n">space_group</span><span class="p">,</span> <span class="n">str_type</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="c1"># By default, service is set to &quot;text&quot; for structural attribute search</span>
+    <span class="n">q1</span> <span class="o">=</span> <span class="n">AttributeQuery</span><span class="p">(</span><span class="s2">&quot;symmetry.cell_setting&quot;</span><span class="p">,</span> <span class="s2">&quot;exact_match&quot;</span><span class="p">,</span> <span class="n">str_type</span><span class="p">,</span> <span class="n">STRUCTURE_ATTRIBUTE_SEARCH_SERVICE</span><span class="p">)</span>
+    <span class="n">q2</span> <span class="o">=</span> <span class="n">AttributeQuery</span><span class="p">(</span><span class="s2">&quot;symmetry.space_group_name_H_M&quot;</span><span class="p">,</span> <span class="s2">&quot;exact_match&quot;</span><span class="p">,</span> <span class="n">space_group</span><span class="p">,</span> <span class="n">STRUCTURE_ATTRIBUTE_SEARCH_SERVICE</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">q2</span>  <span class="c1"># combining queries use &amp; | operators</span>
+    <span class="n">pdb_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">query</span><span class="p">())</span>
+    <span class="n">pdb_lim</span> <span class="o">=</span> <span class="n">truncate</span><span class="p">(</span><span class="n">pdb_ids</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;From search: </span><span class="si">{</span><span class="n">space_group</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pdb_lim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pdb_lim</span>
+
+<span class="k">def</span> <span class="nf">truncate</span><span class="p">(</span><span class="n">pdb_ids</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pdb_ids</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">:</span>
+        <span class="n">pdb_ids</span> <span class="o">=</span> <span class="n">pdb_ids</span><span class="p">[:</span><span class="n">limit</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pdb_ids</span>
+
+
+<span class="k">def</span> <span class="nf">interactive_script</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Download PDB files based on symmetry and space group.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;symmetry_shape&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Crystal symmetry to list space groups for&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--limit&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Limit number of PDB files to download (default: 50)&#39;</span><span class="p">)</span>
+
+    <span class="n">args</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_known_args</span><span class="p">()</span>
+
+    <span class="n">symmetry_shape</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">symmetry_shape</span>
+    <span class="n">symmetry_shape</span> <span class="o">=</span> <span class="n">symmetry_shape</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">limit</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">limit</span>
+
+    <span class="n">space_groups</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1"># Additional space groups from International Tables for Crystallography (ITC)</span>
+        <span class="s2">&quot;cubic&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 21 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 4 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 4 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 41 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 4 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 43 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 41 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 42 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 43 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 41 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 43 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 4 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 4 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 4 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 41 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 42 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 43 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 43 3 3&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;tetragonal&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 4 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 4 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 4 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 41 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 4 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 4 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 41 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 4 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 43 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 41 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 42 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 43 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 41 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 43 2 3&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;orthorhombic&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 21 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;F 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 2 2 1&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;hexagonal&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P -3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3*&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31*&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32*&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3*&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2*&quot;</span><span class="p">,</span> <span class="s2">&quot;P -3*&quot;</span><span class="p">,</span> <span class="s2">&quot;R -3&quot;</span><span class="p">,</span> <span class="s2">&quot;R -3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6&quot;</span><span class="p">,</span> <span class="s2">&quot;P 61&quot;</span><span class="p">,</span> <span class="s2">&quot;P 65&quot;</span><span class="p">,</span> <span class="s2">&quot;P 62&quot;</span><span class="p">,</span> <span class="s2">&quot;P 64&quot;</span><span class="p">,</span> <span class="s2">&quot;P 63&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 1 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 5 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 2 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 4 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 3 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 5 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 4 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 3 2 1&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;trigonal&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P -3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3*&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31*&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32*&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3*&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2*&quot;</span><span class="p">,</span> <span class="s2">&quot;P -3*&quot;</span><span class="p">,</span> <span class="s2">&quot;R -3&quot;</span><span class="p">,</span> <span class="s2">&quot;R -3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 2 1 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2 1 1&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;monoclinic&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 21 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 2 2 1&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;triclinic&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P -1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 1 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 1 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 1 1 1&quot;</span><span class="p">],</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Check if the symmetry_shape is valid and list possible space groups</span>
+    <span class="k">if</span> <span class="n">symmetry_shape</span> <span class="ow">in</span> <span class="n">space_groups</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Select a space group for symmetry shape &#39;</span><span class="si">{</span><span class="n">symmetry_shape</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">sg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">space_groups</span><span class="p">[</span><span class="n">symmetry_shape</span><span class="p">],</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">sg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Prompt the user to select a space group</span>
+        <span class="n">sg_choice</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the number of your chosen space group: &quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">sg_choice</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">space_groups</span><span class="p">[</span><span class="n">symmetry_shape</span><span class="p">]):</span>
+            <span class="n">selected_space_group</span> <span class="o">=</span> <span class="n">space_groups</span><span class="p">[</span><span class="n">symmetry_shape</span><span class="p">][</span><span class="n">sg_choice</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You have selected space group &#39;</span><span class="si">{</span><span class="n">selected_space_group</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Retrieving up to </span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s2"> PDB IDs for space group &#39;</span><span class="si">{</span><span class="n">selected_space_group</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Retrieve and print PDB IDs for the selected space group</span>
+            <span class="n">ids</span> <span class="o">=</span> <span class="n">get_pdb_ids</span><span class="p">(</span><span class="n">selected_space_group</span><span class="p">,</span> <span class="n">symmetry_shape</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid choice. Please run the script again and select a valid number.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid symmetry shape &#39;</span><span class="si">{</span><span class="n">symmetry_shape</span><span class="si">}</span><span class="s2">&#39;. Please run the script again with a valid symmetry shape.&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">interactive_script</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Functions</strong>:</p>
+<ul class="simple">
+<li><p><strong>get_pdb_ids()</strong>: Retrieves PDB IDs based on space group and structure type.</p></li>
+<li><p><strong>truncate()</strong>: Limits the number of PDB IDs to the specified limit.</p></li>
+<li><p><strong>interactive_script()</strong>: Provides an interactive command-line interface for the user.</p></li>
+</ul>
+</section>
+<section id="downloading-pdb-files-using-download-pdb-files-py">
+<h2>Downloading PDB Files using <cite>download_pdb_files.py</cite></h2>
+<p>The <cite>download_pdb_files.py</cite> script allows users to download PDB files based on specified criteria.</p>
+<p><strong>Usage</strong>:</p>
+<p>Run the script with the desired symmetry and limit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>download_pdb_files.py<span class="w"> </span>-h<span class="w"> </span>symmetry<span class="w"> </span>--limit<span class="w"> </span>limit
+</pre></div>
+</div>
+<p><strong>Script Overview</strong>:</p>
+<p>This script creates a directory named <cite>pdb_files</cite> in the root directory of the <cite>pdb_rcsb_api_scripts</cite> repository and organizes downloaded PDB files.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">scrape</span> <span class="kn">import</span> <span class="n">get_pdb_ids</span>  <span class="c1"># Import the function from scrape.py</span>
+
+<span class="k">class</span> <span class="nc">ProteinDownloader</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to download PDB files for specified proteins.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize ProteinDownloader class.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_dir</span> <span class="o">=</span> <span class="n">base_dir</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">is_url_accessible</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if a URL is accessible.&quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+
+    <span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">protein_ids</span><span class="p">,</span> <span class="n">space_group</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download PDB files for specified proteins, organized by space group.&quot;&quot;&quot;</span>
+        <span class="n">formatted_space_group</span> <span class="o">=</span> <span class="n">space_group</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>  <span class="c1"># remove spaces</span>
+        <span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">base_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">formatted_space_group</span><span class="si">}</span><span class="s2">/data/ids&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Create directory structure</span>
+
+        <span class="n">PDB_URL_TEMPLATE</span> <span class="o">=</span> <span class="s2">&quot;https://files.rcsb.org/download/</span><span class="si">{}</span><span class="s2">.pdb&quot;</span>
+
+        <span class="k">for</span> <span class="n">protein_id</span> <span class="ow">in</span> <span class="n">protein_ids</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing Protein: </span><span class="si">{</span><span class="n">protein_id</span><span class="si">}</span><span class="s2">, Space Group: </span><span class="si">{</span><span class="n">formatted_space_group</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">pdb_url</span> <span class="o">=</span> <span class="n">PDB_URL_TEMPLATE</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">protein_id</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_url_accessible</span><span class="p">(</span><span class="n">pdb_url</span><span class="p">):</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pdb_url</span><span class="p">)</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">protein_id</span><span class="si">}</span><span class="s2">.pdb&quot;</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;URL not accessible for Protein ID: </span><span class="si">{</span><span class="n">protein_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Download PDB files based on space group and symmetry.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;symmetry_shape&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Crystal symmetry to list space groups for&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--limit&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Limit number of PDB files to download&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--base_dir&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Base directory to save PDB files to&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">space_groups</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1"># Additional space groups from International Tables for Crystallography (ITC)</span>
+        <span class="s2">&quot;cubic&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 21 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 4 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 4 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 41 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 4 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 43 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 41 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 42 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 43 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 41 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 43 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 4 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 4 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 4 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 41 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 42 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 43 3 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 43 3 3&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;tetragonal&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 4 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 4 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 4 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 41 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 4 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 4 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 41 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 4 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 43 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 41 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 41 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 42 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 42 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 43 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;F 41 2 3&quot;</span><span class="p">,</span> <span class="s2">&quot;I 43 2 3&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;orthorhombic&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;F 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 21 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;F 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 2 2 1&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;hexagonal&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P -3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3*&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31*&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32*&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3*&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2*&quot;</span><span class="p">,</span> <span class="s2">&quot;P -3*&quot;</span><span class="p">,</span> <span class="s2">&quot;R -3&quot;</span><span class="p">,</span> <span class="s2">&quot;R -3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6&quot;</span><span class="p">,</span> <span class="s2">&quot;P 61&quot;</span><span class="p">,</span> <span class="s2">&quot;P 65&quot;</span><span class="p">,</span> <span class="s2">&quot;P 62&quot;</span><span class="p">,</span> <span class="s2">&quot;P 64&quot;</span><span class="p">,</span> <span class="s2">&quot;P 63&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 1 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 5 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 2 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 4 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 3 22&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 5 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 4 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 6 3 2 1&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;trigonal&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P -3&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3*&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31*&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32*&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3*&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2*&quot;</span><span class="p">,</span> <span class="s2">&quot;P -3*&quot;</span><span class="p">,</span> <span class="s2">&quot;R -3&quot;</span><span class="p">,</span> <span class="s2">&quot;R -3 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 31 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 32 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 1 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 3 2 1 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;R 3 2 1 1&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;monoclinic&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 21&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 2 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 2 21 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;C 2 2 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;I 2 2 2 1&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;triclinic&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;P 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P -1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 2&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 21&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 2 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 21 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 2 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 1 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 1 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 1 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 1 21 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 1 21 1 1&quot;</span><span class="p">,</span> <span class="s2">&quot;P 21 21 1 1 1&quot;</span><span class="p">],</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">symmetry_shape</span> <span class="ow">in</span> <span class="n">space_groups</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Select a space group for symmetry shape &#39;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">symmetry_shape</span><span class="si">}</span><span class="s2">&#39;:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">sg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">space_groups</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">symmetry_shape</span><span class="p">],</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">sg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">sg_choice</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the number of your chosen space group: &quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">sg_choice</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">space_groups</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">symmetry_shape</span><span class="p">]):</span>
+            <span class="n">selected_space_group</span> <span class="o">=</span> <span class="n">space_groups</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">symmetry_shape</span><span class="p">][</span><span class="n">sg_choice</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You have selected space group &#39;</span><span class="si">{</span><span class="n">selected_space_group</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Retrieving up to </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">limit</span><span class="si">}</span><span class="s2"> PDB IDs for space group &#39;</span><span class="si">{</span><span class="n">selected_space_group</span><span class="si">}</span><span class="s2">&#39;...&quot;</span><span class="p">)</span>
+
+            <span class="n">pdb_ids</span> <span class="o">=</span> <span class="n">get_pdb_ids</span><span class="p">(</span><span class="n">selected_space_group</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">symmetry_shape</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">limit</span><span class="p">)</span>
+
+            <span class="n">downloader</span> <span class="o">=</span> <span class="n">ProteinDownloader</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">base_dir</span><span class="p">)</span>
+            <span class="n">downloader</span><span class="o">.</span><span class="n">download_files</span><span class="p">(</span><span class="n">pdb_ids</span><span class="p">,</span> <span class="n">selected_space_group</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid choice. Please run the script again and select a valid number.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid symmetry shape &#39;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">symmetry_shape</span><span class="si">}</span><span class="s2">&#39;. Available options are: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">space_groups</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Functions</strong>:</p>
+<ul class="simple">
+<li><p><strong>ProteinDownloader</strong>: A class to manage the download and organization of PDB files.</p></li>
+<li><p><strong>is_url_accessible()</strong>: Checks if the PDB file URL is accessible.</p></li>
+<li><p><strong>download_files()</strong>: Downloads and organizes PDB files into the specified directory.</p></li>
+</ul>
+<p><strong>How to Use</strong>:</p>
+<ol class="arabic simple">
+<li><p>Run the script with the desired symmetry and limit.</p></li>
+<li><p>PDB files will be downloaded and organized in the <cite>pdb_files</cite> directory under the specified space group.</p></li>
+</ol>
+<p><strong>Space Groups</strong>:</p>
+<p>The script includes a comprehensive list of space groups for various crystal symmetries. Users can select the desired space group to narrow down their search.</p>
+<p><strong>Conclusion</strong>:</p>
+<p>These scripts offer a user-friendly way to access and download PDB files from the RCSB PDB database, streamlining the process for researchers and developers working in the field of structural biology and crystallography.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cxls_eiger_4m.html" class="btn btn-neutral float-left" title="Operation of the Dectris Eiger4M Detector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="projects.html" class="btn btn-neutral float-right" title="Projects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Sabine Botha, Adam Kurth, and more.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

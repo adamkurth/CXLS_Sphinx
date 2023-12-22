@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="slurm_script.html" />
-    <link rel="prev" title="Globus File Sharing" href="globus.html" /> 
+    <link rel="next" title="RCSB Search API Scripts" href="rcsb_search_api.html" />
+    <link rel="prev" title="Submmitting SLURM Jobs" href="slurm_script.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,6 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submmitting SLURM Jobs</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Operation of the Dectris Eiger4M Detector</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#accessing-the-dectris-menu">Accessing the Dectris Menu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#steps-to-activate-zmq-listener">Steps to Activate ZMQ Listener</a></li>
@@ -63,7 +64,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rcsb_searchapi.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 </ul>
 
@@ -145,7 +146,7 @@
 <li><p>Usually best to isolate this window in a separate terminal window.</p></li>
 <li><p>The <cite>-i</cite> flag specifies the IP address of the detector.</p></li>
 <li><p>The <cite>-f</cite> flag specifies the name of the log file.</p></li>
-<li><p>If desired, to exit the zmq listener, press <cite>Ctrl+C</cite>.</p></li>
+<li><p>If desired, to exit the ZMQ listener, press <cite>Ctrl+C</cite>.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -161,9 +162,10 @@
 $<span class="w"> </span>initialize
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Note that this will initialize the detector, and return <cite>true</cite>.</p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that this will initialize the detector, and return <cite>true</cite>.</p>
+</div>
 </div></blockquote>
 </li>
 <li><p>Set parameters and enable desired outputs using functions from <cite>setup.sh</cite>:</p>
@@ -212,9 +214,10 @@ $<span class="w"> </span>nimages_per_file<span class="w"> </span>num
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/Dectris/test/temp_data
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Note that this will download all images listed on <cite>http://10.139.1.5/data/</cite>.</p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that this will download all images listed on <cite>http://10.139.1.5/data/</cite>.</p>
+</div>
 </div></blockquote>
 </li>
 <li><p>Source the adapted setup script called <cite>adam_setup.sh</cite> and call the download function to start downloading images from <cite>http://10.139.1.5/data/</cite>:</p>
@@ -350,7 +353,7 @@ $<span class="w"> </span><span class="nb">source</span><span class="w"> </span>E
 </section>
 <section id="additional-resources">
 <h2>Additional Resources</h2>
-<p>Please refer to :<span class="xref std std-ref">agave</span> for additional information and troubleshooting while using AGAVE.</p>
+<p>Please refer to <a class="reference internal" href="agave.html"><span class="doc">AGAVE</span></a> for additional information and troubleshooting.</p>
 </section>
 </section>
 
@@ -358,8 +361,8 @@ $<span class="w"> </span><span class="nb">source</span><span class="w"> </span>E
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="globus.html" class="btn btn-neutral float-left" title="Globus File Sharing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="slurm_script.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="slurm_script.html" class="btn btn-neutral float-left" title="Submmitting SLURM Jobs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rcsb_search_api.html" class="btn btn-neutral float-right" title="RCSB Search API Scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

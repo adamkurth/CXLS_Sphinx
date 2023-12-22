@@ -24,9 +24,9 @@ This documentation is still under construction and will be updated regularly.
    overview
    agave
    globus
-   cxls_eiger_4m
    slurm_script
-   rcsb_searchapi
+   cxls_eiger_4m
+   rcsb_search_api
    projects
 
 .. _installation: 
@@ -45,13 +45,14 @@ The documentation for reborn can be found here: https://kirianlab.gitlab.io/rebo
 
 
 .. _dcu:
+
 Troubleshooting DCU Notes
 -------------------------
 
 Software:
 ---------
 
-- Verify that all instructions on ::ref:`README.md` have been followed.
+- Verify that all instructions on :doc:`README.md` have been followed.
 - 
 
 Hardware:

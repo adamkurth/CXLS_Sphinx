@@ -74,7 +74,9 @@ To run the application without the GUI, follow these steps:
 
             $ ./globusconnectpersonal -pause
         Or 
+        
         .. code-block:: bash
+
             $ ./globusconnectpersonal -unpause
 
     - To see the version of the application, run the following command:
@@ -135,7 +137,7 @@ Web Application
 
 5. Now in the right pannel, nagivate to the directory you want to transfer files to and click the `Start` button *ON THE LEFT PANEL*.
 
-    - If you want to transfer files from the right panel to the left panel, click the `Start` button *ON THE RIGHTPANEL*.
+    - If you want to transfer files from the right panel to the left panel, click the `Start` button *ON THE RIGHT PANEL*.
 
     - This will start the transfer process, and you can monitor the progress in the `Activity` tab.
 

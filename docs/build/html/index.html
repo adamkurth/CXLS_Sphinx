@@ -49,8 +49,9 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submmitting SLURM Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rcsb_searchapi.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 </ul>
 
@@ -92,12 +93,13 @@ The documentation for Reborn can be found here: <a class="reference external" hr
 <li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="agave.html#useful-references">Useful References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agave.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agave.html#agave-login-steps">AGAVE Login Steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agave.html#loading-modules">Loading Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agave.html#partitions-at-agave">Partitions at AGAVE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agave.html#running-pattern-sim-through-crystfel">Running <cite>pattern_sim</cite> through CrystFEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="agave.html#indexing-images-through-crystfel">Indexing Images through CrystFEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agave.html#indexing-images-indexamajig-through-crystfel">Indexing Images <cite>indexamajig</cite> through CrystFEL</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a><ul>
@@ -106,6 +108,18 @@ The documentation for Reborn can be found here: <a class="reference external" hr
 <li class="toctree-l2"><a class="reference internal" href="globus.html#globus-setup-in-command-line-no-gui">Globus Setup in Command Line (No GUI)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="globus.html#web-application">Web Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="globus.html#acessing-agave-with-globus">Acessing AGAVE with Globus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submmitting SLURM Jobs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html#agave-indexamajig-script">AGAVE indexamajig Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html#script-description">Script Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html#agave-pattern-sim-script">AGAVE pattern_sim Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html#id1">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html#id2">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html#id3">Script Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html#key-components">Key Components</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a><ul>
@@ -121,9 +135,11 @@ The documentation for Reborn can be found here: <a class="reference external" hr
 <li class="toctree-l2"><a class="reference internal" href="cxls_eiger_4m.html#additional-resources">Additional Resources</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rcsb_searchapi.html">RCSB Search API Scripts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rcsb_searchapi.html#access-pdb-ids">Access PDB IDs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rcsb_searchapi.html#downloading-pdb-files">Downloading PDB Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rcsb_search_api.html#official-documentation">Official Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rcsb_search_api.html#installation-and-setup">Installation and Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rcsb_search_api.html#accessing-pdb-ids-using-scrape-py">Accessing PDB IDs using <cite>scrape.py</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="rcsb_search_api.html#downloading-pdb-files-using-download-pdb-files-py">Downloading PDB Files using <cite>download_pdb_files.py</cite></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a><ul>
@@ -150,7 +166,7 @@ The documentation for reborn can be found here: <a class="reference external" hr
 <section id="software">
 <h2>Software:</h2>
 <ul class="simple">
-<li><p>Verify that all instructions on :<span class="xref std std-ref">README.md</span> have been followed.</p></li>
+<li><p>Verify that all instructions on <span class="xref std std-doc">README.md</span> have been followed.</p></li>
 <li></li>
 </ul>
 </section>

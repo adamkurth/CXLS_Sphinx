@@ -51,7 +51,7 @@ Steps to Activate ZMQ Listener
 
     - The `-f` flag specifies the name of the log file.   
     
-    - If desired, to exit the zmq listener, press `Ctrl+C`.
+    - If desired, to exit the ZMQ listener, press `Ctrl+C`.
 
 
 Initializing and Arming
@@ -66,7 +66,8 @@ Next, initialize and arm the detector. This will allow you to control the detect
         $ source setup.sh
         $ initialize
     
-    - Note that this will initialize the detector, and return `true`.
+    .. note::
+        Note that this will initialize the detector, and return `true`.
 
 2. Set parameters and enable desired outputs using functions from `setup.sh`:
 
@@ -117,8 +118,9 @@ Downloading and Overwrite Images
     .. code-block:: bash
 
         $ cd /home/labuser/Public/Dectris/test/temp_data
-
-    - Note that this will download all images listed on `http://10.139.1.5/data/`.
+    
+    .. note::
+        Note that this will download all images listed on `http://10.139.1.5/data/`.
 
 2. Source the adapted setup script called `adam_setup.sh` and call the download function to start downloading images from `http://10.139.1.5/data/`:
     
@@ -255,4 +257,4 @@ ADXV Image Viewer
 Additional Resources
 --------------------
 
-Please refer to ::ref:`agave` for additional information and troubleshooting while using AGAVE.
+Please refer to :doc:`AGAVE <agave>` for additional information and troubleshooting.

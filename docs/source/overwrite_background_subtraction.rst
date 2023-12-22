@@ -1,28 +1,28 @@
 Water Background Subtraction (Overwrite)
 ==========================================
 
-This module contains the adaptation of the previous background subtraction programs, and is called `overwrite_10_2_23.py` in the Git repositories.
+This module, `overwrite_10_2_23.py`, adapts previous background subtraction programs for specific crystallography data analysis. It processes `.stream` files with "high" and "low" keV values, overwriting the "low" keV background with the "high" keV stream for improved peak accuracy.
 
-The rational behind this is to take two stream files, one with "high" keV values and one with "low" keV values, and analyze their respective `.stream` files.
-The program will then take the background from the "low" keV stream file and overwrite the background in the "high" keV stream file.
+The rational behind this is to take two stream files, one with "high" keV values and one with "low" keV values, and analyze their respective `.stream` files. The program will then take the background from the "low" keV stream file and overwrite the background in the "high" keV stream file.
 
 The program will then "overwrite" the "low" keV stream file, as the "high" keV stream, with the new more accurate peak values.
 
-Please refer to :doc:`stream_background_subtraction.rst` for information about the foundational coding structure.
+Refer to :doc:`stream_background_subtraction.rst` for foundational coding structures.
 
-The GitHub repository for this project can be found at: 
-    - https://github.com/adamkurth/waterbackground_subtraction.git
-    - https://gitlab.com/amkurth/waterbackground_subtraction.git.
- 
+
+GitHub Repositories:
+
+- `adamkurth/waterbackground_subtraction on GitHub <https://github.com/adamkurth/waterbackground_subtraction.git>`_
+
+- `amkurth/waterbackground_subtraction on GitLab <https://gitlab.com/amkurth/waterbackground_subtraction.git>`_
+
 Imports
-^^^^^^^
+-------
 
-Most notably, we inherit the `h5_stream_background_subtraction_10_2_23.py` program, to simplify the code. 
-
-We also import `os`, `shutil`, `numpy`, and `h5py` as `h5`.
+The script primarily extends `h5_stream_background_subtraction_10_2_23.py` to streamline the code, alongside crucial libraries:
 
 .. code-block:: python
-    
+
     import os
     import shutil
     import numpy as np
@@ -30,22 +30,17 @@ We also import `os`, `shutil`, `numpy`, and `h5py` as `h5`.
     import h5_stream_background_subtraction_10_2_23 as streampy
 
 Duplicate Function
-^^^^^^^^^^^^^^^^^^
+------------------
 
-To compare the two stream files before and after the the overwrite process, we need to duplicate the stream files.
+Creates a copy of the stream files before overwriting, using `shutil.copyfile()`.
 
-We do this by using the `shutil.copyfile()` function, which takes two arguments, the source file and the destination file.
+.. py:function:: duplicate_before_overwrite(filename)
 
-.. py:function:: duplicate_before_overwrite(filename):
-
-    Duplicates a file by creating a copy with a modified name.
-
-    :param filename: The name of the file to duplicate.
+    :param filename: The file to duplicate.
     :type filename: str
-
-    :return: The path of the duplicated file.
+    :return: The duplicated file's path.
     :rtype: str
-
+    
     .. code-block:: python
 
         def duplicate_before_overwrite(filename):
@@ -58,7 +53,7 @@ We do this by using the `shutil.copyfile()` function, which takes two arguments,
 
 
 Debugging Functions
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 - `compare_high_low()` is used to compare the two stream file contents to ensure that they're loaded and read properly. 
 
@@ -121,7 +116,7 @@ This function directly appends certain columns in `data_columns` for ease of use
     
 
 Overwrite Function
-^^^^^^^^^^^^^^^^^^
+------------------
 
 This function executes the overwriting procedure of the "high" keV stream file with the "low" keV stream file.
 
@@ -167,8 +162,8 @@ This function executes the overwriting procedure of the "high" keV stream file w
                     # Write the unmodified line to the file
                     f.write(line)
 
-Intenstity Finder Function
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Intensity Finder Function
+-------------------------
 
 This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
 If the x,y coordinates are out of bounds, the function will simply ignore the peak.
@@ -202,9 +197,8 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
                     found_intensities.append(intensities[int(x), int(y)])
             return found_intensities
 
-
 Populate Intensity Array Function
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 Populates the intensity array to recreate the array of a loaded image with the stream data.
 
@@ -240,9 +234,11 @@ Populates the intensity array to recreate the array of a loaded image with the s
                 if x < intensities.shape[0] and y < intensities.shape[1]:
                     new_intensities[x][y] = intensities[x][y]
             return new_intensities
-
 Main Function
-^^^^^^^^^^^^^
+-------------
+
+Orchestrates the overall process, from loading files to processing data and coordinates.
+
     The main function of the program, which executes the program.
 
     The function performs the following steps:
@@ -296,6 +292,8 @@ Main Function
         - Iterates through a list of radii, processing coordinates with different threshold values and radii.
         
         - Sets completed to True after processing
+
+    - To execute the program, ensure it's correctly set up in your environment and call it from the command line or another script.
 
 .. py:function:: main()
 

@@ -13,10 +13,15 @@ Within the project, there are three main project files:
 
 All of these are found under the `src/` directory. The first file contains the main code for this page, while the others were adaptations on this.
 
-The GitHub repository for this project can be found at: 
-    - https://github.com/adamkurth/waterbackground_subtraction.git
-    - https://gitlab.com/amkurth/waterbackground_subtraction.git.
+
+GitHub Repositories:
+
+- `adamkurth/waterbackground_subtraction on GitHub <https://github.com/adamkurth/waterbackground_subtraction.git>`_
+
+
+- `amkurth/waterbackground_subtraction on GitLab <https://gitlab.com/amkurth/waterbackground_subtraction.git>`_
  
+
 Imports
 -------
 

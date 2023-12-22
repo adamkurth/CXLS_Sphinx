@@ -49,14 +49,18 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submmitting SLURM Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rcsb_searchapi.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="projects.html">Projects</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Water Background Subtraction (Overwrite)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#imports">Imports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#duplicate-function">Duplicate Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#duplicate-function">Duplicate Function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#duplicate_before_overwrite"><code class="docutils literal notranslate"><span class="pre">duplicate_before_overwrite()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#debugging-functions">Debugging Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#compare_high_low"><code class="docutils literal notranslate"><span class="pre">compare_high_low()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#retrieve"><code class="docutils literal notranslate"><span class="pre">retrieve()</span></code></a></li>
@@ -66,7 +70,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#overwrite_low_in_high"><code class="docutils literal notranslate"><span class="pre">overwrite_low_in_high()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#intenstity-finder-function">Intenstity Finder Function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intensity-finder-function">Intensity Finder Function</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#intensity_finder"><code class="docutils literal notranslate"><span class="pre">intensity_finder()</span></code></a></li>
 </ul>
 </li>
@@ -111,22 +115,18 @@
              
   <section id="water-background-subtraction-overwrite">
 <h1>Water Background Subtraction (Overwrite)</h1>
-<p>This module contains the adaptation of the previous background subtraction programs, and is called <cite>overwrite_10_2_23.py</cite> in the Git repositories.</p>
-<p>The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files.
-The program will then take the background from the “low” keV stream file and overwrite the background in the “high” keV stream file.</p>
+<p>This module, <cite>overwrite_10_2_23.py</cite>, adapts previous background subtraction programs for specific crystallography data analysis. It processes <cite>.stream</cite> files with “high” and “low” keV values, overwriting the “low” keV background with the “high” keV stream for improved peak accuracy.</p>
+<p>The rational behind this is to take two stream files, one with “high” keV values and one with “low” keV values, and analyze their respective <cite>.stream</cite> files. The program will then take the background from the “low” keV stream file and overwrite the background in the “high” keV stream file.</p>
 <p>The program will then “overwrite” the “low” keV stream file, as the “high” keV stream, with the new more accurate peak values.</p>
-<p>Please refer to <span class="xref std std-doc">stream_background_subtraction.rst</span> for information about the foundational coding structure.</p>
-<dl class="simple">
-<dt>The GitHub repository for this project can be found at:</dt><dd><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">https://github.com/adamkurth/waterbackground_subtraction.git</a></p></li>
-<li><p><a class="reference external" href="https://gitlab.com/amkurth/waterbackground_subtraction.git">https://gitlab.com/amkurth/waterbackground_subtraction.git</a>.</p></li>
+<p>Refer to <span class="xref std std-doc">stream_background_subtraction.rst</span> for foundational coding structures.</p>
+<p>GitHub Repositories:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">adamkurth/waterbackground_subtraction on GitHub</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.com/amkurth/waterbackground_subtraction.git">amkurth/waterbackground_subtraction on GitLab</a></p></li>
 </ul>
-</dd>
-</dl>
 <section id="imports">
 <h2>Imports</h2>
-<p>Most notably, we inherit the <cite>h5_stream_background_subtraction_10_2_23.py</cite> program, to simplify the code.</p>
-<p>We also import <cite>os</cite>, <cite>shutil</cite>, <cite>numpy</cite>, and <cite>h5py</cite> as <cite>h5</cite>.</p>
+<p>The script primarily extends <cite>h5_stream_background_subtraction_10_2_23.py</cite> to streamline the code, alongside crucial libraries:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">shutil</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -137,18 +137,16 @@ The program will then take the background from the “low” keV stream file and
 </section>
 <section id="duplicate-function">
 <h2>Duplicate Function</h2>
-<p>To compare the two stream files before and after the the overwrite process, we need to duplicate the stream files.</p>
-<p>We do this by using the <cite>shutil.copyfile()</cite> function, which takes two arguments, the source file and the destination file.</p>
+<p>Creates a copy of the stream files before overwriting, using <cite>shutil.copyfile()</cite>.</p>
 <dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">duplicate_before_overwrite(filename):</span></span></dt>
-<dd><p>Duplicates a file by creating a copy with a modified name.</p>
-<dl class="field-list simple">
+<dt class="sig sig-object py" id="duplicate_before_overwrite">
+<span class="sig-name descname"><span class="pre">duplicate_before_overwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The name of the file to duplicate.</p>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The file to duplicate.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The path of the duplicated file.</p>
+<dd class="field-even"><p>The duplicated file’s path.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
@@ -263,8 +261,8 @@ The program will then take the background from the “low” keV stream file and
 </dd></dl>
 
 </section>
-<section id="intenstity-finder-function">
-<h2>Intenstity Finder Function</h2>
+<section id="intensity-finder-function">
+<h2>Intensity Finder Function</h2>
 <p>This function simply finds the intensity of the peaks in the image, and returns a list of the intensities.
 If the x,y coordinates are out of bounds, the function will simply ignore the peak.</p>
 <dl class="py function">
@@ -349,6 +347,7 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </section>
 <section id="main-function">
 <h2>Main Function</h2>
+<p>Orchestrates the overall process, from loading files to processing data and coordinates.</p>
 <blockquote>
 <div><p>The main function of the program, which executes the program.</p>
 <p>The function performs the following steps:</p>
@@ -419,6 +418,9 @@ If the x,y coordinates are out of bounds, the function will simply ignore the pe
 </div></blockquote>
 </li>
 </ol>
+<ul class="simple">
+<li><p>To execute the program, ensure it’s correctly set up in your environment and call it from the command line or another script.</p></li>
+</ul>
 </div></blockquote>
 <dl class="py function">
 <dt class="sig sig-object py" id="main">

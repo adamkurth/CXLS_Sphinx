@@ -50,8 +50,9 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submmitting SLURM Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rcsb_searchapi.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="projects.html">Projects</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Water Background Subtraction Project (Stream)</a><ul>
@@ -117,13 +118,11 @@
 <h1>Water Background Subtraction Project (Stream)</h1>
 <p>This project is an adaptation on  <span class="xref std std-doc">background_subtraction.rst</span>. It is intended to analyze the <cite>.stream</cite> after running <cite>indexamajig</cite> from CrystFEL.</p>
 <p>This extension focuses on reading the <cite>.stream</cite> files, makeing a dictionary of the content, and recreating an array of the intensity values. The intensity values are then used to calculate the average surrounding peak value and the intensity peak value.</p>
-<dl class="simple">
-<dt>The GitHub repository for this project can be found at:</dt><dd><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">https://github.com/adamkurth/waterbackground_subtraction.git</a></p></li>
-<li><p><a class="reference external" href="https://gitlab.com/amkurth/waterbackground_subtraction.git">https://gitlab.com/amkurth/waterbackground_subtraction.git</a>.</p></li>
+<p>GitHub Repositories:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/adamkurth/waterbackground_subtraction.git">adamkurth/waterbackground_subtraction on GitHub</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.com/amkurth/waterbackground_subtraction.git">amkurth/waterbackground_subtraction on GitLab</a></p></li>
 </ul>
-</dd>
-</dl>
 <section id="imports">
 <h2>Imports</h2>
 <p>The following modules are imported for use in the program:</p>

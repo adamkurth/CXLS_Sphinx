@@ -1,245 +1,168 @@
-.. _agave-access:
-
 AGAVE Access
 ============
 
-To access the supercomputer using Agave, follow these steps:
+This document provides useful references and step-by-step guidelines for accessing and utilizing the AGAVE supercomputer.
+
+Useful References
+-----------------
+
+Here are some useful references for information on AGAVE:
+
+- `AGAVE RC Documentation <https://asurc.atlassian.net/wiki/spaces/RC/pages/46268520/Agave+Supercomputer>`_
+- `AGAVE Nodes Information <https://asurc.atlassian.net/wiki/spaces/RC/pages/45875228/Compute+Nodes>`_
+- `AGAVE SSH <https://asurc.atlassian.net/wiki/spaces/RC/pages/45318147/Connecting+with+SSHr>`_
+- `AGAVE Interactive Session <https://asurc.atlassian.net/wiki/spaces/RC/pages/1643839520/Starting+an+Interactive+Session>`_
+- `AGAVE Tutorials <https://asurc.atlassian.net/wiki/spaces/RC/pages/46334137/Tutorials>`_
+- `General RC Documentation <https://cores.research.asu.edu/research-computing/getting-started>`_
 
 Prerequisites
 -------------
 
-1. Make sure to run `Cisco Secure Client` and login to ASU network before running the following commands.
+Before accessing AGAVE, ensure the following prerequisites are met:
 
-2. Under the connect field, make sure `sslvpn.asu.edu` is entered.
-
-3. Click connect, and enter your ASURITE credentials;
-   
-    - ASURITE username and password, and Duo Mobile Code for dual-factor authentication.
-
-4. Click connect, and when connected, follow the next steps to access AGAVE supercomputer.
+1. **VPN Connection**:
+   - Run `Cisco Secure Client` and login to the ASU network.
+   - Under the connect field, enter `sslvpn.asu.edu`.
+   - Click connect, and enter your ASURITE credentials, including the Duo Mobile Code for dual-factor authentication.
 
 AGAVE Login Steps
-------------------
+-----------------
 
-1. To login to AGAVE supercomputer, run the following command:
+Using SSH to access AGAVE supercomputer:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    .. code-block:: bash
+1. **SSH Login**:
+   - Run the following command to log in:
+     .. code-block:: bash
+        $ ssh -Y ASURITE@agave.asu.edu
+   - Replace `ASURITE` with your ASURITE username.
+   - Enter your ASURITE password, ensuring `Cisco Secure Client` is running.
 
-        $ ssh -Y username@agave.asu.edu
-    
-    - replace `username` with your ASURITE username.
-
-    - Please enter your ASURITE password, and ensure that `Cisco Secure Client` is running and user is logged in.
-
-2. Once logged in, make sure and get off of the login node by running the following command:
-
-    .. code-block:: bash
-
+2. **Interactive Node**:
+   - Once logged in, switch from the login node:
+     .. code-block:: bash
         $ interactive
 
-2. Now to activate conda environment, run the following command:
-    
-    - replace `username` with your ASURITE username.
-    
-    .. code-block:: bash
+3. **Activate Conda Environment**:
+   - Activate your conda environment:
+     .. code-block:: bash
+        $ source /home/ASURITE/anaconda3/bin/activate
 
-        $ source /home/username/anaconda3/bin/activate
+Using Web Browser to access AGAVE Virtual Desktop:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. **Open AGAVE Portal**:
+   - Click here to open the AGAVE Web Portal: `AGAVE Web Portal <https://asurc.atlassian.net/wiki/spaces/RC/overview>`_.
+   - Navigate to `Agave Web Portal` link on the ASU Research Computing website.
+
+   .. image:: images/agave_web_portal.jpg
+       :alt: AGAVE Web Portal
+       :width: 500px
+       :height: 400px
+       :align: center
+
+2. **Start Interactive Session**:
+   - Click `Get started with the Agave Web Portal` and navigate to `My Interactive Sessions`.
+   - Select `Agave Virtual Desktop` under `Interactive Apps`.
+   - Fill out the fields `Partition`, `QOS`, `Cores`, `Session Wall Time`, and click `Launch`.
+   - Once resources are ready, click the `Launch Agave Virtual Desktop` button.
 
 Loading Modules
-----------------
+---------------
 
-1. To check which modules are available, run the following command:
-
-    .. code-block:: bash
-
+1. **Check Available Modules**:
+   - Run the following to list all available modules:
+     .. code-block:: bash
         $ module -l avail
 
-    Note this is not a particularly fast command, and will take some time.
-
-2. To load modules, run the following command:
-    
-    .. code-block:: bash
-
+2. **Load Modules**:
+   - Load a specific module:
+     .. code-block:: bash
         $ module load module_name/version_number
 
-    Replace `module_name` with the name of the module you want to load.
-
-    For example, to load the `crystfel` module verion `0.9.0`, run the following command:
-
-    .. code-block:: bash
-
-        $ module load crystfel/0.9.0
-
-3. To view the currently loaded modules, run the following command:
-
-    .. code-block:: bash
-
+3. **View Loaded Modules**:
+   - Check currently loaded modules:
+     .. code-block:: bash
         $ module list
 
-4. To unload a module, run the following command:
-
-    .. code-block:: bash
-
+4. **Unload Modules**:
+   - Unload a specific module:
+     .. code-block:: bash
         $ module unload module_name/version_number
-
-    Replace `module_name` with the name of the module you want to unload.
-
-    For example, to unload the `crystfel` module verion `0.9.0`, run the following command:
-
-    .. code-block:: bash
-
-        $ module unload crystfel/0.9.0
-
-5. To unload all modules, run the following command:
-
-    .. code-block:: bash
-
+   - Unload all modules:
+     .. code-block:: bash
         $ module purge
 
 Partitions at AGAVE
---------------------
+-------------------
 
-- **Note**: Ensure that you are first logged into AGAVE supercomputer.
+Before submitting jobs, understand the partitions available:
 
-Before submitting jobs, here is the information about how to find the partition to run your jobs:
-
-- To check the status of a particular partition, run the following commands:
-
-    .. code-block:: bash
-
+1. **Check Partition Status**:
+   - For a specific partition:
+     .. code-block:: bash
         $ sinfo -p partition_name
+   - For all partitions:
+     .. code-block:: bash
+        $ sinfo -a
 
-    Replace `partition_name` with the name of the partition you want to check.
-
-    - Notes on AGAVE Partitions:
-
-            .. code-block:: bash
-
-                $ sinfo
-
-        - To check the status of all partitions, run the following command:
-
-            .. code-block:: bash
-
-                $ sinfo -a
-
-        - To check the status of a particular partition, run the following command:
-
-            .. code-block:: bash
-
-                $ sinfo -p partition_name
-
-        Replace `partition_name` with the name of the partition you want to check.
-
-        - To change the output to only partitions, run the following command:
-
-            .. code-block:: bash
-
-                $ sinfo -h --format="%P"
-
-        Equivalently, you can run the following command:
-
-            .. code-block:: bash
-
-                $ sinfo -o "%P"
-
-        - To check the status of all partitions, run the following command:
-
-            .. code-block:: bash
-
-                $ sinfo -a
-
-        - To watch a job, run the following command:
-
-            .. coe-block:: bash
-
-                $ squeue -j job_id
-        
-        Or to watch all jobs make sure to replace `username`, run the following command:
-
-            .. code-block:: bash
-
-                $ watch 'squeue -u username'
+2. **Monitor Jobs**:
+   - Watch a specific job:
+     .. code-block:: bash
+        $ squeue -j job_id
+   - Watch all your jobs:
+     .. code-block:: bash
+        $ watch 'squeue -u ASURITE'
 
 Running `pattern_sim` through CrystFEL
 --------------------------------------
 
-- **Note**: To run `run_pattern_sim.sh` script, you must first be logged into AGAVE supercomputer, and have the `crystfel` module loaded.
+Ensure you're logged into AGAVE and have loaded the `crystfel` module.
 
-Accessing `run_pattern_sim.sh` in the following directory: `/home/username/Development/run_pattern_sim.sh
+**Access and Execution**:
 
-- How to run `pattern_sim` through CrystFEL through custom script: 
+- Access the script at `/home/ASURITE/Development/run_pattern_sim.sh`.
+- Run `pattern_sim` through CrystFEL using `run_pattern_sim.sh`.
 
-    Using the script called `run_pattern_sim.sh`, you can run `pattern_sim` through CrystFEL. The script is located in the following directory: `/home/username/Development/run_pattern_sim.sh`.
+**Arguments**:
 
-    Here are the arguments for the script:
+- `RUN`: Run name (e.g., `sim_run1`).
+- `GEOM_FILE`: Path to the geometry file.
+- `PDB_FILE`: Path to the PDB file.
+- `INTENSITY_FILE`: Path to the intensity file.
+- `TASKS`: Number of tasks.
+- `PARTITION`: Partition name.
+- `QOS`: Quality of service.
+- `TIME`: Time limit.
+- `TAG`: Job tag.
 
-    - `RUN=$1`: is the run name, for example `sim_run1`.
+**Run the Script**:
 
-    - `GEOM_FILE=$2`: is the path to the geometry file, for CXFEL this will correspond to the Eiger4M .geom file (`Eiger4M.geom`). Make sure this file is in the same directory as the `run_pattern_sim` script.
+.. code-block:: bash
 
-    - `PDB_FILE=$3`: is the path to the pdb file, for example `1vds.pdb`. Make sure this file is in the same directory as the `run_pattern_sim` script.
+    $ ./run_pattern_sim.sh RUN GEOM_FILE PDB_FILE INTENSITY_FILE TASKS PARTITION QOS TIME TAG
 
-    - `INTENSITY_FILE=$4`: is the path to the intensity file, for example `1vds.pdb.hkl`. Make sure this file is in the same directory as the `run_pattern_sim` script.
+Indexing Images `indexamajig` through CrystFEL
+----------------------------------------------
 
-    - `TASKS=$5`: is the number of tasks to run, for example `10`.
+Ensure you're logged into AGAVE and have loaded the `crystfel` module.
 
-    - `PARTITION=$6`: is the partition to run the job on, for example `gpu`.
+**Preparation**:
 
-    - `QOS=$7`: is the quality of service, for example `wildfire`.
+1. Verify `.h5` files from `pattern_sim`.
+2. Create a list of images to index:
+   .. code-block:: bash
+      $ ls /path/to/h5/files/*.h5 > my_images.list
+3. Load necessary modules (`ccp4` and `crystfel`).
 
-    - `TIME=$8`: is the time limit for the job, for example `4`.
+**Indexing**:
 
-    - `TAG=$9`: is the tag for the job, for example `sim_run1`.
+- Index images using `indexamajig`:
+  .. code-block:: bash
+     $ indexamajig -i my_images.list -o output.stream -g geom_file.geom --additional-options
 
-    To adjust the pattern_sim arguments to CrystFEL, please edit the `run_pattern_sim.sh` script, please add comment.
+Refer to `SLURM Scripts <slurm_script>` for more information on submitting jobs.
 
-- All together, the command to run the script is as follows:
-
-    .. code-block:: bash
-
-        $ ./run_pattern_sim.sh RUN GEOM_FILE PDB_FILE INTENSITY_FILE TASKS PARTITION QOS TIME TAG
-
-    Replace `RUN`, `GEOM_FILE`, `PDB_FILE`, `INTENSITY_FILE`, `TASKS`, `PARTITION`, `QOS`, `TIME`, and `TAG` with the appropriate values.
-
-    .. code-block:: bash
-
-        $ ./run_pattern_sim.sh sim_run1 Eiger4M.geom 1vds.pdb 1vds.pdb.hkl 10 gpu wildfire 4 sim_run1
-
-
-Indexing Images through CrystFEL
---------------------------------
-
-- **Note**: Ensure that you are first logged into AGAVE supercomputer, and have the `crystfel` module loaded.
-
-1. Check the outputted `.h5` files from `pattern_sim` to make sure they are correct.
-
-2. Run the following to create a list of images to index:
-
-    .. code-block:: bash
-
-        $ ls /home/amkurth/Development/pattern_simulations/9_18_23_high_intensity/*.h5 > high_intensity.list
-
-3. Ensure that the pipe operator worked as desired by running the following command:
-
-    .. code-block:: bash
-
-        $ less high_intensity.list
-
-4. Load CCP4 and CrystFEL modules by running the following commands:
-
-    .. code-block:: bash
-
-        $ module load ccp4/7.0.077
-        $ module load crystfel/0.9.0
-
-5. Finally, index the list of images by running the following command:
-
-    .. code-block:: bash
-
-        $ indexamajig -i low_intensity.list -o index_test_low/test_low.stream -g Eiger4M.geom --peaks=peakfinder8 --threshold=200 --min-snr=8.0 --min-pix-count=1 --min-peaks=8 --min-res=50 --int-rad=2,4,6 --indexing=mosflm  --pdb=1vds.pdb --multi --check-peaks 
-
-    - Adjust arguments as desired. For more information on the arguments, refer to the CrystFEL documentation at https://www.desy.de/~twhite/crystfel/manual.html#indexamajig.
-
-6. Check the outputted `.stream` file in the workind directory, to make sure it is correct.
-
+.. note::
+   Adjust arguments as necessary and refer to CrystFEL documentation for detailed usage.
+   
