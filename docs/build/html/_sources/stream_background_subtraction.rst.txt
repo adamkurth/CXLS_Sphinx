@@ -5,12 +5,17 @@ This project is an adaptation on  :doc:`background_subtraction.rst`. It is inten
 
 This extension focuses on reading the `.stream` files, makeing a dictionary of the content, and recreating an array of the intensity values. The intensity values are then used to calculate the average surrounding peak value and the intensity peak value.
 
-The GitHub repository for this project can be found at: 
-    - https://github.com/adamkurth/waterbackground_subtraction.git
-    - https://gitlab.com/amkurth/waterbackground_subtraction.git.
+
+GitHub Repositories:
+
+- `adamkurth/waterbackground_subtraction on GitHub <https://github.com/adamkurth/waterbackground_subtraction.git>`_
+
+
+- `amkurth/waterbackground_subtraction on GitLab <https://gitlab.com/amkurth/waterbackground_subtraction.git>`_
  
+
 Imports
-^^^^^^^
+-------
 
 The following modules are imported for use in the program:
 
@@ -22,8 +27,9 @@ The following modules are imported for use in the program:
     import h5py as h5
     import matplotlib.pyplot as plt
 
+
 PeakThresholdProcessor Class 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
 
@@ -66,8 +72,9 @@ The following functions are defined in the `PeakThresholdProcessor` class:
             coordinates = np.argwhere(self.image_array > self.threshold_value)
             return coordinates
 
+
 ArrayRegion Class
-^^^^^^^^^^^^^^^^^
+-----------------
 
 The `ArrayRegion` class is used for processing the image array region, using the coordinate values provided. This class provides functions for setting and retrieving coordinate values these values.
 
@@ -136,8 +143,9 @@ The following functions are defined in the `ArrayRegion` class:
         region = self.array[x_range, y_range]
         return region
 
+
 Helper Functions
-^^^^^^^^^^^^^^^^
+----------------
 
 .. py:function:: load_file_h5(filename)
 
@@ -187,8 +195,9 @@ Helper Functions
             return region      
     
         
+        
 Coordinate Menu Function
-^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 `coordinate_menu` is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.
 
@@ -284,8 +293,9 @@ Coordinate Menu Function
                     print("Invalid input. Enter a number of 'q' to quit.")
 
 
+
 Load Stream Function
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 .. py:function:: load_stream()
 
@@ -361,7 +371,7 @@ Load Stream Function
             return data_columns, result_x, result_y, result_z
 
 Main Function
-^^^^^^^^^^^^^
+-------------
 
 The `main` function processes image data from specified HDF5 file for 3-ring integration analysis. Calling `coordinate_menu` for increasing radius value.
 
