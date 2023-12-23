@@ -1,5 +1,5 @@
-Welcome to CXFEL GitPages Documentation!
-========================================
+CXFEL Documentation Index
+=========================
 
 Introduction
 ------------
