@@ -16,9 +16,9 @@ For testing and development the html file, after running `make html` is availabl
 
 `file:///Users/adamkurth/Documents/vscode/CXFEL_Image_Analysis/CXFEL/CXLS_Sphinx/docs/build/html/index.html`
 
-and for work station: 
+and for work station:
 
-`file:///home/labuser/Development/adam/vscode/CXLS_Sphinx/docs/build/html/home.html`
+`file:///home/labuser/Development/adam/vscode/CXLS_Sphinx/docs/build/html/index.html`
 
 This repository relies on the use of a virtual environment called .venv. This is included in the root directory of this repository, and should be properly installed before adjusting the sphinx documentation.
 
