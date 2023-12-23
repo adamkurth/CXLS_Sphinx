@@ -16,7 +16,7 @@ For testing and development the html file, after running `make html` is availabl
 
 `file:///Users/adamkurth/Documents/vscode/CXFEL_Image_Analysis/CXFEL/CXLS_Sphinx/docs/build/html/index.html`
 
-and for work station: 
+and for work station:
 
 `file:///home/labuser/Development/adam/vscode/CXLS_Sphinx/docs/build/html/home.html`
 
@@ -80,6 +80,7 @@ conda deactivate
 - Using conda, we need to install Sphinx with:
 
 <<<<<<< HEAD
+
 ```bash {"id":"01HH2XHY84BNQN13BZC2XTX3H8"}
 =======
 ```bash {"id":"01HHYX7DZ9MAG3H6JA2XD73NNX"}
@@ -90,6 +91,7 @@ conda install sphinx
 - Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
 
 <<<<<<< HEAD
+
 ```bash {"id":"01HH2XHY84BNQN13BZC4K0MZJG"}
 =======
 ```bash {"id":"01HHYX7DZ9MAG3H6JA2XR8Z4PD"}
@@ -102,6 +104,7 @@ conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
 - Verify installation and create initial sphinx build for documentation with:
 
 <<<<<<< HEAD
+
 ```bash {"id":"01HH2XHY84BNQN13BZC4XNGXS9"}
 =======
 ```bash {"id":"01HHYX7DZ9MAG3H6JA2Z37Y1WG"}
@@ -114,6 +117,7 @@ sphinx-quickstart
 - When done working with the enviornment, deactivate using:
 
 <<<<<<< HEAD
+
 ```bash {"id":"01HH2XHY84BNQN13BZC8FFJE8A"}
 =======
 ```bash {"id":"01HHYX7DZ9MAG3H6JA2ZGDR0ZD"}
