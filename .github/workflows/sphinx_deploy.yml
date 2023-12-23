@@ -1,0 +1,40 @@
+name: Build and Deploy Sphinx Documentation
+
+on:
+  push:
+    branches:
+      - main
+      - progress
+
+jobs:
+  build-and-deploy:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false  # Continue running even if one version fails
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - ubuntu-20.04
+          - ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'  # Adjust the Python version as needed
+
+    - name: Build Sphinx Documentation
+      run: |
+        cd docs
+        make html
+
+    - name: Deploy to GitHub Pages
+      if: matrix.os == 'ubuntu-latest'  # Deploy only from the latest Ubuntu job
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/build/html
+        keep_files: true  # Set to false to clean the publishing directory
