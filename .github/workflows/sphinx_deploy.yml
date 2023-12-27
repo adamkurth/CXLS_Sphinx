@@ -16,6 +16,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
+    - name: Ensure Container is Running
+      run: |
+        docker start rockylinux || docker run -d --name rockylinux -v $(pwd):/github/workspace rockylinux/rockylinux:8 sleep infinity
+        
     - name: Update Pip and Install Dependencies
       run: |
         docker exec rockylinux /venv/bin/pip install --upgrade pip
