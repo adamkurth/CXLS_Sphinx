@@ -12,11 +12,11 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Explore:
+    :maxdepth: 2
+    :caption: Contents:
 
     overview
-        
+          
 
 Getting Started
 ---------------

@@ -1,7 +1,7 @@
 Operation of the Dectris Eiger4M Detector
 ==========================================
 
-This page contains documentaion for the operation of the Dectris Eiger4M detector. It includes steps for activating the zmq listener, initializing and arming the detector, troubleshooting, and additional resources for handling images and using AGAVE.
+This page contains documentation for the operation of the Dectris Eiger4M detector. It includes steps for activating the zmq listener, initializing and arming the detector, troubleshooting, and additional resources for handling images and using AGAVE.
 
 Accessing the Dectris Menu
 --------------------------
@@ -17,42 +17,38 @@ Steps to Activate ZMQ Listener
 
     .. code-block:: bash
 
-        $ git clone https://gitlab.com/kirianlab/reborn.git
+        git clone https://gitlab.com/kirianlab/reborn.git
 
 2. Switch to develop branch:
 
     .. code-block:: bash
 
-        $ git checkout develop
+        git checkout develop
 
 3. Navigate to the correct directory:
 
     .. code-block:: bash
 
-        $ cd /home/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
+        cd /home/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
 
-4. Activate `reborn` enviornment:
+4. Activate `reborn` environment:
 
     .. code-block:: bash
 
-        $ source activate reborn
+        source activate reborn
 
-    - Note that this will activate the `reborn` conda enviornment.
+    - Note that this will activate the `reborn` conda environment.
       
 5. Run `DEigerStream.py`: This will start the zmq listener, and display menu options for the detector.
 
     .. code-block:: bash
 
-        $ python DEigerStream.py -i 10.139.1.5 -f junk.log
+        python DEigerStream.py -i 10.139.1.5 -f junk.log
 
     - Usually best to isolate this window in a separate terminal window.
-
     - The `-i` flag specifies the IP address of the detector.
-
     - The `-f` flag specifies the name of the log file.   
-    
     - If desired, to exit the ZMQ listener, press `Ctrl+C`.
-
 
 Initializing and Arming
 -----------------------
@@ -63,8 +59,8 @@ Next, initialize and arm the detector. This will allow you to control the detect
     
     .. code-block:: bash
 
-        $ source setup.sh
-        $ initialize
+        source setup.sh
+        initialize
     
     .. note::
         Note that this will initialize the detector, and return `true`.
@@ -75,16 +71,16 @@ Next, initialize and arm the detector. This will allow you to control the detect
 
     .. code-block:: bash
 
-        $ enable_monitor
-        $ enable_stream
-        $ enable_filewriter
+        enable_monitor
+        enable_stream
+        enable_filewriter
 
     .. code-block:: bash
       
-        $ nimages num
-        $ frame_time num
-        $ count_time num
-        $ nimages_per_file num
+        nimages num
+        frame_time num
+        count_time num
+        nimages_per_file num
 
     - `nimages` sets the number of images collected in a series.
     - `frame_time` sets the frame time (time between readouts or inverse of collection rate).
@@ -93,22 +89,23 @@ Next, initialize and arm the detector. This will allow you to control the detect
     - `enable_monitor` enables the monitor output.
     - `enable_stream` enables the stream output.
     - `enable_filewriter` enables the filewriter output.
-
     - Replace `num` argument with the desired number, for each function.
 
 3. Able to check the options set using the following functions:
 
-  .. code-block:: bash
-      $ get_nimages
-      $ get_frame_time
-      $ get_count_time
+    .. code-block:: bash
 
-3. Control the detector:
+        get_nimages
+        get_frame_time
+        get_count_time
 
-  .. code-block:: bash
-      $ arm
-      $ disarm
-      $ trigger
+4. Control the detector:
+
+    .. code-block:: bash
+
+        arm
+        disarm
+        trigger
 
 Downloading and Overwrite Images
 --------------------------------
@@ -117,7 +114,7 @@ Downloading and Overwrite Images
 
     .. code-block:: bash
 
-        $ cd /home/labuser/Public/Dectris/test/temp_data
+        cd /home/labuser/Public/Dectris/test/temp_data
     
     .. note::
         Note that this will download all images listed on `http://10.139.1.5/data/`.
@@ -128,35 +125,35 @@ Downloading and Overwrite Images
   
     .. code-block:: bash
 
-        $ cd ~/Public
+        cd ~/Public
 
     Then,
 
     .. code-block:: bash
 
-        $ source Eiger_Setup.sh
-        $ download_images_from_IP
+        source Eiger_Setup.sh
+        download_images_from_IP
 
 Viewing HDF5 Images Through Reborn
 ----------------------------------
 
 1. Navigate to the recent downloaded images directory:
 
-  .. code-block:: bash
+    .. code-block:: bash
       
-      $ cd ~/Public/Dectris/test/temp_data
+        cd ~/Public/Dectris/test/temp_data
   
 2. Export the Python path:
   
-  .. code-block:: bash
+    .. code-block:: bash
 
-    $ export PYTHONPATH=/home/labuser/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:$PYTHONPATH
+        export PYTHONPATH=/home/labuser/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:$PYTHONPATH
 
 3. Run `test_h5_reading.py` or any other Python file:
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-      $ python test_h5_reading.py
+        python test_h5_reading.py
 
 Troubleshooting
 ---------------
@@ -165,21 +162,21 @@ Troubleshooting
   
     .. code-block:: bash
 
-        $ conda list
+        conda list
 
-- Check and make sure that the `reborn` conda enviornment is activated:
+- Check and make sure that the `reborn` conda environment is activated:
 
     .. code-block:: bash
 
-        $ conda list env
+        conda env list
 
 - If a module is not installed, install using:
 
     .. code-block:: bash
 
-        $ conda install module_name
+        conda install module_name
 
-- Replace `module_name` with the desired module.
+- Replace `module_name` with the desired module
 
 
 Filtering Images

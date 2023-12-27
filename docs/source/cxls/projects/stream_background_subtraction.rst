@@ -1,7 +1,7 @@
 Water Background Subtraction Project (Stream)
 ==============================================
 
-This project is an adaptation on  :doc:`projects/background_subtraction.rst`. It is intended to analyze the `.stream` after running `indexamajig` from CrystFEL. 
+This project is an adaptation on :doc:`background_subtraction`. It is intended to analyze the `.stream` after running `indexamajig` from CrystFEL. 
 
 This extension focuses on reading the `.stream` files, makeing a dictionary of the content, and recreating an array of the intensity values. The intensity values are then used to calculate the average surrounding peak value and the intensity peak value.
 
@@ -123,6 +123,7 @@ The following functions are defined in the `ArrayRegion` class:
        :rtype: numpy.ndarray
 
 .. code-block:: python 
+
     class ArrayRegion:
     def __init__(self, array):
         self.array = array
@@ -157,6 +158,7 @@ Helper Functions
     :type filename: str
 
     .. code-block::python
+    
         def load_file_h5(filename):
             if not os.path.exists(filename):
                 print("File not found within working directory.")
@@ -200,7 +202,6 @@ Coordinate Menu Function
 ------------------------
 
 `coordinate_menu` is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.
-
 .. py:function:: coordinate_menu(image_array, threshold_value, coordinates, radius)
 
     This function displays the coordinates above the given threshold and radius, and allows the user to interactively select the coordinate for further processing.
@@ -215,9 +216,6 @@ Coordinate Menu Function
     :type radius: int
 
     The user is prompted to choose a coordinate. Function displays 9x9 two-dimensional array, the segment, and the boolean array of traversed values. The function then returns the average surrounding peak value and the intensity peak value.
-
-    :return: avg surrounding peak, intensity peak
-    :rtype: tuple[float, float]
 
     .. code-block:: python
 
@@ -302,9 +300,6 @@ Load Stream Function
     This function loads the `.stream` file and prints a success message if the file is loaded successfully. If the file is not found within the working directory, it prints an error message.
     
      It then reads the file line by line and stores the values in a dictionary. The function then returns the dictionary and the x, y, and z values.
-
-    :return: A tuple containing four lists: data_columns, result_x, result_y, result_z, from previous code adaptation `create_scatter`.
-    :rtype: tuple[dictionary, list, list, list]
 
     .. code-block:: python
 
