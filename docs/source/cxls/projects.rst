@@ -2,8 +2,8 @@ Projects
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   background_subtraction
-   stream_background_subtraction
-   overwrite_background_subtraction
+   projects/background_subtraction
+   projects/stream_background_subtraction
+   projects/overwrite_background_subtraction

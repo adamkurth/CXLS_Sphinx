@@ -1,5 +1,5 @@
-CXFEL Documentation Index
-=========================
+CXFEL Documentation Home Page
+==============================
 
 Introduction
 ------------
@@ -15,7 +15,6 @@ Contents
    :maxdepth: 2
    :caption: Explore:
 
-    landing
     overview
         
 

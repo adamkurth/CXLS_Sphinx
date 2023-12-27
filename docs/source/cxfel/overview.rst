@@ -1,40 +1,48 @@
-CXFEL Compact X-ray Free Electron Laser Overview Page
-=====================================================
+CXFEL Home Page
+==================
+
+Welcome to the CXFEL Home Page at Bues Laser Laboratory, located at ASU Biodesign Institute C.
 
 Introduction
-------------
+-------------
 
-The CXFEL (Compact X-ray Free Electron Laser) is a cutting-edge technology that enables the generation of intense X-ray pulses for various scientific applications. This overview page provides a high-level introduction to the CXFEL system and its capabilities.
+The CXFEL (Compact X-ray Free Electron Laser) is a cutting-edge research facility dedicated to the study of ultrafast dynamics in materials using X-ray lasers. Our laboratory is equipped with state-of-the-art instruments and technologies to enable groundbreaking research in the field of X-ray science.
 
-Features
---------
+Research Areas
+--------------
 
-- Compact design: The CXFEL system is designed to be compact, allowing for easy integration into existing experimental setups.
+Our research at CXFEL focuses on the following areas:
 
-- High intensity: The CXFEL can generate X-ray pulses with extremely high intensity, enabling the study of complex phenomena at the atomic level.
+- Ultrafast dynamics in materials
+- Time-resolved X-ray spectroscopy
+- X-ray crystallography
 
-- Tunable wavelength: The wavelength of the X-ray pulses can be tuned to match the specific requirements of the experiment, providing flexibility in research.
+Facilities and Equipment
+------------------------
 
-- Short pulse duration: The CXFEL produces ultrashort X-ray pulses, allowing for the investigation of ultrafast processes in materials and biological systems.
+We have a wide range of advanced facilities and equipment to support our research, including:
 
-- Wide energy range: The CXFEL can operate over a wide range of X-ray energies, making it suitable for a broad range of scientific investigations.
+- High-power X-ray lasers
+- Ultrafast optical lasers
+- X-ray detectors
+- Sample preparation and characterization tools
 
-Applications
-------------
+Collaboration Opportunities
+---------------------------
 
-The CXFEL technology has a wide range of applications in various scientific fields, including:
+We actively seek collaborations with researchers and institutions from around the world. If you are interested in collaborating with us or accessing our facilities, please get in touch.
 
-- Materials science: The CXFEL can be used to study the structure and dynamics of materials at the atomic level, providing insights into their properties and behavior.
+Contact Information
+-------------------
 
-- Chemistry: The CXFEL enables the investigation of chemical reactions in real-time, allowing for a better understanding of reaction mechanisms and kinetics.
+For more information about CXFEL and our research, please contact:
 
-- Biology: The CXFEL can be used to study biological macromolecules, such as proteins and nucleic acids, providing valuable information about their structure and function.
+- Contact Name Goes Here
+    Email: contact@asu.edu
+    Phone: +1 (123) 456-7890
 
-- Physics: The CXFEL is a powerful tool for studying fundamental physical processes, such as electron dynamics and phase transitions.
+- Contact Name Goes Here
+    Email: contact@asu.edu
+    Phone: +1 (123) 456-7890
 
-Conclusion
-----------
-
-The CXFEL Compact X-ray Free Electron Laser is a state-of-the-art technology that offers unprecedented capabilities for scientific research. Its compact design, high intensity, tunable wavelength, short pulse duration, and wide energy range make it a versatile tool for a wide range of applications in materials science, chemistry, biology, and physics.
-
-For more detailed information, please refer to the specific documentation and resources available for the CXFEL system.
+Thank you for visiting the CXFEL Home Page. We look forward to collaborating with you and advancing the field of X-ray science together.
