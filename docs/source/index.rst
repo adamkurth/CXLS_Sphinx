@@ -29,7 +29,10 @@ This is the main landing page for our documentation. Please choose the project y
     cxls/slurm_script
     cxls/cxls_eiger_4m
     cxls/rcsb_search_api
+    cxls/crystfel_tutorial
     cxls/projects
+    cxls/online_analysis
+    cxls/offline_analysis
 
 .. toctree::
     :maxdepth: 2
@@ -43,3 +46,4 @@ About This Documentation
 ------------------------
 
 This documentation is designed to provide a comprehensive guide for users and developers working with CXLS and CXFEL projects. It is regularly updated to reflect the latest changes and features.
+

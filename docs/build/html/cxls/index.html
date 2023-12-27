@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CXLS Documentation Home Page &mdash; CXFEL Labs GitPages Docs  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=649a27d8" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e8c4a81e" />
+      <link rel="stylesheet" type="text/css" href="../_static/fonts.css?v=5583d106" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e8c4a81e" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -62,7 +64,12 @@
 <li class="toctree-l3"><a class="reference internal" href="slurm_script.html">Submitting SLURM Jobs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crystfel_tutorial.html">CrystFEL Tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
@@ -79,7 +86,10 @@
 <li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submitting SLURM Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crystfel_tutorial.html">CrystFEL Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
 <ul>
@@ -115,9 +125,8 @@
 <h1>CXLS Documentation Home Page</h1>
 <section id="introduction">
 <h2>Introduction</h2>
-<p>By adapting the uses of Reborn repository (<a class="reference external" href="https://gitlab.com/kirianlab/reborn">https://gitlab.com/kirianlab/reborn</a>), we have created a new repository for CXLS.</p>
-<p>This repository is tailored to the uses at CXLS and gathering and analyzing crystallography data.</p>
-<p>The documentation for Reborn can be found here: <a class="reference external" href="https://kirianlab.gitlab.io/reborn/">https://kirianlab.gitlab.io/reborn/</a>.</p>
+<p>For the uses of CXLS, we have adapted the existing Reborn repository. <a class="reference external" href="https://gitlab.com/kirianlab/reborn">Here</a> is the hyperlink for this repo. Specifically, this repository is tailored to the uses at CXLS and gathering and analyzing crystallography data.</p>
+<p>Click here to view the documentation for Reborn: <a class="reference external" href="https://kirianlab.gitlab.io/reborn/">Reborn Documentation</a>.</p>
 <p>This documentation is still under construction and will be updated regularly.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
@@ -145,7 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="globus.html#run-application-no-gui">Run Application (No GUI)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="globus.html#globus-setup-in-command-line-no-gui">Globus Setup in Command Line (No GUI)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="globus.html#web-application">Web Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="globus.html#acessing-agave-with-globus">Acessing AGAVE with Globus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globus.html#accessing-agave-with-globus">Accessing AGAVE with Globus</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sol.html">Sol Access Page</a><ul>
@@ -188,24 +197,48 @@
 <li class="toctree-l2"><a class="reference internal" href="rcsb_search_api.html#downloading-pdb-files-using-download-pdb-files-py">Downloading PDB Files using <cite>download_pdb_files.py</cite></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="crystfel_tutorial.html">CrystFEL Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="projects/background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="projects/stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="projects/overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="online_analysis.html">Online Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#online-analysis-tools">Online Analysis Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#online-analysis-workflow">Online Analysis Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#id1">CrystFEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#reborn">Reborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#ai-ml-data-package-1-gpcam">AI/ML Data Package 1 (gpCAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#ai-ml-time-resolved-data-package">AI/ML Time Resolved Data Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online_analysis.html">Online Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#online-analysis-tools">Online Analysis Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#online-analysis-workflow">Online Analysis Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#id1">CrystFEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#reborn">Reborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#ai-ml-data-package-1-gpcam">AI/ML Data Package 1 (gpCAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#ai-ml-time-resolved-data-package">AI/ML Time Resolved Data Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
 </ul>
 </div>
 </section>
 <section id="installation">
-<span id="id1"></span><h2>Installation</h2>
-<p>Please refer to the <cite>README.md</cite> file in the repository for installation and setup instructions, available here: available here: <a class="reference external" href="https://github.com/adamkurth/CXLS_Sphinx/blob/main/README.md">README</a>.
-.. _reborn:</p>
+<span id="cxls-installation"></span><h2>Installation</h2>
+<p>Please refer to the <cite>README.md</cite> file in the repository for installation and setup instructions, available here: available here: <a class="reference external" href="https://github.com/adamkurth/CXLS_Sphinx/blob/main/README.md">README</a>.</p>
 </section>
 <section id="documentation-for-reborn">
-<h2>Documentation for Reborn</h2>
-<p>The GitLab repository for reborn can be found here: <a class="reference external" href="https://gitlab.com/kirianlab/reborn">https://gitlab.com/kirianlab/reborn</a>.</p>
-<p>The documentation for reborn can be found here: <a class="reference external" href="https://kirianlab.gitlab.io/reborn/">https://kirianlab.gitlab.io/reborn/</a>.</p>
+<span id="reborn"></span><h2>Documentation for Reborn</h2>
+<p>The GitLab repository for reborn can be found here: <a class="reference external" href="https://gitlab.com/kirianlab/reborn">Reborn Repository</a>.</p>
+<p>The documentation for reborn can be found here: <a class="reference external" href="https://kirianlab.gitlab.io/reborn/">Reborn Documentation</a>.</p>
 </section>
 <section id="troubleshooting-dcu-notes">
 <span id="dcu"></span><h2>Troubleshooting DCU Notes</h2>
