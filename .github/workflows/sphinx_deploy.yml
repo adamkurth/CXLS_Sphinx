@@ -31,7 +31,7 @@ jobs:
 
     - name: Build Sphinx Documentation
       run: |
-        docker exec rockylinux bash -c "cd /github/workspace/docs && make html"
+        docker exec rockylinux bash -c "source /venv/bin/activate && cd /github/workspace/docs && make html"
 
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'  # Ensures deployment happens only from the main branch
