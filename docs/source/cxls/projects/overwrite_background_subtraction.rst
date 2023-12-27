@@ -7,7 +7,7 @@ The rational behind this is to take two stream files, one with "high" keV values
 
 The program will then "overwrite" the "low" keV stream file, as the "high" keV stream, with the new more accurate peak values.
 
-Refer to :doc:`stream_background_subtraction.rst` for foundational coding structures.
+Refer to :doc:`projects/stream_background_subtraction.rst` for foundational coding structures.
 
 
 GitHub Repositories:
