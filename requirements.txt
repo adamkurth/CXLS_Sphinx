@@ -17,7 +17,6 @@ requests
 setuptools
 sphinx
 sphinx-material
-sphinx-pdj-theme
 sphinx-py3doc-enhanced-theme
 sphinx-rtd-theme
 sphinxcontrib-applehelp
