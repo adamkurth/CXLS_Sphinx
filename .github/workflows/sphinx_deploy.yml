@@ -16,6 +16,11 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
+    - name: Update Pip and Install Dependencies
+      run: |
+        docker exec rockylinux /venv/bin/pip install --upgrade pip
+        docker exec rockylinux /venv/bin/pip install -r /github/workspace/requirements.txt
+
     - name: Set up Docker Container with Rocky Linux 8
       run: |
         docker pull rockylinux/rockylinux:8
