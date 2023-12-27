@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'CXLS Sphinx'
-copyright = '2023, Sabine Botha, Adam Kurth, and more'
-author = 'Sabine Botha, Adam Kurth, and more'
+project = 'CXFEL Labs GitPages Docs'
+copyright = '2023, Adam Kurth, Sabine Botha'
+author = ' Adam Kurth, Sabine Botha'
 # release = 'N'
 
 # -- General configuration ---------------------------------------------------
@@ -30,6 +30,7 @@ pygments_style = 'sphinx'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'renku'
+
 html_static_path = ['_static']
 html_css_files = [
     'custom.css',
