@@ -54,7 +54,8 @@ Troubleshooting DCU Notes
 Software:
 ---------
 
-- Verify that all instructions on :doc:`README.md` have been followed, available here: `README <https://github.com/adamkurth/CXLS_Sphinx/blob/main/README.md>`_.
+- Verify that all instructions on `README.md` have been followed, available here: `README <https://github.com/adamkurth/CXLS_Sphinx/blob/main/README.md>`_.
+
 - Verify that the DCU is connected to the network (either via ethernet or wifi)
 
 
