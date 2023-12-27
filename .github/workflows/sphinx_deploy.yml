@@ -37,10 +37,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: /github/workspace/docs/build/html
-        keep_files: true  # Set to false if you want a clean deployment GitHub Pages
-      if: github.ref == 'refs/heads/main'  # Ensures deployment happens only from the main branch
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/build/html
-        keep_files: true  # Set to false if you want a clean deployment
+        keep_files: true  # Set to false if you want a clean deployment on GitHub Pages
