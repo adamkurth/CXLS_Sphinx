@@ -21,8 +21,9 @@ jobs:
         docker pull rockylinux/rockylinux:8
         docker run -d --name rockylinux -v $(pwd):/github/workspace rockylinux/rockylinux:8 sleep infinity || docker start rockylinux
 
-    - name: Install Python and Dependencies
+    - name: Install Development Tools, Python, and Dependencies
       run: |
+        docker exec rockylinux dnf groupinstall -y "Development Tools"
         docker exec rockylinux dnf install -y python3 python3-pip
         docker exec rockylinux python3 -m venv /venv
         docker exec rockylinux /venv/bin/pip install --upgrade pip
@@ -33,7 +34,7 @@ jobs:
         docker exec rockylinux bash -c "cd /github/workspace/docs && make html"
 
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'  # Ensures deployment happens only from the main branch
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
