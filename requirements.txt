@@ -15,7 +15,7 @@ python-slugify
 recommonmark
 requests
 setuptools
-sphinx
+sphinx==7.2.6
 sphinx-material
 sphinx-py3doc-enhanced-theme
 sphinx-rtd-theme
