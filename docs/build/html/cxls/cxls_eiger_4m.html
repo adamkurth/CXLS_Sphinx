@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operation of the Dectris Eiger4M Detector &mdash; CXFEL Labs GitPages Docs  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RCSB Search API Scripts" href="rcsb_search_api.html" />
+    <link rel="prev" title="Submitting SLURM Jobs" href="slurm_script.html" />
+<!-- Custom toggle buttons -->
+<div class="toggle-container">
+    <a href="index.html" class="toggle-btn">CXLS</a>
+    <a href="../cxfel/index.html" class="toggle-btn">CXFEL</a>
+</div>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CXFEL Labs GitPages Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">CXLS Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">CXLS Documentation Home Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">CXLS Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sol.html">Sol Access Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submitting SLURM Jobs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Operation of the Dectris Eiger4M Detector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-the-dectris-menu">Accessing the Dectris Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps-to-activate-zmq-listener">Steps to Activate ZMQ Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initializing-and-arming">Initializing and Arming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-and-overwrite-images">Downloading and Overwrite Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-hdf5-images-through-reborn">Viewing HDF5 Images Through Reborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filtering-images">Filtering Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#albula-image-viewer">ALBULA Image Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adxv-image-viewer">ADXV Image Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cxfel/index.html">CXFEL Documentation Home Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxfel/overview.html">CXFEL Home Page</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CXFEL Labs GitPages Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">CXLS Documentation Home Page</a></li>
+      <li class="breadcrumb-item active">Operation of the Dectris Eiger4M Detector</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cxls/cxls_eiger_4m.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="operation-of-the-dectris-eiger4m-detector">
+<h1>Operation of the Dectris Eiger4M Detector</h1>
+<p>This page contains documentaion for the operation of the Dectris Eiger4M detector. It includes steps for activating the zmq listener, initializing and arming the detector, troubleshooting, and additional resources for handling images and using AGAVE.</p>
+<section id="accessing-the-dectris-menu">
+<h2>Accessing the Dectris Menu</h2>
+<ul class="simple">
+<li><p>Open <cite>http://10.139.1.5</cite> in any browser to access the Dectris menu options for the detector.</p></li>
+<li><p>Data images will be stored at <cite>http://10.139.1.5/data/</cite>.</p></li>
+<li><p>Use <cite>setup.sh</cite> to download these images onto your computer (details provided later in this document).</p></li>
+</ul>
+</section>
+<section id="steps-to-activate-zmq-listener">
+<h2>Steps to Activate ZMQ Listener</h2>
+<ol class="arabic">
+<li><p>Clone the reborn repository:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/kirianlab/reborn.git
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Switch to develop branch:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>develop
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Navigate to the correct directory:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Activate <cite>reborn</cite> enviornment:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>reborn
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Note that this will activate the <cite>reborn</cite> conda enviornment.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Run <cite>DEigerStream.py</cite>: This will start the zmq listener, and display menu options for the detector.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>DEigerStream.py<span class="w"> </span>-i<span class="w"> </span><span class="m">10</span>.139.1.5<span class="w"> </span>-f<span class="w"> </span>junk.log
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Usually best to isolate this window in a separate terminal window.</p></li>
+<li><p>The <cite>-i</cite> flag specifies the IP address of the detector.</p></li>
+<li><p>The <cite>-f</cite> flag specifies the name of the log file.</p></li>
+<li><p>If desired, to exit the ZMQ listener, press <cite>Ctrl+C</cite>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="initializing-and-arming">
+<h2>Initializing and Arming</h2>
+<p>Next, initialize and arm the detector. This will allow you to control the detector using the zmq listener.</p>
+<ol class="arabic">
+<li><p>Source <cite>setup.sh</cite> to use simplified commands like initialize, arm, disarm, etc.:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>setup.sh
+$<span class="w"> </span>initialize
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that this will initialize the detector, and return <cite>true</cite>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Set parameters and enable desired outputs using functions from <cite>setup.sh</cite>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Choose from the options below:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>enable_monitor
+$<span class="w"> </span>enable_stream
+$<span class="w"> </span>enable_filewriter
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nimages<span class="w"> </span>num
+$<span class="w"> </span>frame_time<span class="w"> </span>num
+$<span class="w"> </span>count_time<span class="w"> </span>num
+$<span class="w"> </span>nimages_per_file<span class="w"> </span>num
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>nimages</cite> sets the number of images collected in a series.</p></li>
+<li><p><cite>frame_time</cite> sets the frame time (time between readouts or inverse of collection rate).</p></li>
+<li><p><cite>count_time</cite> sets the exposure time.</p></li>
+<li><p><cite>nimages_per_file</cite> sets the number of images per file.</p></li>
+<li><p><cite>enable_monitor</cite> enables the monitor output.</p></li>
+<li><p><cite>enable_stream</cite> enables the stream output.</p></li>
+<li><p><cite>enable_filewriter</cite> enables the filewriter output.</p></li>
+<li><p>Replace <cite>num</cite> argument with the desired number, for each function.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Able to check the options set using the following functions:</p></li>
+</ol>
+<blockquote>
+<div></div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Control the detector:</p></li>
+</ol>
+<blockquote>
+<div></div></blockquote>
+</section>
+<section id="downloading-and-overwrite-images">
+<h2>Downloading and Overwrite Images</h2>
+<ol class="arabic">
+<li><p>Navigate to the desired directory to store images:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/Dectris/test/temp_data
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that this will download all images listed on <cite>http://10.139.1.5/data/</cite>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Source the adapted setup script called <cite>adam_setup.sh</cite> and call the download function to start downloading images from <cite>http://10.139.1.5/data/</cite>:</p>
+<blockquote>
+<div><p>First,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public
+</pre></div>
+</div>
+<p>Then,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>Eiger_Setup.sh
+$<span class="w"> </span>download_images_from_IP
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="viewing-hdf5-images-through-reborn">
+<h2>Viewing HDF5 Images Through Reborn</h2>
+<ol class="arabic simple">
+<li><p>Navigate to the recent downloaded images directory:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public/Dectris/test/temp_data
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Export the Python path:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>/home/labuser/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:<span class="nv">$PYTHONPATH</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Run <cite>test_h5_reading.py</cite> or any other Python file:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>test_h5_reading.py
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting</h2>
+<ul>
+<li><p>If encountering module errors, check the modules available in reborn:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>list
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Check and make sure that the <cite>reborn</cite> conda enviornment is activated:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>list<span class="w"> </span>env
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>If a module is not installed, install using:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>module_name
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Replace <cite>module_name</cite> with the desired module.</p></li>
+</ul>
+</section>
+<section id="filtering-images">
+<h2>Filtering Images</h2>
+<ul>
+<li><p>Using <cite>filter_nimages</cite>: This function will filter the downloaded images based on the number of images in the series.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>Eiger_Setup.sh
+</pre></div>
+</div>
+<p>To show all downloaded images, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>filter_nimages
+</pre></div>
+</div>
+<p>Example output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Found<span class="w"> </span>file:<span class="w"> </span>series_1_data_000001.h5
+Found<span class="w"> </span>file:<span class="w"> </span>series_1_data_000002.h5
+</pre></div>
+</div>
+</li>
+<li><p>Using <cite>filter_master_nimages</cite>: This will show all of the master files from using the detector.</p>
+<p>To show all master files, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>filter_master_nimages
+</pre></div>
+</div>
+<p>Example output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Found<span class="w"> </span>file:<span class="w"> </span>series_1_master.h5
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="albula-image-viewer">
+<h2>ALBULA Image Viewer</h2>
+<ul>
+<li><p>To view images using the ALBULA image viewer, navigate to the directory containing the images, and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>Eiger_Setup.sh
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>albula_launch
+</pre></div>
+</div>
+</li>
+<li><p>This function in <cite>Eiger_Setup.sh</cite> will launch the ALBULA image viewer, and display the images in the <cite>temp_data</cite> directory.</p></li>
+<li><p>Note that this function will only work if the <cite>temp_data</cite> directory contains images.</p></li>
+<li><p>There is also an option to choose between <cite>master</cite> files and individual <cite>data</cite> files.</p></li>
+</ul>
+</section>
+<section id="adxv-image-viewer">
+<h2>ADXV Image Viewer</h2>
+<ul>
+<li><p>To view images using the ADXV image viewer, navigate to the directory containing the images, and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>Eiger_Setup.sh
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>adxv_launch
+</pre></div>
+</div>
+</li>
+<li><p>Through the interactive GUI window, you can select the desired image to view.</p></li>
+</ul>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources</h2>
+<p>Please refer to <a class="reference internal" href="agave.html"><span class="doc">AGAVE</span></a> for additional information and troubleshooting.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="slurm_script.html" class="btn btn-neutral float-left" title="Submitting SLURM Jobs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rcsb_search_api.html" class="btn btn-neutral float-right" title="RCSB Search API Scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Adam Kurth, Sabine Botha.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'CXLS Sphinx'
-copyright = '2023, Sabine Botha, Adam Kurth, and more'
-author = 'Sabine Botha, Adam Kurth, and more'
+project = 'CXFEL Labs GitPages Docs'
+copyright = '2023, Adam Kurth, Sabine Botha'
+author = ' Adam Kurth, Sabine Botha'
 # release = 'N'
 
 # -- General configuration ---------------------------------------------------
@@ -29,7 +29,19 @@ pygments_style = 'sphinx'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinxawesome_theme'
+html_theme = 'renku'
+
+html_static_path = ['_static']
+html_css_files = [
+    'custom.css',
+]
+
+# Pygments (syntax highlighting) style to use
+pygments_style = 'friendly'
+
+# This is the correct place for html_add_permalinks configuration
+html_permalinks = False  # Disable ¶ symbols next to headings
+
 # html_static_path = ['_static']
 
 # themes installed with pip 
@@ -38,4 +50,8 @@ html_theme = 'sphinxawesome_theme'
 # 'sphinx_material'
 # 'sphinx_book_theme'
 # 'sphinx_py3doc_enhanced_theme'
+
+
+#FAVORITES
 # 'sphinxawesome_theme'
+# 'renku'
