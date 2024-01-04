@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
+<<<<<<< HEAD
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+=======
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+>>>>>>> origin/progress
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Water Background Subtraction Project (Stream) &mdash; CXFEL Labs GitPages Docs  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/fonts.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e8c4a81e" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -58,6 +62,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../slurm_script.html">Submitting SLURM Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rcsb_search_api.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crystfel_tutorial.html">CrystFEL Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../projects.html">Projects</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Water Background Subtraction Project (Stream)</a><ul>
@@ -75,10 +80,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#extract_region"><code class="docutils literal notranslate"><span class="pre">extract_region()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#coordinate-menu-function">Coordinate Menu Function</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#coordinate_menu"><code class="docutils literal notranslate"><span class="pre">coordinate_menu()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#coordinate-menu-function">Coordinate Menu Function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-stream-function">Load Stream Function</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#load_stream"><code class="docutils literal notranslate"><span class="pre">load_stream()</span></code></a></li>
 </ul>
@@ -92,6 +94,8 @@
 <li class="toctree-l2"><a class="reference internal" href="overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../offline_analysis.html">Offline Analysis</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
 <ul>
@@ -127,7 +131,7 @@
              
   <section id="water-background-subtraction-project-stream">
 <h1>Water Background Subtraction Project (Stream)</h1>
-<p>This project is an adaptation on  <span class="xref std std-doc">projects/background_subtraction.rst</span>. It is intended to analyze the <cite>.stream</cite> after running <cite>indexamajig</cite> from CrystFEL.</p>
+<p>This project is an adaptation on <a class="reference internal" href="background_subtraction.html"><span class="doc">Water Background Subtraction Project (Main)</span></a>. It is intended to analyze the <cite>.stream</cite> after running <cite>indexamajig</cite> from CrystFEL.</p>
 <p>This extension focuses on reading the <cite>.stream</cite> files, makeing a dictionary of the content, and recreating an array of the intensity values. The intensity values are then used to calculate the average surrounding peak value and the intensity peak value.</p>
 <p>GitHub Repositories:</p>
 <ul class="simple">
@@ -276,6 +280,27 @@
 
 </dd></dl>
 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrayRegion</span><span class="p">:</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">array</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">set_peak_coordinate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">=</span> <span class="n">y</span>
+<span class="k">def</span> <span class="nf">set_region_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="c1"># set limit that is printable in terminal</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span> <span class="o">=</span> <span class="n">size</span>
+    <span class="n">max_printable_region</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">//</span><span class="mi">2</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">max_printable_region</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">x_range</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_center</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">y_range</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_center</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">region_size</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">region</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">region</span>
+</pre></div>
+</div>
 </section>
 <section id="helper-functions">
 <h2>Helper Functions</h2>
@@ -316,12 +341,12 @@
 </section>
 <section id="coordinate-menu-function">
 <h2>Coordinate Menu Function</h2>
-<p><cite>coordinate_menu</cite> is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="coordinate_menu">
-<span class="sig-name descname"><span class="pre">coordinate_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>This function displays the coordinates above the given threshold and radius, and allows the user to interactively select the coordinate for further processing.</p>
+<p><cite>coordinate_menu</cite> is the focus of this program, is used interactively with the user to display the chosen coordiante value. Visualizing the region of the chosen coordinate value, and displaying the average surrounding peak value and the intensity peak value.
+.. py:function:: coordinate_menu(image_array, threshold_value, coordinates, radius)</p>
+<blockquote>
+<div><p>This function displays the coordinates above the given threshold and radius, and allows the user to interactively select the coordinate for further processing.</p>
 <dl class="field-list simple">
+<<<<<<< HEAD
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
@@ -340,6 +365,34 @@
 <dd class="field-even"><p>tuple[float, float]</p>
 </dd>
 </dl>
+=======
+<dt class="field-odd">param image_array<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The image array to be processed.</p>
+</dd>
+<dt class="field-even">type image_array<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+<dt class="field-odd">param threshold_value<span class="colon">:</span></dt>
+<dd class="field-odd"><p>thresold value to determine the coordiantes.</p>
+</dd>
+<dt class="field-even">type threshold_value<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+<dt class="field-odd">param coordinates<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple list of coordinates (x,y) above thresold.</p>
+</dd>
+<dt class="field-even">type coordinates<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[tuple[int, int]]</p>
+</dd>
+<dt class="field-odd">param radius<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The radius around each coordinate to be processed.</p>
+</dd>
+<dt class="field-even">type radius<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<p>The user is prompted to choose a coordinate. Function displays 9x9 two-dimensional array, the segment, and the boolean array of traversed values. The function then returns the average surrounding peak value and the intensity peak value.</p>
+>>>>>>> origin/progress
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coordinate_menu</span><span class="p">(</span><span class="n">image_array</span><span class="p">,</span> <span class="n">threshold_value</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Coordinates above given threshold:&quot;</span><span class="p">,</span> <span class="n">threshold_value</span><span class="p">,</span> <span class="s1">&#39;with radius: &#39;</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coordinates</span><span class="p">):</span>
@@ -412,8 +465,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input. Enter a number of &#39;q&#39; to quit.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd></dl>
-
+</div></blockquote>
 </section>
 <section id="load-stream-function">
 <h2>Load Stream Function</h2>
@@ -424,6 +476,7 @@
 <blockquote>
 <div><p>It then reads the file line by line and stores the values in a dictionary. The function then returns the dictionary and the x, y, and z values.</p>
 </div></blockquote>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A tuple containing four lists: data_columns, result_x, result_y, result_z, from previous code adaptation <cite>create_scatter</cite>.</p>
@@ -432,6 +485,8 @@
 <dd class="field-even"><p>tuple[dictionary, list, list, list]</p>
 </dd>
 </dl>
+=======
+>>>>>>> origin/progress
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_stream</span><span class="p">(</span><span class="n">stream_path</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">stream_coord</span>
     <span class="k">global</span> <span class="n">result_x</span><span class="p">,</span> <span class="n">result_y</span><span class="p">,</span> <span class="n">result_z</span> <span class="c1">#for building intensity array</span>

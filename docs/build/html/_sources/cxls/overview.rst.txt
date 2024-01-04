@@ -28,7 +28,7 @@ Our laboratory is equipped with the latest compact X-ray systems and experimenta
 - X-ray safety equipment and protocols to ensure a safe working environment.
 
 Collaboration and Partnerships
------------------------------
+-------------------------------
 
 We actively collaborate with researchers, scientists, and industry partners to foster innovation and advance compact X-ray-based research. Our laboratory welcomes collaborations and partnerships from academia, industry, and other research institutions.
 
