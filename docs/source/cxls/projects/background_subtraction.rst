@@ -26,6 +26,7 @@ Imports
 -------
 
 The following modules are imported for use in the program:
+
 .. code-block:: python
  
     import os
@@ -36,7 +37,7 @@ The following modules are imported for use in the program:
 PeakThresholdProcessor Class 
 ----------------------------
 
- The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
+The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
 
 The following functions are defined in the `PeakThresholdProcessor` class:
 

@@ -7,7 +7,7 @@ The rational behind this is to take two stream files, one with "high" keV values
 
 The program will then "overwrite" the "low" keV stream file, as the "high" keV stream, with the new more accurate peak values.
 
-Refer to :doc:`projects/stream_background_subtraction.rst` for foundational coding structures.
+Refer to :doc:`stream_background_subtraction` for foundational coding structures.
 
 
 GitHub Repositories:
@@ -234,6 +234,7 @@ Populates the intensity array to recreate the array of a loaded image with the s
                 if x < intensities.shape[0] and y < intensities.shape[1]:
                     new_intensities[x][y] = intensities[x][y]
             return new_intensities
+            
 Main Function
 -------------
 
@@ -294,6 +295,7 @@ Orchestrates the overall process, from loading files to processing data and coor
         - Sets completed to True after processing
 
     - To execute the program, ensure it's correctly set up in your environment and call it from the command line or another script.
+
 
 .. py:function:: main()
 

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
+<<<<<<< HEAD
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+=======
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+>>>>>>> origin/progress
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Water Background Subtraction Project (Main) &mdash; CXFEL Labs GitPages Docs  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/fonts.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e8c4a81e" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -58,6 +62,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../slurm_script.html">Submitting SLURM Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rcsb_search_api.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crystfel_tutorial.html">CrystFEL Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../projects.html">Projects</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Water Background Subtraction Project (Main)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#imports">Imports</a></li>
@@ -90,6 +95,8 @@
 <li class="toctree-l2"><a class="reference internal" href="overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../offline_analysis.html">Offline Analysis</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
 <ul>
@@ -142,20 +149,17 @@
 </ul>
 <section id="imports">
 <h2>Imports</h2>
-<p>The following modules are imported for use in the program:
-.. code-block:: python</p>
-<blockquote>
-<div><p>import os
-import numpy as np
-import h5py as h5
-import matplotlib.pyplot as plt</p>
-</div></blockquote>
+<p>The following modules are imported for use in the program:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">h5py</span> <span class="k">as</span> <span class="nn">h5</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
 </section>
 <section id="peakthresholdprocessor-class">
 <h2>PeakThresholdProcessor Class</h2>
-<blockquote>
-<div><p>The <a href="#id1"><span class="problematic" id="id2">`</span></a>PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.</p>
-</div></blockquote>
+<p>The <a href="#id1"><span class="problematic" id="id2">`</span></a>PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.</p>
 <p>The following functions are defined in the <cite>PeakThresholdProcessor</cite> class:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="PeakThresholdProcessor">

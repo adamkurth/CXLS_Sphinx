@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
+<<<<<<< HEAD
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+=======
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+>>>>>>> origin/progress
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Operation of the Dectris Eiger4M Detector &mdash; CXFEL Labs GitPages Docs  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=649a27d8" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e8c4a81e" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -70,7 +74,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crystfel_tutorial.html">CrystFEL Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
 <ul>
@@ -105,7 +112,7 @@
              
   <section id="operation-of-the-dectris-eiger4m-detector">
 <h1>Operation of the Dectris Eiger4M Detector</h1>
-<p>This page contains documentaion for the operation of the Dectris Eiger4M detector. It includes steps for activating the zmq listener, initializing and arming the detector, troubleshooting, and additional resources for handling images and using AGAVE.</p>
+<p>This page contains documentation for the operation of the Dectris Eiger4M detector. It includes steps for activating the zmq listener, initializing and arming the detector, troubleshooting, and additional resources for handling images and using AGAVE.</p>
 <section id="accessing-the-dectris-menu">
 <h2>Accessing the Dectris Menu</h2>
 <ul class="simple">
@@ -119,38 +126,38 @@
 <ol class="arabic">
 <li><p>Clone the reborn repository:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/kirianlab/reborn.git
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/kirianlab/reborn.git
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>Switch to develop branch:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>develop
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>develop
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>Navigate to the correct directory:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/home/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Activate <cite>reborn</cite> enviornment:</p>
+<li><p>Activate <cite>reborn</cite> environment:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>reborn
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>reborn
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Note that this will activate the <cite>reborn</cite> conda enviornment.</p></li>
+<li><p>Note that this will activate the <cite>reborn</cite> conda environment.</p></li>
 </ul>
 </div></blockquote>
 </li>
 <li><p>Run <cite>DEigerStream.py</cite>: This will start the zmq listener, and display menu options for the detector.</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>DEigerStream.py<span class="w"> </span>-i<span class="w"> </span><span class="m">10</span>.139.1.5<span class="w"> </span>-f<span class="w"> </span>junk.log
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>DEigerStream.py<span class="w"> </span>-i<span class="w"> </span><span class="m">10</span>.139.1.5<span class="w"> </span>-f<span class="w"> </span>junk.log
 </pre></div>
 </div>
 <ul class="simple">
@@ -169,8 +176,8 @@
 <ol class="arabic">
 <li><p>Source <cite>setup.sh</cite> to use simplified commands like initialize, arm, disarm, etc.:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>setup.sh
-$<span class="w"> </span>initialize
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>setup.sh
+initialize
 </pre></div>
 </div>
 <div class="admonition note">
@@ -184,15 +191,15 @@ $<span class="w"> </span>initialize
 <div><ul class="simple">
 <li><p>Choose from the options below:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>enable_monitor
-$<span class="w"> </span>enable_stream
-$<span class="w"> </span>enable_filewriter
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>enable_monitor
+enable_stream
+enable_filewriter
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nimages<span class="w"> </span>num
-$<span class="w"> </span>frame_time<span class="w"> </span>num
-$<span class="w"> </span>count_time<span class="w"> </span>num
-$<span class="w"> </span>nimages_per_file<span class="w"> </span>num
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nimages<span class="w"> </span>num
+frame_time<span class="w"> </span>num
+count_time<span class="w"> </span>num
+nimages_per_file<span class="w"> </span>num
 </pre></div>
 </div>
 <ul class="simple">
@@ -207,22 +214,32 @@ $<span class="w"> </span>nimages_per_file<span class="w"> </span>num
 </ul>
 </div></blockquote>
 </li>
-<li><p>Able to check the options set using the following functions:</p></li>
-</ol>
+<li><p>Able to check the options set using the following functions:</p>
 <blockquote>
-<div></div></blockquote>
-<ol class="arabic simple" start="3">
-<li><p>Control the detector:</p></li>
-</ol>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>get_nimages
+get_frame_time
+get_count_time
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Control the detector:</p>
 <blockquote>
-<div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arm
+disarm
+trigger
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
 </section>
 <section id="downloading-and-overwrite-images">
 <h2>Downloading and Overwrite Images</h2>
 <ol class="arabic">
 <li><p>Navigate to the desired directory to store images:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/Dectris/test/temp_data
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/Dectris/test/temp_data
 </pre></div>
 </div>
 <div class="admonition note">
@@ -234,12 +251,12 @@ $<span class="w"> </span>nimages_per_file<span class="w"> </span>num
 <li><p>Source the adapted setup script called <cite>adam_setup.sh</cite> and call the download function to start downloading images from <cite>http://10.139.1.5/data/</cite>:</p>
 <blockquote>
 <div><p>First,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Public
 </pre></div>
 </div>
 <p>Then,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>Eiger_Setup.sh
-$<span class="w"> </span>download_images_from_IP
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>Eiger_Setup.sh
+download_images_from_IP
 </pre></div>
 </div>
 </div></blockquote>
@@ -248,56 +265,55 @@ $<span class="w"> </span>download_images_from_IP
 </section>
 <section id="viewing-hdf5-images-through-reborn">
 <h2>Viewing HDF5 Images Through Reborn</h2>
-<ol class="arabic simple">
-<li><p>Navigate to the recent downloaded images directory:</p></li>
-</ol>
+<ol class="arabic">
+<li><p>Navigate to the recent downloaded images directory:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Public/Dectris/test/temp_data
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Public/Dectris/test/temp_data
 </pre></div>
 </div>
 </div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p>Export the Python path:</p></li>
-</ol>
+</li>
+<li><p>Export the Python path:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>/home/labuser/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:<span class="nv">$PYTHONPATH</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>/home/labuser/Public/Dectris/reborn/developer/rkirian/projects/cxls/dectris/fromzach/DEigerStream:<span class="nv">$PYTHONPATH</span>
 </pre></div>
 </div>
 </div></blockquote>
-<ol class="arabic simple" start="3">
-<li><p>Run <cite>test_h5_reading.py</cite> or any other Python file:</p></li>
-</ol>
+</li>
+<li><p>Run <cite>test_h5_reading.py</cite> or any other Python file:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>test_h5_reading.py
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>test_h5_reading.py
 </pre></div>
 </div>
 </div></blockquote>
+</li>
+</ol>
 </section>
 <section id="troubleshooting">
 <h2>Troubleshooting</h2>
 <ul>
 <li><p>If encountering module errors, check the modules available in reborn:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>list
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>list
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Check and make sure that the <cite>reborn</cite> conda enviornment is activated:</p>
+<li><p>Check and make sure that the <cite>reborn</cite> conda environment is activated:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>list<span class="w"> </span>env
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>list
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>If a module is not installed, install using:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>module_name
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>module_name
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Replace <cite>module_name</cite> with the desired module.</p></li>
+<li><p>Replace <cite>module_name</cite> with the desired module</p></li>
 </ul>
 </section>
 <section id="filtering-images">
