@@ -123,7 +123,8 @@ The script performs the following steps:
 Key Components
 --------------
 
-### SLURM Directives
+SLURM Directives
+~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -131,19 +132,21 @@ Key Components
     #SBATCH --ntasks=$TASKS    # Number of tasks
     #SBATCH --chdir   $PWD     # Change to current directory
     #SBATCH --job-name  $RUN   # Job Name
-    #SBATCH --output    $RUN.out # Standard Output
-    #SBATCH --error    $RUN.err  # Standard Error
+    #SBATCH --output    $RUN.out # Output
+    #SBATCH --error    $RUN.err  # Error
 
-### Command Construction
+Command Construction
+~~~~~~~~~~~~~~~~~~~~
 
 The script constructs a command to execute `pattern_sim` with various parameters like geometry file, PDB file, intensity file, and other simulation specifics.
 
 .. code-block:: bash
 
     command="pattern_sim -g $GEOM_FILE -p $PDB_FILE --number=1000 -o $RUN"
-    # Additional parameters and options are appended here
-
-### Simulation Options
+    command="$command --intensities=$INTENSITY_FILE --no-noise --really-random --no-fringes"
+    
+Simulation Options
+~~~~~~~~~~~~~~~~~~
 
 Different flags and options can be appended to tailor the simulation, such as `--no-noise`, `--really-random`, and `--no-fringes`.
 
