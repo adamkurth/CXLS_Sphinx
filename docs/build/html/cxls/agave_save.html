@@ -23,8 +23,6 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Globus File Sharing" href="globus.html" />
-    <link rel="prev" title="CXLS Overview" href="overview.html" />
 <!-- Custom toggle buttons -->
 <div class="toggle-container">
     <a href="index.html" class="toggle-btn">CXLS</a>
@@ -49,23 +47,10 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">CXLS Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">CXLS Documentation Home Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">CXLS Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">AGAVE Access</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#useful-references">Useful References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#agave-login-steps">AGAVE Login Steps</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-ssh-to-access-agave-supercomputer">Using SSH to access AGAVE supercomputer:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-web-browser-to-access-agave-virtual-desktop">Using Web Browser to access AGAVE Virtual Desktop:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#loading-modules">Loading Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#partitions-at-agave">Partitions at AGAVE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-pattern-sim-through-crystfel">Running <cite>pattern_sim</cite> through CrystFEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#indexing-images-indexamajig-through-crystfel">Indexing Images <cite>indexamajig</cite> through CrystFEL</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="agave.html">AGAVE Access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sol.html">Sol Access Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submitting SLURM Jobs</a></li>
@@ -93,10 +78,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">CXLS Documentation Home Page</a></li>
       <li class="breadcrumb-item active">AGAVE Access</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/cxls/agave.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/cxls/agave_save.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -136,8 +120,9 @@
 <ol class="arabic">
 <li><p><strong>SSH Login</strong>:
 - Run the following command to log in:</p>
-<blockquote>
-<div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-Y<span class="w"> </span>ASURITE@agave.asu.edu
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>Replace <cite>ASURITE</cite> with your ASURITE username.</p></li>
 <li><p>Enter your ASURITE password, ensuring <cite>Cisco Secure Client</cite> is running.</p></li>
@@ -145,13 +130,15 @@
 </li>
 <li><p><strong>Interactive Node</strong>:
 - Once logged in, switch from the login node:</p>
-<blockquote>
-<div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>interactive
+</pre></div>
+</div>
 </li>
 <li><p><strong>Activate Conda Environment</strong>:
 - Activate your conda environment:</p>
-<blockquote>
-<div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>/home/ASURITE/anaconda3/bin/activate
+</pre></div>
+</div>
 </li>
 </ol>
 </section>
@@ -176,31 +163,33 @@
 <ol class="arabic">
 <li><p><strong>Check Available Modules</strong>:
 - Run the following to list all available modules:</p>
-<blockquote>
-<div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>-l<span class="w"> </span>avail
+</pre></div>
+</div>
 </li>
 <li><p><strong>Load Modules</strong>:
 - Load a specific module:</p>
-<blockquote>
-<div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>module_name/version_number
+</pre></div>
+</div>
 </li>
 <li><p><strong>View Loaded Modules</strong>:
 - Check currently loaded modules:</p>
-<blockquote>
-<div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>list
+</pre></div>
+</div>
 </li>
 <li><p><strong>Unload Modules</strong>:
 - Unload a specific module:</p>
-<blockquote>
-<div></div></blockquote>
-<ul>
-<li><p>Unload all modules:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>$ module purge</p>
-</div></blockquote>
-</li>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>unload<span class="w"> </span>module_name/version_number
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Unload all modules:</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>purge
+</pre></div>
+</div>
 </li>
 </ol>
 </section>
@@ -210,29 +199,27 @@
 <ol class="arabic">
 <li><p><strong>Check Partition Status</strong>:
 - For a specific partition:</p>
-<blockquote>
-<div></div></blockquote>
-<ul>
-<li><p>For all partitions:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>$ sinfo -a</p>
-</div></blockquote>
-</li>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-p<span class="w"> </span>partition_name
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>For all partitions:</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-a
+</pre></div>
+</div>
 </li>
 <li><p><strong>Monitor Jobs</strong>:
 - Watch a specific job:</p>
-<blockquote>
-<div></div></blockquote>
-<ul>
-<li><p>Watch all your jobs:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>$ watch ‘squeue -u ASURITE’</p>
-</div></blockquote>
-</li>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>squeue<span class="w"> </span>-j<span class="w"> </span>job_id
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Watch all your jobs:</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>watch<span class="w"> </span><span class="s1">&#39;squeue -u ASURITE&#39;</span>
+</pre></div>
+</div>
 </li>
 </ol>
 </section>
@@ -267,21 +254,19 @@
 <p><strong>Preparation</strong>:</p>
 <ol class="arabic">
 <li><p>Verify <cite>.h5</cite> files from <cite>pattern_sim</cite>.</p></li>
-<li><p>Create a list of images to index:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>$ ls /path/to/h5/files/<a href="#id1"><span class="problematic" id="id2">*</span></a>.h5 &gt; my_images.list</p>
-</div></blockquote>
+<li><p>Create a list of images to index:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>/path/to/h5/files/*.h5<span class="w"> </span>&gt;<span class="w"> </span>my_images.list
+</pre></div>
+</div>
 </li>
 <li><p>Load necessary modules (<cite>ccp4</cite> and <cite>crystfel</cite>).</p></li>
 </ol>
 <p><strong>Indexing</strong>:</p>
 <ul>
-<li><p>Index images using <cite>indexamajig</cite>:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>$ indexamajig -i my_images.list -o output.stream -g geom_file.geom –additional-options</p>
-</div></blockquote>
+<li><p>Index images using <cite>indexamajig</cite>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>indexamajig<span class="w"> </span>-i<span class="w"> </span>my_images.list<span class="w"> </span>-o<span class="w"> </span>output.stream<span class="w"> </span>-g<span class="w"> </span>geom_file.geom<span class="w"> </span>--additional-options
+</pre></div>
+</div>
 </li>
 </ul>
 <p>Refer to <cite>SLURM Scripts &lt;slurm_script&gt;</cite> for more information on submitting jobs.</p>
@@ -295,10 +280,7 @@
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="overview.html" class="btn btn-neutral float-left" title="CXLS Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="globus.html" class="btn btn-neutral float-right" title="Globus File Sharing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
