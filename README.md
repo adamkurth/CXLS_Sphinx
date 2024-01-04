@@ -18,6 +18,10 @@ For testing and development the html file, after running `make html` is availabl
 
 `file:///Users/adamkurth/Documents/vscode/CXFEL_Image_Analysis/CXFEL/CXLS_Sphinx/docs/build/html/index.html`
 
+and for work station:
+
+`file:///home/labuser/Development/adam/vscode/CXLS_Sphinx/docs/build/html/index.html`
+
 This repository relies on the use of a virtual environment called .venv. This is included in the root directory of this repository, and should be properly installed before adjusting the sphinx documentation.
 
 ## Virtual Enviornment Installation
@@ -46,8 +50,11 @@ conda activate sphinx_env
 ```
 
 ### 4. Install Sphinx
+<<<<<<< HEAD
 
 <<<<<<< HEAD
+=======
+>>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
 
 - Using conda, we need to install Sphinx with:
 
@@ -77,17 +84,37 @@ sphinx-quickstart
 conda deactivate
 ```
 
+<<<<<<< HEAD
 =======
 
 - Using conda, we need to install Sphinx with:
 
 ```bash {"id":"01HH2X9XZJF8B41E029D44G1C4"}
+=======
+- Using conda, we need to install Sphinx with:
+
+<<<<<<< HEAD
+
+```bash {"id":"01HH2XHY84BNQN13BZC2XTX3H8"}
+=======
+```bash {"id":"01HHYX7DZ9MAG3H6JA2XD73NNX"}
+>>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
+>>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
 conda install sphinx
 ```
 
 - Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
 
+<<<<<<< HEAD
 ```bash {"id":"01HH2X9XZJF8B41E029GT36HR9"}
+=======
+<<<<<<< HEAD
+
+```bash {"id":"01HH2XHY84BNQN13BZC4K0MZJG"}
+=======
+```bash {"id":"01HHYX7DZ9MAG3H6JA2XR8Z4PD"}
+>>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
+>>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
 conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
 ```
 
@@ -95,7 +122,16 @@ conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
 
 - Verify installation and create initial sphinx build for documentation with:
 
+<<<<<<< HEAD
 ```bash {"id":"01HH2X9XZJF8B41E029HNTBKCY"}
+=======
+<<<<<<< HEAD
+
+```bash {"id":"01HH2XHY84BNQN13BZC4XNGXS9"}
+=======
+```bash {"id":"01HHYX7DZ9MAG3H6JA2Z37Y1WG"}
+>>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
+>>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
 sphinx-quickstart
 ```
 
@@ -103,9 +139,20 @@ sphinx-quickstart
 
 - When done working with the enviornment, deactivate using:
 
+<<<<<<< HEAD
 ```bash {"id":"01HH2X9XZJF8B41E029M2J6SVT"}
 conda deactivate
 ```
 
 > > > > > > > origin/progress
+=======
+<<<<<<< HEAD
+
+```bash {"id":"01HH2XHY84BNQN13BZC8FFJE8A"}
+=======
+```bash {"id":"01HHYX7DZ9MAG3H6JA2ZGDR0ZD"}
+>>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
+conda deactivate
+```
+>>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
 
