@@ -1,7 +1,5 @@
 ## CXLS Sphinx Repository 
 
-TEST
-
 This repository is the documentation for CXLS using Sphinx GitPages. This is under construction currently and will be updated regularly.
 
 Changed so that when pushing to either the `main`, or `progress` branch, `.github/workflows/sphinx_deploy.yml` file is automatically triggered to update the website available at:
