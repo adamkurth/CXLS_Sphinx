@@ -1,9 +1,3 @@
----
-runme:
-  id: 01HGH1C5W5NH560Z1NN3HFF4VF
-  version: v2.0
----
-
 ## CXLS Sphinx Repository 
 
 TEST
@@ -37,7 +31,7 @@ Using Conda Python package manager, to properly install requirements for using S
 - Create a new Conda enviornment called `sphinx_env`.
 - Replace 3.x with the specific version of Python you want to use (e.g., 3.8).
 
-```bash {"id":"01HGH1C5W5NH560Z1NMHVV6XR8"}
+```bash
 conda create --name sphinx_env python=3.x
 ```
 
@@ -45,26 +39,21 @@ conda create --name sphinx_env python=3.x
 
 - Using `source` command with Linux and Mac activate the env with:
 
-```bash {"id":"01HGH1C5W5NH560Z1NMMHX72QX"}
+```bash
 conda activate sphinx_env
 ```
 
 ### 4. Install Sphinx
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
 
 - Using conda, we need to install Sphinx with:
 
-```bash {"id":"01HGH1C5W5NH560Z1NMQ70B1XG"}
+```bash
 conda install sphinx
 ```
 
 - Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
 
-```bash {"id":"01HGH1C5W5NH560Z1NMTJ70GD8"}
+```bash
 conda install sphinx_rtd_theme recommonmark
 ```
 
@@ -72,7 +61,7 @@ conda install sphinx_rtd_theme recommonmark
 
 - Verify installation and create initial sphinx build for documentation with:
 
-```bash {"id":"01HGH1C5W5NH560Z1NMY8QSVVH"}
+```bash
 sphinx-quickstart
 ```
 
@@ -80,58 +69,27 @@ sphinx-quickstart
 
 - When done working with the enviornment, deactivate using:
 
-```bash {"id":"01HGH1C5W5NH560Z1NN12PM8B2"}
+```bash
 conda deactivate
 ```
 
-<<<<<<< HEAD
-=======
-
 - Using conda, we need to install Sphinx with:
 
-```bash {"id":"01HH2X9XZJF8B41E029D44G1C4"}
-=======
-- Using conda, we need to install Sphinx with:
-
-<<<<<<< HEAD
-
-```bash {"id":"01HH2XHY84BNQN13BZC2XTX3H8"}
-=======
-```bash {"id":"01HHYX7DZ9MAG3H6JA2XD73NNX"}
->>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
+```bash
 conda install sphinx
 ```
 
 - Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
 
-<<<<<<< HEAD
-```bash {"id":"01HH2X9XZJF8B41E029GT36HR9"}
-=======
-<<<<<<< HEAD
-
-```bash {"id":"01HH2XHY84BNQN13BZC4K0MZJG"}
-=======
-```bash {"id":"01HHYX7DZ9MAG3H6JA2XR8Z4PD"}
->>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
+```bash
 conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
 ```
 
 ### 5. Verify Installation
 
 - Verify installation and create initial sphinx build for documentation with:
-
-<<<<<<< HEAD
-```bash {"id":"01HH2X9XZJF8B41E029HNTBKCY"}
-=======
-<<<<<<< HEAD
-
-```bash {"id":"01HH2XHY84BNQN13BZC4XNGXS9"}
-=======
-```bash {"id":"01HHYX7DZ9MAG3H6JA2Z37Y1WG"}
->>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
+  
+```bash
 sphinx-quickstart
 ```
 
@@ -139,20 +97,6 @@ sphinx-quickstart
 
 - When done working with the enviornment, deactivate using:
 
-<<<<<<< HEAD
-```bash {"id":"01HH2X9XZJF8B41E029M2J6SVT"}
+```bash
 conda deactivate
 ```
-
-> > > > > > > origin/progress
-=======
-<<<<<<< HEAD
-
-```bash {"id":"01HH2XHY84BNQN13BZC8FFJE8A"}
-=======
-```bash {"id":"01HHYX7DZ9MAG3H6JA2ZGDR0ZD"}
->>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
-conda deactivate
-```
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
-
