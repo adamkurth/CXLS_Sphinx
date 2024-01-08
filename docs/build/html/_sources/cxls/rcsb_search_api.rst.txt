@@ -40,8 +40,15 @@ Run the script with the desired symmetry and limit:
 
 .. code-block:: bash
 
-    python scrape.py -h symmetry --limit limit
+    python scrape.py [symmetry] --limit limit
 
+Example:
+
+.. code-block:: bash
+
+    python scrape.py cubic --limit 100
+
+    
 **Arguments**:
 
 - **symmetry**: Symmetry of the protein (e.g., `-h monoclinic`).
@@ -140,7 +147,14 @@ Run the script with the desired symmetry and limit:
 
 .. code-block:: bash
 
-    python download_pdb_files.py -h symmetry --limit limit
+    python download_pdb_files.py [symmetry] --limit limit
+
+Example:
+
+.. code-block:: bash
+
+    python download_pdb_files.py cubic --limit 100
+
 
 **Script Overview**:
 
