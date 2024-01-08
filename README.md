@@ -73,35 +73,40 @@ sphinx-quickstart
 
 - When done working with the enviornment, deactivate using:
 
-```bash {"id":"01HGH1C5W5NH560Z1NN12PM8B2"}
-conda deactivate
-```
-
-- Using conda, we need to install Sphinx with:
-
-```bash {"id":"01HH2XHY84BNQN13BZC2XTX3H8"}
-conda install sphinx
-```
-
-- Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
-
-```bash {"id":"01HH2XHY84BNQN13BZC4K0MZJG"}
-conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
-```
-
-### 5. Verify Installation
-
-- Verify installation and create initial sphinx build for documentation with:
-
-```bash {"id":"01HH2XHY84BNQN13BZC4XNGXS9"}
-sphinx-quickstart
-```
-
-### 6. Deactivate Enviornment
-
-- When done working with the enviornment, deactivate using:
-
 ```bash {"id":"01HH2XHY84BNQN13BZC8FFJE8A"}
 conda deactivate
 ```
+
+### 7. From here...
+
+From here, we need to make `.rst` files in the following fashion. Say we need another page (`another_page.rst`) to link to out main `index.rst` from running `sphinx-quickstart`.
+
+``` bash
+touch another_page.rst
+```
+
+After creating this file, we need to go into out main `index.rst` and create a table of contents tree (toctree) like this. 
+
+``` sphinx
+toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   another_page
+```
+
+What this will do is link the newly made file, and make this accessible to the user of the website. 
+
+- To make this toctree accessible only in the main side pannel of `index.rst` we need to use the `hidden` option.
+
+``` sphinx
+toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   :hidden:
+   
+   another_page
+```
+
+Now we can proceed with adapting `another_page.rst` using sphinx syntax to build our page.
 
