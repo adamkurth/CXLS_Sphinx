@@ -1,9 +1,3 @@
----
-runme:
-  id: 01HGH1C5W5NH560Z1NN3HFF4VF
-  version: v2.0
----
-
 ## CXLS Sphinx Repository
 
 This repository is the documentation for CXLS using Sphinx GitPages. This is under construction currently and will be updated regularly.
@@ -35,7 +29,7 @@ Using Conda Python package manager, to properly install requirements for using S
 - Create a new Conda enviornment called `sphinx_env`.
 - Replace 3.x with the specific version of Python you want to use (e.g., 3.8).
 
-```bash {"id":"01HGH1C5W5NH560Z1NMHVV6XR8"}
+```bash
 conda create --name sphinx_env python=3.x
 ```
 
@@ -43,7 +37,7 @@ conda create --name sphinx_env python=3.x
 
 - Using `source` command with Linux and Mac activate the env with:
 
-```bash {"id":"01HGH1C5W5NH560Z1NMMHX72QX"}
+```bash
 conda activate sphinx_env
 ```
 
@@ -51,13 +45,13 @@ conda activate sphinx_env
 
 - Using conda, we need to install Sphinx with:
 
-```bash {"id":"01HGH1C5W5NH560Z1NMQ70B1XG"}
+```bash
 conda install sphinx
 ```
 
 - Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
 
-```bash {"id":"01HGH1C5W5NH560Z1NMTJ70GD8"}
+```bash
 conda install sphinx_rtd_theme recommonmark
 ```
 
@@ -65,7 +59,7 @@ conda install sphinx_rtd_theme recommonmark
 
 - Verify installation and create initial sphinx build for documentation with:
 
-```bash {"id":"01HGH1C5W5NH560Z1NMY8QSVVH"}
+```bash
 sphinx-quickstart
 ```
 
@@ -73,7 +67,7 @@ sphinx-quickstart
 
 - When done working with the enviornment, deactivate using:
 
-```bash {"id":"01HH2XHY84BNQN13BZC8FFJE8A"}
+```bash
 conda deactivate
 ```
 
