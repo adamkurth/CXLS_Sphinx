@@ -1,6 +1,14 @@
 CXFEL Documentation Home Page
 ==============================
 
+.. raw:: html
+
+    <div class="custom-buttons">
+        <a href="../cxls/index.html" class="button">Access CXLS Docs</a>
+        <a href="index.html" class="button">Access CXFEL Docs</a>
+    </div>
+
+
 Introduction
 ------------
 
