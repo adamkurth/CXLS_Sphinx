@@ -2,62 +2,53 @@ Accelerator
 ============
 
 .. This button below works !!
-.. raw:: html
+.. raw:: html 
 
-    <div class="contact-section">
-        <button onclick="toggleContactInfo()" class="contact-button">Person of Contact</button>
-        <div id="contactInfo" class="contact-info">
-            <p>Phone: 123-456-7890</p>
-            <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+    <div class="contact-section" style="position: relative; text-align: right;">
+        <button onclick="toggleContactInfo('contactInfo4')" class="contact-button">Person of Contact 4</button>
+        <div id="contactInfo4" class="contact-info" style="display:none; position: absolute; right: 0; top: 100%;">
+            <p>Phone: 444-555-6666</p>
+            <p>Email: <a href="mailto:contact4@example.com">contact4@example.com</a></p>
             <p>More info: <a href="https://www.example.com" target="_blank">Visit our website</a></p>
         </div>
     </div>
 
+
+.. raw:: html
+
     <script>
-    function toggleContactInfo() {
-        var info = document.getElementById("contactInfo");
+    function toggleContactInfo(id) {
+        var info = document.getElementById(id);
         if (info.style.display === "none" || !info.style.display) {
             info.style.display = "block";
-            info.classList.add("expanded");
         } else {
             info.style.display = "none";
-            info.classList.remove("expanded");
         }
     }
     </script>
 
     <style>
-    .contact-section {
-        text-align: right;
-        position: relative; /* For absolute positioning of the dropdown */
-        padding-top: 20px; /* Space above the button */
-        padding-right: 20px; /* Space on the right */
-    }
-
     .contact-button {
-        background-color: #007bff; /* Blue background */
-        color: white; /* White text */
-        padding: 10px 15px; /* Some padding */
-        border: none; /* No border */
-        border-radius: 5px; /* Rounded corners */
-        cursor: pointer; /* Pointer/hand icon */
-        transition: background-color 0.3s; /* Smooth transition for hover effect */
-        text-align: left; /* Align text to the left */
-        display: inline-block; /* Inline block element */
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
     }
 
     .contact-info {
-        background-color: #f8f9fa; /* Light background */
+        background-color: #f8f9fa;
         border: 1px solid #ddd;
         padding: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        position: absolute; /* Positioned relative to the contact-section */
-        top: 100%; /* Directly below the button */
-        right: 0; /* Aligned with the left side of the button */
-        width: auto; /* Auto width based on content */
-        display: none; /* Hidden by default */
-        text-align: left; /* Align text to the left */
+        width: 80%;
+        max-width: 600px;
+        text-align: left;
+        z-index: 1000;
+        display: none;
     }
     </style>
 
@@ -96,15 +87,7 @@ We actively collaborate with researchers, scientists, and industry partners to f
 Contact Us
 ----------
 
-For more information about the CXLS Compact X-ray Light Source and our research activities, please contact:
-
-- Contact Name Goes Here
-    Email: contact@asu.edu
-    Phone: +1 (123) 456-7890
-
-- Contact Name Goes Here
-    Email: contact@asu.edu
-    Phone: +1 (123) 456-7890
+For more information please contact the Person of Contact in the top right corner of this page. 
 
 We look forward to hearing from you and exploring opportunities for collaboration!
 
