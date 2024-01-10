@@ -16,7 +16,7 @@ Homepage for Shared Directory
 
     accelerator
 
-.. Accelerator POC 1
+.. Accelerator/POC 1
 .. raw:: html 
 
     <div class="contact-section" style="position: relative; text-align: right;">
@@ -28,14 +28,17 @@ Homepage for Shared Directory
         </div>
     </div>
 
-.. Sample Delivery/POC 2
+
+
+.. Endstations/POC 2
 .. toctree::
    :maxdepth: 2
-   :caption: Sample Delivery:
+   :caption: Endstations:
 
-   sample_delivery
+   endstations
 
-.. Sample Delivery POC 2
+
+.. Endstations/POC 2
 .. raw:: html 
 
     <div class="contact-section" style="position: relative; text-align: right;">
@@ -47,14 +50,17 @@ Homepage for Shared Directory
         </div>
     </div>
 
-.. Data Analysis/POC 3
+
+
+.. Sample Delivery/POC 3
 .. toctree::
    :maxdepth: 2
-   :caption: Data Analysis:
+   :caption: Sample Delivery:
 
-   data_analysis
+   sample_delivery
 
-.. Data Analysis POC 3
+
+.. Data Analysis/POC 3
 .. raw:: html 
 
     <div class="contact-section" style="position: relative; text-align: right;">
@@ -66,12 +72,13 @@ Homepage for Shared Directory
         </div>
     </div>
 
-.. Endstations/POC 4
+
+.. Data Analysis/POC 3
 .. toctree::
    :maxdepth: 2
-   :caption: Endstations:
+   :caption: Data Analysis:
 
-   endstations
+   data_analysis
 
 .. Endstations POC 4
 .. raw:: html 
