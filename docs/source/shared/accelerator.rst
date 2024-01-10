@@ -1,6 +1,15 @@
 Accelerator
 ============
 
+.. Simple CXLS/CXFEL buttons.
+.. raw:: html
+
+    <div class="custom-buttons">
+        <a href="../cxls/index.html" class="button">Access CXLS Docs</a>
+        <a href="../cxfel/index.html" class="button">Access CXFEL Docs</a>
+    </div>
+
+
 .. This button below works !!
 .. raw:: html 
 
@@ -68,6 +77,17 @@ Our laboratory focuses on the following research areas:
 3. Compact X-ray-based materials analysis and characterization.
 4. Compact X-ray diagnostics and therapeutics for various industries.
 5. Compact X-ray safety and optimization of X-ray parameters for different applications.
+
+Beam Specifications
+-------------------
+
+Our laboratory is equipped with the latest compact X-ray systems and experimental setups, including:
+
+- High-power compact X-ray sources for precision imaging and analysis.
+- Ultrafast compact X-ray systems for high-resolution imaging.
+- Compact X-ray microscopy systems for detailed analysis.
+- X-ray safety equipment and protocols to ensure a safe working environment.    
+
 
 Facilities and Equipment
 ------------------------
