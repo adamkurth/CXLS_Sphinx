@@ -1,6 +1,0 @@
-Sample Delivery
-================
-
-Introduction
-------------
-
