@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGAVE Access &mdash; CXFEL Labs GitPages Docs  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Globus File Sharing" href="globus.html" />
+    <link rel="prev" title="CXLS Overview" href="overview.html" />
+<!-- Custom toggle buttons -->
+<div class="toggle-container">
+    <a href="index.html" class="toggle-btn">CXLS</a>
+    <a href="../cxfel/index.html" class="toggle-btn">CXFEL</a>
+</div>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> CXFEL Labs GitPages Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">CXLS Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">CXLS Documentation Home Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">CXLS Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AGAVE Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#useful-references">Useful References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agave-login-steps">AGAVE Login Steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-ssh-to-access-agave-supercomputer">Using SSH to access AGAVE supercomputer:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-web-browser-to-access-agave-virtual-desktop">Using Web Browser to access AGAVE Virtual Desktop:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-modules">Loading Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#partitions-at-agave">Partitions at AGAVE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-pattern-sim-through-crystfel">Running <cite>pattern_sim</cite> through CrystFEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indexing-images-indexamajig-through-crystfel">Indexing Images <cite>indexamajig</cite> through CrystFEL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sol.html">Sol Access Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="globus.html">Globus File Sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submitting SLURM Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crystfel_tutorial.html">CrystFEL Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cxfel/index.html">CXFEL Documentation Home Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxfel/overview.html">CXFEL Home Page</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CXFEL Labs GitPages Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">CXLS Documentation Home Page</a></li>
+      <li class="breadcrumb-item active">AGAVE Access</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cxls/agave.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agave-access">
+<h1>AGAVE Access</h1>
+<p>This document provides useful references and step-by-step guidelines for accessing and utilizing the AGAVE supercomputer.</p>
+<section id="useful-references">
+<h2>Useful References</h2>
+<p>Here are some useful references for information on AGAVE:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://asurc.atlassian.net/wiki/spaces/RC/pages/46268520/Agave+Supercomputer">AGAVE RC Documentation</a></p></li>
+<li><p><a class="reference external" href="https://asurc.atlassian.net/wiki/spaces/RC/pages/45875228/Compute+Nodes">AGAVE Nodes Information</a></p></li>
+<li><p><a class="reference external" href="https://asurc.atlassian.net/wiki/spaces/RC/pages/45318147/Connecting+with+SSHr">AGAVE SSH</a></p></li>
+<li><p><a class="reference external" href="https://asurc.atlassian.net/wiki/spaces/RC/pages/1643839520/Starting+an+Interactive+Session">AGAVE Interactive Session</a></p></li>
+<li><p><a class="reference external" href="https://asurc.atlassian.net/wiki/spaces/RC/pages/46334137/Tutorials">AGAVE Tutorials</a></p></li>
+<li><p><a class="reference external" href="https://cores.research.asu.edu/research-computing/getting-started">General RC Documentation</a></p></li>
+</ul>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites</h2>
+<p>Before accessing AGAVE, ensure the following prerequisites are met:</p>
+<ol class="arabic simple">
+<li><p><strong>VPN Connection</strong>:
+- Run <cite>Cisco Secure Client</cite> and login to the ASU network.
+- Under the connect field, enter <cite>sslvpn.asu.edu</cite>.
+- Click connect, and enter your ASURITE credentials, including the Duo Mobile Code for dual-factor authentication.</p></li>
+</ol>
+</section>
+<section id="agave-login-steps">
+<h2>AGAVE Login Steps</h2>
+<section id="using-ssh-to-access-agave-supercomputer">
+<h3>Using SSH to access AGAVE supercomputer:</h3>
+<ol class="arabic">
+<li><p><strong>SSH Login</strong>:
+- Run the following command to log in:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-Y<span class="w"> </span>ASURITE@agave.asu.edu
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Replace <cite>ASURITE</cite> with your ASURITE username.</p></li>
+<li><p>Enter your ASURITE password, ensuring <cite>Cisco Secure Client</cite> is running.</p></li>
+</ul>
+</li>
+<li><p><strong>Interactive Node</strong>:
+- Once logged in, switch from the login node:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>interactive
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Activate Conda Environment</strong>:
+- Activate your conda environment:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/home/ASURITE/anaconda3/bin/activate
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="using-web-browser-to-access-agave-virtual-desktop">
+<h3>Using Web Browser to access AGAVE Virtual Desktop:</h3>
+<ol class="arabic">
+<li><p><strong>Open AGAVE Portal</strong>:
+- Click here to open the AGAVE Web Portal: <a class="reference external" href="https://asurc.atlassian.net/wiki/spaces/RC/overview">AGAVE Web Portal</a>.
+- Navigate to <cite>Agave Web Portal</cite> link on the ASU Research Computing website.</p>
+<a class="reference internal image-reference" href="../_images/agave_web_portal.jpg"><img alt="AGAVE Web Portal" src="../_images/agave_web_portal.jpg" style="width: 500px; height: 400px;" /></a>
+</li>
+<li><p><strong>Start Interactive Session</strong>:
+- Click <cite>Get started with the Agave Web Portal</cite> and navigate to <cite>My Interactive Sessions</cite>.
+- Select <cite>Agave Virtual Desktop</cite> under <cite>Interactive Apps</cite>.
+- Fill out the fields <cite>Partition</cite>, <cite>QOS</cite>, <cite>Cores</cite>, <cite>Session Wall Time</cite>, and click <cite>Launch</cite>.
+- Once resources are ready, click the <cite>Launch Agave Virtual Desktop</cite> button.</p></li>
+</ol>
+</section>
+</section>
+<section id="loading-modules">
+<h2>Loading Modules</h2>
+<ol class="arabic">
+<li><p><strong>Check Available Modules</strong>:
+- Run the following to list all available modules:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>-l<span class="w"> </span>avail
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Load Modules</strong>:
+- Load a specific module:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>module_name/version_number
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>View Loaded Modules</strong>:
+- Check currently loaded modules:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>list
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Unload Modules</strong>:
+- Unload a specific module:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>unload<span class="w"> </span>module_name/version_number
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p>Unload all modules:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>purge
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="partitions-at-agave">
+<h2>Partitions at AGAVE</h2>
+<p>Before submitting jobs, understand the partitions available:</p>
+<ol class="arabic">
+<li><p><strong>Check Partition Status</strong>:
+- For a specific partition:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-p<span class="w"> </span>partition_name
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p>For all partitions:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sinfo<span class="w"> </span>-a
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Monitor Jobs</strong>:
+- Watch a specific job:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>squeue<span class="w"> </span>-j<span class="w"> </span>job_id
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p>Watch all your jobs:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>watch<span class="w"> </span><span class="s1">&#39;squeue -u ASURITE&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="running-pattern-sim-through-crystfel">
+<h2>Running <cite>pattern_sim</cite> through CrystFEL</h2>
+<p>Ensure you’re logged into AGAVE and have loaded the <cite>crystfel</cite> module.</p>
+<p><strong>Access and Execution</strong>:</p>
+<ul class="simple">
+<li><p>Access the script at <cite>/home/ASURITE/Development/run_pattern_sim.sh</cite>.</p></li>
+<li><p>Run <cite>pattern_sim</cite> through CrystFEL using <cite>run_pattern_sim.sh</cite>.</p></li>
+</ul>
+<p><strong>Arguments</strong>:</p>
+<ul class="simple">
+<li><p><cite>RUN</cite>: Run name (e.g., <cite>sim_run1</cite>).</p></li>
+<li><p><cite>GEOM_FILE</cite>: Path to the geometry file.</p></li>
+<li><p><cite>PDB_FILE</cite>: Path to the PDB file.</p></li>
+<li><p><cite>INTENSITY_FILE</cite>: Path to the intensity file.</p></li>
+<li><p><cite>TASKS</cite>: Number of tasks.</p></li>
+<li><p><cite>PARTITION</cite>: Partition name.</p></li>
+<li><p><cite>QOS</cite>: Quality of service.</p></li>
+<li><p><cite>TIME</cite>: Time limit.</p></li>
+<li><p><cite>TAG</cite>: Job tag.</p></li>
+</ul>
+<p><strong>Run the Script</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./run_pattern_sim.sh<span class="w"> </span>RUN<span class="w"> </span>GEOM_FILE<span class="w"> </span>PDB_FILE<span class="w"> </span>INTENSITY_FILE<span class="w"> </span>TASKS<span class="w"> </span>PARTITION<span class="w"> </span>QOS<span class="w"> </span>TIME<span class="w"> </span>TAG
+</pre></div>
+</div>
+</section>
+<section id="indexing-images-indexamajig-through-crystfel">
+<h2>Indexing Images <cite>indexamajig</cite> through CrystFEL</h2>
+<p>Ensure you’re logged into AGAVE and have loaded the <cite>crystfel</cite> module.</p>
+<p><strong>Preparation</strong>:</p>
+<ol class="arabic">
+<li><p>Verify <cite>.h5</cite> files from <cite>pattern_sim</cite>.</p></li>
+<li><p>Create a list of images to index:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>/path/to/h5/files/*.h5<span class="w"> </span>&gt;<span class="w"> </span>my_images.list
+</pre></div>
+</div>
+</li>
+<li><p>Load necessary modules (<cite>ccp4</cite> and <cite>crystfel</cite>).</p></li>
+</ol>
+<p><strong>Indexing</strong>:</p>
+<ul>
+<li><p>Index images using <cite>indexamajig</cite>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>indexamajig<span class="w"> </span>-i<span class="w"> </span>my_images.list<span class="w"> </span>-o<span class="w"> </span>output.stream<span class="w"> </span>-g<span class="w"> </span>geom_file.geom<span class="w"> </span>--additional-options
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Refer to <cite>SLURM Scripts &lt;slurm_script&gt;</cite> for more information on submitting jobs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adjust arguments as necessary and refer to CrystFEL documentation for detailed usage.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="overview.html" class="btn btn-neutral float-left" title="CXLS Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="globus.html" class="btn btn-neutral float-right" title="Globus File Sharing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Adam Kurth, Sabine Botha.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
