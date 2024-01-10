@@ -1,6 +1,14 @@
 CXLS Documentation Home Page
 ============================
 
+.. raw:: html
+
+    <div class="custom-buttons">
+        <a href="index.html" class="button">Access CXLS Docs</a>
+        <a href="../cxfel/index.html" class="button">Access CXFEL Docs</a>
+    </div>
+
+
 Introduction
 ------------
 
@@ -9,6 +17,7 @@ For the uses of CXLS, we have adapted the existing Reborn repository. `Here <htt
 Click here to view the documentation for Reborn: `Reborn Documentation <https://kirianlab.gitlab.io/reborn/>`_.
 
 This documentation is still under construction and will be updated regularly.
+
 
 .. toctree::
    :maxdepth: 2
@@ -25,8 +34,6 @@ This documentation is still under construction and will be updated regularly.
    projects
    online_analysis
    offline_analysis
-   online_analysis.rst
-   offline_analysis.rst
 
 .. _cxls_installation: 
 
