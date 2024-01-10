@@ -1,5 +1,0 @@
-Endstations
-============
-
-Introduction
-------------
