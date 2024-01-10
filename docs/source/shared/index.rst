@@ -12,22 +12,22 @@ Homepage for Shared Directory
 
 .. Accelerator/POC 1
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
+    :caption: Accelerator:
 
     accelerator
 
 .. Accelerator POC 1
-.. raw:: html
+.. raw:: html 
 
-    <div class="contact-section" style="text-align: right;">
-        <button onclick="toggleContactInfo1(event)" class="contact-button">Person of Contact 1</button>
-        <div id="contactInfo1" class="contact-info" style="display:none;">
+    <div class="contact-section">
+        <button onclick="toggleContactInfo()" class="contact-button" style="float: right;">Person of Contact</button>
+        <div id="contactInfo" class="contact-info" style="display:none;">
             <p>Phone: 123-456-7890</p>
-            <p>Email: <a href="mailto:contact1@example.com">contact1@example.com</a></p>
+            <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
             <p>More info: <a href="https://www.example.com" target="_blank">Visit our website</a></p>
         </div>
     </div>
-
 
 .. Sample Delivery/POC 2
 .. toctree::
@@ -37,33 +37,20 @@ Homepage for Shared Directory
    sample_delivery
 
 
-.. raw:: html
+.. raw:: html 
 
-    <div class="contact-section" style="text-align: right;">
-        <button onclick="toggleContactInfo2(event)" class="contact-button">Person of Contact 2</button>
-        <div id="contactInfo2" class="contact-info" style="display:none;">
-            <p>Phone: 987-654-3210</p>
-            <p>Email: <a href="mailto:contact2@example.com">contact2@example.com</a></p>
+    <div class="contact-section">
+        <button onclick="toggleContactInfo()" class="contact-button" style="float: right;">Person of Contact</button>
+        <div id="contactInfo" class="contact-info" style="display:none;">
+            <p>Phone: 123-456-7890</p>
+            <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
             <p>More info: <a href="https://www.example.com" target="_blank">Visit our website</a></p>
         </div>
     </div>
 
-.. raw:: html
-
     <script>
-    function toggleContactInfo1(event) {
-        event.preventDefault();
-        var info = document.getElementById("contactInfo1");
-        if (info.style.display === "none" || !info.style.display) {
-            info.style.display = "block";
-        } else {
-            info.style.display = "none";
-        }
-    }
-
-    function toggleContactInfo2(event) {
-        event.preventDefault();
-        var info = document.getElementById("contactInfo2");
+    function toggleContactInfo() {
+        var info = document.getElementById("contactInfo");
         if (info.style.display === "none" || !info.style.display) {
             info.style.display = "block";
         } else {
@@ -73,6 +60,13 @@ Homepage for Shared Directory
     </script>
 
     <style>
+    .contact-section {
+        text-align: center;
+        padding-top: 20px;
+        position: relative;  /* Establishes a positioning context for dropdown */
+        margin-bottom: 50px;
+    }
+
     .contact-button {
         background-color: #007bff;
         color: white;
@@ -82,7 +76,6 @@ Homepage for Shared Directory
         cursor: pointer;
         transition: background-color 0.3s;
         display: inline-block;
-        margin-bottom: 10px;
     }
 
     .contact-info {
@@ -92,11 +85,12 @@ Homepage for Shared Directory
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         position: absolute;
-        top: 100%;
-        right: 0;
-        width: 300px; /* Adjust as needed */
+        top: 100%;  /* Position directly below the button */
+        left: 50%;  /* Center horizontally */
+        transform: translateX(-50%);  /* Adjust horizontal position */
+        width: 80%;  /* Adjust width as needed */
+        max-width: 600px;  /* Maximum width */
         text-align: left;
-        z-index: 1000;
-        display: none;
+        z-index: 1000;  /* Ensure it's on top of other content */
     }
     </style>
