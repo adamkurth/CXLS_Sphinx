@@ -18,37 +18,34 @@ Click here to view the documentation for Reborn: `Reborn Documentation <https://
 
 This documentation is still under construction and will be updated regularly.
 
-
 .. toctree::
-   :maxdepth: 3
-   :caption: Contents:
-   
-   accelerator/accelerator
-   accelerator/overview
-   endstations/endstations
-   endstations/area_detector
-   sample_delivery/sample_delivery
-   data_analysis/data_analysis
-   data_analysis/access
-   data_analysis/slurm_script
-   data_analysis/external_software
-   data_analysis/custom_software/custom_software
-   data_analysis/online_analysis
-   data_analysis/offline_analysis
-   data_analysis/projects
-   
+   :maxdepth: 5
+   :hidden:
+   :caption: CXLS Contents:
 
-..    data
-..    agave
-..    globus
-..    sol
-..    slurm_script
-..    cxls_eiger_4m
-..    rcsb_search_api
-..    crystfel_tutorial
-..    projects
-..    online_analysis
-..    offline_analysis
+   cxls/index
+   cxls/index_test
+   cxls/accelerator/accelerator
+   cxls/accelerator/overview
+   cxls/endstations/endstations
+   cxls/endstations/area_detector
+   cxls/endstations/cxls_eiger_4m
+   cxls/sample_delivery/sample_delivery
+   cxls/data_analysis/data_analysis
+   cxls/data_analysis/access/agave
+   cxls/data_analysis/access/sol
+   cxls/data_analysis/access/globus
+   cxls/data_analysis/slurm_script
+   cxls/data_analysis/external_software
+   cxls/data_analysis/custom_software/custom_software
+   cxls/data_analysis/custom_software/rcsb_search_api
+   cxls/data_analysis/online_analysis
+   cxls/data_analysis/offline_analysis
+   cxls/data_analysis/projects
+   cxls/data_analysis/projects/background_subtraction
+   cxls/data_analysis/projects/stream_background_subtraction
+   cxls/data_analysis/projects/overwrite_background_subtraction
+
 
 .. _cxls_installation: 
 
