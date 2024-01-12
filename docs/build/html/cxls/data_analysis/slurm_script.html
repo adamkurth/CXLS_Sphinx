@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submitting SLURM Jobs &mdash; CXFEL Labs GitPages Docs  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="External Software" href="external_software.html" />
+    <link rel="prev" title="Globus File Sharing" href="access/globus.html" />
+<!-- Custom toggle buttons -->
+<div class="toggle-container">
+    <a href="../index.html" class="toggle-btn">CXLS</a>
+    <a href="../../cxfel/index.html" class="toggle-btn">CXFEL</a>
+</div>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> CXFEL Labs GitPages Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">CXLS Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">CXLS Documentation Home Page</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#introduction">Introduction</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../accelerator/accelerator.html">Accelerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../accelerator/overview.html">CXLS Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../endstations/endstations.html">Endstations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../endstations/area_detector.html">Area Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sample_delivery/sample_delivery.html">Sample Delivery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_analysis.html">Data Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="access.html">Access</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Submitting SLURM Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agave-indexamajig-script">AGAVE indexamajig Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#script-description">Script Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agave-pattern-sim-script">AGAVE pattern_sim Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Script Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#key-components">Key Components</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="external_software.html">External Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom_software/custom_software.html">Custom Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html">Projects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#documentation-for-reborn">Documentation for Reborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#troubleshooting-dcu-notes">Troubleshooting DCU Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#software">Software:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#hardware">Hardware:</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cxfel/index.html">CXFEL Documentation Home Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cxfel/overview.html">CXFEL Home Page</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CXFEL Labs GitPages Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">CXLS Documentation Home Page</a></li>
+          <li class="breadcrumb-item"><a href="data_analysis.html">Data Analysis</a></li>
+      <li class="breadcrumb-item active">Submitting SLURM Jobs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/cxls/data_analysis/slurm_script.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="submitting-slurm-jobs">
+<h1>Submitting SLURM Jobs</h1>
+<p>For more information on the <a class="reference internal" href="external_software.html"><span class="doc">external software</span></a> please refer page in the hyperlink, as well as to the following link:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.desy.de/~twhite/crystfel/">CrystFEL</a></p></li>
+</ul>
+<p>This page will provide a brief overview of how to submit jobs using SLURM on the AGAVE supercomputer cluster using external software.</p>
+<p><em>Added sections will be added to address SOL supercomputer</em></p>
+<p>Before running any scripts, make sure you are logged into the ASU network using the <cite>Cisco Secure Client</cite> VPN. From there, you can SSH into the supercomputer using your ASURITE credentials.</p>
+<p><em>For more information and helpful RC documentaion please refer to.</em> <a class="reference internal" href="access/agave.html"><span class="doc">AGAVE</span></a></p>
+<section id="agave-indexamajig-script">
+<h2>AGAVE indexamajig Script</h2>
+<p>The script is designed to submit jobs to a SLURM workload manager with specific parameters for indexing crystallography data. It creates and submits a job script based on user-provided parameters.</p>
+</section>
+<section id="parameters">
+<h2>Parameters</h2>
+<ul class="simple">
+<li><p><strong>NAME ($1)</strong>: Input file name or pattern.</p></li>
+<li><p><strong>RUN ($2)</strong>: Base name for the run, used to generate filenames.</p></li>
+<li><p><strong>GEOM ($3)</strong>: Geometry file for the indexing process.</p></li>
+<li><p><strong>STREAMDIR ($4)</strong>: Directory to save the output stream.</p></li>
+<li><p><strong>TASKS ($5)</strong>: Number of tasks to request from SLURM.</p></li>
+<li><p><strong>PARTITION ($6)</strong>: The partition to submit the job to.</p></li>
+<li><p><strong>QOS ($7)</strong>: Quality of Service parameter for the job.</p></li>
+<li><p><strong>HOURS ($8)</strong>: Maximum time for the job (in hours).</p></li>
+<li><p><strong>TAG ($9)</strong>: A tag to append to the run name for identification.</p></li>
+</ul>
+</section>
+<section id="script-description">
+<h2>Script Description</h2>
+<p>The script performs the following steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Prepare Filenames</strong>: Based on the run name and tag, it prepares filenames for the SLURM script, output, and error logs.</p></li>
+<li><p><strong>SLURM Script Creation</strong>: It creates a new SLURM script file with the necessary SBATCH directives including time, tasks, job name, output, and error file locations.</p></li>
+<li><p><strong>Command Construction</strong>: It constructs the <cite>indexamajig</cite> command with the provided parameters and some default values for peak finding and indexing.</p></li>
+<li><p><strong>Job Submission</strong>: Finally, the script submits the job to the SLURM scheduler with the specified partition, QOS, and time limit.</p></li>
+</ol>
+</section>
+<section id="usage">
+<h2>Usage</h2>
+<ol class="arabic">
+<li><p>Make sure that the <cite>crystfel</cite> module is loaded on the cluster. This can be done by running the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>crystfel/version
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Replace <cite>version</cite> with the version of <cite>crystfel</cite> you want to use.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>crystfel/0.9.0
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>First navigate to the directory where the script is located.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Development
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>To use this script, provide the necessary parameters:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./index-turbo-slurm.sh<span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>RUN<span class="o">]</span><span class="w"> </span><span class="o">[</span>GEOM<span class="o">]</span><span class="w"> </span><span class="o">[</span>STREAMDIR<span class="o">]</span><span class="w"> </span><span class="o">[</span>TASKS<span class="o">]</span><span class="w"> </span><span class="o">[</span>PARTITION<span class="o">]</span><span class="w"> </span><span class="o">[</span>QOS<span class="o">]</span><span class="w"> </span><span class="o">[</span>HOURS<span class="o">]</span><span class="w"> </span><span class="o">[</span>TAG<span class="o">]</span>
+</pre></div>
+</div>
+<p>Replace the bracketed items with your actual parameters. Ensure that the script has execute permissions before running.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This script assumes you have a working SLURM environment and the necessary permissions to submit jobs. Adjust the <cite>#SBATCH</cite> options as per your cluster’s configuration.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This script is designed to run on the ASU supercomputer cluster. It may not work on other clusters without modification.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<ul class="simple">
+<li><p>This provides automated indexing of crystallography data using the <cite>indexamajig</cite> program. It is designed to be used with the <cite>index-turbo-slurm.sh</cite> script.</p></li>
+</ul>
+</section>
+<section id="agave-pattern-sim-script">
+<h2>AGAVE pattern_sim Script</h2>
+<p>The <cite>run_pattern_sim.sh</cite> script is designed to facilitate the submission of simulation jobs to a SLURM workload manager. This script focuses on using <cite>pattern_sim</cite> from CrystFEL, running simulations for pattern generation with specific geometry and crystal parameters.</p>
+</section>
+<section id="id1">
+<h2>Usage</h2>
+<p>Execute the script with the following parameters:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run_pattern_sim.sh<span class="w"> </span><span class="o">[</span>RUN<span class="o">]</span><span class="w"> </span><span class="o">[</span>GEOM_FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>PDB_FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>STREAMDIR<span class="o">]</span><span class="w"> </span><span class="o">[</span>INTENSITY_FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>TASKS<span class="o">]</span><span class="w"> </span><span class="o">[</span>PARTITION<span class="o">]</span><span class="w"> </span><span class="o">[</span>QOS<span class="o">]</span><span class="w"> </span><span class="o">[</span>HOURS<span class="o">]</span><span class="w"> </span><span class="o">[</span>TAG<span class="o">]</span>
+</pre></div>
+</div>
+<p>Replace the bracketed items with your actual parameters.</p>
+</section>
+<section id="id2">
+<h2>Parameters</h2>
+<ul class="simple">
+<li><p><strong>RUN ($1)</strong>: Base name for the run, used to generate filenames.</p></li>
+<li><p><strong>GEOM_FILE ($2)</strong>: Geometry file for the simulation.</p></li>
+<li><p><strong>PDB_FILE ($3)</strong>: PDB file describing the crystal structure.</p></li>
+<li><p><strong>INTENSITY_FILE ($4)</strong>: File containing intensity information.</p></li>
+<li><p><strong>TASKS ($6)</strong>: Number of tasks to request from SLURM.</p></li>
+<li><p><strong>PARTITION ($6)</strong>: The partition to submit the job to.</p></li>
+<li><p><strong>QOS ($7)</strong>: Quality of Service parameter for the job.</p></li>
+<li><p><strong>HOURS ($8)</strong>: Maximum time for the job (in hours).</p></li>
+<li><p><strong>TAG ($9)</strong>: A tag to append to the run name for identification.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>Script Description</h2>
+<p>The script performs the following steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Prepare Filenames</strong>: Constructs filenames based on the provided run name and tag.</p></li>
+<li><p><strong>SLURM Script Creation</strong>: Generates a SLURM script with specified SBATCH directives including time, tasks, job name, output, and error file locations.</p></li>
+<li><p><strong>Command Construction</strong>: Constructs the <cite>pattern_sim</cite> command with provided parameters and additional options for simulation specifics.</p></li>
+<li><p><strong>Job Submission</strong>: Submits the constructed job to the SLURM scheduler with specified partition, QOS, and time limit.</p></li>
+</ol>
+</section>
+<section id="key-components">
+<h2>Key Components</h2>
+<section id="slurm-directives">
+<h3>SLURM Directives</h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --time=0-60:00     # Job Time</span>
+<span class="c1">#SBATCH --ntasks=$TASKS    # Number of tasks</span>
+<span class="c1">#SBATCH --chdir   $PWD     # Change to current directory</span>
+<span class="c1">#SBATCH --job-name  $RUN   # Job Name</span>
+<span class="c1">#SBATCH --output    $RUN.out # Output</span>
+<span class="c1">#SBATCH --error    $RUN.err  # Error</span>
+</pre></div>
+</div>
+</section>
+<section id="command-construction">
+<h3>Command Construction</h3>
+<p>The script constructs a command to execute <cite>pattern_sim</cite> with various parameters like geometry file, PDB file, intensity file, and other simulation specifics.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">command</span><span class="o">=</span><span class="s2">&quot;pattern_sim -g </span><span class="nv">$GEOM_FILE</span><span class="s2"> -p </span><span class="nv">$PDB_FILE</span><span class="s2"> --number=1000 -o </span><span class="nv">$RUN</span><span class="s2">&quot;</span>
+<span class="nv">command</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$command</span><span class="s2"> --intensities=</span><span class="nv">$INTENSITY_FILE</span><span class="s2"> --no-noise --really-random --no-fringes&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="simulation-options">
+<h3>Simulation Options</h3>
+<p>Different flags and options can be appended to tailor the simulation, such as <cite>–no-noise</cite>, <cite>–really-random</cite>, and <cite>–no-fringes</cite>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Modify the script to include or exclude extra options based on the specific needs of your simulation.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure that all the provided files and parameters are correct and accessible before running the script to avoid errors during job submission.</p>
+</div>
+<p>To execute the script, ensure it’s correctly set up in your environment with the necessary permissions and SLURM is configured properly. Replace the placeholders with your specific parameters to tailor the simulation to your needs.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="access/globus.html" class="btn btn-neutral float-left" title="Globus File Sharing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="external_software.html" class="btn btn-neutral float-right" title="External Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Adam Kurth, Sabine Botha.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

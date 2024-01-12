@@ -29,15 +29,12 @@ jobs:
         docker exec rockylinux /venv/bin/pip install --upgrade pip
         docker exec rockylinux /venv/bin/pip install -r /github/workspace/requirements.txt
 
-<<<<<<< HEAD
     - name: Install Sphinx
       run: |
         python -m pip install --upgrade pip
         pip install sphinx
         # Add any other Sphinx-related installation commands here
 
-=======
->>>>>>> progress
     - name: Build Sphinx Documentation
       run: |
         docker exec rockylinux bash -c "source /venv/bin/activate && cd /github/workspace/docs && make html"

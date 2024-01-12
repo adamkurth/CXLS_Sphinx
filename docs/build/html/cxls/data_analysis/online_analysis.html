@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Analysis &mdash; CXFEL Labs GitPages Docs  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Offline Analysis" href="offline_analysis.html" />
+    <link rel="prev" title="RCSB Search API Scripts" href="custom_software/rcsb_search_api.html" />
+<!-- Custom toggle buttons -->
+<div class="toggle-container">
+    <a href="../index.html" class="toggle-btn">CXLS</a>
+    <a href="../../cxfel/index.html" class="toggle-btn">CXFEL</a>
+</div>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> CXFEL Labs GitPages Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">CXLS Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">CXLS Documentation Home Page</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#introduction">Introduction</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../accelerator/accelerator.html">Accelerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../accelerator/overview.html">CXLS Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../endstations/endstations.html">Endstations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../endstations/area_detector.html">Area Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sample_delivery/sample_delivery.html">Sample Delivery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_analysis.html">Data Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="access.html">Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slurm_script.html">Submitting SLURM Jobs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external_software.html">External Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom_software/custom_software.html">Custom Software</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Online Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#online-analysis-tools">Online Analysis Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#online-analysis-workflow">Online Analysis Workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">CrystFEL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reborn">Reborn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ai-ml-data-package-1-gpcam">AI/ML Data Package 1 (gpCAM)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ai-ml-time-resolved-data-package">AI/ML Time Resolved Data Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html">Projects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#documentation-for-reborn">Documentation for Reborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#troubleshooting-dcu-notes">Troubleshooting DCU Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#software">Software:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#hardware">Hardware:</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cxfel/index.html">CXFEL Documentation Home Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cxfel/overview.html">CXFEL Home Page</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CXFEL Labs GitPages Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">CXLS Documentation Home Page</a></li>
+          <li class="breadcrumb-item"><a href="data_analysis.html">Data Analysis</a></li>
+      <li class="breadcrumb-item active">Online Analysis</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/cxls/data_analysis/online_analysis.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="online-analysis">
+<h1>Online Analysis</h1>
+<section id="introduction">
+<h2>Introduction</h2>
+<p>This page provides information on how to perform online analysis using CXLS. Online analysis is the process of analyzing data in real-time as it is being collected. This is in contrast to offline analysis, where data is analyzed after it has been collected.</p>
+<p>Online analysis is useful for a variety of reasons. For example, it can be used to monitor the quality of the data as it is being collected. It can also be used to perform real-time analysis of the data, which can be useful for making decisions about the experiment.</p>
+<p>CXLS provides a number of tools for performing online analysis. These tools are described in detail in the following sections.</p>
+</section>
+<section id="online-analysis-tools">
+<h2>Online Analysis Tools</h2>
+<p>CXLS provides a number of tools for performing online analysis. These tools are described in detail in the following sections.</p>
+<ol class="arabic">
+<li><p><a class="reference external" href="https://www.desy.de/~twhite/crystfel/index.html">CrystFEL</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CrystFEL is a software package for processing crystallographic data. It can be used to perform online analysis of crystallographic data.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://gpcam.lbl.gov/">gpCAM</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>gpCAM is a software package for processing crystallographic data. It can be used to perform online analysis of crystallographic data.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>To be continued. fill out with more information …</p>
+</section>
+<section id="online-analysis-workflow">
+<h2>Online Analysis Workflow</h2>
+<p>The online analysis workflow consists of the following steps:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Step 1: Data Acquisition</dt><dd><ul class="simple">
+<li><p>Collect the data from the desired source.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Step 2: Preprocessing</dt><dd><ul class="simple">
+<li><p>Clean and preprocess the data to remove noise and artifacts.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Step 3: Feature Extraction</dt><dd><ul class="simple">
+<li><p>Extract relevant features from the preprocessed data.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Step 4: Model Training</dt><dd><ul class="simple">
+<li><p>Train a machine learning model using the extracted features.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Step 5: Real-time Analysis</dt><dd><ul class="simple">
+<li><p>Perform real-time analysis on new data using the trained model.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Step 6: Visualization</dt><dd><ul class="simple">
+<li><p>Visualize the results of the real-time analysis.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Step 7: Decision Making</dt><dd><ul class="simple">
+<li><p>Make decisions based on the results of the real-time analysis.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Step 8: Data Storage</dt><dd><ul class="simple">
+<li><p>Store the results of the real-time analysis for future use.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="id1">
+<h2>CrystFEL</h2>
+<p>For introduction and high-level overview of CrystFEL, <span class="xref std std-doc">crystfel_tutorial</span>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Please click this link for the in-depth overview: <a class="reference external" href="https://www.desy.de/~twhite/crystfel/tutorial-0.9.1.html">Full Tutorial</a></p></li>
+</ul>
+</div></blockquote>
+<p>For troubleshooting, please refer to the <a class="reference external" href="https://www.desy.de/~twhite/crystfel/index.html">CrystFEL documentation</a></p>
+<p>To be continued. fill out with more information …</p>
+</section>
+<section id="reborn">
+<h2>Reborn</h2>
+<p>To be continued. fill out with more information …</p>
+</section>
+<section id="ai-ml-data-package-1-gpcam">
+<h2>AI/ML Data Package 1 (gpCAM)</h2>
+<p>The University of Wisconsin, Milwaukee group has developed a data package for online analysis of time-resolved data. This is an adaptation for the uses of gpCAM developed at <a class="reference external" href="https://gpcam.lbl.gov/">Lawrence Berkeley National Laboratory</a>.</p>
+<p>The documentation will be underconstruction. Please refer to the <a class="reference external" href="https://gpcam.lbl.gov/">gpCAM documentation</a> for the time being.</p>
+<p>To be continued. fill out with more information …</p>
+</section>
+<section id="ai-ml-time-resolved-data-package">
+<h2>AI/ML Time Resolved Data Package</h2>
+<p>The AI/ML Time Resolved Data Package is a collection of data and scripts that can be used to perform online analysis of time-resolved data. The data package contains the following files:</p>
+<ul class="simple">
+<li><p><cite>data/</cite>: A directory containing the data files.</p></li>
+<li><p><cite>scripts/</cite>: A directory containing the scripts.</p></li>
+<li><p><cite>README.md</cite>: A file containing information about the data package.</p></li>
+</ul>
+<p>To be continued. fill out with more information …</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>This page provides a high-level overview of the CXLS online analysis workflow. For detailed instructions and examples, refer to the specific sections in the documentation.</p>
+<p>For any further assistance, please consult the CXLS documentation or seek help from the CXLS community.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="custom_software/rcsb_search_api.html" class="btn btn-neutral float-left" title="RCSB Search API Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="offline_analysis.html" class="btn btn-neutral float-right" title="Offline Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Adam Kurth, Sabine Botha.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
