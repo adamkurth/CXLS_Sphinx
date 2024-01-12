@@ -20,20 +20,35 @@ This documentation is still under construction and will be updated regularly.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
    
-   overview
-   agave
-   globus
-   sol
-   slurm_script
-   cxls_eiger_4m
-   rcsb_search_api
-   crystfel_tutorial
-   projects
-   online_analysis
-   offline_analysis
+   accelerator/accelerator
+   accelerator/overview
+   endstations/endstations
+   endstations/area_detector
+   sample_delivery/sample_delivery
+   data_analysis/data_analysis
+   data_analysis/access
+   data_analysis/slurm_script
+   data_analysis/external_software
+   data_analysis/custom_software/custom_software
+   data_analysis/online_analysis
+   data_analysis/offline_analysis
+   data_analysis/projects
+   
+
+..    data
+..    agave
+..    globus
+..    sol
+..    slurm_script
+..    cxls_eiger_4m
+..    rcsb_search_api
+..    crystfel_tutorial
+..    projects
+..    online_analysis
+..    offline_analysis
 
 .. _cxls_installation: 
 
