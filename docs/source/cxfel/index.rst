@@ -1,6 +1,14 @@
 CXFEL Documentation Home Page
 ==============================
 
+.. raw:: html
+
+    <div class="custom-buttons">
+        <a href="../cxls/index.html" class="button">Access CXLS Docs</a>
+        <a href="index.html" class="button">Access CXFEL Docs</a>
+    </div>
+
+
 Introduction
 ------------
 
@@ -12,11 +20,11 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Explore:
+    :maxdepth: 2
+    :caption: Contents:
 
     overview
-        
+          
 
 Getting Started
 ---------------

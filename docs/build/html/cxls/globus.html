@@ -8,8 +8,6 @@
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -59,13 +57,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#run-application-no-gui">Run Application (No GUI)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#globus-setup-in-command-line-no-gui">Globus Setup in Command Line (No GUI)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#web-application">Web Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#acessing-agave-with-globus">Acessing AGAVE with Globus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-agave-with-globus">Accessing AGAVE with Globus</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="slurm_script.html">Submitting SLURM Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rcsb_search_api.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crystfel_tutorial.html">CrystFEL Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
 <ul>
@@ -100,7 +101,7 @@
              
   <section id="globus-file-sharing">
 <h1>Globus File Sharing</h1>
-<p>Globus is the primary file sharing program used by CXLS. This application is available on the command line, gui, and web application. It is a command line application as well as a web application. The web application is available at <a class="reference external" href="https://www.globus.org/app/transfer">https://www.globus.org/app/transfer</a>. The command line application is available on the CXLS cluster at <cite>/usr/local/bin/globus</cite>.</p>
+<p>Globus is the primary file sharing program used by CXLS. This application is available on the command line, GUI, and web application. It is a command line application as well as a web application. The web application is available at <a class="reference external" href="https://www.globus.org/app/transfer">https://www.globus.org/app/transfer</a>. The command line application is available on the CXLS cluster at <cite>/usr/local/bin/globus</cite>.</p>
 <p>Before using Globus, you must create an account at <a class="reference external" href="https://www.globus.org/">https://www.globus.org/</a>. Once you have created an account, you can use the web application or the command line application.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/globusconnectpersonal-3.2.2
 $<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-setup<span class="w"> </span>&lt;your<span class="w"> </span>username&gt;
@@ -109,16 +110,15 @@ $<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-setup<s
 <section id="run-application-with-gui">
 <h2>Run Application (with GUI)</h2>
 <p>To run the application with the GUI, follow these steps:</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>Make sure and <cite>cd</cite> into the directory where the Globus application is located.</p></li>
-<li><p>To start the application, run the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/globusconnectpersonal-3.2.2
+<li><p>To start the application, run the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/globusconnectpersonal-3.2.2
 $<span class="w"> </span>./globusconnectpersonal
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ol class="arabic simple" start="3">
 <li><p>This will open the GUI for Globus. This will display the current status of the application. Click <cite>Connect</cite> to activate the endpoint.</p></li>
 <li><p>Next please refer to the <cite>Web Application</cite> section for how to use Globus Website.</p></li>
 </ol>
@@ -126,71 +126,60 @@ $<span class="w"> </span>./globusconnectpersonal
 <section id="run-application-no-gui">
 <h2>Run Application (No GUI)</h2>
 <p>To run the application without the GUI, follow these steps:</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>Make sure and <cite>cd</cite> into the directory where the Globus application is located.</p></li>
-<li><p>To start the application, run the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/globusconnectpersonal-3.2.2
+<li><p>To start the application, run the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/labuser/Public/globusconnectpersonal-3.2.2
 $<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-start
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-</ol>
 <ul>
 <li><p>Other helpful commands are listed below:</p>
 <blockquote>
-<div><ul>
-<li><p>To see all the commands, run the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-help
-</pre></div>
-</div>
+<div><ul class="simple">
+<li><p>To see all the commands, run the following command:</p></li>
+</ul>
 </div></blockquote>
 </li>
-<li><p>To start the application in the background, run the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-start<span class="w"> </span><span class="p">&amp;</span>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-help
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>To deactivate the application, run the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-stop
+<ul class="simple">
+<li><p>To start the application in the background, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-start<span class="w"> </span><span class="p">&amp;</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>To check the status of the application, run the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-status
+<ul class="simple">
+<li><p>To deactivate the application, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-stop
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>To pause/resume the application, run the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-pause
+<ul class="simple">
+<li><p>To check the status of the application, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-status
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To pause/resume the application, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-pause
 </pre></div>
 </div>
 <p>Or</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-unpause
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>To see the version of the application, run the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-version
+<ul class="simple">
+<li><p>To see the version of the application, run the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-version
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
 </section>
 <section id="globus-setup-in-command-line-no-gui">
 <h2>Globus Setup in Command Line (No GUI)</h2>
@@ -204,12 +193,12 @@ $<span class="w">  </span>./globusconnect<span class="w"> </span>-setup<span cla
 </div>
 <ol class="arabic simple" start="2">
 <li><p>After running this command, you will be asked to enter your Globus username and password with a link given in the command line.</p></li>
-<li><p>In the drop down menu, select the <cite>Arizona State University</cite> option and press continue.</p></li>
+<li><p>In the drop-down menu, select the <cite>Arizona State University</cite> option and press continue.</p></li>
 <li><p>This will navigate you to login using <cite>ASURITE</cite> credentials.</p></li>
 <li><p>After logging in, you will be asked to enter a display name for your Globus account. Enter a display name and press continue.</p></li>
-<li><p>Please make reference of the code in the field. This will be used in future steps. Click continue.</p></li>
+<li><p>Please make reference to the code in the field. This will be used in future steps. Click continue.</p></li>
 <li><p>You must copy the code given in the field and paste it in the command line to authenticate.</p></li>
-<li><p>After authenticating, then enter the <cite>Endpoint Name</cite>, for example <cite>cxls_guest</cite> and press enter. This is where you will be able to access your Globus accout and transfer files.</p></li>
+<li><p>After authenticating, then enter the <cite>Endpoint Name</cite>, for example <cite>cxls_guest</cite> and press enter. This is where you will be able to access your Globus account and transfer files.</p></li>
 <li><p>As of now, Globus should be up and running. Please refer to the next section for how to use Globus.</p></li>
 </ol>
 </section>
@@ -217,26 +206,24 @@ $<span class="w">  </span>./globusconnect<span class="w"> </span>-setup<span cla
 <h2>Web Application</h2>
 <ol class="arabic">
 <li><p>Go to <a class="reference external" href="https://www.globus.org/globus-connect-personal">https://www.globus.org/globus-connect-personal</a> and click the login button, and login using your Globus credentials.</p></li>
-<li><p>On the left pannel, click <cite>Collection</cite> and enter the <cite>Endpoint Name</cite> you created in the previous section. For example, <cite>cxls_guest</cite>.</p></li>
+<li><p>On the left panel, click <cite>Collection</cite> and enter the <cite>Endpoint Name</cite> you created in the previous section. For example, <cite>cxls_guest</cite>.</p></li>
 <li><p>If this is online, the endpoint should be highlighted in green.</p>
 <blockquote>
-<div><ul>
-<li><p>If it is not, please restart Globus application on the command line using the following command.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-stop
+<div><ul class="simple">
+<li><p>If it is not, please restart the Globus application on the command line using the following command.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-stop
 $<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-start<span class="w"> </span><span class="p">&amp;</span>
+
+-<span class="w"> </span>This<span class="w"> </span>will<span class="w"> </span>start<span class="w"> </span>the<span class="w"> </span>Globus<span class="w"> </span>application<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>background<span class="w"> </span><span class="k">while</span><span class="w"> </span>still<span class="w"> </span>accessing<span class="w"> </span>the<span class="w"> </span>currently<span class="w"> </span>used<span class="w"> </span>terminal<span class="w"> </span>window.
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>This will start the Globus application in the background, while still accessing the currently used terminal window.</p></li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>After the endpoint is highlighted in green, nagivate to the directory you want to transfer files from and click the <cite>Start</cite> button.</p></li>
-<li><p>Now in the right pannel, nagivate to the directory you want to transfer files to and click the <cite>Start</cite> button <em>ON THE LEFT PANEL</em>.</p>
+<ol class="arabic" start="4">
+<li><p>After the endpoint is highlighted in green, navigate to the directory you want to transfer files from and click the <cite>Start</cite> button.</p></li>
+<li><p>Now in the right panel, navigate to the directory you want to transfer files to and click the <cite>Start</cite> button <em>ON THE LEFT PANEL</em>.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>If you want to transfer files from the right panel to the left panel, click the <cite>Start</cite> button <em>ON THE RIGHT PANEL</em>.</p></li>
@@ -246,17 +233,17 @@ $<span class="w"> </span>./globusconnectpersonal<span class="w"> </span>-start<s
 </li>
 </ol>
 </section>
-<section id="acessing-agave-with-globus">
-<h2>Acessing AGAVE with Globus</h2>
+<section id="accessing-agave-with-globus">
+<h2>Accessing AGAVE with Globus</h2>
 <ol class="arabic">
 <li><p>Refer to the <cite>Web Application</cite> section for how to access the Globus web application.</p></li>
-<li><p>To use AGAVE cluster, then on the left pannel, click <cite>Collection</cite> and enter <cite>ASU Data Transfer Node DTN1</cite>.</p></li>
+<li><p>To use AGAVE cluster, then on the left panel, click <cite>Collection</cite> and enter <cite>ASU Data Transfer Node DTN1</cite>.</p></li>
 <li><p>This should immediately activate the endpoint and highlight it in green.</p></li>
-<li><p>Now, nagivate to the directory you want to transfer files and select the files you want to transfer.</p></li>
-<li><p>Now in the right pannel, nagivate to the directory you want to transfer files to and click the <cite>Start</cite> button <em>ON THE LEFT PANEL</em>.</p>
+<li><p>Now, navigate to the directory you want to transfer files and select the files you want to transfer.</p></li>
+<li><p>Now in the right panel, navigate to the directory you want to transfer files to and click the <cite>Start</cite> button <em>ON THE LEFT PANEL</em>.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>If you want to transfer files from the right panel to the left panel, click the <cite>Start</cite> button <em>ON THE RIGHTPANEL</em>.</p></li>
+<li><p>If you want to transfer files from the right panel to the left panel, click the <cite>Start</cite> button <em>ON THE RIGHT PANEL</em>.</p></li>
 <li><p>This will start the transfer process, and you can monitor the progress in the <cite>Activity</cite> tab.</p></li>
 </ul>
 </div></blockquote>

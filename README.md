@@ -1,12 +1,4 @@
----
-runme:
-  id: 01HGH1C5W5NH560Z1NN3HFF4VF
-  version: v2.0
----
-
-## CXLS Sphinx Repository 
-
-TEST
+## CXLS Sphinx Repository
 
 This repository is the documentation for CXLS using Sphinx GitPages. This is under construction currently and will be updated regularly.
 
@@ -37,7 +29,7 @@ Using Conda Python package manager, to properly install requirements for using S
 - Create a new Conda enviornment called `sphinx_env`.
 - Replace 3.x with the specific version of Python you want to use (e.g., 3.8).
 
-```bash {"id":"01HGH1C5W5NH560Z1NMHVV6XR8"}
+```bash
 conda create --name sphinx_env python=3.x
 ```
 
@@ -45,26 +37,21 @@ conda create --name sphinx_env python=3.x
 
 - Using `source` command with Linux and Mac activate the env with:
 
-```bash {"id":"01HGH1C5W5NH560Z1NMMHX72QX"}
+```bash
 conda activate sphinx_env
 ```
 
-### 4. Install Sphinx
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
+### 4. Install Sphinx 
 
 - Using conda, we need to install Sphinx with:
 
-```bash {"id":"01HGH1C5W5NH560Z1NMQ70B1XG"}
+```bash
 conda install sphinx
 ```
 
 - Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
 
-```bash {"id":"01HGH1C5W5NH560Z1NMTJ70GD8"}
+```bash
 conda install sphinx_rtd_theme recommonmark
 ```
 
@@ -72,7 +59,7 @@ conda install sphinx_rtd_theme recommonmark
 
 - Verify installation and create initial sphinx build for documentation with:
 
-```bash {"id":"01HGH1C5W5NH560Z1NMY8QSVVH"}
+```bash
 sphinx-quickstart
 ```
 
@@ -80,79 +67,36 @@ sphinx-quickstart
 
 - When done working with the enviornment, deactivate using:
 
-```bash {"id":"01HGH1C5W5NH560Z1NN12PM8B2"}
+```bash
 conda deactivate
 ```
 
-<<<<<<< HEAD
-=======
+### 7. From here...
 
-- Using conda, we need to install Sphinx with:
+From here, we need to make `.rst` files in the following fashion. Say we need another page (`another_page.rst`) to link to out main `index.rst` from running `sphinx-quickstart`. 
 
-```bash {"id":"01HH2X9XZJF8B41E029D44G1C4"}
-=======
-- Using conda, we need to install Sphinx with:
+*Warning* We want the new page `another_page.rst` mentioned with proper syntax in a table of contents tree (toctree), 
 
-<<<<<<< HEAD
 
-```bash {"id":"01HH2XHY84BNQN13BZC2XTX3H8"}
-=======
-```bash {"id":"01HHYX7DZ9MAG3H6JA2XD73NNX"}
->>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
+```
 conda install sphinx
 ```
 
-- Also, install useful other packages such as `sphinx_rtd_theme` and `recommonmark`.
-
-<<<<<<< HEAD
-```bash {"id":"01HH2X9XZJF8B41E029GT36HR9"}
-=======
-<<<<<<< HEAD
-
-```bash {"id":"01HH2XHY84BNQN13BZC4K0MZJG"}
-=======
-```bash {"id":"01HHYX7DZ9MAG3H6JA2XR8Z4PD"}
->>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
-conda install sphinx_rtd_theme recommonmark sphinxawesome_theme
+``` bash
+touch another_page.rst
 ```
 
-### 5. Verify Installation
+After creating this file, we need to go into out main `index.rst` and create a table of contents tree (toctree) like this. 
 
-- Verify installation and create initial sphinx build for documentation with:
+*Warning* if this new page `another_page.rst` is not attached in a `toctree` in `index.rst` for example, 
 
-<<<<<<< HEAD
-```bash {"id":"01HH2X9XZJF8B41E029HNTBKCY"}
-=======
-<<<<<<< HEAD
-
-```bash {"id":"01HH2XHY84BNQN13BZC4XNGXS9"}
-=======
-```bash {"id":"01HHYX7DZ9MAG3H6JA2Z37Y1WG"}
->>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
-sphinx-quickstart
+``` sphinx
+toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   :hidden:
+   
+   another_page
 ```
 
-### 6. Deactivate Enviornment
-
-- When done working with the enviornment, deactivate using:
-
-<<<<<<< HEAD
-```bash {"id":"01HH2X9XZJF8B41E029M2J6SVT"}
-conda deactivate
-```
-
-> > > > > > > origin/progress
-=======
-<<<<<<< HEAD
-
-```bash {"id":"01HH2XHY84BNQN13BZC8FFJE8A"}
-=======
-```bash {"id":"01HHYX7DZ9MAG3H6JA2ZGDR0ZD"}
->>>>>>> a6d8cca373bc52ec476f1bbf4ec006d15be863d6
-conda deactivate
-```
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094
-
+Now we can proceed with adapting `another_page.rst` using sphinx syntax to build our page.

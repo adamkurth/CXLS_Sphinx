@@ -1,49 +1,66 @@
-.. CXLS Sphinx documentation master file, created by
-   sphinx-quickstart on Wed Nov 22 10:24:38 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 CXLS Documentation Home Page
 ============================
+
+.. raw:: html
+
+    <div class="custom-buttons">
+        <a href="index.html" class="button">Access CXLS Docs</a>
+        <a href="../cxfel/index.html" class="button">Access CXFEL Docs</a>
+    </div>
 
 
 Introduction
 ------------
 
-By adapting the uses of Reborn repository (https://gitlab.com/kirianlab/reborn), we have created a new repository for CXLS. 
+For the uses of CXLS, we have adapted the existing Reborn repository. `Here <https://gitlab.com/kirianlab/reborn>`_ is the hyperlink for this repo. Specifically, this repository is tailored to the uses at CXLS and gathering and analyzing crystallography data. 
 
-This repository is tailored to the uses at CXLS and gathering and analyzing crystallography data. 
-
-The documentation for Reborn can be found here: https://kirianlab.gitlab.io/reborn/.
+Click here to view the documentation for Reborn: `Reborn Documentation <https://kirianlab.gitlab.io/reborn/>`_.
 
 This documentation is still under construction and will be updated regularly.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-   
-   overview
-   agave
-   globus
-   sol
-   slurm_script
-   cxls_eiger_4m
-   rcsb_search_api
-   projects
+   :maxdepth: 5
+   :hidden:
+   :caption: CXLS Contents:
 
-.. _installation: 
+   cxls/index
+   cxls/index_test
+   cxls/accelerator/accelerator
+   cxls/accelerator/overview
+   cxls/endstations/endstations
+   cxls/endstations/area_detector
+   cxls/endstations/cxls_eiger_4m
+   cxls/sample_delivery/sample_delivery
+   cxls/data_analysis/data_analysis
+   cxls/data_analysis/access/agave
+   cxls/data_analysis/access/sol
+   cxls/data_analysis/access/globus
+   cxls/data_analysis/slurm_script
+   cxls/data_analysis/external_software
+   cxls/data_analysis/custom_software/custom_software
+   cxls/data_analysis/custom_software/rcsb_search_api
+   cxls/data_analysis/online_analysis
+   cxls/data_analysis/offline_analysis
+   cxls/data_analysis/projects
+   cxls/data_analysis/projects/background_subtraction
+   cxls/data_analysis/projects/stream_background_subtraction
+   cxls/data_analysis/projects/overwrite_background_subtraction
+
+
+.. _cxls_installation: 
 
 Installation
 ------------
 
 Please refer to the `README.md` file in the repository for installation and setup instructions, available here: available here: `README <https://github.com/adamkurth/CXLS_Sphinx/blob/main/README.md>`_.
+
 .. _reborn:
 
 Documentation for Reborn
 -------------------------
-The GitLab repository for reborn can be found here: https://gitlab.com/kirianlab/reborn.
+The GitLab repository for reborn can be found here: `Reborn Repository <https://gitlab.com/kirianlab/reborn>`_.
 
-The documentation for reborn can be found here: https://kirianlab.gitlab.io/reborn/.
+The documentation for reborn can be found here: `Reborn Documentation <https://kirianlab.gitlab.io/reborn/>`_.
 
 
 .. _dcu:
