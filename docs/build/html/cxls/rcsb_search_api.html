@@ -8,8 +8,6 @@
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,7 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Projects" href="projects.html" />
+    <link rel="next" title="CrystFEL Tutorial" href="crystfel_tutorial.html" />
     <link rel="prev" title="Operation of the Dectris Eiger4M Detector" href="cxls_eiger_4m.html" />
 <!-- Custom toggle buttons -->
 <div class="toggle-container">
@@ -64,7 +62,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#downloading-pdb-files-using-download-pdb-files-py">Downloading PDB Files using <cite>download_pdb_files.py</cite></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="crystfel_tutorial.html">CrystFEL Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">CXFEL Contents:</span></p>
 <ul>
@@ -131,7 +132,11 @@
 <p>The <cite>scrape.py</cite> script, located in the root directory of the <cite>pdb_rcsb_api_scripts</cite> repository, is used to retrieve PDB IDs from the RCSB Search API.</p>
 <p><strong>Usage</strong>:</p>
 <p>Run the script with the desired symmetry and limit:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py<span class="w"> </span>-h<span class="w"> </span>symmetry<span class="w"> </span>--limit<span class="w"> </span>limit
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py<span class="w"> </span><span class="o">[</span>symmetry<span class="o">]</span><span class="w"> </span>--limit<span class="w"> </span>limit
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py<span class="w"> </span>cubic<span class="w"> </span>--limit<span class="w"> </span><span class="m">100</span>
 </pre></div>
 </div>
 <p><strong>Arguments</strong>:</p>
@@ -224,7 +229,11 @@
 <p>The <cite>download_pdb_files.py</cite> script allows users to download PDB files based on specified criteria.</p>
 <p><strong>Usage</strong>:</p>
 <p>Run the script with the desired symmetry and limit:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>download_pdb_files.py<span class="w"> </span>-h<span class="w"> </span>symmetry<span class="w"> </span>--limit<span class="w"> </span>limit
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>download_pdb_files.py<span class="w"> </span><span class="o">[</span>symmetry<span class="o">]</span><span class="w"> </span>--limit<span class="w"> </span>limit
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>download_pdb_files.py<span class="w"> </span>cubic<span class="w"> </span>--limit<span class="w"> </span><span class="m">100</span>
 </pre></div>
 </div>
 <p><strong>Script Overview</strong>:</p>
@@ -330,7 +339,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="cxls_eiger_4m.html" class="btn btn-neutral float-left" title="Operation of the Dectris Eiger4M Detector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="projects.html" class="btn btn-neutral float-right" title="Projects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="crystfel_tutorial.html" class="btn btn-neutral float-right" title="CrystFEL Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
