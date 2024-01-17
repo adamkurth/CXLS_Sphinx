@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Water Background Subtraction Project (Main) &mdash; CXFEL Labs GitPages Docs  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=649a27d8" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=e8c4a81e" />
-
-  
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -37,15 +36,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../../../index.html" class="icon icon-home">
-            CXFEL Labs GitPages Docs
+            <a href="../../../index.html" class="icon icon-home"> CXFEL Labs GitPages Docs
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -133,7 +128,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
           <li class="breadcrumb-item"><a href="../../index.html">CXLS Documentation Home Page</a></li>
           <li class="breadcrumb-item"><a href="../../index_test.html">Homepage for TEST index</a></li>
           <li class="breadcrumb-item"><a href="../data_analysis.html">Data Analysis</a></li>
@@ -184,16 +179,16 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PeakThresholdProcessor</span></span></dt>
 <dd><p>Initialize the <cite>PeakThresholdProcessor</cite> with the image array and coordinate threshold value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
 <li><p><strong>threshold_value</strong> (<em>float</em><em>, </em><em>optional</em>) – The threshold value to be used for processing the image array, defaults to 0.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns coordinate list of x and y values above the threshold value.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -202,7 +197,7 @@
 <span class="sig-name descname"><span class="pre">set_threshold_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_threshold_value</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Set a new threshold value for the image array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>new_threshold_value</strong> (<em>float</em>) – The new threshold value to be used for processing the image array.</p>
 </dd>
 </dl>
@@ -213,10 +208,10 @@
 <span class="sig-name descname"><span class="pre">get_threshold_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Getter method which returns the current threshold value for the image array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The current threshold value for the image array.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -234,7 +229,7 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArrayRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Initialize the <cite>ArrayRegion</cite> class with the image array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p>
 </dd>
 </dl>
@@ -243,7 +238,7 @@
 <span class="sig-name descname"><span class="pre">x_center</span></span></dt>
 <dd><p>The x coordinate of the center of the region. First coordinate in tuple.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -254,7 +249,7 @@
 <span class="sig-name descname"><span class="pre">y_center</span></span></dt>
 <dd><p>The y coordinate of the center of the region. Second coordinate in tuple.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -265,7 +260,7 @@
 <span class="sig-name descname"><span class="pre">region_size</span></span></dt>
 <dd><p>The size of the region radius.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -276,7 +271,7 @@
 <span class="sig-name descname"><span class="pre">set_peak_coordinate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Set the x and y coordinates of the center of the region using chosen coordinate.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>int</em>) – The x coordinate of the center of the region.</p></li>
 <li><p><strong>y</strong> (<em>int</em>) – The y coordinate of the center of the region.</p></li>
@@ -290,7 +285,7 @@
 <span class="sig-name descname"><span class="pre">set_region_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Set the size of the region radius.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>size</strong> (<em>int</em>) – The size of the region radius.</p>
 </dd>
 </dl>
@@ -301,10 +296,10 @@
 <span class="sig-name descname"><span class="pre">get_region</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Get the region from the image array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The region from the image array.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>numpy.ndarray</p>
 </dd>
 </dl>
@@ -320,7 +315,7 @@
 <span class="sig-name descname"><span class="pre">load_h5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>This method loads an HDF5 file and prints a success message if the file is loaded successfully. If the file is not found within the working directory, it prints an error message.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The path to the HDF5 file.</p>
 </dd>
 </dl>
@@ -331,7 +326,7 @@
 <span class="sig-name descname"><span class="pre">extract_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_center</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>This function calls the <cite>ArrayRegion</cite> class to extract the region from the image array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
 <li><p><strong>region_size</strong> (<em>int</em>) – The size of the region radius.</p></li>
@@ -339,10 +334,10 @@
 <li><p><strong>y_center</strong> (<em>int</em>) – The y coordinate of the center of the region.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The extracted region from the image array.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>numpy.ndarray</p>
 </dd>
 </dl>
@@ -357,7 +352,7 @@
 <span class="sig-name descname"><span class="pre">coordinate_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>This function displays the coordinates above the given threshold and radius, and allows the user to interactively select the coordinate for further processing.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>image_array</strong> (<em>numpy.ndarray</em>) – The image array to be processed.</p></li>
 <li><p><strong>threshold_value</strong> (<em>float</em>) – The thresold value used to determine the coordiantes.</p></li>
@@ -368,10 +363,10 @@
 </dl>
 <p>The user is prompted to choose a coordinate. Function displays 9x9 two-dimensional array, the segment, and the boolean array of traversed values. The function then returns the average surrounding peak value and the intensity peak value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The average surrounding peak value and the intensity peak value.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>tuple[float, float]</p>
 </dd>
 </dl>
@@ -449,10 +444,10 @@
 <span class="sig-name descname"><span class="pre">build_coord_intensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>This function builds the intensity peak value for the chosen coordinate, used in the <cite>create_scatter</cite> function.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A tuple containing four lists: x values, y values, z values, and columns needed for <cite>create_scatter</cite>.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>tuple[list, list, list, list]</p>
 </dd>
 </dl>
@@ -488,7 +483,7 @@
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">`create_scatter</span> <span class="pre">`</span> <span class="pre">creates</span> <span class="pre">visualization</span> <span class="pre">for</span> <span class="pre">chosen</span> <span class="pre">highlighted</span> <span class="pre">coordinate,</span> <span class="pre">using</span> <span class="pre">matplotlib.pyplot.</span></span></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>list</em>) – list of x coordinate values.</p></li>
 <li><p><strong>y</strong> (<em>list</em>) – list of y coordinate values.</p></li>
@@ -510,10 +505,10 @@
 <dd><blockquote>
 <div><p>Loads and processes image data from HDF5 file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param filename<span class="colon">:</span></dt>
+<dt class="field-odd">param filename</dt>
 <dd class="field-odd"><p>The path to the HDF5 file containing image data.</p>
 </dd>
-<dt class="field-even">type filename<span class="colon">:</span></dt>
+<dt class="field-even">type filename</dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
