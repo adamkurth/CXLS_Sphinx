@@ -15,7 +15,6 @@ Inside of this page you will find the documentation for the endstations at CXLS 
    :maxdepth: 2
    :caption: Contents:
    
-   endstations
    area_detector
    cxls_eiger_4m
 

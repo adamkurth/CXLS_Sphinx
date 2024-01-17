@@ -296,7 +296,6 @@ Orchestrates the overall process, from loading files to processing data and coor
 
     - To execute the program, ensure it's correctly set up in your environment and call it from the command line or another script.
 
-
 .. py:function:: main()
 
     .. code-block:: python

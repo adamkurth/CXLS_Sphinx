@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Access &mdash; CXFEL Labs GitPages Docs  documentation</title>
+  <title>Quick Start Guide for Data Analysis at CXLS &mdash; CXFEL Labs GitPages Docs  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e8c4a81e" />
@@ -22,6 +22,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Access" href="access.html" />
+    <link rel="prev" title="Data Analysis" href="data_analysis.html" />
 <!-- Custom toggle buttons -->
 <div class="toggle-container">
     <a href="../index.html" class="toggle-btn">CXLS</a>
@@ -50,7 +52,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">CXLS Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">CXLS Documentation Home Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index_test.html">Homepage for TEST index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../accelerator/accelerator.html">Accelerator</a></li>
@@ -59,7 +61,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../endstations/area_detector.html">Area Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../endstations/cxls_eiger_4m.html">Operation of the Dectris Eiger4M Detector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sample_delivery/sample_delivery.html">Sample Delivery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_analysis.html">Data Analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_analysis.html">Data Analysis</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Quick Start Guide for Data Analysis at CXLS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-the-data-stream">Setting up the Data Stream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-the-data">Accessing the Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access.html">Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access/agave.html">AGAVE Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access/sol.html">Sol Access Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access/globus.html">Globus File Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm_script.html">Submitting SLURM Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_software.html">External Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_software/custom_software.html">Custom Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_software/rcsb_search_api.html">RCSB Search API Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_analysis.html">Online Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="offline_analysis.html">Offline Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects/background_subtraction.html">Water Background Subtraction Project (Main)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects/stream_background_subtraction.html">Water Background Subtraction Project (Stream)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects/overwrite_background_subtraction.html">Water Background Subtraction (Overwrite)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis.html#introduction">Introduction</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="access/agave.html">AGAVE Access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="access/sol.html">Sol Access Page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="access/globus.html">Globus File Sharing</a></li>
@@ -94,9 +119,12 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Access</li>
+          <li class="breadcrumb-item"><a href="../index.html">CXLS Documentation Home Page</a></li>
+          <li class="breadcrumb-item"><a href="../index_test.html">Homepage for TEST index</a></li>
+          <li class="breadcrumb-item"><a href="data_analysis.html">Data Analysis</a></li>
+      <li class="breadcrumb-item active">Quick Start Guide for Data Analysis at CXLS</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/cxls/data_analysis/access.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/cxls/data_analysis/quick_start.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -104,49 +132,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="access">
-<h1>Access</h1>
-<div class="custom-buttons">
-    <a href="../index.html" class="button">Access CXLS Docs</a>
-    <a href="../../cxfel/index.html" class="button">Access CXFEL Docs</a>
-</div><p>Inside of the Access page, you will find information on how to access the CXLS and CXFEL clusters. Specifically through the use of Research Computing’s AGAVE Supercomputer, the Sol cluster, and Globus.</p>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="access/agave.html">AGAVE Access</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="access/agave.html#useful-references">Useful References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/agave.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/agave.html#agave-login-steps">AGAVE Login Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/agave.html#loading-modules">Loading Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/agave.html#partitions-at-agave">Partitions at AGAVE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/agave.html#running-pattern-sim-through-crystfel">Running <cite>pattern_sim</cite> through CrystFEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/agave.html#indexing-images-indexamajig-through-crystfel">Indexing Images <cite>indexamajig</cite> through CrystFEL</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="access/sol.html">Sol Access Page</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="access/sol.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/sol.html#access-methods">Access Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/sol.html#user-guide">User Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/sol.html#additional-resources">Additional Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/sol.html#module-load-commands">Module Load Commands</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="access/globus.html">Globus File Sharing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="access/globus.html#run-application-with-gui">Run Application (with GUI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/globus.html#run-application-no-gui">Run Application (No GUI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/globus.html#globus-setup-in-command-line-no-gui">Globus Setup in Command Line (No GUI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/globus.html#web-application">Web Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access/globus.html#accessing-agave-with-globus">Accessing AGAVE with Globus</a></li>
-</ul>
-</li>
-</ul>
+  <section id="quick-start-guide-for-data-analysis-at-cxls">
+<h1>Quick Start Guide for Data Analysis at CXLS</h1>
+<p>Here we intend to provide a quick guide for using the CXLS data analysis tools. This will cover activating reborn (our data analysis package), setting up the data stream using ZMQ, and then using the data analysis tools for both online and offline analysis.</p>
+<section id="getting-started">
+<h2>Getting Started</h2>
+<p>To get started at the Data Analysis station at CXLS, you will need to log in to the computer <cite>cxls-data-analysis</cite> using your ASURITE credentials ( RESOLVE labuser ).</p>
+<p>Once you have logged in, you will need to activate the <cite>reborn</cite> environment. To do this, you will need to open a terminal and type the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>reborn
+</pre></div>
 </div>
+<p>Same thing can be done using <cite>conda</cite> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>reborn
+</pre></div>
+</div>
+<p>This will activate the <cite>reborn</cite> environment, which contains all of the packages that you will need to do your data analysis.</p>
+</section>
+<section id="setting-up-the-data-stream">
+<h2>Setting up the Data Stream</h2>
+</section>
+<section id="accessing-the-data">
+<h2>Accessing the Data</h2>
+<p>To access the offline data, please refer to the <a class="reference external" href="access">Access</a> section of the documentation.</p>
+<p>This will guide you through the steps involved in using AGAVE, SOL, and Globus.</p>
+</section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data_analysis.html" class="btn btn-neutral float-left" title="Data Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="access.html" class="btn btn-neutral float-right" title="Access" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

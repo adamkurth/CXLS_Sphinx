@@ -23,28 +23,27 @@ This documentation is still under construction and will be updated regularly.
    :hidden:
    :caption: CXLS Contents:
 
-   cxls/index
-   cxls/index_test
-   cxls/accelerator/accelerator
-   cxls/accelerator/overview
-   cxls/endstations/endstations
-   cxls/endstations/area_detector
-   cxls/endstations/cxls_eiger_4m
-   cxls/sample_delivery/sample_delivery
-   cxls/data_analysis/data_analysis
-   cxls/data_analysis/access/agave
-   cxls/data_analysis/access/sol
-   cxls/data_analysis/access/globus
-   cxls/data_analysis/slurm_script
-   cxls/data_analysis/external_software
-   cxls/data_analysis/custom_software/custom_software
-   cxls/data_analysis/custom_software/rcsb_search_api
-   cxls/data_analysis/online_analysis
-   cxls/data_analysis/offline_analysis
-   cxls/data_analysis/projects
-   cxls/data_analysis/projects/background_subtraction
-   cxls/data_analysis/projects/stream_background_subtraction
-   cxls/data_analysis/projects/overwrite_background_subtraction
+   index_test
+   accelerator/accelerator
+   accelerator/overview
+   endstations/endstations
+   endstations/area_detector
+   endstations/cxls_eiger_4m
+   sample_delivery/sample_delivery
+   data_analysis/data_analysis
+   data_analysis/access/agave
+   data_analysis/access/sol
+   data_analysis/access/globus
+   data_analysis/slurm_script
+   data_analysis/external_software
+   data_analysis/custom_software/custom_software
+   data_analysis/custom_software/rcsb_search_api
+   data_analysis/online_analysis
+   data_analysis/offline_analysis
+   data_analysis/projects
+   data_analysis/projects/background_subtraction
+   data_analysis/projects/stream_background_subtraction
+   data_analysis/projects/overwrite_background_subtraction
 
 
 .. _cxls_installation: 

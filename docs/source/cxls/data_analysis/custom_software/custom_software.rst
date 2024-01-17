@@ -16,6 +16,4 @@ This is a collection of custom software that I have written for my own use.  It 
    :maxdepth: 2
    :caption: Contents:
    
-   data_analysis
-   access/agave
-   access/sol
+   rcsb_search_api

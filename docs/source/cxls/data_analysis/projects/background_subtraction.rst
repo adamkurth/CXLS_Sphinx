@@ -37,29 +37,31 @@ The following modules are imported for use in the program:
 PeakThresholdProcessor Class 
 ----------------------------
 
-The `PeakThresholdProcessor ` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
+The `PeakThresholdProcessor` class is used for processing the image peak values in the image array, above or at a specified threshold value. This class provides functions for setting and retrieving coordinate values these values.
 
 The following functions are defined in the `PeakThresholdProcessor` class:
 
-.. py:class:: PeakThresholdProcessor(image_array, threshold_value=0)
-    
+.. py:class:: PeakThresholdProcessor
+
     Initialize the `PeakThresholdProcessor` with the image array and coordinate threshold value.
 
-   :param image_array: The image array to be processed.
-   :type image_array: numpy.ndarray
-   :param threshold_value: The threshold value to be used for processing the image array, defaults to 0.
-   :type threshold_value: float, optional
+    :param image_array: The image array to be processed.
+    :type image_array: numpy.ndarray
+    :param threshold_value: The threshold value to be used for processing the image array, defaults to 0.
+    :type threshold_value: float, optional
    
-   :return: Returns coordinate list of x and y values above the threshold value.
-   :rtype: list
+    :return: Returns coordinate list of x and y values above the threshold value.
+    :rtype: list
    
     .. py:method:: set_threshold_value(new_threshold_value)
+
         Set a new threshold value for the image array.
 
         :param new_threshold_value: The new threshold value to be used for processing the image array.
         :type new_threshold_value: float
 
     .. py:method:: get_threshold_value()
+
         Getter method which returns the current threshold value for the image array.
 
         :return: The current threshold value for the image array.
@@ -74,43 +76,51 @@ The following functions are defined in the `ArrayRegion` class:
 
 .. py:class:: ArrayRegion(array)
     
-    The `ArrayRegion` class is used for processing the image array region.
+    Initialize the `ArrayRegion` class with the image array.
 
-   :param array: The image array to be processed.
-   :type array: numpy.ndarray
-   
-   .. py:attribute:: x_center
-       The x coordinate of the center of the region. First coordinate in tuple.
-       :type: int
+    :param array: The image array to be processed.
+    :type array: numpy.ndarray
 
-   .. py:attribute:: y_center
-       The y coordinate of the center of the region. Second coordinate in tuple.
-       :type: int
+    .. py:attribute:: x_center
 
-   .. py:attribute:: region_size
-        Make region that has radius of size region_size.
-       :type: int
+        The x coordinate of the center of the region. First coordinate in tuple.
 
-   .. py:method:: set_peak_coordinate(x, y)
-       Set the x and y coordinates of the center of the region using chosen coordinate.
+        :type: int
 
-       :param x: The x coordinate of the center of the region.
-       :type x: int
-       :param y: The y coordinate of the center of the region.
-       :type y: int
+    .. py:attribute:: y_center
 
-   .. py:method:: set_region_size(size)
-       Make region that is printable for the terminal and has a radius of region_size.
+        The y coordinate of the center of the region. Second coordinate in tuple.
 
-       :param size: The size of the region radius.
-       :type size: int
+        :type: int
 
-   .. py:method:: get_region()
-       Get the region from the image array.
+    .. py:attribute:: region_size
 
-       :return: The region from the image array.
-       :rtype: numpy.ndarray
+        The size of the region radius.
 
+        :type: int
+
+    .. py:method:: set_peak_coordinate(x, y)
+
+        Set the x and y coordinates of the center of the region using chosen coordinate.
+
+        :param x: The x coordinate of the center of the region.
+        :type x: int
+        :param y: The y coordinate of the center of the region.
+        :type y: int
+
+    .. py:method:: set_region_size(size)
+
+        Set the size of the region radius.
+
+        :param size: The size of the region radius.
+        :type size: int
+
+    .. py:method:: get_region()
+
+        Get the region from the image array.
+
+        :return: The region from the image array.
+        :rtype: numpy.ndarray
 
 Helper Functions
 ----------------

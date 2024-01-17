@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-## CXLS Sphinx Repository
-=======
-## CXLS Sphinx Repository 
->>>>>>> 843d0ae790a2c0b548c57e9fc65754f007d405f4
+# CXLS Sphinx Documentation Repository
 
 This repository is the documentation for CXLS using Sphinx GitPages. This is under construction currently and will be updated regularly.
 

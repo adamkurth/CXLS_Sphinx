@@ -294,17 +294,10 @@ Orchestrates the overall process, from loading files to processing data and coor
         
         - Sets completed to True after processing
 
-<<<<<<< HEAD:docs/source/overwrite_background_subtraction.rst
-.. py:function:: main() 
-    :no-index:
-    
-=======
     - To execute the program, ensure it's correctly set up in your environment and call it from the command line or another script.
-
 
 .. py:function:: main()
 
->>>>>>> 72b655a502748a4db787176a57d68bb51f69f094:docs/source/cxls/projects/overwrite_background_subtraction.rst
     .. code-block:: python
 
         def main():

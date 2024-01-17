@@ -15,7 +15,6 @@ Here, we will describe the accelerator and its components.
    :maxdepth: 3
    :caption: Contents:
    
-   accelerator
    overview
 
 
