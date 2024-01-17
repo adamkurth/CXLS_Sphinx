@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ## CXLS Sphinx Repository
+=======
+## CXLS Sphinx Repository 
+>>>>>>> 843d0ae790a2c0b548c57e9fc65754f007d405f4
 
 This repository is the documentation for CXLS using Sphinx GitPages. This is under construction currently and will be updated regularly.
 
@@ -41,7 +45,7 @@ conda create --name sphinx_env python=3.x
 conda activate sphinx_env
 ```
 
-### 4. Install Sphinx 
+### 4. Install Sphinx
 
 - Using conda, we need to install Sphinx with:
 
@@ -71,32 +75,27 @@ sphinx-quickstart
 conda deactivate
 ```
 
-### 7. From here...
+## From here...
 
-From here, we need to make `.rst` files in the following fashion. Say we need another page (`another_page.rst`) to link to out main `index.rst` from running `sphinx-quickstart`. 
+Say we have a file called `index.rst` which serves as our homepage. 
 
-*Warning* We want the new page `another_page.rst` mentioned with proper syntax in a table of contents tree (toctree), 
-
-
-```
-conda install sphinx
-```
+Use the following command to create a new file called `another_page.rst`.
 
 ``` bash
 touch another_page.rst
 ```
 
-After creating this file, we need to go into out main `index.rst` and create a table of contents tree (toctree) like this. 
+Now we need to link these two files in a table of contents tree (called a toctree). 
 
-*Warning* if this new page `another_page.rst` is not attached in a `toctree` in `index.rst` for example, 
+Make sure this syntax is correct, or your content will now show up. 
 
-``` sphinx
-toctree::
+Also we are free to put this page into a directory called `test_dir`, for better organization. 
+
+``` bash
+.. toctree::
    :maxdepth: 2
-   :caption: Contents:
-   :hidden:
-   
-   another_page
-```
+   :caption: Content:
 
-Now we can proceed with adapting `another_page.rst` using sphinx syntax to build our page.
+   index
+   test_dir/another_page
+```
