@@ -36,7 +36,7 @@ Setting up the Data Stream
 
 
 Accessing the Data
-------------------
+-------------------
 
 .. accessing data
 To access the offline data, please refer to the `Access <access>`_ section of the documentation.
